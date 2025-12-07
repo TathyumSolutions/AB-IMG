@@ -1,0 +1,17 @@
+{
+    "email": {
+        "address": "yourmltales@gmail.com",
+        "password": "kodi czae quix bpea",
+        "imap_server": "imap.gmail.com",
+        "imap_port": 993
+    },
+    "agent": {
+        "target_subjects": ["IMGC Letter"],
+        "loan_id_pattern": "(\\d{10})$",
+        "save_location": "./email_attachments",
+        "check_interval": 60,
+        "mark_as_read": false,
+        "only_unseen": true,
+        "log_file": "email_agent.log"
+    }
+}

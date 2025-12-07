@@ -1,0 +1,245 @@
+"
+{
+  ""Loan_Details"": {
+    ""Loan_Number"": ""3002060001846"",
+    ""Sourcing_City_Name"": ""JODHPUR"",
+    ""Branch_Name"": ""JODHPUR"",
+    ""Sourcing_Channel"": ""Marketing Agent"",
+    ""Final_Sanctioned_Amount"": ""4200000"",
+    ""Sanction_Loan_Period"": ""336"",
+    ""Repayment_Structure"": ""EMI Based Repayment"",
+    ""Sanction_Interest_Rate"": ""8.75"",
+    ""Sanction_Interest_Type"": ""VARIABLE"",
+    ""Loan_Type"": ""Home Loan"",
+    ""Loan_Purpose"": ""Extension"",
+    ""Type_Of_Employment_Loan"": ""Salaried"",
+    ""Total_Net_Monthly_Income_Considered_Across_All_Borrowers"": ""63322"",
+    ""Foir"": ""59.95"",
+    ""Is_Collateral_Crosslinked"": ""No"",
+    ""Loan_Account_Number"": ""1234567899876547"",
+    ""Lender_Promo_Code"": ""NORMAL ONE"",
+    ""Govt_Scheme"": ""Non PMAY"",
+    ""LoanID_Of_Cross_linked_loan"": ""JIV88756HJDF89766"",
+    ""Combined_LTV"": ""60"",
+    ""Total_Exposure"": ""50000"",
+    ""Sourcing_Region"": """",
+    ""EMI_TO_ABB_RATIO"": """",
+    ""Lender_Scheme_Code"": """",
+    ""Lender_Internal_Score"": """",
+    ""Refinance_Payment_Period_In_Months"": """",
+    ""Refinance_Original_Mode_Of_payment"": """",
+    ""CRE_Applicable"": """",
+    ""Manual_ABB"": """",
+    ""Final_AMC"": """",
+    ""Total_Monthly_Obligations_Considered"": """",
+    ""Branch_Sales_Manager"": """",
+    ""Branch_Credit_Manager"": """",
+    ""Original_Sanction_Tenor_Of_BT_Loan"": """",
+	""Date_Of_Legal"": """",
+    ""Developer_Name"": """",
+    ""Date_Of_Title"": """",
+    ""Legal_Vendor"": """",
+    ""LoanDeviationDetails"": [
+      {
+        ""Mitigants_For_Deviations_Taken"": ""Decent FOIR."",
+        ""Deviations_Exception_Description"": ""Single applicant case.""
+      }
+    ],
+    ""NotesDetails"": [
+      {
+        ""Sanction_Conditions"": ""Lender to ensure 82,76,125/- to be considered as M.V of property.""
+      },
+      {
+        ""Sanction_Conditions"": ""Disbursement to be as per actual stage of extension as per technical""
+      }
+    ],
+    ""RemkarsDetails"": [
+      {
+        ""OtherRemarks"": ""Remkars1""
+      },
+      {
+        ""OtherRemarks"": ""Remkars2""
+      }
+    ]
+  },
+  ""BorrowersDetails"": [
+    {
+      ""Borrower_First_Name"": ""Sunil Kumar"",
+      ""Borrower_Surname"": ""Saini"",
+      ""Date_Of_Birth_Of_The_Borrower"": ""16-04-1996"",
+      ""Gender"": ""Male"",
+      ""Marital_Status"": ""Married"",
+      ""Borrower_City"": ""Noida"",
+      ""Borrower_PIN"": ""223455"",
+      ""Borrower_MobileNo"": ""98764567833"",
+      ""Borrower_Address1"": ""sector 15"",
+      ""Borrower_Address2"": ""Mohalla - Kayasthan Mahal Hasanpur"",
+      ""Borrower_Address3"": ""Noida"",
+      ""Resident_Status"": ""Resident Indian"",
+      ""Current_Residence"": ""Family"",
+      ""Id_Proof_Type"": ""Aadhar"",
+      ""Id_Number"": ""123456789"",
+      ""Type_Of_Employment_Borrower"": ""Salaried"",
+      ""Borrower_Entity_Type"": ""Individual"",
+      ""Level_Of_Studies"": ""Architect"",
+      ""Number_Of_Dependents"": ""5"",
+      ""SE_Type"": ""Trader"",
+      ""Borrower_Retirement_Date"": ""28-Jul-2052"",
+      ""Work_Details"": ""repairing of electrical component "",
+      ""Relationship_Of_Coborrower_To_The_Borrower"": ""Brother"",
+      ""Office_Ownership"": ""Owned"",
+      ""Satisfactory_TPC_Check"": ""No"",
+      ""Years_In_Current_Employment"": ""2"",
+      ""Months_In_Current_Employment"": ""10"",
+      ""Years_In_Total_Employment"": ""5"",
+      ""Contractual_PartTime_Employment"": ""Contract"",
+      ""Nature_Of_Employment"": ""Daily Wage Earner"",
+      ""Pensionable_Borrower"": ""Yes"",
+      ""Personal_Discussion"": ""Any other red flag in lender PD/CAM etc."",
+      ""Mode_Of_Salary"": ""Cash"",
+      ""Office_Set_Up"": ""Resi cum office (with set up)"",
+      ""Lender_PD_Status"": ""Negative"",
+      ""Place_Of_PD_Conducted"": ""Video PD"",
+      ""Comment_Negative_Remark_Redflag"": ""No"",
+      ""CPV_Resi"": ""Positive"",
+      ""CPV_Office"": ""Negative"",
+      ""DEDUPE"": ""Negative"",
+      ""RCU_FCU"": ""Positive"",
+      ""Income_Considered"": ""100%"",
+      ""Program_Borrower"": ""Star (MSME employee) Home Loan Salaried"",
+      ""Hunter_Status"": ""Fraud"",
+      ""Basic_Salary"": ""200000"",
+      ""DA"": ""15000"",
+      ""HRA"": ""55000"",
+      ""Fixed_Component"": ""70000"",
+      ""Incentives"": ""20000"",
+      ""Performance_Linked_Bonus"": ""2000"",
+      ""Any_Other_Variable_Component"": ""5000"",
+      ""Fixed_Bonus"": ""60000"",
+      ""Other_Annual_Benefits"": ""55000"",
+      ""Cash_Salary"": ""30000"",
+      ""Rental_Income_Bank_ITR"": ""3000"",
+      ""Rental_Income_Cash"": ""300"",
+      ""Agricultural_Income"": ""4000"",
+      ""Interest_Dividend_Income"": ""300"",
+      ""Future_Rental"": ""20000"",
+      ""Rental_Income_Source_Document_Bank"": ""No"",
+      ""Other_Income"": ""5000"",
+      ""Employer_Name"": ""Amit  Kumar"",
+      ""Employer_City"": ""AMROHA"",
+      ""Employer_Pin"": ""234566"",
+      ""Employer_Address1"": ""Kayasthan Mahal"",
+      ""Employer_Address2"": ""Hasanpur Amroha"",
+      ""Employer_Address3"": ""Uttar Pradesh"",
+      ""Employer_Department"": ""HR"",
+      ""Employer_Designation"": ""Senior HR"",
+      ""Employer_Type"": ""Defence"",
+      ""Date_Of_Filing_LatestYear"": ""08-Jun-2024"",
+      ""Date_Of_Filing_PreviousYear"": ""28-Jul-2023"",
+      ""Financial_Status_LatestYear"": ""Unaudited"",
+      ""Financial_Status_PreviousYear"": ""Unaudited"",
+      ""Financial_Status_Previous_To_PreviousYear"": ""Unaudited"",
+      ""Gross_Margin_As_Per_financials_LatestYear"": ""25"",
+      ""Gross_Margin_As_Per_financials_PreviousYear"": ""25"",
+      ""Gross_Margin_As_Per_financials_Previous_To_PreviousYear"": ""15"",
+      ""Gross_Profit_LatestYear"": ""50000"",
+      ""Gross_Profit_PreviousYear"": ""40000"",
+      ""Gross_Profit_Previous_To_PreviousYear"": ""30000"",
+      ""Financial_LatestYear"": ""23-24"",
+      ""Financial_PreviousYear"": ""22-23"",
+      ""Financial_Previous_To_PreviousYear"": ""21-22"",
+      ""Gross_Turnover_LatestYear"": ""50000"",
+      ""Gross_Turnover_PreviousYear"": ""40000"",
+      ""Gross_Turnover_Previous_To_PreviousYear"": ""30000"",
+      ""NetProfit_LatestYear"": ""100000"",
+      ""NetProfit_PreviousYear"": ""90000"",
+      ""NetProfit_Previous_To_PreviousYear"": ""80000"",
+      ""TaxPaid_LatestYear"": ""8000"",
+      ""TaxPaid_PreviousYear"": ""7000"",
+      ""TaxPaid_Previous_To_PreviousYear"": ""6500"",
+      ""ExceptionalIncome_LatestYear"": ""3000"",
+      ""ExceptionalIncome_PreviousYear"": ""2000"",
+      ""ExceptionalIncome_Previous_To_PreviousYear"": ""1000"",
+      ""Depreciation_LatestYear"": ""2500"",
+      ""Depreciation_PreviousYear"": ""1500"",
+      ""Depreciation_Previous_To_PreviousYear"": ""500"",
+      ""Interest_On_Loan_Repaid_LatestYear"": ""900"",
+      ""Interest_On_Loan_Repaid_PreviousYear"": ""700"",
+      ""Interest_On_Loan_Repaid_Previous_To_PreviousYear"": ""500"",
+      ""Interest_On_Partners_LatestYear"": ""5500"",
+      ""Interest_On_Partners_PreviousYear"": ""4500"",
+      ""Interest_On_Partners_Previous_To_PreviousYear"": ""3500"",
+      ""Director_Partners_Salary_LatestYear"": ""7800"",
+      ""Director_Partners_Salary_PreviousYear"": ""6800"",
+      ""Director_Partners_Salary_Previous_To_PreviousYear"": ""5800"",
+      ""Exceptional_Expense_To_Be_Added_Back_LatestYear"": ""4500"",
+      ""Exceptional_Expense_To_Be_Added_Back_PreviousYear"": ""3500"",
+      ""Exceptional_Expense_To_Be_Added_Back_Previous_To_PreviousYear"": ""2400"",
+      ""Assesed_Income"": ""5000"",
+      ""Expected_Pension_Income"": """",
+      ""Property_Ownership_Status_At_Borrower_level"": """",
+      ""Number_Of_Owned_Homes"": """",
+      ""Sole_Child"": """",
+      ""Paid_Up_Capital_In_lacs"": """",
+      ""Months_In_Total_Employment"": """",
+      ""Date_Of_Filing_Previous_To_PreviousYear"": """",
+      ""ITR_Filling_Purpose"": """",
+      ""Net_Worth"": """",
+      ""CCA"": """",
+      ""Flying_Allowance_And_Mileage_Allowance"": """",
+      ""Reimbursement_Against_Actual"": """",
+      ""Existing_Pension_Income"": """",
+      ""PF"": """",
+      ""Income_Tax"": """",
+      ""Other_Deduction_Amount"": """",
+      ""Part_Time_Salary_Income"": """",
+      ""Rental_Income_Source_Cash"": """",
+      ""GST_Turnover"": """",
+      ""Number_Of_Months_GST"": """",
+	  ""Score"": ""501"",
+      ""LoanObligationDetails"": [
+        {
+          ""Account_Type"": ""BT LOAN"",
+          ""Existing_Obligation_EMI"": ""20000"",
+          ""Existing_Obligation_Out_AMT"": ""5000"",
+          ""Obligation_Status"": ""Complete""
+        }
+      ],
+      ""BorrowerDeviationDetails"": [
+        {
+          ""Mitigants_For_Deviations_Taken"": ""Positive PD done."",
+          ""Deviations_Exception_Description"": ""Details""
+        }
+      ],
+      ""BankWiseBorrowerDetails"": [
+        {
+          ""Amount_Of_Salary_Credit"": ""155000"",
+          ""Type_Of_Bank_Statement"": """",
+          ""Date_Of_Salary_Credit"": """",
+          ""Bank_Account_Name"": """",
+          ""Bank_Account_Number"": """",
+          ""Bank_Statement_Last_Date"": """"
+        }
+      ],
+      ""BankingDetails"": [
+        {
+          ""No_Of_Months_Banking_Available"": ""15"",
+          ""Total_Inward_Bounces"": """",
+          ""Total_Inflow_Credits"": """",
+          ""No_Of_Credit_Entries"": """",
+          ""BankMonth_10TH"": """",
+          ""BankMonth_15TH"": """",
+          ""BankMonth_25TH"": """",
+          ""No_Of_Debit_Entries"": """"
+        }
+      ]
+    }
+  ]
+}"
+def classify_document(self, filename):
+    filename_lower = filename.lower()
+    if filename_lower == 'mail_subject.txt':
+        return 'Email Subject'
+    elif filename_lower == 'mail_body.txt':
+        return 'Email Body'
+    # ...existing logic...
