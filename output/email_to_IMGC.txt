@@ -1,0 +1,200 @@
+Subject: 📊 Data Extraction Report - 28 Low Criticality Issue(s) Found
+================================================================================
+
+Dear IMGC Team,
+
+I hope this message finds you well.
+
+Please find below the summary of the data extraction report, including details on the low criticality issues identified after the data cleaning and normalization process:
+
+📊 DATA EXTRACTION SUMMARY
+======================================================================
+Total Fields Processed: 84
+Total Issues Identified: 55
+Low Criticality Issues: 28
+Data Extraction Status: ✅ Complete
+Data Cleaning Applied: ✅ Yes (spaces trimmed, special chars removed, case-normalized)
+
+======================================================================
+LOW CRITICALITY ISSUE DETAILS
+======================================================================
+
+1. **Issue #10: Employer_Department**
+   - ⚠️ Inconsistent values found
+   - Criticality: Low
+   - Unique Values Found: 0
+   - Values: No valid values found
+
+2. **Issue #14: Mode_Of_Salary**
+   - ⚠️ Inconsistent values found
+   - Criticality: Low
+   - Unique Values Found: 0
+   - Values: No valid values found
+
+3. **Issue #15: Date_Of_Filing_LatestYear**
+   - ⚠️ Inconsistent values found
+   - Criticality: Low
+   - Unique Values Found: 0
+   - Values: No valid values found
+
+4. **Issue #16: Financial_Status_LatestYear**
+   - ⚠️ Inconsistent values found
+   - Criticality: Low
+   - Unique Values Found: 0
+   - Values: No valid values found
+
+5. **Issue #17: Gross_Profit_LatestYear**
+   - ⚠️ Inconsistent values found
+   - Criticality: Low
+   - Unique Values Found: 0
+   - Values: No valid values found
+
+6. **Issue #18: Gross_Profit_PreviousYear**
+   - ⚠️ Inconsistent values found
+   - Criticality: Low
+   - Unique Values Found: 0
+   - Values: No valid values found
+
+7. **Issue #19: Gross_Profit_Previous_To_PreviousYear**
+   - ⚠️ Inconsistent values found
+   - Criticality: Low
+   - Unique Values Found: 0
+   - Values: No valid values found
+
+8. **Issue #22: Amount_Of_Salary_Credit**
+   - ⚠️ Inconsistent values found
+   - Criticality: Low
+   - Unique Values Found: 0
+   - Values: No valid values found
+
+9. **Issue #26: No_Of_Months_Banking_Available**
+   - ⚠️ Inconsistent values found
+   - Criticality: Low
+   - Unique Values Found: 0
+   - Values: No valid values found
+
+10. **Issue #27: No_Of_Debit_Entries**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+11. **Issue #29: Developer_Name**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+12. **Issue #31: Level_Of_Studies**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 2
+    - Values: ba graduate, graduate
+    - Recommended Value: ba graduate
+
+13. **Issue #33: Office_Ownership**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+14. **Issue #34: Satisfactory_TPC_Check**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+15. **Issue #35: Basic_Salary**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+16. **Issue #41: Cash_Salary**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+17. **Issue #42: Existing_Pension_Income**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+18. **Issue #43: PF**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+19. **Issue #44: Income_Tax**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+20. **Issue #47: TaxPaid_LatestYear**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+21. **Issue #48: Rental_Income_Source_Cash**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+22. **Issue #49: Total_Inflow_Credits**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+23. **Issue #50: No_Of_Credit_Entries**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+24. **Issue #51: Type_Of_Bank_Statement**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+25. **Issue #52: Date_Of_Salary_Credit**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+26. **Issue #53: Gross_Turnover_PreviousYear**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+27. **Issue #54: Gross_Turnover_LatestYear**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+28. **Issue #55: Gross_Turnover_Previous_To_PreviousYear**
+    - ⚠️ Inconsistent values found
+    - Criticality: Low
+    - Unique Values Found: 0
+    - Values: No valid values found
+
+📎 **ATTACHED**: Complete extracted data for your records.
+
+Should you have any queries or require further clarification, please do not hesitate to reach out.
+
+Best regards,
+
+[Your Name]  
+[Your Job Title]  
+[Your Company]  
+[Your Contact Information]

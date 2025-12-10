@@ -622,9 +622,11 @@ def create_extracted_data(field_config_path, attachments, output_path):
     print(f"✓ Created extracted data file: {output_path}")
 
 def main():
-    base_folder = '/workspaces/PAS-Connect-AI/EmailProject/email_attachments'
+    
+    base_folder = "email_attachments/3000023987/20251207_173848"
     log_files = glob.glob(f"{base_folder}/**/log.json", recursive=True)
-    field_config_path = '/workspaces/PAS-Connect-AI/EmailProject/FieldConfigrationFile.xlsx'
+    print(f"Found {len(log_files)} log files for processing.")
+    field_config_path = 'FieldConfigrationFile.xlsx'
 
     for log_file in log_files:
         folder = os.path.dirname(log_file)

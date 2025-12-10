@@ -1,0 +1,17 @@
+Subject: ✅ Data Quality Check Passed
+================================================================================
+
+Dear ABHL,
+
+I hope this message finds you well.
+
+I am pleased to report that our recent data extraction process has successfully passed the quality check. Good news! No high criticality issues were found during this review. All high criticality fields have consistent values across the source documents, and there are no missing mandatory fields.
+
+If you have any questions or require further information, please do not hesitate to reach out.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Your Company]  
+[Your Contact Information]

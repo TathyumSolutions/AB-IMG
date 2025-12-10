@@ -230,7 +230,7 @@ class EmailAgent:
 
     def _save_metadata(self, sub_folder, subject, mail_body, from_addr, date, loan_id, attachments):
         """
-        Save mail_subject.txt, mail_body.txt, and log.json in the sub_folder
+        Save mail_subject.txt, mail_body.txt, log.json, and a separate sender/receiver JSON in the sub_folder
         """
         try:
             # Save Subject
@@ -258,6 +258,16 @@ class EmailAgent:
             with open(log_path, 'w', encoding='utf-8') as f:
                 json.dump(log_data, f, indent=2, ensure_ascii=False)
             self.logger.info(f"  [SAVED METADATA] Structured log file")
+
+            # Save sender/receiver JSON as abhl_imgc.json
+            abhl_imgc_path = sub_folder / "abhl_imgc.json"
+            abhl_imgc_data = {
+                "ABHL": from_addr,
+                "IMGC": self.email_address
+            }
+            with open(abhl_imgc_path, 'w', encoding='utf-8') as f:
+                json.dump(abhl_imgc_data, f, indent=2, ensure_ascii=False)
+            self.logger.info(f"  [SAVED METADATA] abhl_imgc.json file")
 
         except Exception as e:
             self.logger.error(f"  [ERROR] Failed to save metadata: {e}")
