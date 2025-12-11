@@ -1,0 +1,70 @@
+Subject: 🚨 HIGH Criticality Data Issues Detected - 49 Issue(s)
+================================================================================
+
+Dear ABHL Team,
+
+🚨 CRITICAL DATA QUALITY ALERT
+
+We have identified 49 HIGH criticality issues in the extracted data that require IMMEDIATE attention:
+
+1. Check documents: Values of field 'Loan_Number' differ from various sources.
+2. Check documents: Values of field 'Sourcing_Region' differ from the Application Form.
+3. Check documents: Values of field 'Sourcing_City_Name' differ in Application Form and Word.
+4. Check documents: Values of field 'Branch_Name' differ between sources.
+5. Check documents: Values of field 'Sourcing_Channel' differ in the Application Form.
+6. Check documents: Values of field 'Final_Sanctioned_Amount' have discrepancies.
+7. Check documents: Values of field 'Sanction_Loan_Period' differ among sources.
+8. Check documents: Values of field 'Sanction_Interest_Rate' differ in CAM and Word.
+9. Check documents: Values of field 'Loan_Type' differ between Application Form and Word.
+10. Check documents: Values of field 'Type_Of_Employment_Loan' differ in multiple documents.
+11. Check documents: Values of field 'Foir' differ between CAM and PD.
+12. Check documents: Values of field 'Borrower_First_Name' differ across documents.
+13. Check documents: Values of field 'Borrower_Surname' differ in multiple sources.
+14. Check documents: Values of field 'Date_Of_Birth_Of_The_Borrower' differ.
+15. Check documents: Values of field 'Relationship_Of_Coborrower_To_The_Borrower' differ in CAM and PD.
+16. Check documents: Values of field 'Borrower_City' differ between documents.
+17. Check documents: Values of field 'Borrower_PIN' differ in the Application Form.
+18. Check documents: Values of field 'Borrower_MobileNo' differ across sources.
+19. Check documents: Values of field 'Sole_Child' differ in PD and CAM.
+20. Check documents: Values of field 'Employer_Type' differ in Application Form and PD.
+21. Check documents: Values of field 'Employer_Pin' differ in the Application Form.
+22. Check documents: Values of field 'Years_In_Current_Employment' differ.
+23. Check documents: Values of field 'Months_In_Current_Employment' differ.
+24. Check documents: Values of field 'Months_In_Total_Employment' differ between sources.
+25. Check documents: Values of field 'Years_In_Total_Employment' differ.
+26. Check documents: Values of field 'Personal_Discussion' differ between PD and CAM.
+27. Check documents: Values of field 'Lender_PD_Status' differ across documents.
+28. Check documents: Values of field 'Type_Of_Employment_Borrower' differ in multiple sources.
+29. Check documents: Values of field 'Manual_ABB' differ in CAM.
+30. Check documents: Values of field 'Existing_Obligation_Out_AMT' differ in CAM and PD.
+31. Check documents: Values of field 'Existing_Obligation_EMI' differ in CAM and PD.
+32. Check documents: Values of field 'Account_Type' differ in the Application Form.
+33. Check documents: Values of field 'Date_Of_Legal' differ in the Legal Report.
+34. Check documents: Values of field 'Obligation_Status' differ in CAM and PD.
+35. Check documents: Values of field 'Date_Of_Title' differ in the Legal Report.
+36. Check documents: Values of field 'Borrower_Entity_Type' differ across documents.
+37. Check documents: Values of field 'Gender' differ in the Application Form.
+38. Check documents: Values of field 'Marital_Status' differ between Application Form and PD.
+39. Check documents: Values of field 'Number_Of_Dependents' differ in PD and Word.
+40. Check documents: Values of field 'Resident_Status' differ in Application Form and PD.
+41. Check documents: Values of field 'Current_Residence' differ across documents.
+42. Check documents: Values of field 'Employer_Name' differ in Application Form and PD.
+43. Check documents: Values of field 'DA' differ in CAM and PD.
+44. Check documents: Values of field 'HRA' differ in CAM and PD.
+45. Check documents: Values of field 'Performance_Linked_Bonus' differ in CAM and PD.
+46. Check documents: Values of field 'Fixed_Bonus' differ in CAM and PD.
+47. Check documents: Values of field 'Other_Annual_Benefits' differ in CAM and PD.
+48. Check documents: Values of field 'Rental_Income_Bank_ITR' differ in CAM and PD.
+49. Check documents: Values of field 'Rental_Income_Cash' differ in CAM and PD.
+
+⚠️ ACTION REQUIRED: These high criticality fields must be resolved before proceeding with data integration.
+Please review the issues above and provide corrections or clarifications at your earliest convenience.
+
+Thank you for your prompt attention to this matter.
+
+Best regards,
+
+[Your Name]
+[Your Position]
+[Your Company]
+[Your Contact Information]

@@ -1,0 +1,30 @@
+Subject: 📊 Data Extraction Report - 35 Low Criticality Issue(s) Found
+================================================================================
+
+Dear IMGC Team,
+
+I hope this message finds you well.
+
+Please find attached the detailed report on the extracted data, which includes the summary of all processed fields and highlights the low criticality issues identified during the data cleaning and normalization process.
+
+**📊 DATA EXTRACTION SUMMARY**  
+======================================================================  
+Total Fields Processed: 84  
+Total Issues Identified: 84  
+Low Criticality Issues: 35  
+Data Extraction Status: ✅ Complete  
+Data Cleaning Applied: ✅ Yes (spaces trimmed, special chars removed, case-normalized)  
+======================================================================  
+
+The report contains detailed descriptions of each low criticality issue found, along with recommended values and supporting source documents.
+
+If you have any questions or require further clarification, please do not hesitate to reach out.
+
+Thank you for your attention.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Your Company]  
+[Your Contact Information]

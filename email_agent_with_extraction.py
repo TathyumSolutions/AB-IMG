@@ -190,24 +190,38 @@ def extract_fields_with_intelligent_selection(document_text: str, config_structu
 # RESULT MERGING AND OUTPUT (from extract_fields_intelligent.py)
 # =============================================================================
 def merge_results_to_excel(all_results, pas_fields, output_path, column_selections):
+    # Load the configuration file to get additional columns
+    try:
+        config_df = pd.read_excel(CONFIG_FILE_PATH, sheet_name='Sheet1')
+    except Exception as e:
+        print(f"  ⚠ Warning: Could not load config file for additional columns: {e}")
+        config_df = None
+    
     results_data = []
     for field in pas_fields:
         row = {'PAS Field Name': field}
+        # Add extracted data for each document
         for doc_name, extracted_data in all_results.items():
             row[doc_name] = extracted_data.get(field, "NOT PROCESSED")
+        
+        # Add additional columns from FieldConfiguration file at the end
+        if config_df is not None:
+            # Find the matching row in config_df for this field
+            matching_rows = config_df[config_df['PAS Field Name'] == field]
+            if not matching_rows.empty:
+                config_row = matching_rows.iloc[0]
+                # Add all other columns from the configuration file (excluding 'PAS Field Name')
+                for col in config_df.columns:
+                    if col != 'PAS Field Name':
+                        row[col] = config_row[col] if pd.notna(config_row[col]) else ""
+        
         results_data.append(row)
+    
     results_df = pd.DataFrame(results_data)
-    metadata_data = []
-    for doc_name, selected_col in column_selections.items():
-        metadata_data.append({
-            'Document Name': doc_name,
-            'Selected Configuration Column': selected_col
-        })
-    metadata_df = pd.DataFrame(metadata_data)
+    
     try:
         with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
             results_df.to_excel(writer, sheet_name='Extracted Fields', index=False)
-            metadata_df.to_excel(writer, sheet_name='Column Selections', index=False)
         print(f"\n✓ Results saved to: {output_path}")
     except Exception as e:
         print(f"\n✗ Error saving results: {e}")

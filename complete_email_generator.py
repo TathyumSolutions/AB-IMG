@@ -7,6 +7,7 @@ Features:
 - Major field error messages
 - Email sending via SMTP
 - GPT integration (optional)
+- ABHL email now includes Excel attachment with high criticality issues
 """
 
 import pandas as pd
@@ -174,155 +175,204 @@ class CompleteEmailGenerator:
             return "✅ No issues found. All data is consistent."
         formatted_text = ""
         for idx, row in issues_df.iterrows():
+            field = row['Field Name']
+            criticality = row['Criticality']
+            error_type = row['Error Type']
+            values = row['Values Found']
+            preferred_val = row['Preferred Value']
+            preferred_src = row['Preferred Source']
             formatted_text += f"\n{'='*70}\n"
-            formatted_text += f"Issue #{idx + 1}: {row['Field Name']}\n"
-            formatted_text += f"{'='*70}\n"
-            formatted_text += f"{row['Error Message']}\n\n"
-            formatted_text += f"📊 Details:\n"
-            formatted_text += f"   • Criticality: {row['Criticality']}\n"
-            formatted_text += f"   • Unique Values Found: {row['Unique Values Count']}\n"
-            formatted_text += f"   • Values: {', '.join(str(v) for v in row['Values Found'])}\n\n"
-            if row['Preferred Value'] != 'None':
-                formatted_text += f"✓ Recommended Value (from {row['Preferred Source']}):\n"
-                formatted_text += f"   → {row['Preferred Value']}\n\n"
-            if isinstance(row['Document Sources'], dict) and row['Document Sources']:
-                formatted_text += f"📄 Source Documents:\n"
+            formatted_text += f"Field: {field}\n"
+            formatted_text += f"Criticality: {criticality}\n"
+            formatted_text += f"Issue Type: {error_type}\n"
+            formatted_text += f"Values Found: {values}\n"
+            if preferred_val != 'None':
+                formatted_text += f"Preferred Value: {preferred_val} (from {preferred_src})\n"
+            else:
+                formatted_text += f"Preferred Value: None - Field missing or empty in all documents\n"
+            if isinstance(row['Document Sources'], dict):
+                formatted_text += "Document Sources:\n"
                 for doc, val in row['Document Sources'].items():
-                    formatted_text += f"   • {doc}:\n"
-                    formatted_text += f"     Original: {val}\n"
-                    cleaned = self._clean_value(val)
-                    if cleaned:
-                        formatted_text += f"     Cleaned: {cleaned}\n"
-                formatted_text += "\n"
-            formatted_text += "\n"
-        print(f"[LOG] Issues formatted for email")
+                    formatted_text += f"  • {doc}: {val}\n"
+            formatted_text += f"{'='*70}\n"
         return formatted_text
 
     def send_email(self, to_email, subject, body, attachment_path=None):
-        print(f"[LOG] Preparing to send email to {to_email} with subject '{subject}'")
-        if not self.smtp_config or not to_email:
-            print(f"[ERROR] Cannot send email: Missing SMTP config or recipient email")
+        print(f"[LOG] Attempting to send email to: {to_email}")
+        if not self.smtp_config:
+            print("[ERROR] SMTP config not loaded. Cannot send email.")
             return False
         try:
             msg = MIMEMultipart()
-            msg['From'] = self.smtp_config.get('address')
+            msg['From'] = self.smtp_config['address']
             msg['To'] = to_email
             msg['Subject'] = subject
             msg.attach(MIMEText(body, 'plain'))
             if attachment_path and os.path.exists(attachment_path):
                 print(f"[LOG] Attaching file: {attachment_path}")
-                with open(attachment_path, 'rb') as f:
+                with open(attachment_path, 'rb') as attachment:
                     part = MIMEBase('application', 'octet-stream')
-                    part.set_payload(f.read())
-                    encoders.encode_base64(part)
-                    part.add_header(
-                        'Content-Disposition',
-                        f'attachment; filename={os.path.basename(attachment_path)}'
-                    )
-                    msg.attach(part)
-                print(f"[LOG] File attached: {os.path.basename(attachment_path)}")
-            print(f"[LOG] Connecting to SMTP server...")
-            server = smtplib.SMTP('smtp.gmail.com', 587)
+                    part.set_payload(attachment.read())
+                encoders.encode_base64(part)
+                filename = os.path.basename(attachment_path)
+                part.add_header('Content-Disposition', f'attachment; filename= {filename}')
+                msg.attach(part)
+            else:
+                if attachment_path:
+                    print(f"[WARNING] Attachment path provided but file does not exist: {attachment_path}")
+            print(f"[LOG] Connecting to SMTP server: {self.smtp_config['smtp_server']}:{self.smtp_config['smtp_port']}")
+            server = smtplib.SMTP(self.smtp_config['smtp_server'], self.smtp_config['smtp_port'])
             server.starttls()
-            server.login(
-                self.smtp_config.get('address'),
-                self.smtp_config.get('password')
-            )
-            print(f"[LOG] Sending email...")
-            server.send_message(msg)
+            print(f"[LOG] Logging in with email: {self.smtp_config['address']}")
+            server.login(self.smtp_config['address'], self.smtp_config['password'])
+            text = msg.as_string()
+            server.sendmail(self.smtp_config['address'], to_email, text)
             server.quit()
-            print(f"[LOG] Email sent successfully to {to_email}")
+            print(f"[LOG] ✅ Email sent successfully to {to_email}")
             return True
         except Exception as e:
-            print(f"[ERROR] Failed to send email to {to_email}: {str(e)}")
+            print(f"[ERROR] Failed to send email: {e}")
             return False
-    
+
     def generate_email_with_gpt(self, recipient, subject_hint, body_content, context):
         print(f"[LOG] Generating email with GPT for recipient: {recipient}")
         if not self.client:
-            print(f"[LOG] No OpenAI client available, using fallback email generation")
-            return self._generate_fallback_email(recipient, subject_hint, body_content)
+            print("[WARNING] GPT client not available. Using default email format.")
+            return {
+                'subject': subject_hint,
+                'body': body_content
+            }
         try:
-            prompt = f"""Generate a professional business email with the following details:
+            prompt = f"""You are a professional business email writer. Generate a professional email with the following specifications:
 
 Recipient: {recipient}
+Subject Line Hint: {subject_hint}
 Context: {context}
-Subject Hint: {subject_hint}
 
-Email Content to Include:
+Body Content:
 {body_content}
 
-Please provide:
-1. A professional email subject line
-2. A well-formatted email body with proper greeting, content, and closing
+Please create:
+1. A professional subject line (concise but informative)
+2. A polished email body that includes the provided content but with professional tone and structure
 
-Format the response as JSON with keys: "subject" and "body"
+Return ONLY in this exact JSON format:
+{{
+    "subject": "your subject line here",
+    "body": "your email body here"
+}}
 """
-            print(f"[LOG] Sending prompt to OpenAI")
+            print(f"[LOG] Calling GPT API...")
             response = self.client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[
-                    {"role": "system", "content": "You are a professional business email writer. Generate clear, concise, and professional emails."},
+                    {"role": "system", "content": "You are a professional business email writer. Always return valid JSON."},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.7,
-                response_format={"type": "json_object"}
+                max_tokens=1500
             )
-            result = json.loads(response.choices[0].message.content)
-            print(f"[LOG] GPT email generated: {result['subject']}")
-            return result
+            result = response.choices[0].message.content.strip()
+            print(f"[LOG] GPT response received")
+            if result.startswith("```json"):
+                result = result[7:]
+            if result.endswith("```"):
+                result = result[:-3]
+            result = result.strip()
+            email_data = json.loads(result)
+            print(f"[LOG] Email generated successfully via GPT")
+            return email_data
         except Exception as e:
-            print(f"[ERROR] Error generating email with GPT: {e}")
-            return self._generate_fallback_email(recipient, subject_hint, body_content)
-    
-    def _generate_fallback_email(self, recipient, subject_hint, body_content):
-        print(f"[LOG] Generating fallback email for recipient: {recipient}")
-        current_date = datetime.now().strftime("%Y-%m-%d")
-        return {
-            "subject": subject_hint,
-            "body": f"""Dear {recipient} Team,
+            print(f"[ERROR] GPT email generation failed: {e}. Using default format.")
+            return {
+                'subject': subject_hint,
+                'body': body_content
+            }
 
-{body_content}
+    def create_high_criticality_excel(self, output_folder):
+        """Create an Excel file containing only high criticality rows from extraction results"""
+        print(f"[LOG] Creating Excel file with high criticality rows")
+        
+        # Filter for high criticality rows
+        high_crit_df = self.merged_df[self.merged_df['Criticality'].str.upper() == 'HIGH'].copy()
+        
+        if high_crit_df.empty:
+            print(f"[LOG] No high criticality rows found in extraction results")
+            return None
+        
+        # Create filename with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = os.path.join(output_folder, f"High_Criticality_Issues_{timestamp}.xlsx")
+        
+        # Save to Excel
+        high_crit_df.to_excel(filename, index=False)
+        print(f"[LOG] High criticality Excel file created: {filename}")
+        print(f"[LOG] Rows in high criticality file: {len(high_crit_df)}")
+        
+        return filename
 
-Please review and take necessary action.
-
-Best regards,
-Data Quality Team
-Date: {current_date}
-"""
-        }
-    
     def generate_abhl_email(self):
         print(f"[LOG] Generating ABHL email (high criticality issues)")
         major_issues = self.get_major_issues()
+        
         if major_issues.empty:
             body_content = "✅ Good news! No high criticality issues were found in the data extraction process.\n\nAll high criticality fields have consistent values across documents."
         else:
             lines = ["🚨 CRITICAL DATA QUALITY ALERT\n"]
             lines.append(f"We have identified {len(major_issues)} HIGH criticality issue(s) in the extracted data that require IMMEDIATE attention:\n")
+            
+            # Group issues by document to clearly identify which document has problems
+            document_issues = {}
+            
             for idx, row in major_issues.iterrows():
                 field = row['Field Name']
                 docs = row['Document Sources'] if isinstance(row['Document Sources'], dict) else {}
                 values = docs.values() if docs else []
                 unique_values = set([str(v) for v in values if v not in [None, '', 'NOT FOUND', 'NO INSTRUCTION', 'nan', 'None']])
+                
                 if row['Preferred Value'] == 'None' or not unique_values:
-                    lines.append(f"• Mandatory field '{field}' not found in any document.")
+                    lines.append(f"\n❌ MISSING MANDATORY FIELD: '{field}'")
+                    lines.append(f"   ⚠️  This field is not found in ANY document")
+                    
                 elif len(unique_values) > 1:
-                    value_details = []
+                    lines.append(f"\n❌ CONFLICTING VALUES: '{field}'")
+                    lines.append(f"   ⚠️  Different values found across documents:")
+                    
+                    # List each document with its value
                     for doc, val in docs.items():
                         if val not in [None, '', 'NOT FOUND', 'NO INSTRUCTION', 'nan', 'None']:
-                            value_details.append(f"{doc}: '{val}'")
-                    value_str = "; ".join(value_details)
-                    lines.append(f"• Check documents: Values of field '{field}' differ: {value_str}")
+                            lines.append(f"      • {doc}: '{val}'")
+                            
+                            # Track which documents have issues
+                            if doc not in document_issues:
+                                document_issues[doc] = []
+                            document_issues[doc].append(field)
                 else:
-                    lines.append(f"• Field '{field}' has a single value but flagged as issue: {', '.join(unique_values)}")
-            lines.append("\n⚠️ ACTION REQUIRED: These high criticality fields must be resolved before proceeding with data integration.\nPlease review the issues above and provide corrections or clarifications.")
+                    lines.append(f"\n⚠️  FLAGGED ISSUE: '{field}'")
+                    lines.append(f"   Single value found but requires review: {', '.join(unique_values)}")
+            
+            # Add summary of problematic documents
+            if document_issues:
+                lines.append(f"\n{'='*70}")
+                lines.append("📋 PROBLEM SUMMARY BY DOCUMENT:")
+                lines.append(f"{'='*70}")
+                for doc, fields in document_issues.items():
+                    lines.append(f"\n📄 {doc}")
+                    lines.append(f"   Issues with {len(fields)} field(s): {', '.join(fields)}")
+            
+            lines.append(f"\n{'='*70}")
+            lines.append("⚠️ ACTION REQUIRED:")
+            lines.append("These high criticality fields must be resolved before proceeding with data integration.")
+            lines.append("Please review the attached Excel file for complete details and provide corrections.")
+            lines.append(f"{'='*70}")
+            
             body_content = '\n'.join(lines)
+        
         email = self.generate_email_with_gpt(
             recipient="ABHL",
             subject_hint=f"🚨 HIGH Criticality Data Issues Detected - {len(major_issues)} Issue(s)" if not major_issues.empty else "✅ Data Quality Check Passed",
             body_content=body_content,
-            context="This email reports high criticality issues found during data extraction where values differ across source documents or mandatory fields are missing."
+            context="This email reports high criticality issues found during data extraction where values differ across source documents or mandatory fields are missing. An Excel attachment with the problematic data is included."
         )
         print(f"[LOG] ABHL email generated")
         return email
@@ -387,22 +437,35 @@ All fields have consistent values across all source documents.
         print("="*80 + "\n")
         os.makedirs(output_dir, exist_ok=True)
         print(f"[LOG] Output directory ensured: {output_dir}")
+        
+        # Generate ABHL email
         print("📧 Generating ABHL email (High Criticality Issues)...")
         abhl_email = self.generate_abhl_email()
         abhl_file = f"{output_dir}/email_to_ABHL.txt"
         self.save_email_to_file(abhl_email, abhl_file)
+        
+        # Create high criticality Excel attachment for ABHL
+        print("📊 Creating high criticality Excel file for ABHL...")
+        abhl_attachment = self.create_high_criticality_excel(output_dir)
+        
+        # Send ABHL email with attachment
         abhl_sent = False
         if send_emails and self.recipients.get('ABHL'):
             print(f"📤 Sending email to ABHL ({self.recipients['ABHL']})...")
             abhl_sent = self.send_email(
                 to_email=self.recipients['ABHL'],
                 subject=abhl_email['subject'],
-                body=abhl_email['body']
+                body=abhl_email['body'],
+                attachment_path=abhl_attachment
             )
+        
+        # Generate IMGC email
         print("\n📧 Generating IMGC email (Low Criticality Issues)...")
         imgc_email = self.generate_imgc_email()
         imgc_file = f"{output_dir}/email_to_IMGC.txt"
         self.save_email_to_file(imgc_email, imgc_file)
+        
+        # IMGC gets the full extraction results
         extraction_attachment = self.extraction_file
         imgc_sent = False
         if send_emails and self.recipients.get('IMGC'):
@@ -413,22 +476,28 @@ All fields have consistent values across all source documents.
                 body=imgc_email['body'],
                 attachment_path=extraction_attachment
             )
+        
+        # Summary
         print("\n" + "="*80)
         print("SUMMARY")
         print("="*80)
         print(f"✅ ABHL Email: {abhl_file}")
+        if abhl_attachment:
+            print(f"   📎 Attachment: {abhl_attachment}")
         if send_emails:
             print(f"   {'✅ Sent' if abhl_sent else '❌ Not sent'} to {self.recipients.get('ABHL', 'N/A')}")
         print(f"✅ IMGC Email: {imgc_file}")
         if send_emails:
             print(f"   {'✅ Sent' if imgc_sent else '❌ Not sent'} to {self.recipients.get('IMGC', 'N/A')}")
-        print(f"✅ Extraction Result: {extraction_attachment}")
+        print(f"   📎 Attachment: {extraction_attachment}")
         print("="*80 + "\n")
+        
         return {
             'abhl_email': abhl_email,
             'imgc_email': imgc_email,
             'abhl_file': abhl_file,
             'imgc_file': imgc_file,
+            'abhl_attachment': abhl_attachment,
             'extraction_attachment': extraction_attachment,
             'abhl_sent': abhl_sent,
             'imgc_sent': imgc_sent
