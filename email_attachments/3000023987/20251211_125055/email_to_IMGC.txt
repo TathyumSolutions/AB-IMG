@@ -1,0 +1,616 @@
+Subject: 📊 Data Extraction Report - 35 Low Criticality Issue(s) Found
+================================================================================
+
+
+📊 DATA EXTRACTION SUMMARY
+======================================================================
+
+Total Fields Processed: 84
+Total Issues Identified: 84
+Low Criticality Issues: 35
+Data Extraction Status: ✅ Complete
+Data Cleaning Applied: ✅ Yes (spaces trimmed, special chars removed, case-normalized)
+
+
+======================================================================
+LOW CRITICALITY ISSUE DETAILS
+======================================================================
+
+
+======================================================================
+Field: Borrower_Address1
+Criticality: Low
+Issue Type: Warning
+Values Found: ['application form', 'no instruction', 'ashoka society arera colony', '80', 'in the application form, under the current/communication address section, the fields address 1, address 2, and address 3 typically contain address details such as ashoka society, arera colony, h. no. e7/112, bhopal, or similar address information.']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: Ashoka society arera Colony
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Field length: 80
+  • Primary Source Document: Application Form
+  • Application Form Description: In the Application Form, under the Current/Communication Address section, the fields Address 1, Address 2, and Address 3 typically contain address details such as Ashoka Society, Arera Colony, H. No. E7/112, Bhopal, or similar address information.
+======================================================================
+
+======================================================================
+Field: Employer_Department
+Criticality: Low
+Issue Type: Warning
+Values Found: ['in the pd document, under the applicant details section, there is a field labeled “department name.”', 'varchar2', 'no instruction', 'not found', 'pd', '0']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NOT FOUND
+  • Data Type: VARCHAR2
+  • Field length: 0
+  • Primary Source Document: PD
+  • PD Description: In the PD document, under the Applicant Details section, there is a field labeled “Department Name.”
+======================================================================
+
+======================================================================
+Field: Employer_Designation
+Criticality: Low
+Issue Type: Warning
+Values Found: ['varchar2', 'application form', 'no instruction', 'in the pd document, under the applicant details section, the field “designation” typically contains values such as inspector, ceo, software engineer, analyst, consultant, and similar job roles.', 'pd', 'in the application form, under the occupation/business details section, the field “designation” typically contains values such as inspector, ceo, software engineer, analyst, consultant, and similar job titles.', 'applicant is the proprietor of the firm m/s om construction', '0', 'in the pd (word document), under the about applicants section, the values will typically appear as descriptive statements about the applicant — for example, “applicant is the proprietor of m/s om construction,” or other similar narrative statements.']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: Applicant is the proprietor of the firm M/S Om Construction
+  • Data Type: VARCHAR2
+  • Field length: 0
+  • Primary Source Document: Application Form
+  • Secondary Source Document: PD
+  • PD Description: In the PD document, under the Applicant Details section, the field “Designation” typically contains values such as Inspector, CEO, Software Engineer, Analyst, Consultant, and similar job roles.
+  • PD (Word Doc) Description: In the PD (Word document), under the About Applicants section, the values will typically appear as descriptive statements about the applicant — for example, “Applicant is the proprietor of M/S Om Construction,” or other similar narrative statements.
+  • Application Form Description: In the Application Form, under the Occupation/Business Details section, the field “Designation” typically contains values such as Inspector, CEO, Software Engineer, Analyst, Consultant, and similar job titles.
+======================================================================
+
+======================================================================
+Field: Pensionable_Borrower
+Criticality: Low
+Issue Type: Warning
+Values Found: ['varchar2', 'application form', 'no instruction', 'pd', 'in the pd document, under the applicant details section, check the value of the field “employer type” if it is listed as government, mark the corresponding pas field output as yes; otherwise, mark it as no.', '0']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: VARCHAR2
+  • Field length: 0
+  • Primary Source Document: Application Form
+  • Secondary Source Document: PD
+  • PD Description: In the PD document, under the Applicant Details section, check the value of the Field “Employer Type” If it is listed as Government, mark the corresponding PAS field output as Yes; otherwise, mark it as No.
+======================================================================
+
+======================================================================
+Field: Mode_Of_Salary
+Criticality: Low
+Issue Type: Warning
+Values Found: ['varchar2', 'no instruction', 'pd', 'in the cam file, under the sheet -  applicantsalary , the field “remarks, if any” typically contains entries such as “salary reflected to bank” or similar comments.', '0', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: VARCHAR2
+  • Field length: 0
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the sheet -  ApplicantSalary , the field “Remarks, If any” typically contains entries such as “Salary reflected to bank” or similar comments.
+======================================================================
+
+======================================================================
+Field: Office_SetUp
+Criticality: Low
+Issue Type: Warning
+Values Found: ['varchar2', 'no instruction', 'pd', 'resi-cum-office setup', 'in the pd (word document), under the income details section, the field “business setup details” typically contains values such as resi-cum-office setup or permanent structure or other similar relevant descriptions.', 'in the cam file, under the affordablecmassessedincome sheet, the field “business setup details” typically includes values such as permanent structure, resi-cum-office setup, and other similar descriptions.', '10 byte', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: Resi-cum-Office Setup
+  • Data Type: VARCHAR2
+  • Field length: 10 BYTE
+  • Primary Source Document: PD
+  • Secondary Source Document: CAM
+  • CAM Description: In the CAM file, under the AffordableCMAssessedIncome sheet, the field “Business Setup Details” typically includes values such as Permanent Structure, Resi-cum-Office Setup, and other similar descriptions.
+  • PD (Word Doc) Description: In the PD (Word document), under the Income Details section, the field “Business Setup Details” typically contains values such as Resi-cum-Office Setup or Permanent Structure or other similar relevant descriptions.
+======================================================================
+
+======================================================================
+Field: Date_Of_Filing_LatestYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'pd', 'in the cam file, under the 44ad, 44ada, 44ae income sheet, the field “itr acknowledgement date” appears across three assessment years—such as 2023–2024, 2022–2023, and 2021–2022. for this field, the acknowledgment date must be extracted from the latest assessment year’s column. typical values for this field include dates like 29-jul-2023, 19-jul-1994, and similar formats.', 'date', 'cam', '8']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Date
+  • Field length: 8
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the 44AD, 44ADA, 44AE Income sheet, the field “ITR Acknowledgement Date” appears across three assessment years—such as 2023–2024, 2022–2023, and 2021–2022. For this field, the acknowledgment date must be extracted from the latest assessment year’s column. Typical values for this field include dates like 29-Jul-2023, 19-Jul-1994, and similar formats.
+======================================================================
+
+======================================================================
+Field: Financial_Status_LatestYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['3', 'character', 'no instruction', 'pd', 'in the cam file, under the 44ad, 44ada, 44ae income sheet, the field “pat (rs)” appears across three assessment years—such as 2023–2024, 2022–2023, and 2021–2022. for this field, use the pat value from the latest assessment year’s column and apply the following logic:\n\nif the pat value is up to 1 crore, mark it as unaudited.\n\nif the pat value is greater than 1 crore, mark it as audited.', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Character
+  • Field length: 3
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the 44AD, 44ADA, 44AE Income sheet, the field “PAT (Rs)” appears across three assessment years—such as 2023–2024, 2022–2023, and 2021–2022. For this field, use the PAT value from the latest assessment year’s column and apply the following logic:
+
+If the PAT value is up to 1 crore, mark it as Unaudited.
+
+If the PAT value is greater than 1 crore, mark it as Audited.
+======================================================================
+
+======================================================================
+Field: Gross_Profit_LatestYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'in the cam file, under the 44ad, 44ada, 44ae income sheet, the field “total gross turnover / receipts (rs.)” appears across three assessment years—for example, 2023–2024, 2022–2023, and 2021–2022. for this pas field, use the value listed under the latest assessment year. typical values for this field may include amounts such as 25,33,780, 45,23,280, 1,00,00,123, and similar figures.', 'pd', '18', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 18
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the 44AD, 44ADA, 44AE Income sheet, the field “Total Gross Turnover / Receipts (Rs.)” appears across three assessment years—for example, 2023–2024, 2022–2023, and 2021–2022. For this PAS field, use the value listed under the latest assessment year. Typical values for this field may include amounts such as 25,33,780, 45,23,280, 1,00,00,123, and similar figures.
+======================================================================
+
+======================================================================
+Field: Gross_Profit_PreviousYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'pd', '18', 'in the cam file, under the 44ad, 44ada, 44ae income sheet, the field “total gross turnover / receipts (rs.)” appears across three assessment years—for example, 2023–2024, 2022–2023, and 2021–2022. for this pas field, use the value from the second-latest assessment year. typical values may include amounts such as 25,33,780, 45,23,280, 1,00,00,123, and similar figures.', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 18
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the 44AD, 44ADA, 44AE Income sheet, the field “Total Gross Turnover / Receipts (Rs.)” appears across three assessment years—for example, 2023–2024, 2022–2023, and 2021–2022. For this PAS field, use the value from the second-latest assessment year. Typical values may include amounts such as 25,33,780, 45,23,280, 1,00,00,123, and similar figures.
+======================================================================
+
+======================================================================
+Field: Gross_Profit_Previous_To_PreviousYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'pd', '18', 'number', 'cam', 'in the cam file, under the 44ad, 44ada, 44ae income sheet, the field “total gross turnover / receipts (rs.)” is displayed across three assessment years—such as 2023–2024, 2022–2023, and 2021–2022. for this pas field, use the value from the previous-to-previous assessment year. typical values may include figures like 1,00,00,123 and similar amounts.']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 18
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the 44AD, 44ADA, 44AE Income sheet, the field “Total Gross Turnover / Receipts (Rs.)” is displayed across three assessment years—such as 2023–2024, 2022–2023, and 2021–2022. For this PAS field, use the value from the previous-to-previous assessment year. Typical values may include figures like 1,00,00,123 and similar amounts.
+======================================================================
+
+======================================================================
+Field: Amount_Of_Salary_Credit
+Criticality: Low
+Issue Type: Warning
+Values Found: ['in the cam file, under the applicant salary sheet haivng section name  salary, bonus / incentive, reimbursement, or other credits from employer, there will be a field “amount (rs.)” typically contains values such as 13,410, 1,00,343, and similar amounts.', '18,2', 'no instruction', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 18,2
+  • Primary Source Document: CAM
+  • CAM Description: In the CAM file, under the Applicant Salary sheet haivng section name  Salary, Bonus / Incentive, Reimbursement, or Other Credits from Employer, there will be a field “Amount (Rs.)” typically contains values such as 13,410, 1,00,343, and similar amounts.
+======================================================================
+
+======================================================================
+Field: No_Of_Months_Banking_Available
+Criticality: Low
+Issue Type: Warning
+Values Found: ['cam', 'no instruction', '0', 'number', 'in the cam file, under the banking – non pdf sheet, the field “month” should be used to determine how many months of data are provided. count all the months listed—for example, if data is available for january, february, and march, then the total number of months is 3.']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: NUMBER
+  • Field length: 0
+  • Primary Source Document: CAM
+  • CAM Description: In the CAM file, under the Banking – Non PDF sheet, the field “Month” should be used to determine how many months of data are provided. Count all the months listed—for example, if data is available for January, February, and March, then the total number of months is 3.
+======================================================================
+
+======================================================================
+Field: No_Of_Debit_Entries
+Criticality: Low
+Issue Type: Warning
+Values Found: ['18,2', 'no instruction', 'in the cam file, under the banking – non pdf sheet in the no. of debit entries section, the field “total” typically contains values such as 119, 400, 220, 101, and similar counts. the value shown in front of “total” within this section should be taken as the extracted value.', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: NUMBER
+  • Field length: 18,2
+  • Primary Source Document: CAM
+  • CAM Description: In the CAM file, under the Banking – Non PDF sheet in the No. of Debit Entries section, the field “Total” typically contains values such as 119, 400, 220, 101, and similar counts. The value shown in front of “Total” within this section should be taken as the extracted value.
+======================================================================
+
+======================================================================
+Field: Developer_Name
+Criticality: Low
+Issue Type: Warning
+Values Found: ['varchar2', 'in the legal report, under the section - tracing of title and investigation of title , there are usually statements such as:\n\n“that for security of development of the aforesaid land, shri parasnath builders & developers india pvt. ltd. mortgaged plot nos. 13 to 17, 120 to 123…”\nfrom such sentences, the developer/builder name should be extracted — in this example, it would be “shri parasnath builders & developers india pvt. ltd.”\nsimilar variations of these statements may also appear, but they will clearly indicate the builder’s name.', 'technical report', 'no instruction', 'legal report', '500']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: VARCHAR2
+  • Field length: 500
+  • Primary Source Document: Technical Report
+  • Secondary Source Document: Legal Report
+  • Legal Doc Description: In the Legal Report, under the section - Tracing of Title and Investigation of Title , there are usually statements such as:
+
+“That for security of development of the aforesaid land, Shri Parasnath Builders & Developers India Pvt. Ltd. mortgaged plot nos. 13 to 17, 120 to 123…”
+From such sentences, the Developer/Builder Name should be extracted — in this example, it would be “Shri Parasnath Builders & Developers India Pvt. Ltd.”
+Similar variations of these statements may also appear, but they will clearly indicate the builder’s name.
+======================================================================
+
+======================================================================
+Field: Level_Of_Studies
+Criticality: Low
+Issue Type: Warning
+Values Found: ['varchar2', 'in the application form, under the personal details section, the field “qualification” typically contains values such as graduate and other similar educational qualifications.', 'no instruction', 'application form', 'in the pd (word document), under the about applicants section, the information is usually presented in sentence form—for example: “applicant mr. kanhaiya bharti is about 49 years of age and is a ba graduate by qualification.” similar narrative statements may appear, from which the applicant’s qualification can be extracted.', 'pd', 'ba graduate', 'in the pd document, under the applicant details section, the field “qualification” typically contains values such as graduate and similar educational qualifications.', 'graduate', '40 byte']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: Graduate
+  • PD Note Kanhaiya: BA graduate
+  • Data Type: VARCHAR2
+  • Field length: 40 BYTE
+  • Primary Source Document: Application Form
+  • Secondary Source Document: PD
+  • PD Description: In the PD document, under the Applicant Details section, the field “Qualification” typically contains values such as Graduate and similar educational qualifications.
+  • PD (Word Doc) Description: In the PD (Word document), under the About Applicants section, the information is usually presented in sentence form—for example: “Applicant Mr. Kanhaiya Bharti is about 49 years of age and is a BA graduate by qualification.” Similar narrative statements may appear, from which the applicant’s qualification can be extracted.
+  • Application Form Description: In the Application Form, under the Personal Details section, the field “Qualification” typically contains values such as Graduate and other similar educational qualifications.
+======================================================================
+
+======================================================================
+Field: Employer_Address1
+Criticality: Low
+Issue Type: Warning
+Values Found: ['varchar2', 'ashoka societye7/112, bhopal, bhopal, madhya pradesh, 462001', 'application form', 'no instruction', 'in the application form, under the occupation/business details section, the fields “office address 1,” “office address 2,” and “office address 3” typically contain address details such as kishanganj thana, mhow, indore, madhya pradesh, 452001, and similar office address information.', '80']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: Ashoka societye7/112, Bhopal, Bhopal, Madhya Pradesh, 462001
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: VARCHAR2
+  • Field length: 80
+  • Primary Source Document: Application Form
+  • Application Form Description: In the Application Form, under the Occupation/Business Details section, the fields “Office Address 1,” “Office Address 2,” and “Office Address 3” typically contain address details such as Kishanganj Thana, Mhow, Indore, Madhya Pradesh, 452001, and similar office address information.
+======================================================================
+
+======================================================================
+Field: Employer_City
+Criticality: Low
+Issue Type: Warning
+Values Found: ['varchar2', 'bhopal', 'application form', 'no instruction', 'in the application form, under the occupation/business details section, the field “city” typically contains values such as delhi, indore, lucknow, and similar city names.', '80']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: Bhopal
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: VARCHAR2
+  • Field length: 80
+  • Primary Source Document: Application Form
+  • Application Form Description: In the Application Form, under the Occupation/Business Details section, the field “City” typically contains values such as Delhi, Indore, Lucknow, and similar city names.
+======================================================================
+
+======================================================================
+Field: Office_Ownership
+Criticality: Low
+Issue Type: Warning
+Values Found: ['varchar2', 'in the cam file, under the affordablecmassessedincome sheet, the field “business premises ownership” typically contains values such as self-owned, shared, rented, and other similar ownership types.', 'no instruction', '10 byte', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: VARCHAR2
+  • Field length: 10 BYTE
+  • Primary Source Document: CAM
+  • CAM Description: In the CAM file, under the AffordableCMAssessedIncome sheet, the field “Business Premises Ownership” typically contains values such as Self-Owned, Shared, Rented, and other similar ownership types.
+======================================================================
+
+======================================================================
+Field: Satisfactory_TPC_Check
+Criticality: Low
+Issue Type: Warning
+Values Found: ['3', 'varchar2', 'no instruction', 'not found', 'pd', 'in the pd document, under the site visit details section, the field “third party confirmation” typically contains values such as positive, negative, and similar responses.', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NOT FOUND
+  • Data Type: VARCHAR2
+  • Field length: 3
+  • Primary Source Document: PD
+  • Secondary Source Document: CAM
+  • PD Description: In the PD document, under the Site Visit Details section, the field “Third Party Confirmation” typically contains values such as Positive, Negative, and similar responses.
+======================================================================
+
+======================================================================
+Field: Basic_Salary
+Criticality: Low
+Issue Type: Warning
+Values Found: ['(18,2)', 'no instruction', 'pd', 'in the cam file, under the applicant salary sheet in the component section, the field “basic” typically contains numeric values such as 23,000, 12,444, and similar salary component amounts.', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: NUMBER
+  • Field length: (18,2)
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the Applicant Salary sheet in the Component section, the field “Basic” typically contains numeric values such as 23,000, 12,444, and similar salary component amounts.
+======================================================================
+
+======================================================================
+Field: Cash_Salary
+Criticality: Low
+Issue Type: Warning
+Values Found: ['in the cam file, under the applicant salary sheet in the salary, bonus / incentive, reimbursement, or other credits from employer section, the field “remarks, if any” may sometimes include references such as cash. if any cash references is mentioned in the remarks, that amount should be identified and added accordingly.', 'no instruction', 'pd', '18', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 18
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the Applicant Salary sheet in the Salary, Bonus / Incentive, Reimbursement, or Other Credits from Employer section, the field “Remarks, if any” may sometimes include references such as cash. If any cash references is mentioned in the remarks, that amount should be identified and added accordingly.
+======================================================================
+
+======================================================================
+Field: Existing_Pension_Income
+Criticality: Low
+Issue Type: Warning
+Values Found: ['in the cam file, under the applicant salary sheet in the component section, the field “pension” typically contains values such as 12,000, 45,444, and similar pension amounts.', 'no instruction', 'pd', '(18,0)', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: NUMBER
+  • Field length: (18,0)
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the Applicant Salary sheet in the Component section, the field “Pension” typically contains values such as 12,000, 45,444, and similar pension amounts.
+======================================================================
+
+======================================================================
+Field: PF
+Criticality: Low
+Issue Type: Warning
+Values Found: ['in the cam file, under the basic input sheet, the field “pf” typically contains values such as 7,000, 3,200, 4,000, and similar provident fund amounts.', '16', 'no instruction', 'pd', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 16
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the Basic Input sheet, the field “PF” typically contains values such as 7,000, 3,200, 4,000, and similar provident fund amounts.
+======================================================================
+
+======================================================================
+Field: Income_Tax
+Criticality: Low
+Issue Type: Warning
+Values Found: ['(16,0)', 'in the cam file, under the basic input sheet, the field “income tax (tds)” typically contains values such as 5,000, 12,750, 8,300, and similar tds deduction amounts.', 'no instruction', 'pd', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: NUMBER
+  • Field length: (16,0)
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the Basic Input sheet, the field “Income Tax (TDS)” typically contains values such as 5,000, 12,750, 8,300, and similar TDS deduction amounts.
+======================================================================
+
+======================================================================
+Field: TaxPaid_LatestYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'pd', 'in the cam file, under the 44ad, 44ada, 44ae income sheet in the particulars section, the field “tax paid (rs.)” displays values across three assessment years, such as 2023–24, 2022–23, and 2021–22. for this field, the value corresponding to the latest assessment year should be extracted.', '18', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 18
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the 44AD, 44ADA, 44AE Income sheet in the Particulars section, the field “Tax Paid (Rs.)” displays values across three assessment years, such as 2023–24, 2022–23, and 2021–22. For this field, the value corresponding to the latest assessment year should be extracted.
+======================================================================
+
+======================================================================
+Field: Rental_Income_Source_Cash
+Criticality: Low
+Issue Type: Warning
+Values Found: ['varchar2', 'no instruction', 'pd', 'in the cam file, under the self employed eligibility sheet, the field “rental income (unregistered)” typically contains values such as 12,000, 8,000, 9,000, and other similar unregistered rental income amounts.', '3 byte', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: VARCHAR2
+  • Field length: 3 BYTE
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the Self Employed Eligibility sheet, the field “Rental Income (Unregistered)” typically contains values such as 12,000, 8,000, 9,000, and other similar unregistered rental income amounts.
+======================================================================
+
+======================================================================
+Field: Total_Inflow_Credits
+Criticality: Low
+Issue Type: Warning
+Values Found: ['18,2', 'no instruction', 'number', 'in the cam file, under the banking – non pdf sheet in the total inflows(rs.) section, the field “total” typically contains values such as 11,129, 4,00,000 etc and similar counts. the value shown in front of “total” within this section should be taken as the extracted value.', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 18,2
+  • Primary Source Document: CAM
+  • CAM Description: In the CAM file, under the Banking – Non PDF sheet in the Total inflows(Rs.) section, the field “Total” typically contains values such as 11,129, 4,00,000 etc and similar counts. The value shown in front of “Total” within this section should be taken as the extracted value.
+======================================================================
+
+======================================================================
+Field: No_Of_Credit_Entries
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'in the cam file, under the banking – non pdf sheet, in the no. of credit entries section, the field “total” typically contains values such as 119, 400, 220, 101, and similar counts. the value shown in front of “total” within this section should be taken as the extracted value.', '0', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 0
+  • Primary Source Document: CAM
+  • CAM Description: In the CAM file, under the Banking – Non PDF sheet, in the No. of Credit Entries section, the field “Total” typically contains values such as 119, 400, 220, 101, and similar counts. The value shown in front of “Total” within this section should be taken as the extracted value.
+======================================================================
+
+======================================================================
+Field: Type_Of_Bank_Statement
+Criticality: Low
+Issue Type: Warning
+Values Found: ['varchar2', 'cam', 'no instruction', '20', 'in the cam file, under the banking – non pdf sheet, the field “a/c type (select from dropdown)” typically contains values such as saving, current, salary, overdraft, and other similar account types.']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: VARCHAR2
+  • Field length: 20
+  • Primary Source Document: CAM
+  • CAM Description: In the CAM file, under the Banking – Non PDF sheet, the field “A/C Type (Select from Dropdown)” typically contains values such as Saving, Current, Salary, Overdraft, and other similar account types.
+======================================================================
+
+======================================================================
+Field: Date_Of_Salary_Credit
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', '0', 'date', 'cam', 'in the cam file, under the applicant salary sheet in the salary, bonus / incentive, reimbursement, or other credits from employer section, the field “date” typically contains values such as 01-jan-2024, 01-nov-2023, and similar date formats.']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: DATE
+  • Field length: 0
+  • Primary Source Document: CAM
+  • CAM Description: In the CAM file, under the Applicant Salary sheet in the Salary, Bonus / Incentive, Reimbursement, or Other Credits from Employer section, the field “Date” typically contains values such as 01-Jan-2024, 01-Nov-2023, and similar date formats.
+======================================================================
+
+======================================================================
+Field: Assesed_Income
+Criticality: Low
+Issue Type: Warning
+Values Found: ['100,000', 'no instruction', 'pd', 'in the pd (word document), under the income details section, there is a field labeled “total assessed income.” typically contains values such as 1,00,000, 32,000, and other similar income amounts.', '(18,0)', 'in the cam file, under the affordablecmassessedincome sheet,under assessed sale/operational income section the field “total assessed income” typically contains values such as 1,00,000, 32,000, and other similar income amounts.', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: 100,000
+  • Data Type: NUMBER
+  • Field length: (18,0)
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the AffordableCMAssessedIncome sheet,under Assessed Sale/operational Income Section the field “Total Assessed Income” typically contains values such as 1,00,000, 32,000, and other similar income amounts.
+  • PD (Word Doc) Description: In the PD (Word document), under the Income Details section, there is a field labeled “Total Assessed Income.” typically contains values such as 1,00,000, 32,000, and other similar income amounts.
+======================================================================
+
+======================================================================
+Field: Gross_Turnover_PreviousYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'pd', '18', 'number', 'in the cam file, under the 44ad, 44ada, 44ae income sheet, the field “total gross turnover / receipts (rs.)” displays values across three assessment years—for example, 2023–24, 2022–23, and 2021–22. for this field, the value corresponding to the previous assessment year  should be extracted.', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 18
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the 44AD, 44ADA, 44AE Income sheet, the field “Total Gross Turnover / Receipts (Rs.)” displays values across three assessment years—for example, 2023–24, 2022–23, and 2021–22. For this field, the value corresponding to the previous assessment year  should be extracted.
+======================================================================
+
+======================================================================
+Field: Gross_Turnover_LatestYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'pd', 'in the cam file, under the 44ad, 44ada, 44ae income sheet, the field “total gross turnover / receipts (rs.)” displays values across three assessment years—for example, 2023–24, 2022–23, and 2021–22. for this field, the value corresponding to the latest assessment year should be extracted.', '18', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 18
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the 44AD, 44ADA, 44AE Income sheet, the field “Total Gross Turnover / Receipts (Rs.)” displays values across three assessment years—for example, 2023–24, 2022–23, and 2021–22. For this field, the value corresponding to the latest assessment year should be extracted.
+======================================================================
+
+======================================================================
+Field: Gross_Turnover_Previous_To_PreviousYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'pd', 'in the cam file, under the 44ad, 44ada, 44ae income sheet, the field “total gross turnover / receipts (rs.)” displays values across three assessment years—for example, 2023–24, 2022–23, and 2021–22. for this field, the value corresponding to the previous-to-previous assessment year  should be extracted.', '18', 'number', 'cam']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • Application Form: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+  • Data Type: Number
+  • Field length: 18
+  • Primary Source Document: CAM
+  • Secondary Source Document: PD
+  • CAM Description: In the CAM file, under the 44AD, 44ADA, 44AE Income sheet, the field “Total Gross Turnover / Receipts (Rs.)” displays values across three assessment years—for example, 2023–24, 2022–23, and 2021–22. For this field, the value corresponding to the previous-to-previous assessment year  should be extracted.
+======================================================================
+
+
+📎 ATTACHED: Complete extracted data for your records.

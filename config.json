@@ -3,7 +3,9 @@
         "address": "yourmltales@gmail.com",
         "password": "kodi czae quix bpea",
         "imap_server": "imap.gmail.com",
-        "imap_port": 993
+        "imap_port": 993,
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587
     },
     "agent": {
         "target_subjects": ["IMGC Letter"],
