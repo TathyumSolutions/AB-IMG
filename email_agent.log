@@ -3395,3 +3395,25 @@
 2025-12-10 04:39:24,585 - EmailAgentWithExtraction - INFO -   No new attachments
 2025-12-10 04:40:24,585 - EmailAgentWithExtraction - INFO - [2025-12-10 04:40:24] Checking emails...
 2025-12-10 04:40:26,912 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-10 07:25:43,553 - EmailAgentWithExtraction - INFO - 
+============================================================
+2025-12-10 07:25:43,554 - EmailAgentWithExtraction - INFO - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-10 07:25:43,554 - EmailAgentWithExtraction - INFO - ============================================================
+2025-12-10 07:25:43,554 - EmailAgentWithExtraction - INFO - Email: yourmltales@gmail.com
+2025-12-10 07:25:43,554 - EmailAgentWithExtraction - INFO - Server: imap.gmail.com:993
+2025-12-10 07:25:43,554 - EmailAgentWithExtraction - INFO - Watching for subjects: IMGC Letter
+2025-12-10 07:25:43,554 - EmailAgentWithExtraction - INFO - Loan ID Pattern: (\d{10})$
+2025-12-10 07:25:43,554 - EmailAgentWithExtraction - INFO - Root save location: email_attachments
+2025-12-10 07:25:43,554 - EmailAgentWithExtraction - INFO - Check interval: 60s
+2025-12-10 07:25:43,555 - EmailAgentWithExtraction - INFO - Only unseen emails: True
+2025-12-10 07:25:43,555 - EmailAgentWithExtraction - INFO - Mark as read: False
+2025-12-10 07:25:43,555 - EmailAgentWithExtraction - INFO - ============================================================
+
+2025-12-10 07:25:43,555 - EmailAgentWithExtraction - INFO - Connecting to imap.gmail.com:993...
+2025-12-10 07:25:44,851 - EmailAgentWithExtraction - INFO - [SUCCESS] Connected to imap.gmail.com
+2025-12-10 07:25:44,852 - EmailAgentWithExtraction - INFO - [2025-12-10 07:25:44] Checking emails...
+2025-12-10 07:25:45,678 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-10 07:25:51,049 - EmailAgentWithExtraction - INFO - 
+
+[STOPPED] Agent stopped by user
+2025-12-10 07:25:51,600 - EmailAgentWithExtraction - INFO - [DISCONNECT] Logged out from server
