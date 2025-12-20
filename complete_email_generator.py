@@ -20,19 +20,18 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
-from email_agent_with_extraction import llm_logger
+# from email_agent_with_extraction import llm_logger
 
 class CompleteEmailGenerator:
     """Complete email generator with all features and detailed logging"""
-    def __init__(self, extraction_file, config_file, api_key, recipients_config, smtp_config):
+    def __init__(self, extraction_file, config_file, api_key, smtp_config):
         print(f"[LOG] Initializing CompleteEmailGenerator")
         self.extraction_file = extraction_file
         self.config_file = config_file
         self.api_key = api_key
-        self.recipients_config = recipients_config
         self.smtp_config = self.load_smtp_config(smtp_config)
-        print(f"[LOG] Loading recipients from {self.recipients_config}")
-        self.recipients = self.load_recipients()
+        print(f"[LOG] Loading recipients from {smtp_config}")
+        self.recipients = self.load_recipients_from_config(smtp_config)
         print(f"[LOG] Recipients loaded: {self.recipients}")
         print(f"[LOG] Loading extraction results from {self.extraction_file}")
         self.merged_df = self.load_extraction_results()
@@ -46,6 +45,7 @@ class CompleteEmailGenerator:
             except Exception as e:
                 print(f"[ERROR] Failed to initialize OpenAI client: {e}")
 
+
     def load_smtp_config(self, smtp_config_path):
         try:
             with open(smtp_config_path, "r") as f:
@@ -56,15 +56,16 @@ class CompleteEmailGenerator:
             print(f"[ERROR] Could not load SMTP config: {e}")
             return {}
 
-    def load_recipients(self):
+    def load_recipients_from_config(self, config_path):
         try:
-            with open(self.recipients_config, "r") as f:
-                recipients = json.load(f)
-                print(f"[LOG] Recipients file loaded: {recipients}")
-                return recipients
+            with open(config_path, "r") as f:
+                config = json.load(f)
+                abhl = config.get("abhl_imgc", {}).get("abhl_email_id", "")
+                imgc = config.get("abhl_imgc", {}).get("imgc_email_id", "")
+                return {"ABHL": abhl, "IMGC": imgc}
         except Exception as e:
-            print(f"[ERROR] Could not load recipients: {e}")
-            return {}
+            print(f"[ERROR] Could not load recipients from config: {e}")
+            return {"ABHL": "", "IMGC": ""}
 
     def load_extraction_results(self):
         try:
@@ -551,7 +552,6 @@ def process_extraction_results(extraction_file, output_folder):
         extraction_file=extraction_file,
         config_file=config_file,
         api_key=api_key,
-        recipients_config=recipients_config,
         smtp_config=smtp_config
     )
     print(f"[LOG] Recipients loaded: {generator.recipients}")

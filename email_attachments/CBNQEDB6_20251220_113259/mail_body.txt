@@ -1,0 +1,15 @@
+[image: Google]
+A new sign-in on Windows
+
+
+yourmltales@gmail.com
+We noticed a new sign-in to your Google Account on a Windows device. If
+this was you, you don’t need to do anything. If not, we’ll help you secure
+your account.
+Check activity
+<https://accounts.google.com/AccountChooser?Email=yourmltales@gmail.com&continue=https://myaccount.google.com/alert/nt/1766230371000?rfn%3D325%26rfnc%3D1%26eid%3D8353813617335160277%26et%3D0>
+You can also see security activity at
+https://myaccount.google.com/notifications
+You received this email to let you know about important changes to your
+Google Account and services.
+© 2025 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA

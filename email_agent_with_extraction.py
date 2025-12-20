@@ -22,6 +22,7 @@ import re
 import imaplib
 import email
 from email.header import decode_header
+from complete_email_generator import CompleteEmailGenerator
 from dotenv import load_dotenv
 import random
 import string
@@ -234,6 +235,12 @@ Examples of correct mappings:
    Extension: .docx
    Column: "PD (Word Doc) Description"
    Reasoning: Contains "PD" and has Word document extension (.docx)
+
+8. Filename: "Cam - Niranjan Bhosale"
+   Extension: .xlsx
+   Column: "CAM Description"
+   Reasoning: Contains "CAM" and has Excel document extension (.xlsx)
+
 """
 
     # Construct the prompt for LLM
@@ -480,36 +487,42 @@ Return ONLY valid JSON."""
 #         print(f"  ✗ Error saving results: {e}")
 
 def merge_results_to_excel(all_results, pas_fields, output_path, column_selections):
-    """Merge extraction results into Excel file"""
-    # Load the configuration file to get additional columns
+    """Merge extraction results into Excel file with custom NA/Not Found logic"""
     try:
         config_df = pd.read_excel(CONFIG_FILE_PATH, sheet_name='Sheet1')
     except Exception as e:
         print(f"  ⚠ Warning: Could not load config file for additional columns: {e}")
         config_df = None
-    
+
     results_data = []
     for field in pas_fields:
         row = {'PAS Field Name': field}
-        # Add extracted data for each document
         for doc_name, extracted_data in all_results.items():
-            row[doc_name] = extracted_data.get(field, "NOT PROCESSED")
-        
-        # Add additional columns from FieldConfiguration file at the end
+            # Determine which column was used for this document
+            matched_column = column_selections.get(doc_name)
+            description = ""
+            if config_df is not None and matched_column in config_df.columns:
+                desc_row = config_df[config_df['PAS Field Name'] == field]
+                if not desc_row.empty:
+                    description = desc_row.iloc[0][matched_column]
+            # Custom logic
+            if pd.isna(description) or str(description).strip() == "":
+                row[doc_name] = "Not Applicable"
+            elif field not in extracted_data or extracted_data[field] in [None, "", "null"]:
+                row[doc_name] = "Not Found"
+            else:
+                row[doc_name] = extracted_data[field]
+        # Add additional columns from config_df at the end
         if config_df is not None:
-            # Find the matching row in config_df for this field
             matching_rows = config_df[config_df['PAS Field Name'] == field]
             if not matching_rows.empty:
                 config_row = matching_rows.iloc[0]
-                # Add all other columns from the configuration file (excluding 'PAS Field Name')
                 for col in config_df.columns:
                     if col != 'PAS Field Name':
                         row[col] = config_row[col] if pd.notna(config_row[col]) else ""
-        
         results_data.append(row)
-    
+
     results_df = pd.DataFrame(results_data)
-    
     try:
         with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
             results_df.to_excel(writer, sheet_name='Extracted Fields', index=False)
@@ -562,6 +575,38 @@ class EmailAgentWithExtraction:
         console.setFormatter(logging.Formatter('%(message)s'))
         if not any(isinstance(h, logging.StreamHandler) for h in self.logger.handlers):
             self.logger.addHandler(console)
+
+    #####
+    def run_email_generation(self, folder_path, extraction_file):
+        """Generate and send summary emails after extraction"""
+        try:
+            self.logger.info(f"\n  [EMAIL GENERATION] Starting email generation for {extraction_file}")
+            print("\n  [EMAIL GENERATION] Starting email generation for {extraction_file}")
+            config_file = CONFIG_FILE_PATH
+            smtp_config = "config.json"
+            api_key = OPENAI_API_KEY
+
+            # No need to check for abhl_imgc.json anymore
+
+            generator = CompleteEmailGenerator(
+                extraction_file=extraction_file,
+                config_file=config_file,
+                api_key=api_key,
+                smtp_config=smtp_config
+            )
+
+            self.logger.info(f"  [EMAIL GENERATION] Recipients loaded: {len(generator.recipients)} recipient(s)")
+
+            result = generator.generate_and_send_all_emails(folder_path, send_emails=True)
+
+            self.logger.info(f"  [EMAIL GENERATION] ✓ Email generation and sending complete")
+
+        except Exception as e:
+            self.logger.error(f"  [EMAIL GENERATION ERROR] {e}")
+            import traceback
+            self.logger.error(f"Traceback: {traceback.format_exc()}")
+
+    #####
 
     def connect(self, retry_count=3, retry_delay=5):
         for attempt in range(retry_count):
@@ -777,6 +822,7 @@ class EmailAgentWithExtraction:
                 output_path = os.path.join(folder_path, OUTPUT_FILENAME)
                 merge_results_to_excel(all_results, self.pas_fields, output_path, column_selections)
                 self.logger.info(f"  [EXTRACTION] Results saved to {output_path}")
+                self.run_email_generation(folder_path, output_path)  ##Added by AP
             else:
                 self.logger.info(f"  [EXTRACTION] No extraction results to save for {folder_path}")
                 

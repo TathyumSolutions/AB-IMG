@@ -15,5 +15,9 @@
         "mark_as_read": false,
         "only_unseen": true,
         "log_file": "email_agent.log"
+    },
+    "abhl_imgc": {
+        "abhl_email_id": "yourmltales@gmail.com",
+        "imgc_email_id": "yourmltales@gmail.com"
     }
 }
