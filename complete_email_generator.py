@@ -20,6 +20,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
+from email_agent_with_extraction import llm_logger
 
 class CompleteEmailGenerator:
     """Complete email generator with all features and detailed logging"""
@@ -285,17 +286,14 @@ Return ONLY in this exact JSON format:
                 temperature=0.0,
                 response_format={"type": "json_object"}
             )
-            # response = self.client.chat.completions.create(
-            #     model="gpt-4o-mini",
-            #     messages=[
-            #         {"role": "system", "content": "You are a professional business email writer. Always return valid JSON."},
-            #         {"role": "user", "content": prompt}
-            #     ],
-            #     temperature=0.7,
-            #     max_tokens=1500
-            # )
             result = completion.choices[0].message.content.strip()
-            print(f"[LOG] GPT response received")
+            llm_logger.info(json.dumps({
+                "model": "gpt-4o-mini",
+                "input_tokens": completion.usage.prompt_tokens,
+                "output_tokens": completion.usage.completion_tokens,
+                "prompt": prompt,
+                "response": result
+            }))
             if result.startswith("```json"):
                 result = result[7:]
             if result.endswith("```"):

@@ -293,9 +293,9 @@ Return ONLY valid JSON, no explanations."""
             api_key="DvskuzopcDYytzJygTQiCl1ikUiT8513H8vfpIwVPZPOnfeHCdZ1JQQJ99BEACHYHv6XJ3w3AAABACOGprIt",
             api_version="2025-01-01-preview",
         )
-
+        model="gpt-4o-mini"
         completion = client.chat.completions.create(
-                model="gpt-4o-mini",
+                model=model,
                 messages=[
                     {
                     "role": "system", 
@@ -312,19 +312,27 @@ Return ONLY valid JSON, no explanations."""
             )
         result_text = completion.choices[0].message.content.strip()
         mapping = json.loads(result_text)
+
+        llm_logger.info(json.dumps({
+            "model": model,
+            "input_tokens": completion.usage.prompt_tokens,
+            "output_tokens": completion.usage.completion_tokens,
+            "prompt": prompt,
+            "response": result_text
+        }))
         
         # Validate and clean the mapping
         validated_mapping = {}
         for filename, column in mapping.items():
             if column in description_columns:
                 validated_mapping[filename] = column
-                llm_logger.info(f"LLM Mapping: '{filename}' → '{column}'")
+                #llm_logger.info(f"LLM Mapping: '{filename}' → '{column}'")
             elif column == "NONE":
                 validated_mapping[filename] = None
-                llm_logger.info(f"LLM Mapping: '{filename}' → No match found")
+                #llm_logger.info(f"LLM Mapping: '{filename}' → No match found")
             else:
                 validated_mapping[filename] = None
-                llm_logger.warning(f"LLM returned invalid column '{column}' for '{filename}'")
+                #llm_logger.warning(f"LLM returned invalid column '{column}' for '{filename}'")
         
         # Save mapping to file with timestamp
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -341,7 +349,7 @@ Return ONLY valid JSON, no explanations."""
         return validated_mapping
             
     except Exception as e:
-        llm_logger.error(f"Error in LLM batch matching: {e}")
+        #llm_logger.error(f"Error in LLM batch matching: {e}")
         print(f"  ⚠ Error using LLM for document matching: {e}")
         return {doc: None for doc in documents}
 
@@ -440,13 +448,19 @@ Return ONLY valid JSON."""
         extracted_data = json.loads(result_text)
         
         # Log LLM usage
-        llm_logger.info(f"Field extraction using column '{matched_column}': {len(fields_json)} fields processed")
-        
+        #llm_logger.info(f"Field extraction using column '{matched_column}': {len(fields_json)} fields processed")
+        llm_logger.info(json.dumps({
+            "model": model,
+            "input_tokens": completion.usage.prompt_tokens,
+            "output_tokens": completion.usage.completion_tokens,
+            "prompt": prompt,
+            "response": result_text
+        }))
         return extracted_data, matched_column
         
     except Exception as e:
         print(f"  ✗ Field extraction error: {e}")
-        llm_logger.error(f"Field extraction error with column '{matched_column}': {e}")
+        #llm_logger.error(f"Field extraction error with column '{matched_column}': {e}")
         return {}, matched_column
 
 # def merge_results_to_excel(all_results: dict, pas_fields: list, output_path: str, column_selections: dict):

@@ -7487,3 +7487,58 @@ NameError: name 'get_description_columns' is not defined
 
 [STOPPED] Agent stopped by user
 2025-12-20 08:48:09,414 - [DISCONNECTED] Logged out from email server
+2025-12-20 09:14:38,012 - 
+============================================================
+2025-12-20 09:14:38,012 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 09:14:38,012 - ============================================================
+2025-12-20 09:14:38,013 - Email: yourmltales@gmail.com
+2025-12-20 09:14:38,013 - Server: imap.gmail.com:993
+2025-12-20 09:14:38,013 - Watching for subjects: 
+2025-12-20 09:14:38,013 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 09:14:38,013 - Root save location: email_attachments
+2025-12-20 09:14:38,014 - Check interval: 6s
+2025-12-20 09:14:38,014 - Only unseen emails: True
+2025-12-20 09:14:38,014 - Mark as read: False
+2025-12-20 09:14:38,014 - ============================================================
+
+2025-12-20 09:14:38,014 - Connecting to imap.gmail.com:993...
+2025-12-20 09:14:39,004 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 09:14:39,004 - [2025-12-20 09:14:39] Checking emails...
+2025-12-20 09:14:39,555 -   No new attachments
+2025-12-20 09:14:45,555 - [2025-12-20 09:14:45] Checking emails...
+2025-12-20 09:14:46,098 -   No new attachments
+2025-12-20 09:14:52,099 - [2025-12-20 09:14:52] Checking emails...
+2025-12-20 09:14:52,637 -   No new attachments
+2025-12-20 09:14:58,638 - [2025-12-20 09:14:58] Checking emails...
+2025-12-20 09:14:59,180 -   No new attachments
+2025-12-20 09:15:05,180 - [2025-12-20 09:15:05] Checking emails...
+2025-12-20 09:15:06,944 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-20 09:15:06,944 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-20 09:15:06,944 -   Date: Sat, 20 Dec 2025 14:45:09 +0530
+2025-12-20 09:15:06,949 -     [ATTACHMENT] Application Form.pdf
+2025-12-20 09:15:06,955 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-20 09:15:06,955 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-20 09:15:06,955 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251220_091506
+2025-12-20 09:15:06,955 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251220_091506
+2025-12-20 09:15:06,955 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-20 09:15:08,937 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 09:15:08,937 -     [EXTRACTION] Document 'CAM Kanhiya Bhartiya.xlsx' has no matching column. Skipping.
+2025-12-20 09:15:08,937 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 09:15:10,561 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 09:15:10,561 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-20 09:15:15,801 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-20 09:15:15,801 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-20 09:15:21,301 -     [EXTRACTION] ✓ Extracted 21 fields using column: PD (Word Doc) Description
+2025-12-20 09:15:21,301 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 09:15:23,030 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 09:15:23,258 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251220_091506/extraction_results.xlsx
+2025-12-20 09:15:23,258 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-20 09:15:29,259 - [2025-12-20 09:15:29] Checking emails...
+2025-12-20 09:15:29,821 -   No new attachments
+2025-12-20 09:15:31,635 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 09:15:31,900 - [DISCONNECTED] Logged out from email server
