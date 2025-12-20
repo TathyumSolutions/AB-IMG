@@ -53,3 +53,44 @@
 2025-12-20 07:17:50,075 - Field extraction using column 'Application Form Description': 31 fields processed
 2025-12-20 07:17:52,101 - Field extraction using column 'PD (Word Doc) Description': 21 fields processed
 2025-12-20 07:17:52,815 - Field extraction using column 'Email Body Description': 1 fields processed
+2025-12-20 07:44:25,799 - LLM Mapping: 'CAM Kanhiya Bhartiya.xlsx' → No match found
+2025-12-20 07:44:25,799 - LLM Mapping: 'mail_subject.txt' → 'Email Subject Description'
+2025-12-20 07:44:25,799 - LLM Mapping: 'Application Form.pdf' → 'Application Form Description'
+2025-12-20 07:44:25,799 - LLM Mapping: 'PD Note Kanhaiya.docx' → 'PD (Word Doc) Description'
+2025-12-20 07:44:25,800 - LLM Mapping: 'mail_body.txt' → 'Email Body Description'
+2025-12-20 07:44:27,775 - Field extraction using column 'Email Subject Description': 5 fields processed
+2025-12-20 07:44:33,197 - Field extraction using column 'Application Form Description': 31 fields processed
+2025-12-20 07:44:36,573 - Field extraction using column 'PD (Word Doc) Description': 21 fields processed
+2025-12-20 07:44:37,829 - Field extraction using column 'Email Body Description': 1 fields processed
+2025-12-20 08:09:11,085 - LLM Mapping: 'mail_subject.txt' → 'Email Subject Description'
+2025-12-20 08:09:11,085 - LLM Mapping: 'PD FORMAT - SALARIED.docx' → 'PD (Word Doc) Description'
+2025-12-20 08:09:11,085 - LLM Mapping: 'App Form - Bhosale.pdf' → 'Application Form Description'
+2025-12-20 08:09:11,086 - LLM Mapping: 'Cam - Niranjan Bhosale.xlsx' → No match found
+2025-12-20 08:09:11,086 - LLM Mapping: 'mail_body.txt' → 'Email Body Description'
+2025-12-20 08:09:12,781 - Field extraction using column 'Email Subject Description': 5 fields processed
+2025-12-20 08:09:16,531 - Field extraction using column 'PD (Word Doc) Description': 21 fields processed
+2025-12-20 08:09:22,291 - Field extraction using column 'Application Form Description': 31 fields processed
+2025-12-20 08:09:23,711 - Field extraction using column 'Email Body Description': 1 fields processed
+2025-12-20 08:15:00,003 - LLM Mapping: 'CAM Kanhiya Bhartiya.xlsx' → No match found
+2025-12-20 08:15:00,003 - LLM Mapping: 'mail_subject.txt' → 'Email Subject Description'
+2025-12-20 08:15:00,003 - LLM Mapping: 'Application Form.pdf' → 'Application Form Description'
+2025-12-20 08:15:00,003 - LLM Mapping: 'PD Note Kanhaiya.docx' → 'PD (Word Doc) Description'
+2025-12-20 08:15:00,004 - LLM Mapping: 'mail_body.txt' → 'Email Body Description'
+2025-12-20 08:15:02,000 - Field extraction using column 'Email Subject Description': 5 fields processed
+2025-12-20 08:15:07,061 - Field extraction using column 'Application Form Description': 31 fields processed
+2025-12-20 08:15:11,180 - Field extraction using column 'PD (Word Doc) Description': 21 fields processed
+2025-12-20 08:15:12,871 - Field extraction using column 'Email Body Description': 1 fields processed
+2025-12-20 08:27:42,053 - LLM Mapping: 'mail_subject.txt' → 'Email Subject Description'
+2025-12-20 08:27:42,053 - LLM Mapping: 'PD FORMAT - SALARIED.docx' → 'PD (Word Doc) Description'
+2025-12-20 08:27:42,053 - LLM Mapping: 'App Form - Bhosale.pdf' → 'Application Form Description'
+2025-12-20 08:27:42,053 - LLM Mapping: 'Cam - Niranjan Bhosale.xlsx' → No match found
+2025-12-20 08:27:42,053 - LLM Mapping: 'mail_body.txt' → 'Email Body Description'
+2025-12-20 08:27:43,642 - Field extraction using column 'Email Subject Description': 5 fields processed
+2025-12-20 08:27:46,992 - Field extraction using column 'PD (Word Doc) Description': 21 fields processed
+2025-12-20 08:27:52,222 - Field extraction using column 'Application Form Description': 31 fields processed
+2025-12-20 08:27:53,380 - Field extraction using column 'Email Body Description': 1 fields processed
+2025-12-20 08:35:43,259 - LLM Mapping: 'mail_subject.txt' → 'Email Subject Description'
+2025-12-20 08:35:43,259 - LLM Mapping: 'mail_body.txt' → 'Email Body Description'
+2025-12-20 08:35:43,259 - LLM Mapping: 'extraction_results.xlsx' → No match found
+2025-12-20 08:35:44,998 - Field extraction using column 'Email Subject Description': 5 fields processed
+2025-12-20 08:35:46,268 - Field extraction using column 'Email Body Description': 1 fields processed

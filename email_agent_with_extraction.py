@@ -25,6 +25,7 @@ from email.header import decode_header
 from dotenv import load_dotenv
 import random
 import string
+from openai import AzureOpenAI
 
 # Document processing imports
 import pandas as pd
@@ -271,24 +272,45 @@ Example output format:
 Return ONLY valid JSON, no explanations."""
 
     try:
-        client = OpenAI(api_key=OPENAI_API_KEY)
-        response = client.chat.completions.create(
-            model=OPENAI_MODEL,
-            messages=[
-                {
+        # client = OpenAI(api_key=OPENAI_API_KEY)
+        # response = client.chat.completions.create(
+        #     model=OPENAI_MODEL,
+        #     messages=[
+        #         {
+        #             "role": "system", 
+        #             "content": "You are a precise assistant that matches filenames to configuration columns. You carefully consider both the document name and file extension. Return only valid JSON."
+        #         },
+        #         {
+        #             "role": "user", 
+        #             "content": prompt
+        #         }
+        #     ],
+        #     temperature=0.0,
+        #     response_format={"type": "json_object"}
+        # )
+        client = AzureOpenAI(
+            azure_endpoint="https://qc-tspl-dau-mr.openai.azure.com/",
+            api_key="DvskuzopcDYytzJygTQiCl1ikUiT8513H8vfpIwVPZPOnfeHCdZ1JQQJ99BEACHYHv6XJ3w3AAABACOGprIt",
+            api_version="2025-01-01-preview",
+        )
+
+        completion = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {
                     "role": "system", 
                     "content": "You are a precise assistant that matches filenames to configuration columns. You carefully consider both the document name and file extension. Return only valid JSON."
-                },
-                {
-                    "role": "user", 
-                    "content": prompt
-                }
-            ],
-            temperature=0.0,
-            response_format={"type": "json_object"}
-        )
-        
-        result_text = response.choices[0].message.content.strip()
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                max_tokens=16384,
+                temperature=0.0,
+                response_format={"type": "json_object"}
+            )
+        result_text = completion.choices[0].message.content.strip()
         mapping = json.loads(result_text)
         
         # Validate and clean the mapping
@@ -391,18 +413,30 @@ Instructions:
 Return ONLY valid JSON."""
 
     try:
-        client = OpenAI(api_key=api_key)
-        response = client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": "You are a precise data extraction assistant. Return only valid JSON."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.0,
-            response_format={"type": "json_object"}
+        client = AzureOpenAI(
+            azure_endpoint="https://qc-tspl-dau-mr.openai.azure.com/",
+            api_key="DvskuzopcDYytzJygTQiCl1ikUiT8513H8vfpIwVPZPOnfeHCdZ1JQQJ99BEACHYHv6XJ3w3AAABACOGprIt",
+            api_version="2025-01-01-preview",
         )
+
+        completion = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are an expert document analysis AI that extracts specific fields from documents based on provided descriptions. Return only valid JSON."
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                max_tokens=16384,
+                temperature=0.0,
+                response_format={"type": "json_object"}
+            )
         
-        result_text = response.choices[0].message.content
+        result_text = completion.choices[0].message.content
         extracted_data = json.loads(result_text)
         
         # Log LLM usage

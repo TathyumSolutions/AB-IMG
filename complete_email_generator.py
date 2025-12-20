@@ -14,7 +14,7 @@ import pandas as pd
 import os
 import json
 import smtplib
-from openai import OpenAI
+from openai import OpenAI,AzureOpenAI
 from datetime import datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -263,16 +263,38 @@ Return ONLY in this exact JSON format:
 }}
 """
             print(f"[LOG] Calling GPT API...")
-            response = self.client.chat.completions.create(
+            client = AzureOpenAI(
+            azure_endpoint="https://qc-tspl-dau-mr.openai.azure.com/",
+            api_key="DvskuzopcDYytzJygTQiCl1ikUiT8513H8vfpIwVPZPOnfeHCdZ1JQQJ99BEACHYHv6XJ3w3AAABACOGprIt",
+            api_version="2025-01-01-preview",
+        )
+
+            completion = client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[
-                    {"role": "system", "content": "You are a professional business email writer. Always return valid JSON."},
-                    {"role": "user", "content": prompt}
+                    {
+                    "role": "system", 
+                    "content": "You are a professional business email writer. Always return valid JSON"
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
                 ],
-                temperature=0.7,
-                max_tokens=1500
+                max_tokens=16384,
+                temperature=0.0,
+                response_format={"type": "json_object"}
             )
-            result = response.choices[0].message.content.strip()
+            # response = self.client.chat.completions.create(
+            #     model="gpt-4o-mini",
+            #     messages=[
+            #         {"role": "system", "content": "You are a professional business email writer. Always return valid JSON."},
+            #         {"role": "user", "content": prompt}
+            #     ],
+            #     temperature=0.7,
+            #     max_tokens=1500
+            # )
+            result = completion.choices[0].message.content.strip()
             print(f"[LOG] GPT response received")
             if result.startswith("```json"):
                 result = result[7:]
