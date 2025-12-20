@@ -20,6 +20,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
+import glob
 
 class CompleteEmailGenerator:
     """Complete email generator with all features and detailed logging"""
@@ -110,11 +111,11 @@ class CompleteEmailGenerator:
     def identify_issues(self):
         print(f"[LOG] Identifying issues in extraction results")
         issues = []
-        exclude_cols = ['PAS Field Name', 'Criticality', 'First Preference', 'Second Preference']
+        exclude_cols = ['PAS Field Name', 'Mismatch Criticality', 'Criticality', 'First Preference', 'Second Preference', 'Final Data for PAS System']
         doc_columns = [col for col in self.merged_df.columns if col not in exclude_cols]
         for idx, row in self.merged_df.iterrows():
             field_name = row['PAS Field Name']
-            criticality = row.get('Criticality', 'Unknown')
+            criticality = row.get('Mismatch Criticality', row.get('Criticality', 'Unknown'))
             cleaned_values = {}
             raw_values = {}
             for col in doc_columns:
@@ -155,7 +156,7 @@ class CompleteEmailGenerator:
         if all_issues.empty:
             print(f"[LOG] No issues found")
             return all_issues
-        major_issues = all_issues[all_issues['Criticality'].str.upper() == 'HIGH']
+        major_issues = all_issues[all_issues['Criticality'].astype(str).str.upper() == 'HIGH']
         print(f"[LOG] Major issues found: {len(major_issues)}")
         return major_issues
 
@@ -165,7 +166,7 @@ class CompleteEmailGenerator:
         if all_issues.empty:
             print(f"[LOG] No issues found")
             return all_issues
-        low_issues = all_issues[all_issues['Criticality'].str.upper() != 'HIGH']
+        low_issues = all_issues[all_issues['Criticality'].astype(str).str.upper() != 'HIGH']
         print(f"[LOG] Low issues found: {len(low_issues)}")
         return low_issues
 
@@ -197,7 +198,7 @@ class CompleteEmailGenerator:
             formatted_text += f"{'='*70}\n"
         return formatted_text
 
-    def send_email(self, to_email, subject, body, attachment_path=None):
+    def send_email(self, to_email, subject, body, attachment_path=None, attachment_paths=None):
         print(f"[LOG] Attempting to send email to: {to_email}")
         if not self.smtp_config:
             print("[ERROR] SMTP config not loaded. Cannot send email.")
@@ -208,18 +209,30 @@ class CompleteEmailGenerator:
             msg['To'] = to_email
             msg['Subject'] = subject
             msg.attach(MIMEText(body, 'plain'))
-            if attachment_path and os.path.exists(attachment_path):
-                print(f"[LOG] Attaching file: {attachment_path}")
-                with open(attachment_path, 'rb') as attachment:
+
+            files_to_attach = []
+            if attachment_paths is not None:
+                if isinstance(attachment_paths, (list, tuple)):
+                    files_to_attach.extend(list(attachment_paths))
+                else:
+                    files_to_attach.append(attachment_paths)
+            if attachment_path is not None:
+                files_to_attach.append(attachment_path)
+
+            for path in files_to_attach:
+                if not path:
+                    continue
+                if not os.path.exists(path):
+                    print(f"[WARNING] Attachment path provided but file does not exist: {path}")
+                    continue
+                print(f"[LOG] Attaching file: {path}")
+                with open(path, 'rb') as attachment:
                     part = MIMEBase('application', 'octet-stream')
                     part.set_payload(attachment.read())
                 encoders.encode_base64(part)
-                filename = os.path.basename(attachment_path)
+                filename = os.path.basename(path)
                 part.add_header('Content-Disposition', f'attachment; filename= {filename}')
                 msg.attach(part)
-            else:
-                if attachment_path:
-                    print(f"[WARNING] Attachment path provided but file does not exist: {attachment_path}")
             print(f"[LOG] Connecting to SMTP server: {self.smtp_config['smtp_server']}:{self.smtp_config['smtp_port']}")
             server = smtplib.SMTP(self.smtp_config['smtp_server'], self.smtp_config['smtp_port'])
             server.starttls()
@@ -294,11 +307,39 @@ Return ONLY in this exact JSON format:
         print(f"[LOG] Creating Excel file with high criticality rows")
         
         # Filter for high criticality rows
-        high_crit_df = self.merged_df[self.merged_df['Criticality'].str.upper() == 'HIGH'].copy()
+        crit_col = 'Mismatch Criticality' if 'Mismatch Criticality' in self.merged_df.columns else 'Criticality'
+        high_crit_df = self.merged_df[self.merged_df[crit_col].astype(str).str.upper() == 'HIGH'].copy()
         
         if high_crit_df.empty:
             print(f"[LOG] No high criticality rows found in extraction results")
             return None
+        
+        # Re-enrich high criticality rows with all configuration metadata/description columns
+        # so the High Criticality Excel attachment contains all columns
+        try:
+            config_df = pd.read_excel(self.config_file, sheet_name='Sheet1')
+            if 'PAS Field Name' in config_df.columns and 'PAS Field Name' in high_crit_df.columns:
+                extra_cols = [
+                    'Data Type',
+                    'Field length',
+                    'Primary Source Document',
+                    'Secondary Source Document',
+                    'CAM Description',
+                    'PD Description',
+                    'PD (Word Doc) Description',
+                    'Application Form Description',
+                    'Legal Doc Description',
+                    'Technical Doc Description',
+                    'Email Subject Description',
+                    'Email Body Description',
+                ]
+                # Only use columns that actually exist in the config file
+                available_extra_cols = [c for c in extra_cols if c in config_df.columns]
+                if available_extra_cols:
+                    extra_config = config_df[['PAS Field Name'] + available_extra_cols]
+                    high_crit_df = high_crit_df.merge(extra_config, on='PAS Field Name', how='left')
+        except Exception as e:
+            print(f"[LOG] Warning: Could not enrich High Criticality Excel with config metadata: {e}")
         
         # Create filename with timestamp
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -470,11 +511,23 @@ All fields have consistent values across all source documents.
         imgc_sent = False
         if send_emails and self.recipients.get('IMGC'):
             print(f"\n📤 Sending email to IMGC ({self.recipients['IMGC']})...")
+
+            json_candidates = []
+            try:
+                extraction_dir = os.path.dirname(str(extraction_attachment))
+                json_candidates = glob.glob(os.path.join(extraction_dir, 'pas_field_map_*.json'))
+            except Exception:
+                json_candidates = []
+
+            latest_json = max(json_candidates, key=os.path.getmtime) if json_candidates else None
+            attachments = [extraction_attachment]
+            if latest_json:
+                attachments.append(latest_json)
             imgc_sent = self.send_email(
                 to_email=self.recipients['IMGC'],
                 subject=imgc_email['subject'],
                 body=imgc_email['body'],
-                attachment_path=extraction_attachment
+                attachment_paths=attachments
             )
         
         # Summary

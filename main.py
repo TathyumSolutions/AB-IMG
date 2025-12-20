@@ -44,6 +44,38 @@ from email_agent_with_extraction import (
 # ...existing EmailAgentWithExtraction class from email_agent_with_extraction.py...
 
 class EmailAgentWithExtractionAndEmail(EmailAgentWithExtraction):
+    def run_once(self):
+        """Execute single check cycle and exit"""
+        self.logger.info("\n" + "=" * 60)
+        self.logger.info("EMAIL AGENT - SINGLE EXECUTION MODE")
+        self.logger.info("=" * 60)
+        self.logger.info(f"Email: {self.email_address}")
+        self.logger.info(f"Server: {self.imap_server}:{self.imap_port}")
+        self.logger.info(f"Watching for subjects: {', '.join(self.target_subjects)}")
+        self.logger.info(f"Loan ID Pattern: {self.loan_id_pattern}")
+        self.logger.info(f"Root save location: {self.save_location}")
+        self.logger.info("=" * 60 + "\n")
+        
+        if not self.connect():
+            self.logger.error("[FAILED] Could not connect to email server")
+            return
+        
+        try:
+            self.logger.info(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Checking emails...")
+            attachments = self.check_emails()
+            
+            if attachments:
+                self.logger.info(f"[SUCCESS] Downloaded {len(attachments)} attachment(s) into {len(set(Path(f).parent for f in attachments))} folder(s)")
+            else:
+                self.logger.info("[INFO] No new attachments found")
+            
+            self.logger.info("[COMPLETE] Single check cycle finished")
+        except Exception as e:
+            self.logger.error(f"[ERROR] Execution failed: {e}")
+        finally:
+            self.disconnect()
+            self.logger.info("[EXIT] Agent shutting down\n")
+
     def run_field_extraction(self, folder_path):
         # Only process this folder, not recursively
         documents = [f for f in os.listdir(folder_path) if Path(f).suffix.lower() in SUPPORTED_EXTENSIONS]
@@ -97,12 +129,12 @@ class EmailAgentWithExtractionAndEmail(EmailAgentWithExtraction):
         print(f"[DEBUG] Recipients loaded: {generator.recipients}")
         result = generator.generate_and_send_all_emails(folder_path, send_emails=True)
         print(f"[DEBUG] Email generation and sending complete for: {extraction_file}")
-
 # ...main function and config loading as in email_agent_with_extraction.py...
 
 def main():
     parser = argparse.ArgumentParser(description='Email Agent with Extraction and Email Generation')
     parser.add_argument('-c', '--config', default='config.json', help='Configuration file (default: config.json)')
+    parser.add_argument('--once', action='store_true', help='Run once and exit (for cron scheduling)')
     args = parser.parse_args()
     if not os.path.exists(args.config):
         print(f"[ERROR] Config file not found: {args.config}")
@@ -115,7 +147,11 @@ def main():
         return
     config = load_config(args.config)
     agent = EmailAgentWithExtractionAndEmail(config)
-    agent.run()
+    
+    if args.once:
+        agent.run_once()
+    else:
+        agent.run()
 
 if __name__ == "__main__":
     main()
