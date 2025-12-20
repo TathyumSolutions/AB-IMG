@@ -11,7 +11,7 @@
         "target_subjects": [],
         "loan_id_pattern": "([A-Za-z0-9]{9,}\\d)",
         "save_location": "./email_attachments",
-        "check_interval": 60,
+        "check_interval": 6,
         "mark_as_read": false,
         "only_unseen": true,
         "log_file": "email_agent.log"

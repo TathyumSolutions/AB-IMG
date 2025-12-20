@@ -1,0 +1,159 @@
+Dear IMGC Team,
+
+I hope this message finds you well. 
+
+Please find below the summary of our recent data extraction process:
+
+📊 DATA EXTRACTION SUMMARY
+======================================================================
+Total Fields Processed: 84
+Total Issues Identified: 47
+Low Criticality Issues: 11
+Data Extraction Status: ✅ Complete
+Data Cleaning Applied: ✅ Yes (spaces trimmed, special chars removed, case-normalized)
+
+======================================================================
+LOW CRITICALITY ISSUE DETAILS
+======================================================================
+
+======================================================================
+Field: Borrower_Address1
+Criticality: Low
+Issue Type: Warning
+Values Found: ['ashoka society arera colony', 'no instruction']
+Preferred Value: ashoka society arera colony (from Application Form)
+Document Sources:
+  • Application Form: Ashoka society arera Colony
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+======================================================================
+
+======================================================================
+Field: Employer_Department
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'no instruction']
+Preferred Value: no instruction (from Application Form)
+Document Sources:
+  • Application Form: NO INSTRUCTION
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: NOT FOUND
+======================================================================
+
+======================================================================
+Field: Employer_Designation
+Criticality: Low
+Issue Type: Warning
+Values Found: ['applicant is proprietor of firm m/s om construction.', 'no instruction']
+Preferred Value: no instruction (from CAM Kanhiya Bhartiya)
+Document Sources:
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: Applicant is Proprietor of Firm M/S Om construction.
+======================================================================
+
+======================================================================
+Field: Pensionable_Borrower
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no', 'no instruction']
+Preferred Value: no instruction (from Application Form)
+Document Sources:
+  • Application Form: NO INSTRUCTION
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: No
+======================================================================
+
+======================================================================
+Field: Mode_Of_Salary
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'no instruction']
+Preferred Value: no instruction (from Application Form)
+Document Sources:
+  • Application Form: NO INSTRUCTION
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: NOT FOUND
+======================================================================
+
+======================================================================
+Field: Office_SetUp
+Criticality: Low
+Issue Type: Warning
+Values Found: ['resi-cum-office setup', 'no instruction']
+Preferred Value: no instruction (from Application Form)
+Document Sources:
+  • Application Form: NO INSTRUCTION
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: Resi-cum-Office Setup
+======================================================================
+
+======================================================================
+Field: Level_Of_Studies
+Criticality: Low
+Issue Type: Warning
+Values Found: ['ba graduate', 'graduate', 'no instruction']
+Preferred Value: graduate (from Application Form)
+Document Sources:
+  • Application Form: Graduate
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: BA graduate
+======================================================================
+
+======================================================================
+Field: Employer_Address1
+Criticality: Low
+Issue Type: Warning
+Values Found: ['ashoka societye7/112, bhopal, bhopal, madhya pradesh, 462001', 'no instruction']
+Preferred Value: ashoka societye7/112, bhopal, bhopal, madhya pradesh, 462001 (from Application Form)
+Document Sources:
+  • Application Form: Ashoka societye7/112, Bhopal, Bhopal, Madhya Pradesh, 462001
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+======================================================================
+
+======================================================================
+Field: Employer_City
+Criticality: Low
+Issue Type: Warning
+Values Found: ['bhopal', 'no instruction']
+Preferred Value: bhopal (from Application Form)
+Document Sources:
+  • Application Form: Bhopal
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: NO INSTRUCTION
+======================================================================
+
+======================================================================
+Field: Satisfactory_TPC_Check
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'no instruction']
+Preferred Value: no instruction (from Application Form)
+Document Sources:
+  • Application Form: NO INSTRUCTION
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: NOT FOUND
+======================================================================
+
+======================================================================
+Field: Assesed_Income
+Criticality: Low
+Issue Type: Warning
+Values Found: ['100,000', 'no instruction']
+Preferred Value: no instruction (from Application Form)
+Document Sources:
+  • Application Form: NO INSTRUCTION
+  • CAM Kanhiya Bhartiya: NO INSTRUCTION
+  • PD Note Kanhaiya: 100,000
+======================================================================
+
+📎 ATTACHED: Complete extracted data for your records.
+
+Should you have any questions or require further details, please feel free to reach out.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Your Company]  
+[Your Contact Information]

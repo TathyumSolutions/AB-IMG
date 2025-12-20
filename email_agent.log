@@ -4781,3 +4781,1392 @@ NameError: name 'get_description_columns' is not defined
 
 [STOPPED] Agent stopped by user
 2025-12-19 15:59:32,515 - EmailAgentWithExtraction - INFO - [DISCONNECT] Logged out from server
+2025-12-20 03:56:13,680 - EmailAgentWithExtraction - INFO - 
+============================================================
+2025-12-20 03:56:13,680 - EmailAgentWithExtraction - INFO - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 03:56:13,680 - EmailAgentWithExtraction - INFO - ============================================================
+2025-12-20 03:56:13,680 - EmailAgentWithExtraction - INFO - Email: yourmltales@gmail.com
+2025-12-20 03:56:13,681 - EmailAgentWithExtraction - INFO - Server: imap.gmail.com:993
+2025-12-20 03:56:13,681 - EmailAgentWithExtraction - INFO - Watching for subjects: 
+2025-12-20 03:56:13,681 - EmailAgentWithExtraction - INFO - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 03:56:13,681 - EmailAgentWithExtraction - INFO - Root save location: email_attachments
+2025-12-20 03:56:13,681 - EmailAgentWithExtraction - INFO - Check interval: 60s
+2025-12-20 03:56:13,681 - EmailAgentWithExtraction - INFO - Only unseen emails: True
+2025-12-20 03:56:13,681 - EmailAgentWithExtraction - INFO - Mark as read: False
+2025-12-20 03:56:13,681 - EmailAgentWithExtraction - INFO - ============================================================
+
+2025-12-20 03:56:13,681 - EmailAgentWithExtraction - INFO - Connecting to imap.gmail.com:993...
+2025-12-20 03:56:14,722 - EmailAgentWithExtraction - INFO - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 03:56:14,722 - EmailAgentWithExtraction - INFO - [2025-12-20 03:56:14] Checking emails...
+2025-12-20 03:56:15,318 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 03:57:15,318 - EmailAgentWithExtraction - INFO - [2025-12-20 03:57:15] Checking emails...
+2025-12-20 03:57:15,909 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 03:58:15,909 - EmailAgentWithExtraction - INFO - [2025-12-20 03:58:15] Checking emails...
+2025-12-20 03:58:16,490 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 03:59:16,491 - EmailAgentWithExtraction - INFO - [2025-12-20 03:59:16] Checking emails...
+2025-12-20 03:59:17,065 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:00:17,066 - EmailAgentWithExtraction - INFO - [2025-12-20 04:00:17] Checking emails...
+2025-12-20 04:00:17,629 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:01:17,629 - EmailAgentWithExtraction - INFO - [2025-12-20 04:01:17] Checking emails...
+2025-12-20 04:01:18,205 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:02:18,205 - EmailAgentWithExtraction - INFO - [2025-12-20 04:02:18] Checking emails...
+2025-12-20 04:02:18,804 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:03:18,804 - EmailAgentWithExtraction - INFO - [2025-12-20 04:03:18] Checking emails...
+2025-12-20 04:03:19,344 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:04:19,344 - EmailAgentWithExtraction - INFO - [2025-12-20 04:04:19] Checking emails...
+2025-12-20 04:04:19,913 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:05:19,913 - EmailAgentWithExtraction - INFO - [2025-12-20 04:05:19] Checking emails...
+2025-12-20 04:05:20,484 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:06:20,485 - EmailAgentWithExtraction - INFO - [2025-12-20 04:06:20] Checking emails...
+2025-12-20 04:06:21,063 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:06:38,209 - EmailAgentWithExtraction - INFO - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 04:06:38,758 - EmailAgentWithExtraction - INFO - [DISCONNECT] Logged out from server
+2025-12-20 04:06:42,359 - EmailAgentWithExtraction - INFO - 
+============================================================
+2025-12-20 04:06:42,359 - EmailAgentWithExtraction - INFO - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 04:06:42,359 - EmailAgentWithExtraction - INFO - ============================================================
+2025-12-20 04:06:42,360 - EmailAgentWithExtraction - INFO - Email: yourmltales@gmail.com
+2025-12-20 04:06:42,360 - EmailAgentWithExtraction - INFO - Server: imap.gmail.com:993
+2025-12-20 04:06:42,360 - EmailAgentWithExtraction - INFO - Watching for subjects: 
+2025-12-20 04:06:42,360 - EmailAgentWithExtraction - INFO - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 04:06:42,360 - EmailAgentWithExtraction - INFO - Root save location: email_attachments
+2025-12-20 04:06:42,361 - EmailAgentWithExtraction - INFO - Check interval: 60s
+2025-12-20 04:06:42,361 - EmailAgentWithExtraction - INFO - Only unseen emails: True
+2025-12-20 04:06:42,361 - EmailAgentWithExtraction - INFO - Mark as read: False
+2025-12-20 04:06:42,362 - EmailAgentWithExtraction - INFO - ============================================================
+
+2025-12-20 04:06:42,362 - EmailAgentWithExtraction - INFO - Connecting to imap.gmail.com:993...
+2025-12-20 04:06:43,664 - EmailAgentWithExtraction - INFO - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 04:06:43,664 - EmailAgentWithExtraction - INFO - [2025-12-20 04:06:43] Checking emails...
+2025-12-20 04:06:44,241 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:07:44,241 - EmailAgentWithExtraction - INFO - [2025-12-20 04:07:44] Checking emails...
+2025-12-20 04:07:44,817 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:08:44,817 - EmailAgentWithExtraction - INFO - [2025-12-20 04:08:44] Checking emails...
+2025-12-20 04:08:45,404 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:09:44,700 - EmailAgentWithExtraction - INFO - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 04:09:45,265 - EmailAgentWithExtraction - INFO - [DISCONNECT] Logged out from server
+2025-12-20 04:09:49,314 - EmailAgentWithExtraction - INFO - 
+============================================================
+2025-12-20 04:09:49,314 - EmailAgentWithExtraction - INFO - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 04:09:49,315 - EmailAgentWithExtraction - INFO - ============================================================
+2025-12-20 04:09:49,315 - EmailAgentWithExtraction - INFO - Email: yourmltales@gmail.com
+2025-12-20 04:09:49,315 - EmailAgentWithExtraction - INFO - Server: imap.gmail.com:993
+2025-12-20 04:09:49,315 - EmailAgentWithExtraction - INFO - Watching for subjects: 
+2025-12-20 04:09:49,315 - EmailAgentWithExtraction - INFO - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 04:09:49,315 - EmailAgentWithExtraction - INFO - Root save location: email_attachments
+2025-12-20 04:09:49,316 - EmailAgentWithExtraction - INFO - Check interval: 60s
+2025-12-20 04:09:49,316 - EmailAgentWithExtraction - INFO - Only unseen emails: True
+2025-12-20 04:09:49,316 - EmailAgentWithExtraction - INFO - Mark as read: False
+2025-12-20 04:09:49,316 - EmailAgentWithExtraction - INFO - ============================================================
+
+2025-12-20 04:09:49,316 - EmailAgentWithExtraction - INFO - Connecting to imap.gmail.com:993...
+2025-12-20 04:09:50,289 - EmailAgentWithExtraction - INFO - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 04:09:50,289 - EmailAgentWithExtraction - INFO - [2025-12-20 04:09:50] Checking emails...
+2025-12-20 04:09:50,874 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:10:50,875 - EmailAgentWithExtraction - INFO - [2025-12-20 04:10:50] Checking emails...
+2025-12-20 04:10:52,724 - EmailAgentWithExtraction - INFO - 
+[MATCH FOUND] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-20 04:10:52,724 - EmailAgentWithExtraction - INFO -   Loan ID: **3000023637**
+2025-12-20 04:10:52,724 - EmailAgentWithExtraction - INFO -   Folder: 3000023637/20251220_041052
+2025-12-20 04:10:52,724 - EmailAgentWithExtraction - INFO -   From: ML TALES <yourmltales@gmail.com>
+2025-12-20 04:10:52,724 - EmailAgentWithExtraction - INFO -   Date: Sat, 20 Dec 2025 09:40:08 +0530
+2025-12-20 04:10:52,726 - EmailAgentWithExtraction - INFO -   [SAVED ATTACHMENT] Application Form.pdf (248.1 KB)
+2025-12-20 04:10:52,732 - EmailAgentWithExtraction - INFO -   [SAVED ATTACHMENT] CAM Kanhiya Bhartiya.xlsx (652.6 KB)
+2025-12-20 04:10:52,733 - EmailAgentWithExtraction - INFO -   [SAVED ATTACHMENT] PD Note Kanhaiya.docx (19.8 KB)
+2025-12-20 04:10:52,733 - EmailAgentWithExtraction - INFO -   [EXTRACTION] Running field extraction for folder: email_attachments/3000023637/20251220_041052
+2025-12-20 04:10:55,471 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'CAM Kanhiya Bhartiya' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:10:55,472 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'mail_subject' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:11:07,711 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'PD Note Kanhaiya' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:11:07,712 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'mail_body' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:11:07,873 - EmailAgentWithExtraction - INFO -   [EXTRACTION] Results saved to email_attachments/3000023637/20251220_041052/extraction_results.xlsx
+2025-12-20 04:11:11,963 - EmailAgentWithExtraction - INFO - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 04:11:12,512 - EmailAgentWithExtraction - INFO - [DISCONNECT] Logged out from server
+2025-12-20 04:34:15,282 - EmailAgentWithExtraction - INFO - 
+============================================================
+2025-12-20 04:34:15,282 - EmailAgentWithExtraction - INFO - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 04:34:15,283 - EmailAgentWithExtraction - INFO - ============================================================
+2025-12-20 04:34:15,283 - EmailAgentWithExtraction - INFO - Email: yourmltales@gmail.com
+2025-12-20 04:34:15,283 - EmailAgentWithExtraction - INFO - Server: imap.gmail.com:993
+2025-12-20 04:34:15,283 - EmailAgentWithExtraction - INFO - Watching for subjects: 
+2025-12-20 04:34:15,283 - EmailAgentWithExtraction - INFO - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 04:34:15,283 - EmailAgentWithExtraction - INFO - Root save location: email_attachments
+2025-12-20 04:34:15,283 - EmailAgentWithExtraction - INFO - Check interval: 60s
+2025-12-20 04:34:15,283 - EmailAgentWithExtraction - INFO - Only unseen emails: True
+2025-12-20 04:34:15,283 - EmailAgentWithExtraction - INFO - Mark as read: False
+2025-12-20 04:34:15,283 - EmailAgentWithExtraction - INFO - ============================================================
+
+2025-12-20 04:34:15,283 - EmailAgentWithExtraction - INFO - Connecting to imap.gmail.com:993...
+2025-12-20 04:34:16,684 - EmailAgentWithExtraction - INFO - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 04:34:16,685 - EmailAgentWithExtraction - INFO - [2025-12-20 04:34:16] Checking emails...
+2025-12-20 04:34:17,261 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:35:17,261 - EmailAgentWithExtraction - INFO - [2025-12-20 04:35:17] Checking emails...
+2025-12-20 04:35:17,839 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:36:17,050 - EmailAgentWithExtraction - INFO - 
+============================================================
+2025-12-20 04:36:17,050 - EmailAgentWithExtraction - INFO - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 04:36:17,051 - EmailAgentWithExtraction - INFO - ============================================================
+2025-12-20 04:36:17,051 - EmailAgentWithExtraction - INFO - Email: yourmltales@gmail.com
+2025-12-20 04:36:17,051 - EmailAgentWithExtraction - INFO - Server: imap.gmail.com:993
+2025-12-20 04:36:17,051 - EmailAgentWithExtraction - INFO - Watching for subjects: 
+2025-12-20 04:36:17,052 - EmailAgentWithExtraction - INFO - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 04:36:17,052 - EmailAgentWithExtraction - INFO - Root save location: email_attachments
+2025-12-20 04:36:17,052 - EmailAgentWithExtraction - INFO - Check interval: 60s
+2025-12-20 04:36:17,052 - EmailAgentWithExtraction - INFO - Only unseen emails: True
+2025-12-20 04:36:17,052 - EmailAgentWithExtraction - INFO - Mark as read: False
+2025-12-20 04:36:17,053 - EmailAgentWithExtraction - INFO - ============================================================
+
+2025-12-20 04:36:17,053 - EmailAgentWithExtraction - INFO - Connecting to imap.gmail.com:993...
+2025-12-20 04:36:17,839 - EmailAgentWithExtraction - INFO - [2025-12-20 04:36:17] Checking emails...
+2025-12-20 04:36:17,994 - EmailAgentWithExtraction - INFO - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 04:36:17,994 - EmailAgentWithExtraction - INFO - [2025-12-20 04:36:17] Checking emails...
+2025-12-20 04:36:18,416 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:36:18,554 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:37:18,416 - EmailAgentWithExtraction - INFO - [2025-12-20 04:37:18] Checking emails...
+2025-12-20 04:37:18,559 - EmailAgentWithExtraction - INFO - [2025-12-20 04:37:18] Checking emails...
+2025-12-20 04:37:19,066 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:37:19,125 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 04:38:19,066 - EmailAgentWithExtraction - INFO - [2025-12-20 04:38:19] Checking emails...
+2025-12-20 04:38:19,125 - EmailAgentWithExtraction - INFO - [2025-12-20 04:38:19] Checking emails...
+2025-12-20 04:38:20,965 - EmailAgentWithExtraction - INFO - 
+[MATCH FOUND] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-20 04:38:20,965 - EmailAgentWithExtraction - INFO -   Loan ID: **3000023637**
+2025-12-20 04:38:20,965 - EmailAgentWithExtraction - INFO -   Folder: 3000023637/20251220_043820
+2025-12-20 04:38:20,965 - EmailAgentWithExtraction - INFO -   From: "rakesh ai.consult" <rakeshaiconsult@gmail.com>
+2025-12-20 04:38:20,966 - EmailAgentWithExtraction - INFO -   Date: Sat, 20 Dec 2025 10:07:10 +0530
+2025-12-20 04:38:20,968 - EmailAgentWithExtraction - INFO -   [SAVED ATTACHMENT] Application Form.pdf (248.1 KB)
+2025-12-20 04:38:20,981 - EmailAgentWithExtraction - INFO -   [SAVED ATTACHMENT] CAM Kanhiya Bhartiya.xlsx (652.6 KB)
+2025-12-20 04:38:20,981 - EmailAgentWithExtraction - INFO -   [SAVED ATTACHMENT] PD Note Kanhaiya.docx (19.8 KB)
+2025-12-20 04:38:20,983 - EmailAgentWithExtraction - INFO -   [EXTRACTION] Running field extraction for folder: email_attachments/3000023637/20251220_043820
+2025-12-20 04:38:21,232 - EmailAgentWithExtraction - INFO - 
+[MATCH FOUND] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-20 04:38:21,232 - EmailAgentWithExtraction - INFO -   Loan ID: **3000023637**
+2025-12-20 04:38:21,232 - EmailAgentWithExtraction - INFO -   Folder: 3000023637/20251220_043821
+2025-12-20 04:38:21,232 - EmailAgentWithExtraction - INFO -   From: "rakesh ai.consult" <rakeshaiconsult@gmail.com>
+2025-12-20 04:38:21,233 - EmailAgentWithExtraction - INFO -   Date: Sat, 20 Dec 2025 10:07:10 +0530
+2025-12-20 04:38:21,241 - EmailAgentWithExtraction - INFO -   [SAVED ATTACHMENT] Application Form.pdf (248.1 KB)
+2025-12-20 04:38:21,260 - EmailAgentWithExtraction - INFO -   [SAVED ATTACHMENT] CAM Kanhiya Bhartiya.xlsx (652.6 KB)
+2025-12-20 04:38:21,260 - EmailAgentWithExtraction - INFO -   [SAVED ATTACHMENT] PD Note Kanhaiya.docx (19.8 KB)
+2025-12-20 04:38:21,261 - EmailAgentWithExtraction - INFO -   [EXTRACTION] Running field extraction for folder: email_attachments/3000023637/20251220_043821
+2025-12-20 04:38:26,228 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'CAM Kanhiya Bhartiya' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:38:26,229 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'mail_subject' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:38:26,737 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'CAM Kanhiya Bhartiya' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:38:26,738 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'mail_subject' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:38:37,828 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'PD Note Kanhaiya' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:38:37,829 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'mail_body' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:38:37,979 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'PD Note Kanhaiya' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:38:37,980 - EmailAgentWithExtraction - WARNING -     [EXTRACTION] Document 'mail_body' does not match any config columns (G onwards). Skipping.
+2025-12-20 04:38:38,068 - EmailAgentWithExtraction - INFO -   [EXTRACTION] Results saved to email_attachments/3000023637/20251220_043820/extraction_results.xlsx
+2025-12-20 04:38:38,281 - EmailAgentWithExtraction - INFO - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 04:38:38,392 - EmailAgentWithExtraction - INFO -   [EXTRACTION] Results saved to email_attachments/3000023637/20251220_043821/extraction_results.xlsx
+2025-12-20 04:38:38,835 - EmailAgentWithExtraction - INFO - [DISCONNECT] Logged out from server
+2025-12-20 04:38:43,823 - EmailAgentWithExtraction - INFO - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 04:38:44,385 - EmailAgentWithExtraction - INFO - [DISCONNECT] Logged out from server
+2025-12-20 05:14:44,310 - 
+============================================================
+2025-12-20 05:14:44,310 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:14:44,310 - ============================================================
+2025-12-20 05:14:44,310 - Email: None
+2025-12-20 05:14:44,310 - Server: imap.gmail.com:993
+2025-12-20 05:14:44,310 - Watching for subjects: 
+2025-12-20 05:14:44,310 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:14:44,310 - Root save location: ./email_attachments
+2025-12-20 05:14:44,310 - Check interval: 60s
+2025-12-20 05:14:44,311 - Only unseen emails: True
+2025-12-20 05:14:44,311 - Mark as read: False
+2025-12-20 05:14:44,311 - ============================================================
+
+2025-12-20 05:14:44,865 - [CONNECTION FAILED] 'NoneType' object has no attribute 'replace'
+2025-12-20 05:14:44,865 - [FAILED] Could not start agent - connection failed
+2025-12-20 05:15:53,407 - 
+============================================================
+2025-12-20 05:15:53,407 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:15:53,407 - ============================================================
+2025-12-20 05:15:53,407 - Email: None
+2025-12-20 05:15:53,407 - Server: imap.gmail.com:993
+2025-12-20 05:15:53,407 - Watching for subjects: 
+2025-12-20 05:15:53,407 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:15:53,407 - Root save location: ./email_attachments
+2025-12-20 05:15:53,408 - Check interval: 60s
+2025-12-20 05:15:53,408 - Only unseen emails: True
+2025-12-20 05:15:53,408 - Mark as read: False
+2025-12-20 05:15:53,408 - ============================================================
+
+2025-12-20 05:15:53,971 - [CONNECTION FAILED] 'NoneType' object has no attribute 'replace'
+2025-12-20 05:15:53,972 - [FAILED] Could not start agent - connection failed
+2025-12-20 05:17:25,385 - 
+============================================================
+2025-12-20 05:17:25,385 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:17:25,385 - ============================================================
+2025-12-20 05:17:25,385 - Email: None
+2025-12-20 05:17:25,385 - Server: imap.gmail.com:993
+2025-12-20 05:17:25,385 - Watching for subjects: 
+2025-12-20 05:17:25,385 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:17:25,386 - Root save location: ./email_attachments
+2025-12-20 05:17:25,386 - Check interval: 60s
+2025-12-20 05:17:25,386 - Only unseen emails: True
+2025-12-20 05:17:25,386 - Mark as read: False
+2025-12-20 05:17:25,386 - ============================================================
+
+2025-12-20 05:17:25,942 - [CONNECTION FAILED] 'NoneType' object has no attribute 'replace'
+2025-12-20 05:17:25,942 - [FAILED] Could not start agent - connection failed
+2025-12-20 05:18:26,727 - 
+============================================================
+2025-12-20 05:18:26,727 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:18:26,727 - ============================================================
+2025-12-20 05:18:26,727 - Email: None
+2025-12-20 05:18:26,727 - Server: imap.gmail.com:993
+2025-12-20 05:18:26,727 - Watching for subjects: 
+2025-12-20 05:18:26,728 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:18:26,728 - Root save location: ./email_attachments
+2025-12-20 05:18:26,728 - Check interval: 60s
+2025-12-20 05:18:26,728 - Only unseen emails: True
+2025-12-20 05:18:26,728 - Mark as read: False
+2025-12-20 05:18:26,728 - ============================================================
+
+2025-12-20 05:18:27,267 - [CONNECTION FAILED] 'NoneType' object has no attribute 'replace'
+2025-12-20 05:18:27,267 - [FAILED] Could not start agent - connection failed
+2025-12-20 05:19:15,981 - 
+============================================================
+2025-12-20 05:19:15,981 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:19:15,981 - ============================================================
+2025-12-20 05:19:15,981 - Email: None
+2025-12-20 05:19:15,982 - Server: imap.gmail.com:993
+2025-12-20 05:19:15,982 - Watching for subjects: 
+2025-12-20 05:19:15,982 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:19:15,982 - Root save location: ./email_attachments
+2025-12-20 05:19:15,982 - Check interval: 60s
+2025-12-20 05:19:15,982 - Only unseen emails: True
+2025-12-20 05:19:15,982 - Mark as read: False
+2025-12-20 05:19:15,982 - ============================================================
+
+2025-12-20 05:19:16,542 - [CONNECTION FAILED] 'NoneType' object has no attribute 'replace'
+2025-12-20 05:19:16,542 - [FAILED] Could not start agent - connection failed
+2025-12-20 05:20:05,528 - 
+============================================================
+2025-12-20 05:20:05,531 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:20:05,531 - ============================================================
+2025-12-20 05:20:05,531 - Email: None
+2025-12-20 05:20:05,531 - Server: imap.gmail.com:993
+2025-12-20 05:20:05,531 - Watching for subjects: 
+2025-12-20 05:20:05,532 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:20:05,532 - Root save location: ./email_attachments
+2025-12-20 05:20:05,532 - Check interval: 60s
+2025-12-20 05:20:05,532 - Only unseen emails: True
+2025-12-20 05:20:05,532 - Mark as read: False
+2025-12-20 05:20:05,533 - ============================================================
+
+2025-12-20 05:20:06,079 - [CONNECTION FAILED] 'NoneType' object has no attribute 'replace'
+2025-12-20 05:20:06,079 - [FAILED] Could not start agent - connection failed
+2025-12-20 05:22:01,462 - 
+============================================================
+2025-12-20 05:22:01,462 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:22:01,462 - ============================================================
+2025-12-20 05:22:01,462 - Email: None
+2025-12-20 05:22:01,463 - Server: imap.gmail.com:993
+2025-12-20 05:22:01,463 - Watching for subjects: 
+2025-12-20 05:22:01,463 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:22:01,463 - Root save location: ./email_attachments
+2025-12-20 05:22:01,463 - Check interval: 60s
+2025-12-20 05:22:01,463 - Only unseen emails: True
+2025-12-20 05:22:01,463 - Mark as read: False
+2025-12-20 05:22:01,463 - ============================================================
+
+2025-12-20 05:22:02,009 - [CONNECTION FAILED] 'NoneType' object has no attribute 'replace'
+2025-12-20 05:22:02,009 - [FAILED] Could not start agent - connection failed
+2025-12-20 05:24:20,817 - 
+============================================================
+2025-12-20 05:24:20,817 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:24:20,817 - ============================================================
+2025-12-20 05:24:20,817 - Email: None
+2025-12-20 05:24:20,817 - Server: imap.gmail.com:993
+2025-12-20 05:24:20,818 - Watching for subjects: 
+2025-12-20 05:24:20,818 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:24:20,818 - Root save location: ./email_attachments
+2025-12-20 05:24:20,818 - Check interval: 60s
+2025-12-20 05:24:20,818 - Only unseen emails: True
+2025-12-20 05:24:20,818 - Mark as read: False
+2025-12-20 05:24:20,818 - ============================================================
+
+2025-12-20 05:24:20,818 - Connecting to imap.gmail.com:993...
+2025-12-20 05:24:21,407 - Connection attempt 1/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:24:26,407 - Connecting to imap.gmail.com:993...
+2025-12-20 05:24:26,953 - Connection attempt 2/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:24:31,954 - Connecting to imap.gmail.com:993...
+2025-12-20 05:24:32,515 - Connection attempt 3/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:24:32,515 - [FAILED] Could not connect after all retries
+2025-12-20 05:24:32,515 - [FAILED] Could not start agent - connection failed
+2025-12-20 05:28:00,340 - EmailAgentWithExtraction - INFO - 
+============================================================
+2025-12-20 05:28:00,340 - EmailAgentWithExtraction - INFO - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:28:00,340 - EmailAgentWithExtraction - INFO - ============================================================
+2025-12-20 05:28:00,340 - EmailAgentWithExtraction - INFO - Email: yourmltales@gmail.com
+2025-12-20 05:28:00,341 - EmailAgentWithExtraction - INFO - Server: imap.gmail.com:993
+2025-12-20 05:28:00,341 - EmailAgentWithExtraction - INFO - Watching for subjects: 
+2025-12-20 05:28:00,341 - EmailAgentWithExtraction - INFO - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 05:28:00,341 - EmailAgentWithExtraction - INFO - Root save location: email_attachments
+2025-12-20 05:28:00,341 - EmailAgentWithExtraction - INFO - Check interval: 60s
+2025-12-20 05:28:00,341 - EmailAgentWithExtraction - INFO - Only unseen emails: True
+2025-12-20 05:28:00,341 - EmailAgentWithExtraction - INFO - Mark as read: False
+2025-12-20 05:28:00,341 - EmailAgentWithExtraction - INFO - ============================================================
+
+2025-12-20 05:28:00,342 - EmailAgentWithExtraction - INFO - Connecting to imap.gmail.com:993...
+2025-12-20 05:28:01,350 - EmailAgentWithExtraction - INFO - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 05:28:01,350 - EmailAgentWithExtraction - INFO - [2025-12-20 05:28:01] Checking emails...
+2025-12-20 05:28:01,916 - EmailAgentWithExtraction - INFO -   No new attachments
+2025-12-20 05:28:08,972 - EmailAgentWithExtraction - INFO - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 05:28:09,521 - EmailAgentWithExtraction - INFO - [DISCONNECT] Logged out from server
+2025-12-20 05:29:53,841 - 
+============================================================
+2025-12-20 05:29:53,842 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:29:53,842 - ============================================================
+2025-12-20 05:29:53,842 - Email: None
+2025-12-20 05:29:53,842 - Server: imap.gmail.com:993
+2025-12-20 05:29:53,842 - Watching for subjects: 
+2025-12-20 05:29:53,842 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:29:53,842 - Root save location: ./email_attachments
+2025-12-20 05:29:53,842 - Check interval: 60s
+2025-12-20 05:29:53,842 - Only unseen emails: True
+2025-12-20 05:29:53,842 - Mark as read: False
+2025-12-20 05:29:53,842 - ============================================================
+
+2025-12-20 05:29:53,843 - Connecting to imap.gmail.com:993...
+2025-12-20 05:29:54,389 - Connection attempt 1/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:29:59,390 - Connecting to imap.gmail.com:993...
+2025-12-20 05:29:59,929 - Connection attempt 2/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:30:04,930 - Connecting to imap.gmail.com:993...
+2025-12-20 05:30:05,485 - Connection attempt 3/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:30:05,485 - [FAILED] Could not connect after all retries
+2025-12-20 05:30:05,485 - [FAILED] Could not start agent - connection failed
+2025-12-20 05:30:51,709 - 
+============================================================
+2025-12-20 05:30:51,709 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:30:51,709 - ============================================================
+2025-12-20 05:30:51,710 - Email: None
+2025-12-20 05:30:51,710 - Server: imap.gmail.com:993
+2025-12-20 05:30:51,710 - Watching for subjects: 
+2025-12-20 05:30:51,710 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:30:51,710 - Root save location: ./email_attachments
+2025-12-20 05:30:51,710 - Check interval: 60s
+2025-12-20 05:30:51,710 - Only unseen emails: True
+2025-12-20 05:30:51,710 - Mark as read: False
+2025-12-20 05:30:51,710 - ============================================================
+
+2025-12-20 05:30:51,710 - Connecting to imap.gmail.com:993...
+2025-12-20 05:30:52,259 - Connection attempt 1/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:30:57,259 - Connecting to imap.gmail.com:993...
+2025-12-20 05:30:57,811 - Connection attempt 2/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:31:02,811 - Connecting to imap.gmail.com:993...
+2025-12-20 05:31:03,345 - Connection attempt 3/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:31:03,345 - [FAILED] Could not connect after all retries
+2025-12-20 05:31:03,345 - [FAILED] Could not start agent - connection failed
+2025-12-20 05:32:44,049 - 
+============================================================
+2025-12-20 05:32:44,049 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:32:44,049 - ============================================================
+2025-12-20 05:32:44,050 - Email: None
+2025-12-20 05:32:44,050 - Server: imap.gmail.com:993
+2025-12-20 05:32:44,050 - Watching for subjects: 
+2025-12-20 05:32:44,050 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:32:44,050 - Root save location: ./email_attachments
+2025-12-20 05:32:44,050 - Check interval: 60s
+2025-12-20 05:32:44,050 - Only unseen emails: True
+2025-12-20 05:32:44,050 - Mark as read: False
+2025-12-20 05:32:44,050 - ============================================================
+
+2025-12-20 05:32:44,050 - Connecting to imap.gmail.com:993...
+2025-12-20 05:32:44,598 - Connection attempt 1/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:32:49,598 - Connecting to imap.gmail.com:993...
+2025-12-20 05:32:50,156 - Connection attempt 2/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:34:02,118 - 
+============================================================
+2025-12-20 05:34:02,118 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:34:02,118 - ============================================================
+2025-12-20 05:34:02,118 - Email: None
+2025-12-20 05:34:02,118 - Server: imap.gmail.com:993
+2025-12-20 05:34:02,118 - Watching for subjects: 
+2025-12-20 05:34:02,118 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:34:02,118 - Root save location: ./email_attachments
+2025-12-20 05:34:02,119 - Check interval: 60s
+2025-12-20 05:34:02,119 - Only unseen emails: True
+2025-12-20 05:34:02,119 - Mark as read: False
+2025-12-20 05:34:02,119 - ============================================================
+
+2025-12-20 05:34:02,119 - Connecting to imap.gmail.com:993...
+2025-12-20 05:34:02,671 - Connection attempt 1/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:37:02,561 - 
+============================================================
+2025-12-20 05:37:02,562 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:37:02,562 - ============================================================
+2025-12-20 05:37:02,562 - Email: None
+2025-12-20 05:37:02,562 - Server: imap.gmail.com:993
+2025-12-20 05:37:02,562 - Watching for subjects: 
+2025-12-20 05:37:02,562 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:37:02,562 - Root save location: ./email_attachments
+2025-12-20 05:37:02,562 - Check interval: 60s
+2025-12-20 05:37:02,562 - Only unseen emails: True
+2025-12-20 05:37:02,562 - Mark as read: False
+2025-12-20 05:37:02,562 - ============================================================
+
+2025-12-20 05:37:02,562 - Connecting to imap.gmail.com:993...
+2025-12-20 05:37:03,125 - Connection attempt 1/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:37:08,125 - Connecting to imap.gmail.com:993...
+2025-12-20 05:37:08,675 - Connection attempt 2/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:38:22,260 - 
+============================================================
+2025-12-20 05:38:22,260 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:38:22,260 - ============================================================
+2025-12-20 05:38:22,260 - Email: None
+2025-12-20 05:38:22,260 - Server: imap.gmail.com:993
+2025-12-20 05:38:22,260 - Watching for subjects: 
+2025-12-20 05:38:22,260 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:38:22,260 - Root save location: ./email_attachments
+2025-12-20 05:38:22,260 - Check interval: 60s
+2025-12-20 05:38:22,261 - Only unseen emails: True
+2025-12-20 05:38:22,261 - Mark as read: False
+2025-12-20 05:38:22,261 - ============================================================
+
+2025-12-20 05:38:22,261 - Connecting to imap.gmail.com:993...
+2025-12-20 05:38:22,807 - Connection attempt 1/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:38:27,808 - Connecting to imap.gmail.com:993...
+2025-12-20 05:38:28,346 - Connection attempt 2/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:39:02,107 - 
+============================================================
+2025-12-20 05:39:02,108 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:39:02,108 - ============================================================
+2025-12-20 05:39:02,108 - Email: None
+2025-12-20 05:39:02,108 - Server: imap.gmail.com:993
+2025-12-20 05:39:02,108 - Watching for subjects: 
+2025-12-20 05:39:02,108 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:39:02,108 - Root save location: ./email_attachments
+2025-12-20 05:39:02,108 - Check interval: 60s
+2025-12-20 05:39:02,108 - Only unseen emails: True
+2025-12-20 05:39:02,108 - Mark as read: False
+2025-12-20 05:39:02,108 - ============================================================
+
+2025-12-20 05:39:02,109 - Connecting to imap.gmail.com:993...
+2025-12-20 05:39:02,661 - Connection attempt 1/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:39:07,662 - Connecting to imap.gmail.com:993...
+2025-12-20 05:39:08,202 - Connection attempt 2/3 failed: 'NoneType' object has no attribute 'replace'
+2025-12-20 05:44:20,564 - 
+============================================================
+2025-12-20 05:44:20,564 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:44:20,564 - ============================================================
+2025-12-20 05:44:20,565 - Email: yourmltales@gmail.com
+2025-12-20 05:44:20,565 - Server: imap.gmail.com:993
+2025-12-20 05:44:20,565 - Watching for subjects: 
+2025-12-20 05:44:20,565 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:44:20,565 - Root save location: ./email_attachments
+2025-12-20 05:44:20,565 - Check interval: 60s
+2025-12-20 05:44:20,565 - Only unseen emails: True
+2025-12-20 05:44:20,565 - Mark as read: False
+2025-12-20 05:44:20,565 - ============================================================
+
+2025-12-20 05:44:20,565 - Connecting to imap.gmail.com:993...
+2025-12-20 05:44:21,568 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 05:44:21,568 - [2025-12-20 05:44:21] Checking emails...
+2025-12-20 05:44:22,133 -   No new attachments
+2025-12-20 05:45:22,133 - [2025-12-20 05:45:22] Checking emails...
+2025-12-20 05:45:23,964 -   No new attachments
+2025-12-20 05:46:23,964 - [2025-12-20 05:46:23] Checking emails...
+2025-12-20 05:46:24,538 -   No new attachments
+2025-12-20 05:47:20,743 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 05:47:21,017 - [DISCONNECTED] Logged out from email server
+2025-12-20 05:52:26,534 - 
+============================================================
+2025-12-20 05:52:26,534 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:52:26,534 - ============================================================
+2025-12-20 05:52:26,534 - Email: yourmltales@gmail.com
+2025-12-20 05:52:26,534 - Server: imap.gmail.com:993
+2025-12-20 05:52:26,534 - Watching for subjects: 
+2025-12-20 05:52:26,534 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:52:26,534 - Root save location: ./email_attachments
+2025-12-20 05:52:26,535 - Check interval: 60s
+2025-12-20 05:52:26,535 - Only unseen emails: True
+2025-12-20 05:52:26,535 - Mark as read: False
+2025-12-20 05:52:26,535 - ============================================================
+
+2025-12-20 05:52:26,535 - Connecting to imap.gmail.com:993...
+2025-12-20 05:52:27,481 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 05:52:27,481 - [2025-12-20 05:52:27] Checking emails...
+2025-12-20 05:52:29,328 -   No new attachments
+2025-12-20 05:53:29,331 - [2025-12-20 05:53:29] Checking emails...
+2025-12-20 05:53:31,064 -   No new attachments
+2025-12-20 05:54:31,065 - [2025-12-20 05:54:31] Checking emails...
+2025-12-20 05:54:31,645 -   No new attachments
+2025-12-20 05:54:32,924 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 05:54:33,197 - [DISCONNECTED] Logged out from email server
+2025-12-20 05:54:50,392 - 
+============================================================
+2025-12-20 05:54:50,392 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:54:50,392 - ============================================================
+2025-12-20 05:54:50,392 - Email: yourmltales@gmail.com
+2025-12-20 05:54:50,392 - Server: imap.gmail.com:993
+2025-12-20 05:54:50,393 - Watching for subjects: 
+2025-12-20 05:54:50,393 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:54:50,393 - Root save location: ./email_attachments
+2025-12-20 05:54:50,393 - Check interval: 60s
+2025-12-20 05:54:50,393 - Only unseen emails: True
+2025-12-20 05:54:50,393 - Mark as read: False
+2025-12-20 05:54:50,393 - ============================================================
+
+2025-12-20 05:54:50,393 - Connecting to imap.gmail.com:993...
+2025-12-20 05:54:51,677 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 05:54:51,678 - [2025-12-20 05:54:51] Checking emails...
+2025-12-20 05:54:52,283 -   No new attachments
+2025-12-20 05:55:52,284 - [2025-12-20 05:55:52] Checking emails...
+2025-12-20 05:55:52,831 -   No new attachments
+2025-12-20 05:55:59,942 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 05:56:00,211 - [DISCONNECTED] Logged out from email server
+2025-12-20 05:56:03,511 - 
+============================================================
+2025-12-20 05:56:03,511 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:56:03,511 - ============================================================
+2025-12-20 05:56:03,511 - Email: yourmltales@gmail.com
+2025-12-20 05:56:03,511 - Server: imap.gmail.com:993
+2025-12-20 05:56:03,511 - Watching for subjects: 
+2025-12-20 05:56:03,512 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:56:03,512 - Root save location: ./email_attachments
+2025-12-20 05:56:03,512 - Check interval: 60s
+2025-12-20 05:56:03,512 - Only unseen emails: True
+2025-12-20 05:56:03,512 - Mark as read: False
+2025-12-20 05:56:03,512 - ============================================================
+
+2025-12-20 05:56:03,512 - Connecting to imap.gmail.com:993...
+2025-12-20 05:56:04,442 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 05:56:04,442 - [2025-12-20 05:56:04] Checking emails...
+2025-12-20 05:56:05,001 -   No new attachments
+2025-12-20 05:56:25,556 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 05:56:25,820 - [DISCONNECTED] Logged out from email server
+2025-12-20 05:56:28,890 - 
+============================================================
+2025-12-20 05:56:28,890 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:56:28,890 - ============================================================
+2025-12-20 05:56:28,890 - Email: yourmltales@gmail.com
+2025-12-20 05:56:28,890 - Server: imap.gmail.com:993
+2025-12-20 05:56:28,890 - Watching for subjects: 
+2025-12-20 05:56:28,891 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:56:28,891 - Root save location: ./email_attachments
+2025-12-20 05:56:28,891 - Check interval: 60s
+2025-12-20 05:56:28,891 - Only unseen emails: True
+2025-12-20 05:56:28,891 - Mark as read: False
+2025-12-20 05:56:28,891 - ============================================================
+
+2025-12-20 05:56:28,891 - Connecting to imap.gmail.com:993...
+2025-12-20 05:56:30,196 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 05:56:30,196 - [2025-12-20 05:56:30] Checking emails...
+2025-12-20 05:56:30,778 -   No new attachments
+2025-12-20 05:56:33,828 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 05:56:34,111 - [DISCONNECTED] Logged out from email server
+2025-12-20 05:57:34,566 - 
+============================================================
+2025-12-20 05:57:34,566 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:57:34,567 - ============================================================
+2025-12-20 05:57:34,567 - Email: yourmltales@gmail.com
+2025-12-20 05:57:34,567 - Server: imap.gmail.com:993
+2025-12-20 05:57:34,567 - Watching for subjects: 
+2025-12-20 05:57:34,567 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:57:34,567 - Root save location: ./email_attachments
+2025-12-20 05:57:34,567 - Check interval: 60s
+2025-12-20 05:57:34,567 - Only unseen emails: True
+2025-12-20 05:57:34,567 - Mark as read: False
+2025-12-20 05:57:34,567 - ============================================================
+
+2025-12-20 05:57:34,568 - Connecting to imap.gmail.com:993...
+2025-12-20 05:57:35,526 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 05:57:35,526 - [2025-12-20 05:57:35] Checking emails...
+2025-12-20 05:57:36,108 -   No new attachments
+2025-12-20 05:58:13,503 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 05:58:13,775 - [DISCONNECTED] Logged out from email server
+2025-12-20 05:58:17,468 - 
+============================================================
+2025-12-20 05:58:17,468 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 05:58:17,468 - ============================================================
+2025-12-20 05:58:17,469 - Email: yourmltales@gmail.com
+2025-12-20 05:58:17,469 - Server: imap.gmail.com:993
+2025-12-20 05:58:17,469 - Watching for subjects: 
+2025-12-20 05:58:17,469 - Loan ID Pattern: [A-Z0-9]+
+2025-12-20 05:58:17,469 - Root save location: ./email_attachments
+2025-12-20 05:58:17,470 - Check interval: 60s
+2025-12-20 05:58:17,470 - Only unseen emails: True
+2025-12-20 05:58:17,470 - Mark as read: False
+2025-12-20 05:58:17,470 - ============================================================
+
+2025-12-20 05:58:17,471 - Connecting to imap.gmail.com:993...
+2025-12-20 05:58:18,409 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 05:58:18,410 - [2025-12-20 05:58:18] Checking emails...
+2025-12-20 05:58:18,982 -   No new attachments
+2025-12-20 05:58:20,678 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 05:58:20,951 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:04:59,178 - 
+============================================================
+2025-12-20 06:04:59,178 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:04:59,178 - ============================================================
+2025-12-20 06:04:59,178 - Email: yourmltales@gmail.com
+2025-12-20 06:04:59,178 - Server: imap.gmail.com:993
+2025-12-20 06:04:59,178 - Watching for subjects: 
+2025-12-20 06:04:59,178 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:04:59,179 - Root save location: email_attachments
+2025-12-20 06:04:59,179 - Check interval: 60s
+2025-12-20 06:04:59,179 - Only unseen emails: True
+2025-12-20 06:04:59,179 - Mark as read: False
+2025-12-20 06:04:59,179 - ============================================================
+
+2025-12-20 06:04:59,179 - Connecting to imap.gmail.com:993...
+2025-12-20 06:05:00,473 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:05:00,473 - [2025-12-20 06:05:00] Checking emails...
+2025-12-20 06:05:01,055 -   No new attachments
+2025-12-20 06:06:01,059 - [2025-12-20 06:06:01] Checking emails...
+2025-12-20 06:06:03,133 -   No new attachments
+2025-12-20 06:07:03,133 - [2025-12-20 06:07:03] Checking emails...
+2025-12-20 06:07:03,749 -   No new attachments
+2025-12-20 06:08:03,750 - [2025-12-20 06:08:03] Checking emails...
+2025-12-20 06:08:04,345 -   No new attachments
+2025-12-20 06:08:08,980 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:08:09,264 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:09:08,360 - 
+============================================================
+2025-12-20 06:09:08,360 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:09:08,360 - ============================================================
+2025-12-20 06:09:08,360 - Email: yourmltales@gmail.com
+2025-12-20 06:09:08,360 - Server: imap.gmail.com:993
+2025-12-20 06:09:08,360 - Watching for subjects: 
+2025-12-20 06:09:08,360 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:09:08,360 - Root save location: email_attachments
+2025-12-20 06:09:08,360 - Check interval: 60s
+2025-12-20 06:09:08,360 - Only unseen emails: True
+2025-12-20 06:09:08,360 - Mark as read: False
+2025-12-20 06:09:08,360 - ============================================================
+
+2025-12-20 06:09:08,361 - Connecting to imap.gmail.com:993...
+2025-12-20 06:09:09,513 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:09:09,513 - [2025-12-20 06:09:09] Checking emails...
+2025-12-20 06:09:10,061 -   No new attachments
+2025-12-20 06:10:10,061 - [2025-12-20 06:10:10] Checking emails...
+2025-12-20 06:10:11,867 -   No new attachments
+2025-12-20 06:11:11,868 - [2025-12-20 06:11:11] Checking emails...
+2025-12-20 06:11:12,442 -   No new attachments
+2025-12-20 06:11:24,053 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:11:24,320 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:13:30,369 - 
+============================================================
+2025-12-20 06:13:30,369 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:13:30,369 - ============================================================
+2025-12-20 06:13:30,369 - Email: yourmltales@gmail.com
+2025-12-20 06:13:30,369 - Server: imap.gmail.com:993
+2025-12-20 06:13:30,369 - Watching for subjects: 
+2025-12-20 06:13:30,369 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:13:30,369 - Root save location: email_attachments
+2025-12-20 06:13:30,369 - Check interval: 60s
+2025-12-20 06:13:30,369 - Only unseen emails: True
+2025-12-20 06:13:30,370 - Mark as read: False
+2025-12-20 06:13:30,370 - ============================================================
+
+2025-12-20 06:13:30,370 - Connecting to imap.gmail.com:993...
+2025-12-20 06:13:31,406 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:13:31,407 - [2025-12-20 06:13:31] Checking emails...
+2025-12-20 06:13:31,966 -   No new attachments
+2025-12-20 06:13:55,257 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:13:55,532 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:15:31,334 - 
+============================================================
+2025-12-20 06:15:31,334 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:15:31,334 - ============================================================
+2025-12-20 06:15:31,334 - Email: yourmltales@gmail.com
+2025-12-20 06:15:31,335 - Server: imap.gmail.com:993
+2025-12-20 06:15:31,335 - Watching for subjects: 
+2025-12-20 06:15:31,335 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:15:31,335 - Root save location: email_attachments
+2025-12-20 06:15:31,335 - Check interval: 60s
+2025-12-20 06:15:31,335 - Only unseen emails: True
+2025-12-20 06:15:31,335 - Mark as read: False
+2025-12-20 06:15:31,335 - ============================================================
+
+2025-12-20 06:15:31,335 - Connecting to imap.gmail.com:993...
+2025-12-20 06:15:32,299 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:15:32,299 - [2025-12-20 06:15:32] Checking emails...
+2025-12-20 06:15:32,891 -   No new attachments
+2025-12-20 06:16:32,892 - [2025-12-20 06:16:32] Checking emails...
+2025-12-20 06:16:36,639 -   No new attachments
+2025-12-20 06:17:10,492 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:17:10,766 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:17:36,622 - 
+============================================================
+2025-12-20 06:17:36,622 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:17:36,622 - ============================================================
+2025-12-20 06:17:36,622 - Email: yourmltales@gmail.com
+2025-12-20 06:17:36,623 - Server: imap.gmail.com:993
+2025-12-20 06:17:36,623 - Watching for subjects: 
+2025-12-20 06:17:36,623 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:17:36,623 - Root save location: email_attachments
+2025-12-20 06:17:36,623 - Check interval: 60s
+2025-12-20 06:17:36,624 - Only unseen emails: True
+2025-12-20 06:17:36,624 - Mark as read: False
+2025-12-20 06:17:36,624 - ============================================================
+
+2025-12-20 06:17:36,624 - Connecting to imap.gmail.com:993...
+2025-12-20 06:17:37,585 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:17:37,585 - [2025-12-20 06:17:37] Checking emails...
+2025-12-20 06:17:38,224 -   No new attachments
+2025-12-20 06:18:38,225 - [2025-12-20 06:18:38] Checking emails...
+2025-12-20 06:18:42,738 -   No new attachments
+2025-12-20 06:19:42,739 - [2025-12-20 06:19:42] Checking emails...
+2025-12-20 06:19:43,341 -   No new attachments
+2025-12-20 06:19:47,636 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:19:47,922 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:19:52,446 - 
+============================================================
+2025-12-20 06:19:52,446 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:19:52,446 - ============================================================
+2025-12-20 06:19:52,447 - Email: yourmltales@gmail.com
+2025-12-20 06:19:52,447 - Server: imap.gmail.com:993
+2025-12-20 06:19:52,447 - Watching for subjects: 
+2025-12-20 06:19:52,447 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:19:52,447 - Root save location: email_attachments
+2025-12-20 06:19:52,447 - Check interval: 60s
+2025-12-20 06:19:52,447 - Only unseen emails: True
+2025-12-20 06:19:52,447 - Mark as read: False
+2025-12-20 06:19:52,447 - ============================================================
+
+2025-12-20 06:19:52,447 - Connecting to imap.gmail.com:993...
+2025-12-20 06:19:53,420 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:19:53,420 - [2025-12-20 06:19:53] Checking emails...
+2025-12-20 06:19:53,956 -   No new attachments
+2025-12-20 06:20:53,957 - [2025-12-20 06:20:53] Checking emails...
+2025-12-20 06:20:55,832 -   No new attachments
+2025-12-20 06:21:55,833 - [2025-12-20 06:21:55] Checking emails...
+2025-12-20 06:21:56,415 -   No new attachments
+2025-12-20 06:22:56,415 - [2025-12-20 06:22:56] Checking emails...
+2025-12-20 06:22:56,985 -   No new attachments
+2025-12-20 06:23:40,175 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:23:40,449 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:23:44,087 - 
+============================================================
+2025-12-20 06:23:44,087 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:23:44,087 - ============================================================
+2025-12-20 06:23:44,087 - Email: yourmltales@gmail.com
+2025-12-20 06:23:44,087 - Server: imap.gmail.com:993
+2025-12-20 06:23:44,087 - Watching for subjects: 
+2025-12-20 06:23:44,087 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:23:44,087 - Root save location: email_attachments
+2025-12-20 06:23:44,087 - Check interval: 60s
+2025-12-20 06:23:44,087 - Only unseen emails: True
+2025-12-20 06:23:44,087 - Mark as read: False
+2025-12-20 06:23:44,087 - ============================================================
+
+2025-12-20 06:23:44,087 - Connecting to imap.gmail.com:993...
+2025-12-20 06:23:45,028 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:23:45,028 - [2025-12-20 06:23:45] Checking emails...
+2025-12-20 06:23:45,570 -   No new attachments
+2025-12-20 06:24:45,570 - [2025-12-20 06:24:45] Checking emails...
+2025-12-20 06:24:46,152 -   No new attachments
+2025-12-20 06:25:46,153 - [2025-12-20 06:25:46] Checking emails...
+2025-12-20 06:25:49,675 -   No new attachments
+2025-12-20 06:26:49,676 - [2025-12-20 06:26:49] Checking emails...
+2025-12-20 06:26:50,263 -   No new attachments
+2025-12-20 06:27:50,264 - [2025-12-20 06:27:50] Checking emails...
+2025-12-20 06:27:50,841 -   No new attachments
+2025-12-20 06:28:50,841 - [2025-12-20 06:28:50] Checking emails...
+2025-12-20 06:28:51,391 -   No new attachments
+2025-12-20 06:29:51,392 - [2025-12-20 06:29:51] Checking emails...
+2025-12-20 06:29:51,983 -   No new attachments
+2025-12-20 06:30:45,790 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:30:46,063 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:30:48,456 - 
+============================================================
+2025-12-20 06:30:48,457 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:30:48,457 - ============================================================
+2025-12-20 06:30:48,457 - Email: yourmltales@gmail.com
+2025-12-20 06:30:48,457 - Server: imap.gmail.com:993
+2025-12-20 06:30:48,457 - Watching for subjects: 
+2025-12-20 06:30:48,457 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:30:48,457 - Root save location: email_attachments
+2025-12-20 06:30:48,457 - Check interval: 60s
+2025-12-20 06:30:48,458 - Only unseen emails: True
+2025-12-20 06:30:48,458 - Mark as read: False
+2025-12-20 06:30:48,458 - ============================================================
+
+2025-12-20 06:30:48,458 - Connecting to imap.gmail.com:993...
+2025-12-20 06:30:49,409 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:30:49,409 - [2025-12-20 06:30:49] Checking emails...
+2025-12-20 06:30:49,981 -   No new attachments
+2025-12-20 06:31:49,981 - [2025-12-20 06:31:49] Checking emails...
+2025-12-20 06:31:55,790 -   No new attachments
+2025-12-20 06:32:55,790 - [2025-12-20 06:32:55] Checking emails...
+2025-12-20 06:32:56,370 -   No new attachments
+2025-12-20 06:33:56,371 - [2025-12-20 06:33:56] Checking emails...
+2025-12-20 06:33:56,930 -   No new attachments
+2025-12-20 06:34:56,931 - [2025-12-20 06:34:56] Checking emails...
+2025-12-20 06:34:57,517 -   No new attachments
+2025-12-20 06:35:31,541 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:35:31,814 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:35:35,289 - 
+============================================================
+2025-12-20 06:35:35,289 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:35:35,289 - ============================================================
+2025-12-20 06:35:35,289 - Email: yourmltales@gmail.com
+2025-12-20 06:35:35,289 - Server: imap.gmail.com:993
+2025-12-20 06:35:35,290 - Watching for subjects: 
+2025-12-20 06:35:35,290 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:35:35,290 - Root save location: email_attachments
+2025-12-20 06:35:35,290 - Check interval: 60s
+2025-12-20 06:35:35,290 - Only unseen emails: True
+2025-12-20 06:35:35,290 - Mark as read: False
+2025-12-20 06:35:35,290 - ============================================================
+
+2025-12-20 06:35:35,290 - Connecting to imap.gmail.com:993...
+2025-12-20 06:35:36,286 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:35:36,287 - [2025-12-20 06:35:36] Checking emails...
+2025-12-20 06:35:36,854 -   No new attachments
+2025-12-20 06:36:36,855 - [2025-12-20 06:36:36] Checking emails...
+2025-12-20 06:36:38,718 -   No new attachments
+2025-12-20 06:37:38,719 - [2025-12-20 06:37:38] Checking emails...
+2025-12-20 06:37:39,305 -   No new attachments
+2025-12-20 06:38:39,308 - [2025-12-20 06:38:39] Checking emails...
+2025-12-20 06:38:39,869 -   No new attachments
+2025-12-20 06:39:39,870 - [2025-12-20 06:39:39] Checking emails...
+2025-12-20 06:39:40,435 -   No new attachments
+2025-12-20 06:39:51,477 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:39:51,750 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:40:11,919 - 
+============================================================
+2025-12-20 06:40:11,920 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:40:11,920 - ============================================================
+2025-12-20 06:40:11,920 - Email: yourmltales@gmail.com
+2025-12-20 06:40:11,920 - Server: imap.gmail.com:993
+2025-12-20 06:40:11,920 - Watching for subjects: 
+2025-12-20 06:40:11,920 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:40:11,920 - Root save location: email_attachments
+2025-12-20 06:40:11,920 - Check interval: 6s
+2025-12-20 06:40:11,920 - Only unseen emails: True
+2025-12-20 06:40:11,920 - Mark as read: False
+2025-12-20 06:40:11,920 - ============================================================
+
+2025-12-20 06:40:11,921 - Connecting to imap.gmail.com:993...
+2025-12-20 06:40:12,861 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:40:12,861 - [2025-12-20 06:40:12] Checking emails...
+2025-12-20 06:40:13,421 -   No new attachments
+2025-12-20 06:40:19,421 - [2025-12-20 06:40:19] Checking emails...
+2025-12-20 06:40:19,980 -   No new attachments
+2025-12-20 06:40:25,980 - [2025-12-20 06:40:25] Checking emails...
+2025-12-20 06:40:26,537 -   No new attachments
+2025-12-20 06:40:32,537 - [2025-12-20 06:40:32] Checking emails...
+2025-12-20 06:40:33,114 -   No new attachments
+2025-12-20 06:40:39,115 - [2025-12-20 06:40:39] Checking emails...
+2025-12-20 06:40:41,007 -   No new attachments
+2025-12-20 06:40:47,007 - [2025-12-20 06:40:47] Checking emails...
+2025-12-20 06:40:47,729 -   No new attachments
+2025-12-20 06:40:53,729 - [2025-12-20 06:40:53] Checking emails...
+2025-12-20 06:40:54,316 -   No new attachments
+2025-12-20 06:40:56,238 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:40:56,510 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:41:55,669 - 
+============================================================
+2025-12-20 06:41:55,669 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:41:55,670 - ============================================================
+2025-12-20 06:41:55,670 - Email: yourmltales@gmail.com
+2025-12-20 06:41:55,670 - Server: imap.gmail.com:993
+2025-12-20 06:41:55,670 - Watching for subjects: 
+2025-12-20 06:41:55,670 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:41:55,670 - Root save location: email_attachments
+2025-12-20 06:41:55,670 - Check interval: 6s
+2025-12-20 06:41:55,670 - Only unseen emails: True
+2025-12-20 06:41:55,670 - Mark as read: False
+2025-12-20 06:41:55,670 - ============================================================
+
+2025-12-20 06:41:55,670 - Connecting to imap.gmail.com:993...
+2025-12-20 06:41:56,635 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:41:56,635 - [2025-12-20 06:41:56] Checking emails...
+2025-12-20 06:41:57,177 -   No new attachments
+2025-12-20 06:42:03,177 - [2025-12-20 06:42:03] Checking emails...
+2025-12-20 06:42:03,713 -   No new attachments
+2025-12-20 06:42:09,713 - [2025-12-20 06:42:09] Checking emails...
+2025-12-20 06:42:10,276 -   No new attachments
+2025-12-20 06:42:16,277 - [2025-12-20 06:42:16] Checking emails...
+2025-12-20 06:42:17,955 -   No new attachments
+2025-12-20 06:42:23,955 - [2025-12-20 06:42:23] Checking emails...
+2025-12-20 06:42:24,523 -   No new attachments
+2025-12-20 06:42:26,319 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:42:26,580 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:50:37,535 - 
+============================================================
+2025-12-20 06:50:37,535 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:50:37,536 - ============================================================
+2025-12-20 06:50:37,536 - Email: yourmltales@gmail.com
+2025-12-20 06:50:37,536 - Server: imap.gmail.com:993
+2025-12-20 06:50:37,536 - Watching for subjects: 
+2025-12-20 06:50:37,536 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:50:37,536 - Root save location: email_attachments
+2025-12-20 06:50:37,536 - Check interval: 6s
+2025-12-20 06:50:37,536 - Only unseen emails: True
+2025-12-20 06:50:37,536 - Mark as read: False
+2025-12-20 06:50:37,536 - ============================================================
+
+2025-12-20 06:50:37,536 - Connecting to imap.gmail.com:993...
+2025-12-20 06:50:38,492 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:50:38,492 - [2025-12-20 06:50:38] Checking emails...
+2025-12-20 06:50:39,106 -   No new attachments
+2025-12-20 06:50:45,107 - [2025-12-20 06:50:45] Checking emails...
+2025-12-20 06:50:45,675 -   No new attachments
+2025-12-20 06:50:51,676 - [2025-12-20 06:50:51] Checking emails...
+2025-12-20 06:50:52,256 -   No new attachments
+2025-12-20 06:50:58,256 - [2025-12-20 06:50:58] Checking emails...
+2025-12-20 06:51:00,149 -   No new attachments
+2025-12-20 06:51:06,149 - [2025-12-20 06:51:06] Checking emails...
+2025-12-20 06:51:06,744 -   No new attachments
+2025-12-20 06:51:09,637 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:51:09,911 - [DISCONNECTED] Logged out from email server
+2025-12-20 06:51:46,924 - 
+============================================================
+2025-12-20 06:51:46,924 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 06:51:46,924 - ============================================================
+2025-12-20 06:51:46,924 - Email: yourmltales@gmail.com
+2025-12-20 06:51:46,924 - Server: imap.gmail.com:993
+2025-12-20 06:51:46,924 - Watching for subjects: 
+2025-12-20 06:51:46,925 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 06:51:46,925 - Root save location: email_attachments
+2025-12-20 06:51:46,925 - Check interval: 6s
+2025-12-20 06:51:46,925 - Only unseen emails: True
+2025-12-20 06:51:46,925 - Mark as read: False
+2025-12-20 06:51:46,925 - ============================================================
+
+2025-12-20 06:51:46,925 - Connecting to imap.gmail.com:993...
+2025-12-20 06:51:48,231 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 06:51:48,231 - [2025-12-20 06:51:48] Checking emails...
+2025-12-20 06:51:48,854 -   No new attachments
+2025-12-20 06:51:54,855 - [2025-12-20 06:51:54] Checking emails...
+2025-12-20 06:51:55,442 -   No new attachments
+2025-12-20 06:52:01,443 - [2025-12-20 06:52:01] Checking emails...
+2025-12-20 06:52:02,493 - 
+[NEW EMAIL] Subject: 📊 Data Extraction Report - 11 Low Criticality Issues Identified
+2025-12-20 06:52:02,493 -   From: yourmltales@gmail.com
+2025-12-20 06:52:02,493 -   Date: Fri, 19 Dec 2025 22:52:00 -0800 (PST)
+2025-12-20 06:52:02,494 -     [ATTACHMENT] extraction_results.xlsx
+2025-12-20 06:52:02,494 -   [SAVED] 1 attachment(s) to: email_attachments/5L9UJU71_20251220_065202
+2025-12-20 06:52:02,494 - 
+  [EXTRACTION] Starting field extraction for email_attachments/5L9UJU71_20251220_065202
+2025-12-20 06:52:02,495 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-20 06:52:05,212 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 06:52:05,214 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 06:52:06,576 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 06:52:06,576 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 06:52:07,751 -     [EXTRACTION] Document 'extraction_results.xlsx' has no matching column. Skipping.
+2025-12-20 06:52:07,773 -   [EXTRACTION] Results saved to email_attachments/5L9UJU71_20251220_065202/extraction_results.xlsx
+2025-12-20 06:52:07,774 - [SUCCESS] Downloaded 1 attachment(s) into 1 folder(s)
+2025-12-20 06:52:13,774 - [2025-12-20 06:52:13] Checking emails...
+2025-12-20 06:52:15,908 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-20 06:52:15,908 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-20 06:52:15,908 -   Date: Sat, 20 Dec 2025 12:22:09 +0530
+2025-12-20 06:52:15,915 -     [ATTACHMENT] Application Form.pdf
+2025-12-20 06:52:15,930 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-20 06:52:15,932 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-20 06:52:15,932 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251220_065215
+2025-12-20 06:52:15,932 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251220_065215
+2025-12-20 06:52:15,932 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-20 06:52:18,625 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 06:52:18,625 -     [EXTRACTION] Document 'CAM Kanhiya Bhartiya.xlsx' has no matching column. Skipping.
+2025-12-20 06:52:18,625 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 06:52:20,042 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 06:52:20,042 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-20 06:52:24,339 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-20 06:52:24,339 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-20 06:52:26,555 -     [EXTRACTION] ✓ Extracted 21 fields using column: PD (Word Doc) Description
+2025-12-20 06:52:26,555 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 06:52:28,219 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 06:52:28,239 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251220_065215/extraction_results.xlsx
+2025-12-20 06:52:28,240 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-20 06:52:34,241 - [2025-12-20 06:52:34] Checking emails...
+2025-12-20 06:52:34,855 -   No new attachments
+2025-12-20 06:52:40,855 - [2025-12-20 06:52:40] Checking emails...
+2025-12-20 06:52:41,419 -   No new attachments
+2025-12-20 06:52:42,359 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 06:52:42,631 - [DISCONNECTED] Logged out from email server
+2025-12-20 07:05:19,493 - 
+============================================================
+2025-12-20 07:05:19,494 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 07:05:19,494 - ============================================================
+2025-12-20 07:05:19,494 - Email: yourmltales@gmail.com
+2025-12-20 07:05:19,494 - Server: imap.gmail.com:993
+2025-12-20 07:05:19,494 - Watching for subjects: 
+2025-12-20 07:05:19,494 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 07:05:19,494 - Root save location: email_attachments
+2025-12-20 07:05:19,494 - Check interval: 6s
+2025-12-20 07:05:19,494 - Only unseen emails: True
+2025-12-20 07:05:19,494 - Mark as read: False
+2025-12-20 07:05:19,494 - ============================================================
+
+2025-12-20 07:05:19,495 - Connecting to imap.gmail.com:993...
+2025-12-20 07:05:20,415 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 07:05:20,415 - [2025-12-20 07:05:20] Checking emails...
+2025-12-20 07:05:20,956 -   No new attachments
+2025-12-20 07:05:26,956 - [2025-12-20 07:05:26] Checking emails...
+2025-12-20 07:05:27,496 -   No new attachments
+2025-12-20 07:05:33,496 - [2025-12-20 07:05:33] Checking emails...
+2025-12-20 07:05:34,069 -   No new attachments
+2025-12-20 07:05:40,069 - [2025-12-20 07:05:40] Checking emails...
+2025-12-20 07:05:40,628 -   No new attachments
+2025-12-20 07:05:46,628 - [2025-12-20 07:05:46] Checking emails...
+2025-12-20 07:05:47,167 -   No new attachments
+2025-12-20 07:05:53,168 - [2025-12-20 07:05:53] Checking emails...
+2025-12-20 07:05:53,712 -   No new attachments
+2025-12-20 07:05:59,712 - [2025-12-20 07:05:59] Checking emails...
+2025-12-20 07:06:00,262 -   No new attachments
+2025-12-20 07:06:06,263 - [2025-12-20 07:06:06] Checking emails...
+2025-12-20 07:06:06,814 -   No new attachments
+2025-12-20 07:06:12,814 - [2025-12-20 07:06:12] Checking emails...
+2025-12-20 07:06:13,493 -   No new attachments
+2025-12-20 07:06:19,493 - [2025-12-20 07:06:19] Checking emails...
+2025-12-20 07:06:20,061 -   No new attachments
+2025-12-20 07:06:26,061 - [2025-12-20 07:06:26] Checking emails...
+2025-12-20 07:06:26,598 -   No new attachments
+2025-12-20 07:06:32,600 - [2025-12-20 07:06:32] Checking emails...
+2025-12-20 07:06:33,145 -   No new attachments
+2025-12-20 07:06:39,146 - [2025-12-20 07:06:39] Checking emails...
+2025-12-20 07:06:39,703 -   No new attachments
+2025-12-20 07:06:45,704 - [2025-12-20 07:06:45] Checking emails...
+2025-12-20 07:06:46,240 -   No new attachments
+2025-12-20 07:06:52,241 - [2025-12-20 07:06:52] Checking emails...
+2025-12-20 07:06:52,788 -   No new attachments
+2025-12-20 07:06:58,788 - [2025-12-20 07:06:58] Checking emails...
+2025-12-20 07:06:59,325 -   No new attachments
+2025-12-20 07:07:05,326 - [2025-12-20 07:07:05] Checking emails...
+2025-12-20 07:07:05,863 -   No new attachments
+2025-12-20 07:07:11,863 - [2025-12-20 07:07:11] Checking emails...
+2025-12-20 07:07:12,401 -   No new attachments
+2025-12-20 07:07:18,402 - [2025-12-20 07:07:18] Checking emails...
+2025-12-20 07:07:18,941 -   No new attachments
+2025-12-20 07:07:24,941 - [2025-12-20 07:07:24] Checking emails...
+2025-12-20 07:07:25,490 -   No new attachments
+2025-12-20 07:07:31,491 - [2025-12-20 07:07:31] Checking emails...
+2025-12-20 07:07:32,106 -   No new attachments
+2025-12-20 07:07:38,107 - [2025-12-20 07:07:38] Checking emails...
+2025-12-20 07:07:38,649 -   No new attachments
+2025-12-20 07:07:44,649 - [2025-12-20 07:07:44] Checking emails...
+2025-12-20 07:07:45,187 -   No new attachments
+2025-12-20 07:07:51,188 - [2025-12-20 07:07:51] Checking emails...
+2025-12-20 07:07:51,726 -   No new attachments
+2025-12-20 07:07:57,727 - [2025-12-20 07:07:57] Checking emails...
+2025-12-20 07:07:58,262 -   No new attachments
+2025-12-20 07:08:04,263 - [2025-12-20 07:08:04] Checking emails...
+2025-12-20 07:08:04,816 -   No new attachments
+2025-12-20 07:08:10,816 - [2025-12-20 07:08:10] Checking emails...
+2025-12-20 07:08:11,377 -   No new attachments
+2025-12-20 07:08:17,377 - [2025-12-20 07:08:17] Checking emails...
+2025-12-20 07:08:17,915 -   No new attachments
+2025-12-20 07:08:23,915 - [2025-12-20 07:08:23] Checking emails...
+2025-12-20 07:08:24,462 -   No new attachments
+2025-12-20 07:08:30,462 - [2025-12-20 07:08:30] Checking emails...
+2025-12-20 07:08:30,997 -   No new attachments
+2025-12-20 07:08:36,998 - [2025-12-20 07:08:36] Checking emails...
+2025-12-20 07:08:37,544 -   No new attachments
+2025-12-20 07:08:43,544 - [2025-12-20 07:08:43] Checking emails...
+2025-12-20 07:08:44,078 -   No new attachments
+2025-12-20 07:08:50,079 - [2025-12-20 07:08:50] Checking emails...
+2025-12-20 07:08:50,649 -   No new attachments
+2025-12-20 07:08:56,650 - [2025-12-20 07:08:56] Checking emails...
+2025-12-20 07:08:57,900 -   No new attachments
+2025-12-20 07:09:03,901 - [2025-12-20 07:09:03] Checking emails...
+2025-12-20 07:09:04,473 -   No new attachments
+2025-12-20 07:09:10,473 - [2025-12-20 07:09:10] Checking emails...
+2025-12-20 07:09:11,008 -   No new attachments
+2025-12-20 07:09:17,008 - [2025-12-20 07:09:17] Checking emails...
+2025-12-20 07:09:17,547 -   No new attachments
+2025-12-20 07:09:23,548 - [2025-12-20 07:09:23] Checking emails...
+2025-12-20 07:09:24,098 -   No new attachments
+2025-12-20 07:09:30,098 - [2025-12-20 07:09:30] Checking emails...
+2025-12-20 07:09:30,648 -   No new attachments
+2025-12-20 07:09:36,648 - [2025-12-20 07:09:36] Checking emails...
+2025-12-20 07:09:37,185 -   No new attachments
+2025-12-20 07:09:43,186 - [2025-12-20 07:09:43] Checking emails...
+2025-12-20 07:09:43,753 -   No new attachments
+2025-12-20 07:09:49,753 - [2025-12-20 07:09:49] Checking emails...
+2025-12-20 07:09:50,289 -   No new attachments
+2025-12-20 07:09:56,289 - [2025-12-20 07:09:56] Checking emails...
+2025-12-20 07:09:56,827 -   No new attachments
+2025-12-20 07:10:02,828 - [2025-12-20 07:10:02] Checking emails...
+2025-12-20 07:10:03,422 -   No new attachments
+2025-12-20 07:10:09,423 - [2025-12-20 07:10:09] Checking emails...
+2025-12-20 07:10:09,980 -   No new attachments
+2025-12-20 07:10:15,980 - [2025-12-20 07:10:15] Checking emails...
+2025-12-20 07:10:16,515 -   No new attachments
+2025-12-20 07:10:22,516 - [2025-12-20 07:10:22] Checking emails...
+2025-12-20 07:10:23,106 -   No new attachments
+2025-12-20 07:10:29,107 - [2025-12-20 07:10:29] Checking emails...
+2025-12-20 07:10:29,651 -   No new attachments
+2025-12-20 07:10:35,652 - [2025-12-20 07:10:35] Checking emails...
+2025-12-20 07:10:36,209 -   No new attachments
+2025-12-20 07:10:42,209 - [2025-12-20 07:10:42] Checking emails...
+2025-12-20 07:10:42,772 -   No new attachments
+2025-12-20 07:10:48,772 - [2025-12-20 07:10:48] Checking emails...
+2025-12-20 07:10:49,309 -   No new attachments
+2025-12-20 07:10:55,309 - [2025-12-20 07:10:55] Checking emails...
+2025-12-20 07:10:55,877 -   No new attachments
+2025-12-20 07:11:01,877 - [2025-12-20 07:11:01] Checking emails...
+2025-12-20 07:11:02,478 -   No new attachments
+2025-12-20 07:11:08,479 - [2025-12-20 07:11:08] Checking emails...
+2025-12-20 07:11:10,262 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-20 07:11:10,262 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-20 07:11:10,262 -   Date: Sat, 20 Dec 2025 12:41:14 +0530
+2025-12-20 07:11:10,266 -     [ATTACHMENT] Application Form.pdf
+2025-12-20 07:11:10,272 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-20 07:11:10,273 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-20 07:11:10,273 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251220_071110
+2025-12-20 07:11:10,273 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251220_071110
+2025-12-20 07:11:10,273 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-20 07:11:11,598 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 07:11:11,598 -     [EXTRACTION] Document 'CAM Kanhiya Bhartiya.xlsx' has no matching column. Skipping.
+2025-12-20 07:11:11,599 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 07:11:12,958 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 07:11:12,959 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-20 07:11:18,078 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-20 07:11:18,079 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-20 07:11:23,230 -     [EXTRACTION] ✓ Extracted 21 fields using column: PD (Word Doc) Description
+2025-12-20 07:11:23,230 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 07:11:24,199 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 07:11:24,228 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251220_071110/extraction_results.xlsx
+2025-12-20 07:11:24,228 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-20 07:11:30,229 - [2025-12-20 07:11:30] Checking emails...
+2025-12-20 07:11:30,796 -   No new attachments
+2025-12-20 07:11:36,797 - [2025-12-20 07:11:36] Checking emails...
+2025-12-20 07:11:37,352 -   No new attachments
+2025-12-20 07:11:43,352 - [2025-12-20 07:11:43] Checking emails...
+2025-12-20 07:11:43,987 -   No new attachments
+2025-12-20 07:11:49,987 - [2025-12-20 07:11:49] Checking emails...
+2025-12-20 07:11:50,544 -   No new attachments
+2025-12-20 07:11:56,544 - [2025-12-20 07:11:56] Checking emails...
+2025-12-20 07:11:57,084 -   No new attachments
+2025-12-20 07:12:03,084 - [2025-12-20 07:12:03] Checking emails...
+2025-12-20 07:12:03,620 -   No new attachments
+2025-12-20 07:12:09,620 - [2025-12-20 07:12:09] Checking emails...
+2025-12-20 07:12:10,163 -   No new attachments
+2025-12-20 07:12:16,163 - [2025-12-20 07:12:16] Checking emails...
+2025-12-20 07:12:16,730 -   No new attachments
+2025-12-20 07:12:22,731 - [2025-12-20 07:12:22] Checking emails...
+2025-12-20 07:12:23,271 -   No new attachments
+2025-12-20 07:12:29,271 - [2025-12-20 07:12:29] Checking emails...
+2025-12-20 07:12:29,840 -   No new attachments
+2025-12-20 07:12:35,841 - [2025-12-20 07:12:35] Checking emails...
+2025-12-20 07:12:36,380 -   No new attachments
+2025-12-20 07:12:42,380 - [2025-12-20 07:12:42] Checking emails...
+2025-12-20 07:12:42,926 -   No new attachments
+2025-12-20 07:12:48,927 - [2025-12-20 07:12:48] Checking emails...
+2025-12-20 07:12:49,462 -   No new attachments
+2025-12-20 07:12:55,462 - [2025-12-20 07:12:55] Checking emails...
+2025-12-20 07:12:56,024 -   No new attachments
+2025-12-20 07:13:02,024 - [2025-12-20 07:13:02] Checking emails...
+2025-12-20 07:13:02,574 -   No new attachments
+2025-12-20 07:13:08,574 - [2025-12-20 07:13:08] Checking emails...
+2025-12-20 07:13:09,140 -   No new attachments
+2025-12-20 07:13:15,141 - [2025-12-20 07:13:15] Checking emails...
+2025-12-20 07:13:15,773 -   No new attachments
+2025-12-20 07:13:21,773 - [2025-12-20 07:13:21] Checking emails...
+2025-12-20 07:13:22,314 -   No new attachments
+2025-12-20 07:13:28,314 - [2025-12-20 07:13:28] Checking emails...
+2025-12-20 07:13:28,849 -   No new attachments
+2025-12-20 07:13:34,849 - [2025-12-20 07:13:34] Checking emails...
+2025-12-20 07:13:35,416 -   No new attachments
+2025-12-20 07:13:41,416 - [2025-12-20 07:13:41] Checking emails...
+2025-12-20 07:13:41,977 -   No new attachments
+2025-12-20 07:13:47,977 - [2025-12-20 07:13:47] Checking emails...
+2025-12-20 07:13:48,533 -   No new attachments
+2025-12-20 07:13:54,534 - [2025-12-20 07:13:54] Checking emails...
+2025-12-20 07:13:55,157 -   No new attachments
+2025-12-20 07:14:01,157 - [2025-12-20 07:14:01] Checking emails...
+2025-12-20 07:14:01,717 -   No new attachments
+2025-12-20 07:14:07,717 - [2025-12-20 07:14:07] Checking emails...
+2025-12-20 07:14:08,282 -   No new attachments
+2025-12-20 07:14:14,283 - [2025-12-20 07:14:14] Checking emails...
+2025-12-20 07:14:14,841 -   No new attachments
+2025-12-20 07:14:20,842 - [2025-12-20 07:14:20] Checking emails...
+2025-12-20 07:14:21,395 -   No new attachments
+2025-12-20 07:14:27,395 - [2025-12-20 07:14:27] Checking emails...
+2025-12-20 07:14:27,934 -   No new attachments
+2025-12-20 07:14:33,934 - [2025-12-20 07:14:33] Checking emails...
+2025-12-20 07:14:34,474 -   No new attachments
+2025-12-20 07:14:40,474 - [2025-12-20 07:14:40] Checking emails...
+2025-12-20 07:14:41,018 -   No new attachments
+2025-12-20 07:14:47,018 - [2025-12-20 07:14:47] Checking emails...
+2025-12-20 07:14:47,586 -   No new attachments
+2025-12-20 07:14:53,587 - [2025-12-20 07:14:53] Checking emails...
+2025-12-20 07:14:54,133 -   No new attachments
+2025-12-20 07:15:00,133 - [2025-12-20 07:15:00] Checking emails...
+2025-12-20 07:15:00,683 -   No new attachments
+2025-12-20 07:15:06,683 - [2025-12-20 07:15:06] Checking emails...
+2025-12-20 07:15:07,251 -   No new attachments
+2025-12-20 07:15:13,252 - [2025-12-20 07:15:13] Checking emails...
+2025-12-20 07:15:13,806 -   No new attachments
+2025-12-20 07:15:19,807 - [2025-12-20 07:15:19] Checking emails...
+2025-12-20 07:15:20,346 -   No new attachments
+2025-12-20 07:15:26,346 - [2025-12-20 07:15:26] Checking emails...
+2025-12-20 07:15:26,918 -   No new attachments
+2025-12-20 07:15:32,918 - [2025-12-20 07:15:32] Checking emails...
+2025-12-20 07:15:33,487 -   No new attachments
+2025-12-20 07:15:39,488 - [2025-12-20 07:15:39] Checking emails...
+2025-12-20 07:15:40,037 -   No new attachments
+2025-12-20 07:15:46,037 - [2025-12-20 07:15:46] Checking emails...
+2025-12-20 07:15:46,578 -   No new attachments
+2025-12-20 07:15:52,578 - [2025-12-20 07:15:52] Checking emails...
+2025-12-20 07:15:53,136 -   No new attachments
+2025-12-20 07:15:59,136 - [2025-12-20 07:15:59] Checking emails...
+2025-12-20 07:15:59,687 -   No new attachments
+2025-12-20 07:16:05,687 - [2025-12-20 07:16:05] Checking emails...
+2025-12-20 07:16:06,226 -   No new attachments
+2025-12-20 07:16:12,226 - [2025-12-20 07:16:12] Checking emails...
+2025-12-20 07:16:12,785 -   No new attachments
+2025-12-20 07:16:18,785 - [2025-12-20 07:16:18] Checking emails...
+2025-12-20 07:16:19,330 -   No new attachments
+2025-12-20 07:16:25,330 - [2025-12-20 07:16:25] Checking emails...
+2025-12-20 07:16:25,897 -   No new attachments
+2025-12-20 07:16:31,897 - [2025-12-20 07:16:31] Checking emails...
+2025-12-20 07:16:32,461 -   No new attachments
+2025-12-20 07:16:38,461 - [2025-12-20 07:16:38] Checking emails...
+2025-12-20 07:16:39,006 -   No new attachments
+2025-12-20 07:16:45,006 - [2025-12-20 07:16:45] Checking emails...
+2025-12-20 07:16:45,542 -   No new attachments
+2025-12-20 07:16:51,543 - [2025-12-20 07:16:51] Checking emails...
+2025-12-20 07:16:52,079 -   No new attachments
+2025-12-20 07:16:58,079 - [2025-12-20 07:16:58] Checking emails...
+2025-12-20 07:16:58,624 -   No new attachments
+2025-12-20 07:17:04,625 - [2025-12-20 07:17:04] Checking emails...
+2025-12-20 07:17:05,184 -   No new attachments
+2025-12-20 07:17:11,104 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 07:17:11,377 - [DISCONNECTED] Logged out from email server
+2025-12-20 07:17:14,567 - 
+============================================================
+2025-12-20 07:17:14,567 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 07:17:14,567 - ============================================================
+2025-12-20 07:17:14,567 - Email: yourmltales@gmail.com
+2025-12-20 07:17:14,567 - Server: imap.gmail.com:993
+2025-12-20 07:17:14,567 - Watching for subjects: 
+2025-12-20 07:17:14,567 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 07:17:14,567 - Root save location: email_attachments
+2025-12-20 07:17:14,567 - Check interval: 6s
+2025-12-20 07:17:14,567 - Only unseen emails: True
+2025-12-20 07:17:14,567 - Mark as read: False
+2025-12-20 07:17:14,568 - ============================================================
+
+2025-12-20 07:17:14,568 - Connecting to imap.gmail.com:993...
+2025-12-20 07:17:15,829 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 07:17:15,829 - [2025-12-20 07:17:15] Checking emails...
+2025-12-20 07:17:16,400 -   No new attachments
+2025-12-20 07:17:22,401 - [2025-12-20 07:17:22] Checking emails...
+2025-12-20 07:17:22,962 -   No new attachments
+2025-12-20 07:17:28,962 - [2025-12-20 07:17:28] Checking emails...
+2025-12-20 07:17:29,519 -   No new attachments
+2025-12-20 07:17:35,519 - [2025-12-20 07:17:35] Checking emails...
+2025-12-20 07:17:36,120 -   No new attachments
+2025-12-20 07:17:42,120 - [2025-12-20 07:17:42] Checking emails...
+2025-12-20 07:17:43,946 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-20 07:17:43,946 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-20 07:17:43,946 -   Date: Sat, 20 Dec 2025 12:47:42 +0530
+2025-12-20 07:17:43,949 -     [ATTACHMENT] Application Form.pdf
+2025-12-20 07:17:43,955 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-20 07:17:43,955 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-20 07:17:43,955 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251220_071743
+2025-12-20 07:17:43,955 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251220_071743
+2025-12-20 07:17:43,955 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-20 07:17:45,199 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 07:17:45,199 -     [EXTRACTION] Document 'CAM Kanhiya Bhartiya.xlsx' has no matching column. Skipping.
+2025-12-20 07:17:45,199 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 07:17:46,402 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 07:17:46,402 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-20 07:17:50,075 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-20 07:17:50,075 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-20 07:17:52,101 -     [EXTRACTION] ✓ Extracted 21 fields using column: PD (Word Doc) Description
+2025-12-20 07:17:52,101 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 07:17:52,816 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 07:17:52,981 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251220_071743/extraction_results.xlsx
+2025-12-20 07:17:52,981 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-20 07:17:58,982 - [2025-12-20 07:17:58] Checking emails...
+2025-12-20 07:17:59,568 -   No new attachments
+2025-12-20 07:18:05,568 - [2025-12-20 07:18:05] Checking emails...
+2025-12-20 07:18:06,130 -   No new attachments
+2025-12-20 07:18:12,130 - [2025-12-20 07:18:12] Checking emails...
+2025-12-20 07:18:12,692 -   No new attachments
+2025-12-20 07:18:18,693 - [2025-12-20 07:18:18] Checking emails...
+2025-12-20 07:18:19,251 -   No new attachments
+2025-12-20 07:18:25,251 - [2025-12-20 07:18:25] Checking emails...
+2025-12-20 07:18:25,809 -   No new attachments
+2025-12-20 07:18:31,809 - [2025-12-20 07:18:31] Checking emails...
+2025-12-20 07:18:32,374 -   No new attachments
+2025-12-20 07:18:38,374 - [2025-12-20 07:18:38] Checking emails...
+2025-12-20 07:18:38,937 -   No new attachments
+2025-12-20 07:18:44,937 - [2025-12-20 07:18:44] Checking emails...
+2025-12-20 07:18:45,495 -   No new attachments
+2025-12-20 07:18:51,496 - [2025-12-20 07:18:51] Checking emails...
+2025-12-20 07:18:52,059 -   No new attachments
+2025-12-20 07:18:58,060 - [2025-12-20 07:18:58] Checking emails...
+2025-12-20 07:18:58,624 -   No new attachments
+2025-12-20 07:19:04,625 - [2025-12-20 07:19:04] Checking emails...
+2025-12-20 07:19:05,183 -   No new attachments
+2025-12-20 07:19:11,183 - [2025-12-20 07:19:11] Checking emails...
+2025-12-20 07:19:11,745 -   No new attachments
+2025-12-20 07:19:14,371 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 07:19:14,643 - [DISCONNECTED] Logged out from email server

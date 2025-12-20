@@ -17,3 +17,39 @@
 2025-12-19 15:51:12,064 - model=gpt-4o doc=Application form.pdf matched_column=Application Form Description selected_column=Application Form Description prompt_tokens=5769 completion_tokens=1423 total_tokens=7192
 2025-12-19 15:58:49,036 - model=gpt-4o doc=Application form.pdf matched_column=Application Form Description selected_column=Application Form Description prompt_tokens=5769 completion_tokens=1423 total_tokens=7192
 2025-12-19 15:59:19,346 - model=gpt-4o doc=Word.docx matched_column=AUTO selected_column=PD (Word Doc) Description prompt_tokens=10477 completion_tokens=1138 total_tokens=11615
+2025-12-20 04:11:07,679 - model=gpt-4o doc=Application Form.pdf matched_column=Application Form Description selected_column=Application Form Description prompt_tokens=5754 completion_tokens=1114 total_tokens=6868
+2025-12-20 04:38:29,952 - LLM Mapping: 'Application Form' (ext: .pdf) → 'Application Form Description'
+2025-12-20 04:38:37,784 - model=gpt-4o doc=Application Form.pdf matched_column=Application Form Description selected_column=Application Form Description prompt_tokens=5754 completion_tokens=1402 total_tokens=7156
+2025-12-20 04:38:37,882 - model=gpt-4o doc=Application Form.pdf matched_column=Application Form Description selected_column=Application Form Description prompt_tokens=5754 completion_tokens=1403 total_tokens=7157
+2025-12-20 06:52:05,210 - LLM Mapping: 'mail_subject.txt' → 'Email Subject Description'
+2025-12-20 06:52:05,210 - LLM Mapping: 'mail_body.txt' → 'Email Body Description'
+2025-12-20 06:52:05,211 - LLM Mapping: 'extraction_results.xlsx' → No match found
+2025-12-20 06:52:06,576 - Field extraction using column 'Email Subject Description': 5 fields processed
+2025-12-20 06:52:07,751 - Field extraction using column 'Email Body Description': 1 fields processed
+2025-12-20 06:52:18,623 - LLM Mapping: 'CAM Kanhiya Bhartiya.xlsx' → No match found
+2025-12-20 06:52:18,623 - LLM Mapping: 'mail_subject.txt' → 'Email Subject Description'
+2025-12-20 06:52:18,624 - LLM Mapping: 'Application Form.pdf' → 'Application Form Description'
+2025-12-20 06:52:18,624 - LLM Mapping: 'PD Note Kanhaiya.docx' → 'PD (Word Doc) Description'
+2025-12-20 06:52:18,624 - LLM Mapping: 'mail_body.txt' → 'Email Body Description'
+2025-12-20 06:52:20,042 - Field extraction using column 'Email Subject Description': 5 fields processed
+2025-12-20 06:52:24,339 - Field extraction using column 'Application Form Description': 31 fields processed
+2025-12-20 06:52:26,554 - Field extraction using column 'PD (Word Doc) Description': 21 fields processed
+2025-12-20 06:52:28,219 - Field extraction using column 'Email Body Description': 1 fields processed
+2025-12-20 07:11:11,598 - LLM Mapping: 'CAM Kanhiya Bhartiya.xlsx' → No match found
+2025-12-20 07:11:11,598 - LLM Mapping: 'mail_subject.txt' → 'Email Subject Description'
+2025-12-20 07:11:11,598 - LLM Mapping: 'Application Form.pdf' → 'Application Form Description'
+2025-12-20 07:11:11,598 - LLM Mapping: 'PD Note Kanhaiya.docx' → 'PD (Word Doc) Description'
+2025-12-20 07:11:11,598 - LLM Mapping: 'mail_body.txt' → 'Email Body Description'
+2025-12-20 07:11:12,958 - Field extraction using column 'Email Subject Description': 5 fields processed
+2025-12-20 07:11:18,078 - Field extraction using column 'Application Form Description': 31 fields processed
+2025-12-20 07:11:23,230 - Field extraction using column 'PD (Word Doc) Description': 21 fields processed
+2025-12-20 07:11:24,199 - Field extraction using column 'Email Body Description': 1 fields processed
+2025-12-20 07:17:45,198 - LLM Mapping: 'CAM Kanhiya Bhartiya.xlsx' → No match found
+2025-12-20 07:17:45,198 - LLM Mapping: 'mail_subject.txt' → 'Email Subject Description'
+2025-12-20 07:17:45,198 - LLM Mapping: 'Application Form.pdf' → 'Application Form Description'
+2025-12-20 07:17:45,198 - LLM Mapping: 'PD Note Kanhaiya.docx' → 'PD (Word Doc) Description'
+2025-12-20 07:17:45,198 - LLM Mapping: 'mail_body.txt' → 'Email Body Description'
+2025-12-20 07:17:46,402 - Field extraction using column 'Email Subject Description': 5 fields processed
+2025-12-20 07:17:50,075 - Field extraction using column 'Application Form Description': 31 fields processed
+2025-12-20 07:17:52,101 - Field extraction using column 'PD (Word Doc) Description': 21 fields processed
+2025-12-20 07:17:52,815 - Field extraction using column 'Email Body Description': 1 fields processed

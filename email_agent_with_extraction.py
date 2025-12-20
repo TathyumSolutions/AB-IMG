@@ -158,239 +158,279 @@ def get_description_columns(config_df: pd.DataFrame) -> list:
     description_columns = [col for col in config_df.columns[6:] if 'Description' in col]
     return description_columns
 
-def match_document_to_column(document_name: str, file_extension: str, description_columns: list) -> str:
+def prepare_config_for_llm(config_df: pd.DataFrame) -> dict:
     """
-    Intelligently match document name to the appropriate description column
+    Prepare configuration structure for LLM - needed for compatibility with main.py
+    """
+    description_columns = get_description_columns(config_df)
+    config_structure = {}
+    
+    for col in description_columns:
+        config_structure[col] = {
+            'fields': config_df['PAS Field Name'].tolist(),
+            'descriptions': config_df[col].tolist()
+        }
+    
+    return config_structure
+
+def match_document_to_column(documents: list, description_columns: list, folder_path: str) -> dict:
+    """
+    Intelligently match all documents to appropriate description columns using LLM (one-time call)
     
     Args:
-        document_name: Name of the document (without extension)
-        file_extension: File extension (.pdf, .docx, etc.)
+        documents: List of document filenames with extensions
         description_columns: List of available description columns
+        folder_path: Path to the folder where mapping will be saved
     
     Returns:
-        The matched column name or None if no match
+        Dictionary mapping {filename: matched_column} or {filename: None} if no match
     """
-    doc_name_lower = document_name.lower()
+    # Prepare document information for LLM
+    document_info = []
+    for doc in documents:
+        path_obj = Path(doc)
+        document_info.append({
+            "filename": doc,
+            "name": path_obj.stem,
+            "extension": path_obj.suffix
+        })
     
-    # Define matching rules
-    matching_rules = {
-        'CAM Description': ['cam', 'credit assessment', 'assessment memo'],
-        'PD Description': ['pd', 'personal discussion', 'discussion report'],
-        'PD (Word Doc) Description': ['pd', 'personal discussion', 'discussion report'],
-        'Application Form Description': ['app', 'application', 'form', 'app form'],
-        'Legal Doc Description': ['legal', 'legal report', 'legal doc'],
-        'Technical Doc Description': ['technical', 'tech', 'technical report'],
-        'Email Subject Description': ['mail_subject', 'subject', 'email subject'],
-        'Email Body Description': ['mail_body', 'body', 'email body']
-    }
-    
-    # Special handling for Word vs Excel PD documents
-    if 'pd' in doc_name_lower:
-        if file_extension in ['.docx', '.doc']:
-            if 'PD (Word Doc) Description' in description_columns:
-                return 'PD (Word Doc) Description'
-        elif file_extension in ['.xlsx', '.xls']:
-            if 'PD Description' in description_columns:
-                return 'PD Description'
-    
-    # Try to match based on keywords
-    for column, keywords in matching_rules.items():
-        if column in description_columns:
-            for keyword in keywords:
-                if keyword in doc_name_lower:
-                    return column
-    
-    # If no match found, return None (will use all columns)
-    return None
+    # Create few-shot examples for the LLM
+    few_shot_examples = """
+Examples of correct mappings:
 
-def prepare_config_for_llm(config_df: pd.DataFrame, selected_column: str = None) -> str:
+1. Filename: "mail_subject.txt"
+   Extension: .txt
+   Column: "Email Subject Description"
+   Reasoning: Contains "mail_subject" which clearly indicates email subject content
+
+2. Filename: "mail_body.txt"
+   Extension: .txt
+   Column: "Email Body Description"
+   Reasoning: Contains "mail_body" which clearly indicates email body content
+
+3. Filename: "PD Note Kanhaiya.doc"
+   Extension: .doc
+   Column: "PD (Word Doc) Description"
+   Reasoning: Contains "PD" and has .doc/.docx extension, matching Word document description
+
+4. Filename: "Application Form.pdf"
+   Extension: .pdf
+   Column: "Application Form Description"
+   Reasoning: Contains "Application Form" which directly matches the column name
+
+5. Filename: "CAM Report.pdf"
+   Extension: .pdf
+   Column: "CAM Description"
+   Reasoning: Contains "CAM" which indicates Credit Assessment Memo
+
+6. Filename: "Legal Agreement.pdf"
+   Extension: .pdf
+   Column: "Legal Doc Description"
+   Reasoning: Contains "Legal" indicating legal documentation
+
+7. Filename: "PD Discussion.docx"
+   Extension: .docx
+   Column: "PD (Word Doc) Description"
+   Reasoning: Contains "PD" and has Word document extension (.docx)
+"""
+
+    # Construct the prompt for LLM
+    prompt = f"""You are an expert at matching document filenames to appropriate configuration columns for data extraction.
+
+{few_shot_examples}
+
+Now, match ALL the following documents to the most appropriate columns:
+
+Documents to match:
+{json.dumps(document_info, indent=2)}
+
+Available columns:
+{json.dumps(description_columns, indent=2)}
+
+Matching Rules:
+- Match based on keywords in the document name (e.g., "mail_subject" → "Email Subject Description")
+- Consider file extensions critically:
+  * .txt files named "mail_subject" → "Email Subject Description"
+  * .txt files named "mail_body" → "Email Body Description"
+  * .doc/.docx files with "PD" → "PD (Word Doc) Description"
+  * .pdf files with "Application Form" → "Application Form Description"
+- Look for abbreviations (e.g., "CAM", "PD", "App")
+- Match column names that explicitly mention file types (e.g., "Word Doc") only to files with matching extensions
+- If no clear match exists for a document, use "NONE" as the value
+
+Return a JSON object where each key is the full filename (with extension) and each value is the matched column name or "NONE".
+
+Example output format:
+{{
+  "mail_subject.txt": "Email Subject Description",
+  "PD Note.docx": "PD (Word Doc) Description",
+  "random_file.pdf": "NONE"
+}}
+
+Return ONLY valid JSON, no explanations."""
+
+    try:
+        client = OpenAI(api_key=OPENAI_API_KEY)
+        response = client.chat.completions.create(
+            model=OPENAI_MODEL,
+            messages=[
+                {
+                    "role": "system", 
+                    "content": "You are a precise assistant that matches filenames to configuration columns. You carefully consider both the document name and file extension. Return only valid JSON."
+                },
+                {
+                    "role": "user", 
+                    "content": prompt
+                }
+            ],
+            temperature=0.0,
+            response_format={"type": "json_object"}
+        )
+        
+        result_text = response.choices[0].message.content.strip()
+        mapping = json.loads(result_text)
+        
+        # Validate and clean the mapping
+        validated_mapping = {}
+        for filename, column in mapping.items():
+            if column in description_columns:
+                validated_mapping[filename] = column
+                llm_logger.info(f"LLM Mapping: '{filename}' → '{column}'")
+            elif column == "NONE":
+                validated_mapping[filename] = None
+                llm_logger.info(f"LLM Mapping: '{filename}' → No match found")
+            else:
+                validated_mapping[filename] = None
+                llm_logger.warning(f"LLM returned invalid column '{column}' for '{filename}'")
+        
+        # Save mapping to file with timestamp
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        mapping_file = os.path.join(folder_path, f"document_column_mapping_{timestamp}.json")
+        with open(mapping_file, 'w', encoding='utf-8') as f:
+            json.dump(validated_mapping, f, indent=2)
+        
+        # Also save human-readable version
+        readable_file = os.path.join(folder_path, f"document_column_mapping_{timestamp}.txt")
+        with open(readable_file, 'w', encoding='utf-8') as f:
+            for filename, column in validated_mapping.items():
+                f.write(f"{filename} -> {column if column else 'NO MATCH'}\n")
+        
+        return validated_mapping
+            
+    except Exception as e:
+        llm_logger.error(f"Error in LLM batch matching: {e}")
+        print(f"  ⚠ Error using LLM for document matching: {e}")
+        return {doc: None for doc in documents}
+
+def extract_fields_with_intelligent_selection(
+    document_text: str,
+    config_df: pd.DataFrame,
+    matched_column: str,
+    pas_fields: list,
+    api_key: str,
+    model: str = "gpt-4o",
+    document_name: str = None,  # Keep for backward compatibility
+    file_extension: str = None   # Keep for backward compatibility
+):
     """
-    Prepare configuration data for LLM
+    Extract fields from document using the matched description column
     
     Args:
-        config_df: Configuration dataframe
-        selected_column: If specified, only use this column for instructions
+        document_text: The text content of the document
+        config_df: Configuration DataFrame
+        matched_column: The specific description column to use for extraction
+        pas_fields: List of PAS field names
+        api_key: OpenAI API key
+        model: OpenAI model to use
+        document_name: (deprecated, for backward compatibility)
+        file_extension: (deprecated, for backward compatibility)
     
     Returns:
-        Formatted configuration text
+        Tuple of (extracted_data dict, selected_column str)
     """
-    config_text = []
-    description_columns = get_description_columns(config_df)
+    if not matched_column or matched_column not in config_df.columns:
+        print(f"  ⚠ Invalid matched column: {matched_column}")
+        return {}, None
     
-    if selected_column and selected_column in description_columns:
-        # Use only the selected column
-        config_text.append("SELECTED CONFIGURATION COLUMN:")
-        config_text.append("="*80)
-        config_text.append(f"Using: {selected_column}")
-        config_text.append("\n" + "="*80)
-        config_text.append("FIELD EXTRACTION INSTRUCTIONS:")
-        config_text.append("="*80)
-        
-        for idx, row in config_df.iterrows():
-            field_name = row['PAS Field Name']
-            description = row.get(selected_column, '')
-            if pd.notna(description) and str(description).strip():
-                config_text.append(f"\n[FIELD: {field_name}]")
-                config_text.append(f"  • {selected_column}: {str(description)}")
-    else:
-        # Use all description columns
-        config_text.append("CONFIGURATION FILE STRUCTURE:")
-        config_text.append("="*80)
-        config_text.append(f"\nAvailable instruction columns: {len(description_columns)}")
-        for i, col in enumerate(description_columns, 1):
-            field_count = config_df[col].notna().sum()
-            config_text.append(f"{i}. {col} ({field_count} fields with instructions)")
-        config_text.append("\n" + "="*80)
-        config_text.append("FIELD EXTRACTION INSTRUCTIONS:")
-        config_text.append("="*80)
-        for idx, row in config_df.iterrows():
-            field_name = row['PAS Field Name']
-            config_text.append(f"\n[FIELD: {field_name}]")
-            for col in description_columns:
-                description = row.get(col, '')
-                if pd.notna(description) and str(description).strip():
-                    config_text.append(f"  • {col}: {str(description)}")
+    # Get the description for the matched column
+    descriptions = config_df[matched_column].tolist()
     
-    return "\n".join(config_text)
-
-# =============================================================================
-# LLM-BASED EXTRACTION
-# =============================================================================
-def extract_fields_with_intelligent_selection(document_text: str, config_df: pd.DataFrame, document_name: str, file_extension: str, pas_fields: list, api_key: str, model: str):
-    """
-    Extract fields using intelligent column selection based on document name
-    """
+    # Build the field extraction prompt
+    fields_json = []
+    for i, field_name in enumerate(pas_fields):
+        description = descriptions[i] if i < len(descriptions) else ""
+        if pd.notna(description) and str(description).strip():
+            fields_json.append({
+                "field_name": field_name,
+                "description": str(description)
+            })
+    
+    if not fields_json:
+        print(f"  ⚠ No valid field descriptions found in column: {matched_column}")
+        return {}, matched_column
+    
+    # Truncate document if too long
     if len(document_text) > MAX_DOCUMENT_CHARS:
-        document_text = document_text[:MAX_DOCUMENT_CHARS]
+        document_text = document_text[:MAX_DOCUMENT_CHARS] + "\n...[Document truncated]"
     
-    # Get description columns
-    description_columns = get_description_columns(config_df)
-    
-    # Try to match document name to a specific column
-    matched_column = match_document_to_column(document_name, file_extension, description_columns)
-    
-    # Prepare config structure
-    config_structure = prepare_config_for_llm(config_df, matched_column)
-    
-    # Build the prompt based on whether we have a matched column
-    if matched_column:
-        prompt = f"""You are an expert document field extraction system.
+    prompt = f"""You are a data extraction assistant. Extract the following fields from the document.
 
-TASK OVERVIEW:
-You will receive a document and extraction instructions from a specific configuration column that matches this document type.
-Your job is to extract all fields using the instructions provided.
-
-DOCUMENT INFORMATION:
-- Document Name: {document_name}
-- File Extension: {file_extension}
-- Document Type: {{'Word Document' if file_extension in ['.docx', '.doc'] else 'PDF Document' if file_extension == '.pdf' else 'Excel Spreadsheet' if file_extension in ['.xlsx', '.xls'] else 'Text File'}}
-- Matched Configuration Column: {matched_column}
-
-{config_structure}
-
-DOCUMENT CONTENT:
+Document content:
 {document_text}
 
-EXTRACTION INSTRUCTIONS:
-1. Extract each of the {len(pas_fields)} PAS fields using the instructions from "{matched_column}"
-2. If a field has no instruction in the column, mark as "NO INSTRUCTION"
-3. If a field has instruction but value is not found in document, mark as "NOT FOUND"
-4. Extract exact values as they appear in the document
-5. Do NOT make assumptions or infer values not explicitly stated
+Fields to extract:
+{json.dumps(fields_json, indent=2)}
 
-OUTPUT FORMAT:
-Return a JSON object with field names as keys and extracted values as values.
+Instructions:
+- For each field, extract the value based on its description
+- If a field is not found or not applicable, use null
+- Return a JSON object with field names as keys and extracted values as values
+- Be precise and only extract what is explicitly mentioned
 
-CRITICAL: Include ALL {len(pas_fields)} PAS fields in your response, even if they are "NO INSTRUCTION" or "NOT FOUND".
-Return ONLY the JSON object, no additional text."""
-    else:
-        prompt = f"""You are an expert document field extraction system with intelligent configuration selection.
+Return ONLY valid JSON."""
 
-TASK OVERVIEW:
-You will receive a document and a complete configuration file with multiple instruction columns.
-Your job is to:
-1. Analyze the document name, type, and content to select the MOST APPROPRIATE instruction column
-2. Extract all fields using the instructions from that selected column
-3. Return the extracted data along with the column you selected
-
-DOCUMENT INFORMATION:
-- Document Name: {document_name}
-- File Extension: {file_extension}
-- Document Type: {{'Word Document' if file_extension in ['.docx', '.doc'] else 'PDF Document' if file_extension == '.pdf' else 'Excel Spreadsheet' if file_extension in ['.xlsx', '.xls'] else 'Text File'}}
-
-{config_structure}
-
-DOCUMENT CONTENT:
-{document_text}
-
-EXTRACTION INSTRUCTIONS:
-1. FIRST: Analyze the document name "{document_name}" and type "{file_extension}"
-2. SELECT the most appropriate instruction column based on the document characteristics
-3. For each of the {len(pas_fields)} PAS fields, extract the value using instructions from your selected column
-4. If a field has no instruction in the selected column, mark as "NO INSTRUCTION"
-5. If a field has instruction but value is not found in document, mark as "NOT FOUND"
-6. Extract exact values as they appear in the document
-7. Do NOT make assumptions or infer values not explicitly stated
-
-OUTPUT FORMAT:
-Return a JSON object with TWO keys:
-1. "selected_column": The name of the configuration column you selected
-2. "extracted_fields": An object with field names as keys and extracted values as values
-
-CRITICAL: Include ALL {len(pas_fields)} PAS fields in your response, even if they have "NO INSTRUCTION" or are "NOT FOUND".
-Return ONLY the JSON object, no additional text."""
-    
     try:
         client = OpenAI(api_key=api_key)
         response = client.chat.completions.create(
             model=model,
             messages=[
-                {"role": "system", "content": "You are a precise document field extraction assistant. Always respond with valid JSON."},
+                {"role": "system", "content": "You are a precise data extraction assistant. Return only valid JSON."},
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.1,
+            temperature=0.0,
             response_format={"type": "json_object"}
         )
+        
         result_text = response.choices[0].message.content
-        result_json = json.loads(result_text)
+        extracted_data = json.loads(result_text)
         
-        # Handle different response formats
-        if matched_column:
-            # We provided a specific column, so response should be just the fields
-            extracted_fields = result_json
-            selected_column = matched_column
-        else:
-            # LLM selected a column
-            selected_column = result_json.get("selected_column", "UNKNOWN")
-            extracted_fields = result_json.get("extracted_fields", result_json)
+        # Log LLM usage
+        llm_logger.info(f"Field extraction using column '{matched_column}': {len(fields_json)} fields processed")
         
-        # Ensure all fields are present
-        for field in pas_fields:
-            if field not in extracted_fields:
-                extracted_fields[field] = "ERROR"
+        return extracted_data, matched_column
         
-        # --- LLM USAGE LOGGING ---
-        usage = response.usage
-        if usage:
-            prompt_tokens = usage.prompt_tokens
-            completion_tokens = usage.completion_tokens
-            total_tokens = usage.total_tokens
-        else:
-            prompt_tokens = completion_tokens = total_tokens = -1
-        
-        llm_logger.info(
-            f"model={model} doc={document_name}{file_extension} matched_column={matched_column or 'AUTO'} selected_column={selected_column} prompt_tokens={prompt_tokens} completion_tokens={completion_tokens} total_tokens={total_tokens}"
-        )
-        
-        return extracted_fields, selected_column
     except Exception as e:
-        print(f"  ✗ LLM extraction error: {e}")
-        llm_logger.error(f"model={model} doc={document_name}{file_extension} ERROR: {e}")
-        return {field: "ERROR" for field in pas_fields}, "ERROR"
+        print(f"  ✗ Field extraction error: {e}")
+        llm_logger.error(f"Field extraction error with column '{matched_column}': {e}")
+        return {}, matched_column
 
-# =============================================================================
-# RESULT MERGING AND OUTPUT
-# =============================================================================
+# def merge_results_to_excel(all_results: dict, pas_fields: list, output_path: str, column_selections: dict):
+#     """Merge all extraction results into a single Excel file"""
+#     try:
+#         rows = []
+#         for doc_name, extracted_data in all_results.items():
+#             row = {"Document": doc_name, "Selected_Column": column_selections.get(doc_name, "Unknown")}
+#             for field in pas_fields:
+#                 row[field] = extracted_data.get(field, "")
+#             rows.append(row)
+        
+#         df = pd.DataFrame(rows)
+#         df.to_excel(output_path, index=False)
+#         print(f"  ✓ Results saved to: {output_path}")
+#     except Exception as e:
+#         print(f"  ✗ Error saving results: {e}")
+
 def merge_results_to_excel(all_results, pas_fields, output_path, column_selections):
     """Merge extraction results into Excel file"""
     # Load the configuration file to get additional columns
@@ -430,11 +470,14 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
         print(f"\n✗ Error saving results: {e}")
 
 # =============================================================================
-# EMAIL AGENT
+# EMAIL AGENT CLASS
 # =============================================================================
 class EmailAgentWithExtraction:
     def __init__(self, config):
+
         self.email_address = config['email']['address']
+        print("*****************EmailAddress:",self.email_address)
+
         self.password = config['email']['password']
         self.imap_server = config['email']['imap_server']
         self.imap_port = config['email'].get('imap_port', 993)
@@ -448,31 +491,37 @@ class EmailAgentWithExtraction:
         self.only_unseen = config['agent'].get('only_unseen', True)
         self.processed_emails = set()
         self.mail = None
-        self._setup_logging(config['agent'].get('log_file'))
+        self._setup_logging=config['agent'].get('log_file')
         self.save_location.mkdir(parents=True, exist_ok=True)
         # Extraction config
         self.config_df, self.pas_fields = load_configuration(CONFIG_FILE_PATH)
-
-    def _setup_logging(self, log_file=None):
-        self.logger = logging.getLogger('EmailAgentWithExtraction')
+        
+        self.mail = None
+        
+        
+        # Load field extraction configuration
+        self.config_df, self.pas_fields = load_configuration(CONFIG_FILE_PATH)
+        self.description_columns = get_description_columns(self.config_df)
+        
+        # Setup logging
+        self.logger = logging.getLogger('EmailAgent')
         self.logger.setLevel(logging.INFO)
-        console_handler = logging.StreamHandler(sys.stdout)
-        console_handler.setLevel(logging.INFO)
-        console_format = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S')
-        console_handler.setFormatter(console_format)
-        self.logger.addHandler(console_handler)
-        if log_file:
-            file_handler = logging.FileHandler(log_file, encoding='utf-8')
-            file_handler.setLevel(logging.DEBUG)
-            file_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-            file_handler.setFormatter(file_format)
-            self.logger.addHandler(file_handler)
+        handler = logging.FileHandler('email_agent.log', encoding='utf-8')
+        handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+        if not self.logger.hasHandlers():
+            self.logger.addHandler(handler)
+        console = logging.StreamHandler()
+        console.setFormatter(logging.Formatter('%(message)s'))
+        if not any(isinstance(h, logging.StreamHandler) for h in self.logger.handlers):
+            self.logger.addHandler(console)
 
     def connect(self, retry_count=3, retry_delay=5):
         for attempt in range(retry_count):
             try:
+                print(f"Attempting to connect to {self.imap_server}:{self.imap_port} (Attempt {attempt + 1}/{retry_count})...")
                 self.logger.info(f"Connecting to {self.imap_server}:{self.imap_port}...")
                 self.mail = imaplib.IMAP4_SSL(self.imap_server, self.imap_port)
+                print(f"Attempting to connect to address and password {self.email_address}:{self.password} (Attempt {attempt + 1}/{retry_count})...")
                 self.mail.login(self.email_address, self.password)
                 self.logger.info(f"[SUCCESS] Connected to {self.imap_server}")
                 return True
@@ -489,245 +538,200 @@ class EmailAgentWithExtraction:
     def disconnect(self):
         if self.mail:
             try:
-                self.mail.close()
                 self.mail.logout()
-                self.logger.info("[DISCONNECT] Logged out from server")
-            except Exception as e:
-                self.logger.warning(f"Error during disconnect: {e}")
+                self.logger.info("[DISCONNECTED] Logged out from email server")
+            except:
+                pass
 
-    def decode_subject(self, subject):
-        if not subject:
+    def decode_str(self, s):
+        if s is None:
             return ""
-        decoded_parts = decode_header(subject)
-        decoded_subject = ""
-        for part, encoding in decoded_parts:
-            if isinstance(part, bytes):
-                try:
-                    decoded_subject += part.decode(encoding or 'utf-8', errors='replace')
-                except Exception:
-                    decoded_subject += part.decode('utf-8', errors='replace')
-            else:
-                decoded_subject += str(part)
-        return decoded_subject
-
-    def matches_subject(self, subject):
-        subject_lower = subject.lower()
-        return any(target.lower() in subject_lower for target in self.target_subjects)
+        if isinstance(s, bytes):
+            s = s.decode('utf-8', errors='ignore')
+        parts = decode_header(s)
+        decoded_parts = []
+        for content, encoding in parts:
+            if isinstance(content, bytes):
+                content = content.decode(encoding or 'utf-8', errors='ignore')
+            decoded_parts.append(content)
+        return ''.join(decoded_parts)
 
     def extract_loan_id(self, subject):
-        # Use the pattern from config for loan ID extraction (alphanumeric or numeric)
         match = re.search(self.loan_id_pattern, subject)
-        if match:
-            return match.group(1).strip()
-        # If not found, generate TMP + 10 random alphanumeric characters
-        rand_str = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
-        return f"TMP{rand_str}"
+        return match.group(0) if match else self.generate_random_id()
 
-    def clean_filename(self, filename):
-        invalid_chars = '<>:"|?*\\/\0'
-        for char in invalid_chars:
-            filename = filename.replace(char, '_')
-        if len(filename) > 200:
-            name, ext = os.path.splitext(filename)
-            filename = name[:200 - len(ext)] + ext
-        return filename
+    def generate_random_id(self):
+        return ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
 
-    def save_attachment(self, part, sub_folder):
-        """
-        Save email attachment to disk in the specified sub_folder
-        Args:
-            part: Email part containing attachment
-            sub_folder (Path): Path to the unique folder for this email
-        Returns:
-            str: Filepath if saved successfully, None otherwise
-        """
-        filename = part.get_filename()
-        if not filename:
-            return None
-        try:
-            # Decode filename if needed
-            if isinstance(filename, str):
-                filename = self.clean_filename(filename)
-            else:
-                decoded = decode_header(filename)[0]
-                if isinstance(decoded[0], bytes):
-                    filename = decoded[0].decode(decoded[1] or 'utf-8')
-                else:
-                    filename = decoded[0]
-                filename = self.clean_filename(filename)
-            # Do NOT add timestamp to filename, just use original name
-            unique_filename = filename
-            filepath = sub_folder / unique_filename
-            # Save the file
-            with open(filepath, 'wb') as f:
-                f.write(part.get_payload(decode=True))
-            file_size = filepath.stat().st_size / 1024  # KB
-            self.logger.info(f"  [SAVED ATTACHMENT] {unique_filename} ({file_size:.1f} KB)")
-            return str(filepath)
-        except Exception as e:
-            self.logger.error(f"  [ERROR] Failed to save attachment: {e}")
-            return None
+    def process_email(self, email_id, msg):
+        subject = self.decode_str(msg.get('Subject', ''))
+        from_addr = self.decode_str(msg.get('From', ''))
+        date_str = self.decode_str(msg.get('Date', ''))
+        print("Subject:",subject)
+        print("From:",from_addr)
+        print("Date:",date_str)
+        # Check if subject matches target subjects
+        # if not any(target in subject for target in self.target_subjects):
+        #     return []
+        
+        self.logger.info(f"\n[NEW EMAIL] Subject: {subject}")
+        self.logger.info(f"  From: {from_addr}")
+        self.logger.info(f"  Date: {date_str}")
+        
+        loan_id = self.extract_loan_id(subject)
+        print("Loan ID:",loan_id)
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        folder_name = f"{loan_id}_{timestamp}"
+        save_path = os.path.join(self.save_location, folder_name)
+        os.makedirs(save_path, exist_ok=True)
+        
+        # Save email metadata
+        metadata = {
+            'subject': subject,
+            'from': from_addr,
+            'date': date_str,
+            'loan_id': loan_id,
+            'timestamp': timestamp
+        }
 
-    def _save_metadata(self, sub_folder, subject, mail_body, from_addr, date, loan_id, attachments):
-        try:
-            subject_path = sub_folder / "mail_subject.txt"
-            with open(subject_path, 'w', encoding='utf-8') as f:
-                f.write(subject)
-            body_path = sub_folder / "mail_body.txt"
-            with open(body_path, 'w', encoding='utf-8') as f:
-                f.write(mail_body)
-            log_path = sub_folder / "log.json"
-            log_data = {
-                "sender": from_addr,
-                "timestamp": date,
-                "loan_id": loan_id,
-                "attachments": [Path(a).name for a in attachments],
-                "subject": subject,
-                "mail_body_initial": mail_body[:200]
-            }
-            with open(log_path, 'w', encoding='utf-8') as f:
-                json.dump(log_data, f, indent=2, ensure_ascii=False)
-            abhl_imgc_path = sub_folder / "abhl_imgc.json"
-            abhl_imgc_data = {
-                "ABHL": from_addr,
-                "IMGC": self.email_address
-            }
-            with open(abhl_imgc_path, 'w', encoding='utf-8') as f:
-                json.dump(abhl_imgc_data, f, indent=2, ensure_ascii=False)
-        except Exception as e:
-            self.logger.error(f"  [ERROR] Failed to save metadata: {e}")
+        print("Saving email metadata to:",os.path.join(save_path, 'email_metadata.json'))
+        with open(os.path.join(save_path, 'email_metadata.json'), 'w', encoding='utf-8') as f:
+            json.dump(metadata, f, indent=2)
+        print("Saved email metadata.")
+        # Save email body
+        body_content = self.extract_email_body(msg)
+        
+        with open(os.path.join(save_path, 'mail_body.txt'), 'w', encoding='utf-8') as f:
+            f.write(body_content)
+        
+        # Save email subject
+        with open(os.path.join(save_path, 'mail_subject.txt'), 'w', encoding='utf-8') as f:
+            f.write(subject)
+        
+        # Download attachments
+        attachments = self.download_attachments(msg, save_path)
+        
+        if attachments:
+            self.logger.info(f"  [SAVED] {len(attachments)} attachment(s) to: {save_path}")
+        
+        if self.mark_as_read:
+            self.mail.store(email_id, '+FLAGS', '\\Seen')
+        
+        # Run field extraction on this folder
+        self.run_field_extraction(save_path)
+        
+        return attachments
 
-    def get_mail_body(self, msg):
+    def extract_email_body(self, msg):
         body = ""
         if msg.is_multipart():
             for part in msg.walk():
                 content_type = part.get_content_type()
-                content_disposition = part.get_content_disposition()
-                if content_type == "text/plain" and content_disposition != "attachment":
-                    try:
-                        body += part.get_payload(decode=True).decode(part.get_content_charset() or 'utf-8', errors='replace')
-                    except Exception:
-                        body += part.get_payload(decode=True).decode('utf-8', errors='replace')
+                if content_type == "text/plain":
+                    payload = part.get_payload(decode=True)
+                    if payload:
+                        body += payload.decode('utf-8', errors='ignore')
         else:
-            if msg.get_content_type() == "text/plain":
-                try:
-                    body += msg.get_payload(decode=True).decode(msg.get_content_charset() or 'utf-8', errors='replace')
-                except Exception:
-                    body += msg.get_payload(decode=True).decode('utf-8', errors='replace')
-        return body.strip()
+            payload = msg.get_payload(decode=True)
+            if payload:
+                body = payload.decode('utf-8', errors='ignore')
+        return body
 
-    def process_email(self, email_id, msg):
-        attachments_saved = []
-        try:
-            subject = self.decode_subject(msg.get('subject', ''))
-            # if not self.matches_subject(subject):
-            #     return attachments_saved
-            loan_id = self.extract_loan_id(subject)
-            if not loan_id:
-                self.logger.warning(f"\n[MATCH FOUND] Subject matches, but **could not extract Loan ID** for folder creation. Skipping...")
-                self.logger.warning(f"  Subject: {subject}")
-                return attachments_saved
-            from_addr = msg.get('from', 'Unknown')
-            date = msg.get('date', 'Unknown')
-            loan_folder = self.save_location / loan_id
-            loan_folder.mkdir(parents=True, exist_ok=True)
-            folder_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            sub_folder = loan_folder / folder_timestamp
-            sub_folder.mkdir(parents=True, exist_ok=True)
-            self.logger.info(f"\n[MATCH FOUND] Subject: {subject}")
-            self.logger.info(f"  Loan ID: **{loan_id}**")
-            self.logger.info(f"  Folder: {loan_id}/{folder_timestamp}")
-            self.logger.info(f"  From: {from_addr}")
-            self.logger.info(f"  Date: {date}")
-            mail_body = self.get_mail_body(msg)
-            attachment_count = 0
-            if msg.is_multipart():
-                for part in msg.walk():
-                    content_disposition = part.get_content_disposition()
-                    if content_disposition == 'attachment' and part.get_filename():
-                        attachment_count += 1
-                        filepath = self.save_attachment(part, sub_folder)
-                        if filepath:
-                            attachments_saved.append(filepath)
-            else:
-                if msg.get_content_disposition() == 'attachment' and msg.get_filename():
-                    attachment_count += 1
-                    filepath = self.save_attachment(msg, sub_folder)
-                    if filepath:
-                        attachments_saved.append(filepath)
-            if attachment_count == 0:
-                self.logger.info("  (No attachments found in email)")
-            self._save_metadata(sub_folder, subject, mail_body, from_addr, date, loan_id, attachments_saved)
-            # === FIELD EXTRACTION HOOK ===
-            if attachments_saved:
-                self.logger.info(f"  [EXTRACTION] Running field extraction for folder: {sub_folder}")
-                self.run_field_extraction(sub_folder)
-            if self.mark_as_read and attachments_saved:
-                try:
-                    self.mail.store(email_id, '+FLAGS', '\\Seen')
-                except Exception as e:
-                    self.logger.warning(f"  Could not mark email as read: {e}")
-        except Exception as e:
-            self.logger.error(f"[ERROR] Processing email: {e}")
-            import traceback
-            self.logger.error(f"Traceback: {traceback.format_exc()}")
-        return attachments_saved
+    def download_attachments(self, msg, save_path):
+        print("Downloading attachments...")
+        attachments = []
+        for part in msg.walk():
+            print("DEBUG: part content-type:", part.get_content_type())
+            print("DEBUG: part content-disposition:", part.get('Content-Disposition'))
+            print("DEBUG: part filename:", part.get_filename())
+            if part.get_content_maintype() == 'multipart':
+                continue
+            if part.get('Content-Disposition') is None:
+                continue
+            
+            filename = part.get_filename()
+            if filename:
+                filename = self.decode_str(filename)
+                filepath = os.path.join(save_path, filename)
+                
+                with open(filepath, 'wb') as f:
+                    f.write(part.get_payload(decode=True))
+                attachments.append(filepath)
+                self.logger.info(f"    [ATTACHMENT] {filename}")
+        
+        return attachments
 
     def run_field_extraction(self, folder_path):
+        """Run field extraction on all documents in the folder"""
         try:
-            all_files = [f for f in os.listdir(folder_path)]
-            documents = [f for f in all_files if Path(f).suffix.lower() in SUPPORTED_EXTENSIONS]
+            self.logger.info(f"\n  [EXTRACTION] Starting field extraction for {folder_path}")
+            
+            # Get all supported documents in the folder
+            documents = [
+                f for f in os.listdir(folder_path)
+                if Path(f).suffix.lower() in SUPPORTED_EXTENSIONS
+            ]
+            
             if not documents:
                 self.logger.info(f"  [EXTRACTION] No supported documents found in {folder_path}")
                 return
-
-            description_columns = get_description_columns(self.config_df)
-            # LLM call to map filenames to config columns
-            filename_to_column = llm_map_filenames_to_config_columns(
-                documents, description_columns, OPENAI_API_KEY, OPENAI_MODEL
+            
+            self.logger.info(f"  [EXTRACTION] Found {len(documents)} document(s) to process")
+            
+            # ONE-TIME LLM CALL: Match all documents to columns
+            filename_to_column = match_document_to_column(
+                documents=documents,
+                description_columns=self.description_columns,
+                folder_path=folder_path
             )
-            self.logger.info(f"LLM filename-to-column mapping: {filename_to_column}")  # Add this line
-
+            
+            self.logger.info(f"  [EXTRACTION] Document-to-column mapping completed")
+            
+            # Extract fields from each document using its matched column
             all_results = {}
             column_selections = {}
-
+            
             for doc_file in documents:
-                matched_column = filename_to_column.get(doc_file, "NONE")
-                if matched_column == "NONE":
-                    self.logger.warning(f"    [EXTRACTION] Document '{doc_file}' does not match any config columns (G onwards). Skipping.")
+                matched_column = filename_to_column.get(doc_file)
+                if not matched_column:
+                    self.logger.warning(f"    [EXTRACTION] Document '{doc_file}' has no matching column. Skipping.")
                     continue
-
+                
                 doc_path = os.path.join(folder_path, doc_file)
                 doc_name = Path(doc_file).stem
-                doc_ext = Path(doc_file).suffix
-
+                
                 self.logger.info(f"    [EXTRACTION] Processing: {doc_file} (using column: {matched_column})")
+                
+                # Read document
                 document_text = read_document(doc_path)
                 if not document_text or len(document_text) < 50:
                     self.logger.info(f"    [EXTRACTION] Skipping {doc_file} (not enough content)")
                     continue
-
+                
+                # Extract fields using the matched column
                 extracted_data, _ = extract_fields_with_intelligent_selection(
                     document_text=document_text,
                     config_df=self.config_df,
-                    document_name=doc_name,
-                    file_extension=doc_ext,
+                    matched_column=matched_column,
                     pas_fields=self.pas_fields,
                     api_key=OPENAI_API_KEY,
                     model=OPENAI_MODEL
                 )
-
+                
                 if extracted_data:
                     all_results[doc_name] = extracted_data
                     column_selections[doc_name] = matched_column
-                    self.logger.info(f"    [EXTRACTION] ✓ Extracted using column: {matched_column}")
-
+                    self.logger.info(f"    [EXTRACTION] ✓ Extracted {len(extracted_data)} fields using column: {matched_column}")
+            
+            # Save results
             if all_results:
+                print(all_results)
                 output_path = os.path.join(folder_path, OUTPUT_FILENAME)
                 merge_results_to_excel(all_results, self.pas_fields, output_path, column_selections)
                 self.logger.info(f"  [EXTRACTION] Results saved to {output_path}")
             else:
                 self.logger.info(f"  [EXTRACTION] No extraction results to save for {folder_path}")
+                
         except Exception as e:
             self.logger.error(f"  [EXTRACTION ERROR] {e}")
             import traceback
@@ -735,6 +739,7 @@ class EmailAgentWithExtraction:
 
     def check_emails(self):
         all_attachments = []
+        print("Inside check_emails")
         try:
             try:
                 self.mail.select('inbox')
@@ -745,10 +750,13 @@ class EmailAgentWithExtraction:
                 self.mail.select('inbox')
             search_criteria = 'UNSEEN' if self.only_unseen else 'ALL'
             status, messages = self.mail.search(None, search_criteria)
+            print("Messages:",len(messages[0].split()))
+            print("Status:", status)
             if status != 'OK':
                 self.logger.error(f"Search failed: {status}")
                 return all_attachments
             email_ids = messages[0].split()
+            print("Email IDs:",email_ids)
             for email_id in email_ids:
                 if email_id in self.processed_emails:
                     continue
@@ -757,9 +765,12 @@ class EmailAgentWithExtraction:
                     if status != 'OK':
                         continue
                     for response_part in msg_data:
+                        print("Response Part:")
                         if isinstance(response_part, tuple):
                             msg = email.message_from_bytes(response_part[1])
+                            #print("Message:",msg)
                             attachments = self.process_email(email_id, msg)
+                            print("Attachments:",attachments)
                             all_attachments.extend(attachments)
                     self.processed_emails.add(email_id)
                 except Exception as e:
@@ -770,6 +781,7 @@ class EmailAgentWithExtraction:
         return all_attachments
 
     def run(self):
+        print("Inside run")
         self.logger.info("\n" + "=" * 60)
         self.logger.info("EMAIL AGENT WITH FIELD EXTRACTION STARTED")
         self.logger.info("=" * 60)
@@ -782,18 +794,25 @@ class EmailAgentWithExtraction:
         self.logger.info(f"Only unseen emails: {self.only_unseen}")
         self.logger.info(f"Mark as read: {self.mark_as_read}")
         self.logger.info("=" * 60 + "\n")
+        print("Inside run___ ")
         if not self.connect():
             self.logger.error("[FAILED] Could not start agent - connection failed")
+            print("Could not start agent - connection failed")
             return
+        
         try:
             while True:
+                print("Checking emails...")
                 self.logger.info(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Checking emails...")
                 attachments = self.check_emails()
+                
                 if attachments:
                     self.logger.info(f"[SUCCESS] Downloaded {len(attachments)} attachment(s) into {len(set(Path(f).parent for f in attachments))} folder(s)")
                 else:
                     self.logger.info("  No new attachments")
+                
                 time.sleep(self.check_interval)
+                
         except KeyboardInterrupt:
             self.logger.info("\n\n[STOPPED] Agent stopped by user")
         except Exception as e:
@@ -806,7 +825,7 @@ class EmailAgentWithExtraction:
 # =============================================================================
 # CONFIG LOADING AND MAIN
 # =============================================================================
-def load_config(config_file):
+def load_config(config_file='config.json'):
     with open(config_file, 'r', encoding='utf-8') as f:
         return json.load(f)
 
@@ -814,61 +833,22 @@ def main():
     parser = argparse.ArgumentParser(description='Email Agent with Field Extraction')
     parser.add_argument('-c', '--config', default='config.json', help='Configuration file (default: config.json)')
     args = parser.parse_args()
+    
     if not os.path.exists(args.config):
         print(f"[ERROR] Config file not found: {args.config}")
         return
+    
     if not os.path.exists(CONFIG_FILE_PATH):
         print(f"[ERROR] Field extraction config not found: {CONFIG_FILE_PATH}")
         return
+    
     if not OPENAI_API_KEY:
         print(f"[ERROR] OPENAI_API_KEY not set in environment.")
         return
+    print("Loading config...",args.config)
     config = load_config(args.config)
     agent = EmailAgentWithExtraction(config)
     agent.run()
 
 if __name__ == "__main__":
     main()
-
-def llm_map_filenames_to_config_columns(filenames, description_columns, api_key, model="gpt-4o"):
-    """
-    Use LLM to map each filename to the most appropriate config column (G onwards).
-    Returns a dict: {filename: matched_column or "NONE"}
-    """
-    prompt = f"""
-You are an expert at mapping document filenames to configuration columns for data extraction.
-
-Below is a list of document filenames (attachments) and a list of configuration columns (from an Excel config file, columns G onwards).You should match file name mail_subject.txt with column name Email Subject Description
-mail_subject.txt with Email Body Description similarly files having cam in their name with CAM Description and so on.
-For each filename, select the most appropriate column from the list, or "NONE" if there is no suitable match. 
-Filenames:
-{json.dumps(filenames, indent=2)}
-
-Configuration columns:
-{json.dumps(description_columns, indent=2)}
-
-Return your answer as a JSON object where each key is a filename and each value is the matched column name or "NONE".
-Example:
-{{
-  "App Form - John.pdf": "Application Form Description",
-  "mail_subject.txt": "Email Subject Description",
-  "random.txt": "NONE"
-}}
-"""
-    try:
-        client = OpenAI(api_key=api_key)
-        response = client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": "You are a precise assistant. Always respond with valid JSON."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.1,
-            response_format={"type": "json_object"}
-        )
-        result_text = response.choices[0].message.content
-        mapping = json.loads(result_text)
-        return mapping
-    except Exception as e:
-        print(f"  ✗ LLM mapping error: {e}")
-        return {filename: "NONE" for filename in filenames}
