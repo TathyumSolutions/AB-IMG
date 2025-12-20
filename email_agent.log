@@ -8767,3 +8767,6 @@ NameError: name 'get_description_columns' is not defined
 2025-12-20 12:32:47,533 - 
   [EMAIL GENERATION] Starting email generation for email_attachments/3000019391_20251220_123223/extraction_results.xlsx
 2025-12-20 12:32:47,618 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 12:37:26,095 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 12:37:26,097 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-20 12:37:32,098 - [2025-12-20 12:37:32] Checking emails...
