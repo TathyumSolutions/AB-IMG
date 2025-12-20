@@ -512,17 +512,121 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
                 row[doc_name] = "Not Found"
             else:
                 row[doc_name] = extracted_data[field]
-        # Add additional columns from config_df at the end
+        # Add additional columns from FieldConfiguration file at the end
         if config_df is not None:
+            # Find the matching row in config_df for this field
             matching_rows = config_df[config_df['PAS Field Name'] == field]
             if not matching_rows.empty:
                 config_row = matching_rows.iloc[0]
+
+                # Compute Final Data for PAS System using First/Second Preference and document values
+                def _is_valid_value(value):
+                    if value is None:
+                        return False
+                    if isinstance(value, float) and pd.isna(value):
+                        return False
+                    text = str(value).strip()
+                    if not text:
+                        return False
+                    if text.upper() in {'NO INSTRUCTION', 'NOT FOUND', 'NOT PROCESSED'}:
+                        return False
+                    return True
+
+                first_pref = config_row.get('First Preference') if 'First Preference' in config_df.columns else None
+                second_pref = config_row.get('Second Preference') if 'Second Preference' in config_df.columns else None
+
+                final_value = None
+
+                # Try First Preference
+                if pd.notna(first_pref):
+                    pref_col = str(first_pref)
+                    if pref_col in doc_columns:
+                        candidate = row.get(pref_col)
+                        if _is_valid_value(candidate):
+                            final_value = candidate
+
+                # Fallback to Second Preference
+                if final_value is None and pd.notna(second_pref):
+                    pref_col = str(second_pref)
+                    if pref_col in doc_columns:
+                        candidate = row.get(pref_col)
+                        if _is_valid_value(candidate):
+                            final_value = candidate
+
+                # Fallback to first valid document value
+                if final_value is None:
+                    for col in doc_columns:
+                        candidate = row.get(col)
+                        if _is_valid_value(candidate):
+                            final_value = candidate
+                            break
+
+                row['Final Data for PAS System'] = final_value if final_value is not None else ""
+
+                # Populate Email Subject / Email Body from extracted values of the corresponding documents
+                # based on which instruction column was selected during extraction.
+                subject_doc = next(
+                    (doc for doc, selected in column_selections.items() if selected == 'Email Subject Description' and doc in doc_columns),
+                    None,
+                )
+                body_doc = next(
+                    (doc for doc, selected in column_selections.items() if selected == 'Email Body Description' and doc in doc_columns),
+                    None,
+                )
+
+                subject_val = row.get(subject_doc) if subject_doc else None
+                body_val = row.get(body_doc) if body_doc else None
+
+                row['Email Subject'] = str(subject_val).strip() if _is_valid_value(subject_val) else ""
+                row['Email Body'] = str(body_val).strip() if _is_valid_value(body_val) else ""
+
+                # Add selected columns from the configuration file, excluding unwanted metadata/description columns
+                excluded_columns = {
+                    'Data Type',
+                    'Field length',
+                    'Primary Source Document',
+                    'Secondary Source Document',
+                    'CAM Description',
+                    'PD Description',
+                    'PD (Word Doc) Description',
+                    'Application Form Description',
+                    'Legal Doc Description',
+                    'Technical Doc Description',
+                    'Email Subject Description',
+                    'Email Body Description',
+                }
                 for col in config_df.columns:
-                    if col != 'PAS Field Name':
+                    if col == 'PAS Field Name':
+                        continue
+                    if col in excluded_columns:
+                        continue
+                    if col == 'Criticality':
+                        row['Mismatch Criticality'] = config_row[col] if pd.notna(config_row[col]) else ""
+                        continue
                         row[col] = config_row[col] if pd.notna(config_row[col]) else ""
         results_data.append(row)
 
     results_df = pd.DataFrame(results_data)
+    try:
+        required_cols = ['PAS Field Name', 'Final Data for PAS System']
+        missing_cols = [c for c in required_cols if c not in results_df.columns]
+        if missing_cols:
+            print(f"\n  ⚠ Warning: Could not write PAS JSON map. Missing columns: {missing_cols}")
+        else:
+            pas_map_df = results_df[required_cols].copy()
+            pas_map_df['PAS Field Name'] = pas_map_df['PAS Field Name'].fillna('').astype(str)
+            pas_map_df['Final Data for PAS System'] = pas_map_df['Final Data for PAS System'].fillna('').astype(str)
+            pas_map = dict(zip(pas_map_df['PAS Field Name'], pas_map_df['Final Data for PAS System']))
+
+            ts = datetime.now().strftime('%Y%m%d_%H%M%S')
+            out_dir = os.path.dirname(output_path) or '.'
+            json_path = os.path.join(out_dir, f"pas_field_map_{ts}.json")
+            with open(json_path, 'w', encoding='utf-8') as f:
+                json.dump(pas_map, f, indent=2, ensure_ascii=False)
+            print(f"\n✓ PAS JSON map saved to: {json_path}")
+    except Exception as e:
+        print(f"\n  ⚠ Warning: Could not write PAS JSON map: {e}")
+    
     try:
         with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
             results_df.to_excel(writer, sheet_name='Extracted Fields', index=False)
