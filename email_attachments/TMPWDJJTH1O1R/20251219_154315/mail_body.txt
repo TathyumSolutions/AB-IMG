@@ -1,0 +1,557 @@
+🚨 CRITICAL DATA QUALITY ALERT
+
+We have identified 49 HIGH criticality issue(s) in the extracted data that require IMMEDIATE attention:
+
+
+❌ CONFLICTING VALUES: 'Loan_Number'
+   ⚠️  Different values found across documents:
+      • Application form: '3000017606'
+      • Word: '3000017606'
+      • Data Type: 'VARCHAR2'
+      • Field length: '30'
+      • Primary Source Document: 'Email Subject'
+      • Secondary Source Document: 'Application Form'
+      • PD Description: 'In the PD document, the value can be extracted from the field “Application No.” positioned just below the Personal Discussion Report header. This value typically appears as a 10-character alpha  numeric identifier (e.g., 300002010).'
+      • Application Form Description: 'It can be found in the Application Form under the field “Application Form Number,” usually shown at the top of the document. This value generally appears as a 10-character alpha numeric identifier (e.g., 300002010) and ideally should  be cross-validated with the corresponding 10-character alpha numeric  in the email subject.'
+      • Email Subject Description: 'This value can be extracted from the Email Subject, where it typically appears as a 10-digit numeric identifier (e.g., 300002010).It may or may not be at the end of complete subject line.'
+      • Email Body Description: 'This value can be extracted from the Email Subject, where it typically appears as a 10-digit numeric identifier (e.g., 300002010).'
+
+❌ CONFLICTING VALUES: 'Sourcing_Region'
+   ⚠️  Different values found across documents:
+      • Application form: 'Bhopal'
+      • Data Type: 'CLob'
+      • Field length: '25'
+      • Primary Source Document: 'Application Form'
+      • Application Form Description: 'It can be obtained from the Application Form under the Sourcing Channel Details section, in the field “Location Name.” The value for this field should be mapped based on the corresponding City and Branch.'
+
+❌ CONFLICTING VALUES: 'Sourcing_City_Name'
+   ⚠️  Different values found across documents:
+      • Application form: 'Bhopal'
+      • Word: 'Bhopal'
+      • Data Type: 'VARCHAR2'
+      • Field length: '25'
+      • Primary Source Document: 'Email Subject'
+      • Secondary Source Document: 'Application Form'
+      • PD (Word Doc) Description: 'In the PD document, the sourcing city is generally referenced within the “About Applicants” section. For example, in the sentence “Applicant is married & residing in rented house at H No E7/112 Arera Colony Bhopal,” the city Bhopal is the sourcing city.'
+      • Application Form Description: 'In the Application Form, the city can be found under the Sourcing Channel Details section in the field “Location Name.” Typical entries include cities such as Indore, Lucknow, Mumbai, Noida, Kanpur, Ahmedabad, etc.'
+      • Email Subject Description: 'In the Email Subject, the sourcing city is usually mentioned directly. Examples include: Agra, Bhopal, Chennai, Bengaluru, etc.'
+
+❌ CONFLICTING VALUES: 'Branch_Name'
+   ⚠️  Different values found across documents:
+      • Application form: 'Bhopal'
+      • Word: 'Bhopal'
+      • Data Type: 'CLob'
+      • Field length: '40'
+      • Primary Source Document: 'Email Subject'
+      • Secondary Source Document: 'Application Form'
+      • PD (Word Doc) Description: 'In the PD Word document, the city reference that helps identify the branch is generally found within the “About Applicants” section.
+Example:
+“Applicant is married & residing in rented house at H No E7/112 Arera Colony Bhopal.”
+Here, Bhopal can be used to determine the corresponding branch name.'
+      • Application Form Description: 'In the Application Form, the branch-related city information appears under the Sourcing Channel Details section in the field “Location Name.” Common examples include: Indore, Lucknow, Mumbai, Noida, Kanpur, Ahmedabad, etc.
+The branch name can be mapped based on this city value.'
+      • Email Subject Description: 'The branch or city reference can sometimes be inferred from the Email Subject, where the sourcing city is typically mentioned. Examples include: Agra, Bhopal, Chennai, Bengaluru, etc. This city reference can help determine the corresponding branch location.'
+
+❌ CONFLICTING VALUES: 'Sourcing_Channel'
+   ⚠️  Different values found across documents:
+      • Application form: 'Deepa Soni'
+      • Data Type: 'CLob'
+      • Field length: '50'
+      • Primary Source Document: 'Application Form'
+      • Application Form Description: 'In the Application Form, check the SOURCING CHANNEL DETAILS section under the field “Channel Name.” Update the PAS Field only if this value is present; otherwise, mark it as NA.'
+
+❌ CONFLICTING VALUES: 'Final_Sanctioned_Amount'
+   ⚠️  Different values found across documents:
+      • Application form: '1200000'
+      • Word: '12,00,000'
+      • Data Type: 'Number'
+      • Field length: '20'
+      • Primary Source Document: 'Email Subject'
+      • Secondary Source Document: 'Application Form'
+      • CAM Description: 'In the Basic Input sheet, navigate to the “Proposed Loan Break-up” section and extract the value from the field “Loan Amount.”'
+      • PD (Word Doc) Description: 'Check the “Proposed Loan Break-up” section which will be in Tabular Form  and pick the value from the field “Loan Amount.”'
+      • Application Form Description: 'Under the Loan Details section, refer to the field “Loan Amount Requested.” Use the given value for mapping this PAS Field.'
+      • Email Subject Description: 'The loan amount is typically mentioned in the Email Subject, such as “Loan Amount – 15.00 Lacs,” “19 Lacs,” or “Rs 30.00 Lacs.”, etc.'
+
+❌ CONFLICTING VALUES: 'Sanction_Loan_Period'
+   ⚠️  Different values found across documents:
+      • Application form: '240'
+      • Word: '240'
+      • Data Type: 'Number'
+      • Field length: '3'
+      • Primary Source Document: 'Email Subject'
+      • Secondary Source Document: 'Application Form'
+      • CAM Description: 'In the Basic Input sheet of the CAM Excel, go to the “Proposed Loan Break-up” section and pick the value from the field “Tenure (Months).”'
+      • PD (Word Doc) Description: 'In the tabular section titled “Proposed Loan Break-up,” extract the value from the field “Tenure (Months).”'
+      • Application Form Description: 'Under the Loan Details section, use the value from the field “Loan Tenure (Months)” for mapping this PAS Field.'
+      • Email Subject Description: 'The tenure is usually mentioned in the Email Subject, such as “240 Months” or “Tenure – 240 Months” etc.'
+
+❌ CONFLICTING VALUES: 'Sanction_Interest_Rate'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Word: '10.10%'
+      • Data Type: 'CLob'
+      • Field length: '5'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the Basic Input sheet under the “Proposed Loan Break-up” section, extract the value from the field “Proposed ROI.” This value is typically presented in formats like 10.50% or 12.00% etc.'
+      • PD (Word Doc) Description: 'In the “Proposed Loan Break-up” section which will be tabular form, refer to the field name “Proposed ROI,” where the value will appear in formats such as 10.50% or 12.00% etc'
+
+❌ CONFLICTING VALUES: 'Loan_Type'
+   ⚠️  Different values found across documents:
+      • Application form: 'PLOT AND HOME CONSTRUCTION LOAN'
+      • Word: 'Home Loan'
+      • Data Type: 'VARCHAR2'
+      • Field length: '3'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM Excel file, within the Basic Input sheet under the Proposed Loan Breakup section, there is a field called “Type of Loan.” This field typically contains values such as Home Loan.'
+      • PD (Word Doc) Description: 'In the PD (Word document), within the Proposed Loan Breakup table, there is a field  “Type of Loan.” This field generally includes values such as Home Loan, Composite Loan (Plot Purchase plus Home Construction), and similar options.'
+      • Application Form Description: 'In the Application Form, at the beginning of the document, there is a section titled Loan Details. Under this section, you will find a field named “Scheme,” which typically contains values such as PLOT AND  HOME CONSTRUCTION LOAN,  PLOT HOME CONSTRUCTION LOAN among others.'
+
+❌ CONFLICTING VALUES: 'Type_Of_Employment_Loan'
+   ⚠️  Different values found across documents:
+      • Application form: 'SENP'
+      • Word: 'Self-employed'
+      • Data Type: 'VARCHAR2'
+      • Field length: '2'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM Excel file, under the Basic Input sheet, the field “Customer Type” typically contains values such as Salaried, Self-Employed Non-Professional, and similar categories. This field can be found at the top.'
+      • PD Description: 'In the PD report, under the Applicant Details section, there is a field labeled “Profile,” which generally contains values such as Salaried, among others.'
+      • PD (Word Doc) Description: 'In the PD (Word document), under the About Applicant or a similar section, you will find statements such as “The applicant is the proprietor of the firm M/S Om Construction” or other similar declarations.'
+      • Application Form Description: 'In the Application Form, under the Occupation/Business Details section, the field “Salaried / Self-Employed” typically contains values such as Salaried, SENP, and other similar categories.'
+
+❌ CONFLICTING VALUES: 'Foir'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Word: '37.92%'
+      • Data Type: 'Number'
+      • Field length: '10'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the AffordableCMAssessedIncome sheet, the field “FOIR for Applied Loan Amount” typically contains values such as 44.55%, 33.24%, and similar percentages.'
+      • PD (Word Doc) Description: 'In the PD (Word document), under the Income Details section, which contains tabular data, the field “FOIR for Applied Loan Amount” typically includes values such as 55.02%, 33.24%, and similar percentages.'
+
+❌ CONFLICTING VALUES: 'Borrower_First_Name'
+   ⚠️  Different values found across documents:
+      • Application form: 'BHANU PRATAP'
+      • Word: 'Bhanu'
+      • Data Type: 'Clob'
+      • Field length: '25'
+      • Primary Source Document: 'Application Form'
+      • Secondary Source Document: 'CAM'
+      • CAM Description: 'In the CAM file, under the Basic Input sheet and the Parties to the Loan section, the field “Name” typically contains values such as Vikram Singh, Girish Kumar Nanda, Mohd. Azhar, and similar entries.'
+      • Application Form Description: 'In the Application Form, under the Personal Details section, the field “Name” will contain values such as Vikram Singh, Girish Kumar Nanda, Mohd. Azhar, and similar applicant names.'
+
+❌ CONFLICTING VALUES: 'Borrower_Surname'
+   ⚠️  Different values found across documents:
+      • Application form: 'BHAGIRATH'
+      • Word: 'Pratap'
+      • Data Type: 'Clob'
+      • Field length: '25'
+      • Primary Source Document: 'Application Form'
+      • Secondary Source Document: 'CAM'
+      • CAM Description: 'In the CAM file, under the Basic Input sheet and the Parties to the Loan section, the field “Name” typically contains values such as Vikram Singh, Girish Kumar Nanda, Mohd. Azhar, and similar entries.'
+      • Application Form Description: 'In the Application Form, under the Personal Details section, the field “Name” will contain values such as Vikram Singh, Girish Kumar Nanda, Mohd. Azhar, and similar applicant names.'
+
+❌ CONFLICTING VALUES: 'Date_Of_Birth_Of_The_Borrower'
+   ⚠️  Different values found across documents:
+      • Application form: '01/01/1996'
+      • Data Type: 'DATE'
+      • Field length: '8'
+      • Primary Source Document: 'Application Form'
+      • Application Form Description: 'In the Application Form, under the Personal Details section, the field “Date of Birth” usually values appears in the DD/MM/YYYY format, with sample values such as 02/01/2024, 24/03/1991, and similar dates.'
+
+❌ CONFLICTING VALUES: 'Relationship_Of_Coborrower_To_The_Borrower'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Word: 'MOTHER'
+      • Data Type: 'Clob'
+      • Field length: '3'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the Parties to the Loan section, the field “Relationship with Applicant” typically contains values such as Mother, Spouse, Father, and similar relationships.'
+      • PD Description: 'In the PD document, under the Applicant Details section, review the details of the second applicant. There, you will find a field name “Relationship” which typically includes values such as Spouse, Mother, and similar relationships.'
+
+❌ CONFLICTING VALUES: 'Borrower_City'
+   ⚠️  Different values found across documents:
+      • Application form: 'Mandideep'
+      • Word: 'Mandideep'
+      • Data Type: 'Clob'
+      • Field length: '25'
+      • Primary Source Document: 'Application Form'
+      • Application Form Description: 'In the Application Form, under the Current/Communication Address section, the field “City” typically contains values such as Bhopal, Indore, Lucknow, and similar city names.'
+
+❌ CONFLICTING VALUES: 'Borrower_PIN'
+   ⚠️  Different values found across documents:
+      • Application form: '462046'
+      • Data Type: 'Clob'
+      • Field length: '10'
+      • Primary Source Document: 'Application Form'
+      • Application Form Description: 'In the Application Form, under the Current/Communication Address section, the field “Pincode” typically contains values such as 226024, 110024, 201010, 400503, and similar numeric codes.'
+
+❌ CONFLICTING VALUES: 'Borrower_MobileNo'
+   ⚠️  Different values found across documents:
+      • Application form: '+91 6262878767'
+      • Data Type: 'VARCHAR2'
+      • Field length: '25'
+      • Primary Source Document: 'Application Form'
+      • Application Form Description: 'In the Application Form, under the Current/Communication Address section, the field “Mobile No.” typically contains values such as 8377998214, 9876543210, 7823445432, and other similar mobile numbers.'
+
+❌ CONFLICTING VALUES: 'Sole_Child'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Word: 'NO'
+      • Data Type: 'VARCHAR2'
+      • Field length: '20 BYTE'
+      • Primary Source Document: 'PD'
+      • Secondary Source Document: 'CAM'
+      • PD Description: 'Anwhere, If mentioned in PD then make it as Yes, if nothing is mentioned then make it as No'
+      • PD (Word Doc) Description: 'Anwhere, If mentioned in PD then make it as Yes, if nothing is mentioned then make it as No'
+
+❌ CONFLICTING VALUES: 'Employer_Type'
+   ⚠️  Different values found across documents:
+      • Application form: 'Proprietor'
+      • Word: 'Proprietor'
+      • Data Type: 'VARCHAR2'
+      • Field length: '0'
+      • Primary Source Document: 'Application Form'
+      • Secondary Source Document: 'PD'
+      • PD Description: 'In the PD document, under the Applicant Details section, the field “Employer Type” typically contains values such as Government and similar classifications.'
+      • PD (Word Doc) Description: 'In the PD (Word document), under the About Applicant section, there are usually statements such as “Applicant is the proprietor of the firm M/S Om Construction,” though the wording may vary in different cases.'
+      • Application Form Description: 'In the Application Form, under the Occupation/Business Details section, the field “Company / Occupation Type” typically contains values such as Madhya Pradesh Madhyam, Proprietorship, Private limited etc and similar classifications.'
+
+❌ CONFLICTING VALUES: 'Employer_Pin'
+   ⚠️  Different values found across documents:
+      • Application form: '462046'
+      • Data Type: 'VARCHAR2'
+      • Field length: '40'
+      • Primary Source Document: 'Application Form'
+      • Application Form Description: 'In the Application Form, under the Occupation/Business Details section, the field “Pincode” typically contains values such as 220567, 440032, 110032, and similar numeric codes.'
+
+❌ CONFLICTING VALUES: 'Years_In_Current_Employment'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Word: '6'
+      • Data Type: 'NUMBER'
+      • Field length: '0'
+      • Primary Source Document: 'CAM'
+      • CAM Description: 'In the CAM file, under the ApplicantSalary sheet, the field “Date of Joining” typically contains values such as 19/12/1981, etc.
+Check the Date of Joining and calculate the duration up to the current date, then update the corresponding months and years accordingly.'
+
+❌ CONFLICTING VALUES: 'Months_In_Current_Employment'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Word: '0'
+      • Data Type: 'NUMBER'
+      • Field length: '0'
+      • Primary Source Document: 'CAM'
+      • CAM Description: 'In the CAM file, under the ApplicantSalary sheet, the field “Date of Joining” typically contains values such as 19/12/1981, etc.
+Check the Date of Joining and calculate the duration up to the current date, then update the corresponding months and years accordingly.'
+
+❌ CONFLICTING VALUES: 'Months_In_Total_Employment'
+   ⚠️  Different values found across documents:
+      • Application form: '61 Months'
+      • Data Type: 'NUMBER'
+      • Field length: '22'
+      • Primary Source Document: 'Application Form'
+      • Secondary Source Document: 'PD'
+      • PD Description: 'In the Applicant Details section, the field “Total Work Experience” typically contains values such as 38 years 2 months or similar formats. If the total number of months is required, the provided years and months must be converted into a single cumulative month value.'
+      • PD (Word Doc) Description: 'In the PD (Word document), under sections such as About Applicant, About Employment, or Applicant Personal Details—or any similar sections—there will typically be explicit mentions of the applicant’s work experience in the form of months, years, or sometimes specific dates. If a date is provided, the corresponding years and months must be calculated up to the current date.'
+      • Application Form Description: 'In the Application Form, under the Occupation/Business Details section, the field “Work Experience / No. of Years in Business” typically contains values such as 60 months, 80 months, and similar durations.'
+
+❌ CONFLICTING VALUES: 'Years_In_Total_Employment'
+   ⚠️  Different values found across documents:
+      • Application form: '5'
+      • Data Type: 'NUMBER'
+      • Field length: '0'
+      • Primary Source Document: 'Application Form'
+      • Secondary Source Document: 'PD'
+      • PD Description: 'In the Applicant Details section, the field “Total Work Experience” typically contains values such as 38 years 2 months or similar formats.'
+      • PD (Word Doc) Description: 'In the PD (Word document), under sections such as About Applicant, About Employment, or Applicant Personal Details—or any similar sections—there will typically be explicit mentions of the applicant’s work experience in the form of months, years, or sometimes specific dates. If a date is provided, the corresponding years must be calculated up to the current date and if months are provided then the given months must be converted into an equivalent year count.'
+      • Application Form Description: 'In the Application Form, under the Occupation/Business Details section, the field “Work Experience / No. of Years in Business” typically contains values such as 60 months, 108 months, and similar durations. If only the total number of years is required, the given months must be converted into an equivalent year count.'
+
+❌ CONFLICTING VALUES: 'Personal_Discussion'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'VARCHAR2'
+      • Field length: '0'
+      • Primary Source Document: 'PD'
+      • Secondary Source Document: 'CAM'
+      • PD Description: 'In the PD document, the field “PD Done By and Agency Name” is typically located at the very beginning. It usually contains the name of the person who conducted the PD, such as Komal Kamble, Kartik, and similar names.'
+
+❌ CONFLICTING VALUES: 'Lender_PD_Status'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'VARCHAR2'
+      • Field length: '3'
+      • Primary Source Document: 'PD'
+      • Secondary Source Document: 'CAM'
+      • PD Description: 'In the PD document, under the Site Visit Details section, the field “Recommendation” typically contains values such as Positive or Negative.'
+      • PD (Word Doc) Description: 'consider it as Positive if anywhere in the document, Credit manager is mentioned if it is not mentioned then discuss what to be done.'
+
+❌ CONFLICTING VALUES: 'Type_Of_Employment_Borrower'
+   ⚠️  Different values found across documents:
+      • Application form: 'SENP'
+      • Word: 'Self-employed'
+      • Data Type: 'VARCHAR2'
+      • Field length: '20'
+      • Primary Source Document: 'Application Form'
+      • Secondary Source Document: 'CAM'
+      • CAM Description: 'In the CAM file, under the Basic Input sheet, the field “Customer Type” typically contains values such as Self-Employed Non-Professional (SENP), Salaried, Self-Employed Professional, and other similar categories.'
+      • Application Form Description: 'In the Application Form, under the Occupation/Business Details section, the field “Salaried / Self Employed” typically contains values such as Salaried, SENP, and other similar classifications.'
+
+❌ CONFLICTING VALUES: 'Manual_ABB'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'Number'
+      • Field length: '18,2'
+      • Primary Source Document: 'CAM'
+      • CAM Description: 'In the CAM file, under the Banking–Non PDF sheet, within the Average (Rs.) section, the field “Average” should be extracted from the Total row value shown under the Average (Rs.) section of all months column.'
+
+❌ CONFLICTING VALUES: 'Existing_Obligation_Out_AMT'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'VARCHAR2'
+      • Field length: '(50 BYTE)'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the Existing Loans & Facilities & RTR sheet, the field “Current Outstanding (Rs.)” typically contains values such as 21,000, 2,00,321, and similar outstanding amounts.'
+      • PD Description: 'In the PD document, under the Obligation Details section, the field “Total” typically contains values such as 12,500, 35,000, 1,10,450, or other similar consolidated obligation amounts.'
+
+❌ CONFLICTING VALUES: 'Existing_Obligation_EMI'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'VARCHAR2'
+      • Field length: '(50 BYTE)'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the Existing Loans & Facilities & RTR sheet, the field “Running EMI (Rs.)” typically contains values such as 12,000, 28,444, and similar EMI amounts.'
+
+❌ CONFLICTING VALUES: 'Account_Type'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'VARCHAR2'
+      • Field length: '(50 BYTE)'
+      • Primary Source Document: 'CAM'
+      • CAM Description: 'In the CAM file, under the Banking – Non PDF sheet, the field “A/C Type” typically contains values such as Savings, Current, and other similar account types.'
+
+❌ CONFLICTING VALUES: 'Date_Of_Legal'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'DATE'
+      • Field length: '0'
+      • Primary Source Document: 'Legal Report'
+      • Legal Doc Description: '
+In the Legal Report, the field “Date” is usually found at the beginning of the document. Typical values for this field include dates such as 04.03.2024 and similar formats.'
+
+❌ CONFLICTING VALUES: 'Obligation_Status'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'VARCHAR2'
+      • Field length: '(5 BYTE)'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the Existing Loans & Facilities & RTR sheet, the field “Status” typically contains values such as Active, Closed, To be closed before our disbursal, and other similar status descriptions.'
+
+❌ CONFLICTING VALUES: 'Date_Of_Title'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'DATE'
+      • Field length: '0'
+      • Primary Source Document: 'Legal Report'
+      • Legal Doc Description: 'In the Legal Report, the field “Date” typically contains values such as 04.03.2024 and similar date formats.'
+
+❌ CONFLICTING VALUES: 'Borrower_Entity_Type'
+   ⚠️  Different values found across documents:
+      • Application form: 'Individual'
+      • Word: 'Individual'
+      • Data Type: 'Clob'
+      • Primary Source Document: 'Application Form'
+      • Secondary Source Document: 'PD'
+      • PD Description: 'Logic: If the gender is Male or Female, mark the PAS field as Individual.
+If the applicant is a Company or any other entity, mark it as Non-Individual.'
+      • Application Form Description: 'Logic: If the gender is Male or Female, mark the PAS field as Individual.
+If the applicant is a Company or any other entity, mark it as Non-Individual.'
+
+❌ CONFLICTING VALUES: 'Gender'
+   ⚠️  Different values found across documents:
+      • Application form: 'Male'
+      • Data Type: 'Clob'
+      • Primary Source Document: 'Application Form'
+      • Application Form Description: 'In the Application Form, under the Personal Details section, there is a field labeled “Gender.”'
+
+❌ CONFLICTING VALUES: 'Marital_Status'
+   ⚠️  Different values found across documents:
+      • Application form: 'Single'
+      • Data Type: 'VARCHAR2'
+      • Field length: '10 BYTE'
+      • Primary Source Document: 'Application Form'
+      • Secondary Source Document: 'PD'
+      • PD Description: 'In the PD document, under the Applicant Details section, the field “Marital Status” typically contains values such as Married, Single, and other similar statuses.'
+      • PD (Word Doc) Description: 'In the PD (Word document), under the About Applicants section, you will typically find statements such as “Applicant is married and residing in a rented house at H No. E7/112, Arera Colony, Bhopal.” These statements may appear in different wording or under differently named sections. From such sentences, marital status—such as Married, Single, or other applicable statuses—can be extracted.'
+      • Application Form Description: 'In the Application Form, under the Personal Details section, the field “Marital Status” typically contains values such as Married, Single, and similar statuses.'
+
+❌ CONFLICTING VALUES: 'Number_Of_Dependents'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Word: '2'
+      • Data Type: 'NUMBER'
+      • Field length: '(2,0)'
+      • Primary Source Document: 'PD'
+      • PD Description: 'In the PD document, under the Applicant Details section, the field “No. of Dependents” typically contains values such as 2, 1, 3, and similar counts.
+If dependent members are mentioned, use the stated number; if none are indicated, record the value as 0.'
+      • PD (Word Doc) Description: 'In the PD (Word document), under the About Applicants section, details about the applicant are usually written in descriptive sentence form. These narratives may also include information about the applicant’s dependents, from which the number of dependents can be identified if mentioned.If dependent members are mentioned, use the stated number; if none are indicated, record the value as 0.'
+
+❌ CONFLICTING VALUES: 'Resident_Status'
+   ⚠️  Different values found across documents:
+      • Application form: 'RI'
+      • Data Type: 'Clob'
+      • Primary Source Document: 'Application Form'
+      • Secondary Source Document: 'PD'
+      • PD Description: 'In the PD document, under the Applicant Details section, the field “Residential Status” typically contains values such as RI or other similar terms.'
+      • Application Form Description: 'In the Application Form, under the Personal Details section, the field “Residency Status” typically contains values such as RI or other similar terms.'
+
+❌ CONFLICTING VALUES: 'Current_Residence'
+   ⚠️  Different values found across documents:
+      • Application form: 'Rented'
+      • Word: 'Rented'
+      • Data Type: 'VARCHAR2'
+      • Field length: '40 BYTE'
+      • Primary Source Document: 'Application Form'
+      • Secondary Source Document: 'PD'
+      • PD Description: 'In the PD document, under the Applicant Details section, the field “Place of Residence” typically contains values such as Rented, Owned, Lease House, and other similar types of residence.'
+      • PD (Word Doc) Description: 'In the PD (Word document), under the About Applicants section, details about the applicant’s current residence are typically provided in descriptive sentence form. For example:
+“Applicant is married and residing in a rented house at H No. E7/112, Arera Colony, Bhopal.”
+
+From such narrative statements, the applicant’s current residence type—such as Rented, Owned, Lease House, or similar—can be identified.'
+      • Application Form Description: 'In the Application Form, under the Personal Details section, the field “Current Residence” typically contains values such as Rented, Owned, Lease House, and other similar residence types.'
+
+❌ CONFLICTING VALUES: 'Employer_Name'
+   ⚠️  Different values found across documents:
+      • Application form: 'BHANU PRATAP'
+      • Word: 'M/s Delhi Bike Service'
+      • Data Type: 'VARCHAR2'
+      • Field length: '40 BYTE'
+      • Primary Source Document: 'Application Form'
+      • Secondary Source Document: 'PD'
+      • PD Description: 'In the PD document, under the Applicant Details section, the field “Employer Name” typically contains values such as Office of the Superintendent of Police, Om Constructions, and other similar employer names.'
+      • PD (Word Doc) Description: 'In The PD (Word Document) Sections like About Applicants, About Employment, or any other similar section, you will often find descriptive statements like:
+
+“Applicant is currently working with M/S Sateri Kirana Store.”
+
+From such narrative lines, the applicant’s Employer Name can be identified—for example, in this case, the employer name would be M/S Sateri Kirana Store.'
+      • Application Form Description: 'In the Application Form, under the Occupation/Business Details section, the field “Company Name” typically contains values such as Madhya Pradesh Madhyam, Om Constructions, and other similar organization names.'
+
+❌ CONFLICTING VALUES: 'DA'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'NUMBER'
+      • Field length: '(16,0)'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the Applicant Salary sheet in the Component section, the field “DA” typically contains numeric values such as 5,000, 8,750, 12,300, and similar amounts.'
+
+❌ CONFLICTING VALUES: 'HRA'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'NUMBER'
+      • Field length: '(16,0)'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the Applicant Salary sheet in the Component section, the field “HRA” typically contains numeric values such as 5,000, 8,750, 12,300, and similar amounts.'
+
+❌ CONFLICTING VALUES: 'Performance_Linked_Bonus'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'NUMBER'
+      • Field length: '(18,0)'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the Applicant Salary sheet in the Annual Components (if excluded from above) section, the field “Performance Linked Bonus” typically contains values such as 25,000, 40,500, 75,000, and similar annual bonus amounts.'
+
+❌ CONFLICTING VALUES: 'Fixed_Bonus'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'Number'
+      • Field length: '18'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the Applicant Salary sheet in the Annual Components (if excluded from above) section, the field “Fixed Bonus” typically contains values such as 20,000, 35,000, 60,000, and similar annual fixed bonus amounts.'
+
+❌ CONFLICTING VALUES: 'Other_Annual_Benefits'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'NUMBER'
+      • Field length: '(18,0)'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the Applicant Salary sheet in the Annual Components (if excluded from above) section, the field “LTA” typically contains values such as 15,000, 22,500, 30,000, and similar annual LTA amounts.'
+
+❌ CONFLICTING VALUES: 'Rental_Income_Bank_ITR'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'Number'
+      • Field length: '18'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the SelfEmployedEligibility sheet in the Other Income section, the field “Rental Income” typically contains values such as 24,000, 6,000, and other similar rental income amounts.'
+
+❌ CONFLICTING VALUES: 'Rental_Income_Cash'
+   ⚠️  Different values found across documents:
+      • Application form: 'ERROR'
+      • Data Type: 'Number'
+      • Field length: '16'
+      • Primary Source Document: 'CAM'
+      • Secondary Source Document: 'PD'
+      • CAM Description: 'In the CAM file, under the SelfEmployedEligibility sheet in the Other Income section, the field “Rental Income (Unregistered)” typically contains values such as 10,000, 18,500, 5,000, and other similar unregistered rental income amounts.'
+
+======================================================================
+📋 PROBLEM SUMMARY BY DOCUMENT:
+======================================================================
+
+📄 Application form
+   Issues with 49 field(s): Loan_Number, Sourcing_Region, Sourcing_City_Name, Branch_Name, Sourcing_Channel, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Date_Of_Birth_Of_The_Borrower, Relationship_Of_Coborrower_To_The_Borrower, Borrower_City, Borrower_PIN, Borrower_MobileNo, Sole_Child, Employer_Type, Employer_Pin, Years_In_Current_Employment, Months_In_Current_Employment, Months_In_Total_Employment, Years_In_Total_Employment, Personal_Discussion, Lender_PD_Status, Type_Of_Employment_Borrower, Manual_ABB, Existing_Obligation_Out_AMT, Existing_Obligation_EMI, Account_Type, Date_Of_Legal, Obligation_Status, Date_Of_Title, Borrower_Entity_Type, Gender, Marital_Status, Number_Of_Dependents, Resident_Status, Current_Residence, Employer_Name, DA, HRA, Performance_Linked_Bonus, Fixed_Bonus, Other_Annual_Benefits, Rental_Income_Bank_ITR, Rental_Income_Cash
+
+📄 Word
+   Issues with 22 field(s): Loan_Number, Sourcing_City_Name, Branch_Name, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Relationship_Of_Coborrower_To_The_Borrower, Borrower_City, Sole_Child, Employer_Type, Years_In_Current_Employment, Months_In_Current_Employment, Type_Of_Employment_Borrower, Borrower_Entity_Type, Number_Of_Dependents, Current_Residence, Employer_Name
+
+📄 Data Type
+   Issues with 49 field(s): Loan_Number, Sourcing_Region, Sourcing_City_Name, Branch_Name, Sourcing_Channel, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Date_Of_Birth_Of_The_Borrower, Relationship_Of_Coborrower_To_The_Borrower, Borrower_City, Borrower_PIN, Borrower_MobileNo, Sole_Child, Employer_Type, Employer_Pin, Years_In_Current_Employment, Months_In_Current_Employment, Months_In_Total_Employment, Years_In_Total_Employment, Personal_Discussion, Lender_PD_Status, Type_Of_Employment_Borrower, Manual_ABB, Existing_Obligation_Out_AMT, Existing_Obligation_EMI, Account_Type, Date_Of_Legal, Obligation_Status, Date_Of_Title, Borrower_Entity_Type, Gender, Marital_Status, Number_Of_Dependents, Resident_Status, Current_Residence, Employer_Name, DA, HRA, Performance_Linked_Bonus, Fixed_Bonus, Other_Annual_Benefits, Rental_Income_Bank_ITR, Rental_Income_Cash
+
+📄 Field length
+   Issues with 46 field(s): Loan_Number, Sourcing_Region, Sourcing_City_Name, Branch_Name, Sourcing_Channel, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Date_Of_Birth_Of_The_Borrower, Relationship_Of_Coborrower_To_The_Borrower, Borrower_City, Borrower_PIN, Borrower_MobileNo, Sole_Child, Employer_Type, Employer_Pin, Years_In_Current_Employment, Months_In_Current_Employment, Months_In_Total_Employment, Years_In_Total_Employment, Personal_Discussion, Lender_PD_Status, Type_Of_Employment_Borrower, Manual_ABB, Existing_Obligation_Out_AMT, Existing_Obligation_EMI, Account_Type, Date_Of_Legal, Obligation_Status, Date_Of_Title, Marital_Status, Number_Of_Dependents, Current_Residence, Employer_Name, DA, HRA, Performance_Linked_Bonus, Fixed_Bonus, Other_Annual_Benefits, Rental_Income_Bank_ITR, Rental_Income_Cash
+
+📄 Primary Source Document
+   Issues with 49 field(s): Loan_Number, Sourcing_Region, Sourcing_City_Name, Branch_Name, Sourcing_Channel, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Date_Of_Birth_Of_The_Borrower, Relationship_Of_Coborrower_To_The_Borrower, Borrower_City, Borrower_PIN, Borrower_MobileNo, Sole_Child, Employer_Type, Employer_Pin, Years_In_Current_Employment, Months_In_Current_Employment, Months_In_Total_Employment, Years_In_Total_Employment, Personal_Discussion, Lender_PD_Status, Type_Of_Employment_Borrower, Manual_ABB, Existing_Obligation_Out_AMT, Existing_Obligation_EMI, Account_Type, Date_Of_Legal, Obligation_Status, Date_Of_Title, Borrower_Entity_Type, Gender, Marital_Status, Number_Of_Dependents, Resident_Status, Current_Residence, Employer_Name, DA, HRA, Performance_Linked_Bonus, Fixed_Bonus, Other_Annual_Benefits, Rental_Income_Bank_ITR, Rental_Income_Cash
+
+📄 Secondary Source Document
+   Issues with 34 field(s): Loan_Number, Sourcing_City_Name, Branch_Name, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Relationship_Of_Coborrower_To_The_Borrower, Sole_Child, Employer_Type, Months_In_Total_Employment, Years_In_Total_Employment, Personal_Discussion, Lender_PD_Status, Type_Of_Employment_Borrower, Existing_Obligation_Out_AMT, Existing_Obligation_EMI, Obligation_Status, Borrower_Entity_Type, Marital_Status, Resident_Status, Current_Residence, Employer_Name, DA, HRA, Performance_Linked_Bonus, Fixed_Bonus, Other_Annual_Benefits, Rental_Income_Bank_ITR, Rental_Income_Cash
+
+📄 PD Description
+   Issues with 16 field(s): Loan_Number, Type_Of_Employment_Loan, Relationship_Of_Coborrower_To_The_Borrower, Sole_Child, Employer_Type, Months_In_Total_Employment, Years_In_Total_Employment, Personal_Discussion, Lender_PD_Status, Existing_Obligation_Out_AMT, Borrower_Entity_Type, Marital_Status, Number_Of_Dependents, Resident_Status, Current_Residence, Employer_Name
+
+📄 Application Form Description
+   Issues with 26 field(s): Loan_Number, Sourcing_Region, Sourcing_City_Name, Branch_Name, Sourcing_Channel, Final_Sanctioned_Amount, Sanction_Loan_Period, Loan_Type, Type_Of_Employment_Loan, Borrower_First_Name, Borrower_Surname, Date_Of_Birth_Of_The_Borrower, Borrower_City, Borrower_PIN, Borrower_MobileNo, Employer_Type, Employer_Pin, Months_In_Total_Employment, Years_In_Total_Employment, Type_Of_Employment_Borrower, Borrower_Entity_Type, Gender, Marital_Status, Resident_Status, Current_Residence, Employer_Name
+
+📄 Email Subject Description
+   Issues with 5 field(s): Loan_Number, Sourcing_City_Name, Branch_Name, Final_Sanctioned_Amount, Sanction_Loan_Period
+
+📄 Email Body Description
+   Issues with 1 field(s): Loan_Number
+
+📄 PD (Word Doc) Description
+   Issues with 17 field(s): Sourcing_City_Name, Branch_Name, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Sole_Child, Employer_Type, Months_In_Total_Employment, Years_In_Total_Employment, Lender_PD_Status, Marital_Status, Number_Of_Dependents, Current_Residence, Employer_Name
+
+📄 CAM Description
+   Issues with 24 field(s): Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Relationship_Of_Coborrower_To_The_Borrower, Years_In_Current_Employment, Months_In_Current_Employment, Type_Of_Employment_Borrower, Manual_ABB, Existing_Obligation_Out_AMT, Existing_Obligation_EMI, Account_Type, Obligation_Status, DA, HRA, Performance_Linked_Bonus, Fixed_Bonus, Other_Annual_Benefits, Rental_Income_Bank_ITR, Rental_Income_Cash
+
+📄 Legal Doc Description
+   Issues with 2 field(s): Date_Of_Legal, Date_Of_Title
+
+======================================================================
+⚠️ ACTION REQUIRED:
+These high criticality fields must be resolved before proceeding with data integration.
+Please review the attached Excel file for complete details and provide corrections.
+======================================================================

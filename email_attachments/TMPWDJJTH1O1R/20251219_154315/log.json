@@ -1,0 +1,10 @@
+{
+  "sender": "yourmltales@gmail.com",
+  "timestamp": "Fri, 19 Dec 2025 07:41:46 -0800 (PST)",
+  "loan_id": "TMPWDJJTH1O1R",
+  "attachments": [
+    "High_Criticality_Issues_20251219_154143.xlsx"
+  ],
+  "subject": "🚨 HIGH Criticality Data Issues Detected - 49 Issue(s)",
+  "mail_body_initial": "🚨 CRITICAL DATA QUALITY ALERT\n\nWe have identified 49 HIGH criticality issue(s) in the extracted data that require IMMEDIATE attention:\n\n\n❌ CONFLICTING VALUES: 'Loan_Number'\n   ⚠️  Different values fou"
+}

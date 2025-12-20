@@ -1,0 +1,10 @@
+{
+  "sender": "yourmltales@gmail.com",
+  "timestamp": "Fri, 19 Dec 2025 06:24:56 -0800 (PST)",
+  "loan_id": "Extraction",
+  "attachments": [
+    "extraction_results.xlsx"
+  ],
+  "subject": "📊 Data Extraction Report - 13 Low Criticality Issue(s) Found",
+  "mail_body_initial": "📊 DATA EXTRACTION SUMMARY\n======================================================================\n\nTotal Fields Processed: 84\nTotal Issues Identified: 53\nLow Criticality Issues: 13\nData Extraction Stat"
+}

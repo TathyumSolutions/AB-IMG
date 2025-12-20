@@ -1,0 +1,173 @@
+📊 DATA EXTRACTION SUMMARY
+======================================================================
+
+Total Fields Processed: 84
+Total Issues Identified: 53
+Low Criticality Issues: 13
+Data Extraction Status: ✅ Complete
+Data Cleaning Applied: ✅ Yes (spaces trimmed, special chars removed, case-normalized)
+
+
+======================================================================
+LOW CRITICALITY ISSUE DETAILS
+======================================================================
+
+
+======================================================================
+Field: Borrower_Address1
+Criticality: Low
+Issue Type: Warning
+Values Found: ['plot no.42, sahajivan housing society, pachgaon r.k.nagar road, kolhapur', 'no instruction']
+Preferred Value: plot no.42, sahajivan housing society, pachgaon r.k.nagar road, kolhapur (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: Plot No.42, Sahajivan Housing Society, Pachgaon R.K.Nagar Road, Kolhapur
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: NO INSTRUCTION
+======================================================================
+
+======================================================================
+Field: Employer_Department
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'not found']
+Preferred Value: no instruction (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: NO INSTRUCTION
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: NOT FOUND
+======================================================================
+
+======================================================================
+Field: Employer_Designation
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'not found', 'maneger']
+Preferred Value: maneger (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: Maneger
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: NOT FOUND
+======================================================================
+
+======================================================================
+Field: Pensionable_Borrower
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no', 'no instruction']
+Preferred Value: no instruction (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: NO INSTRUCTION
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: No
+======================================================================
+
+======================================================================
+Field: Mode_Of_Salary
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'cash']
+Preferred Value: no instruction (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: NO INSTRUCTION
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: Cash
+======================================================================
+
+======================================================================
+Field: Office_SetUp
+Criticality: Low
+Issue Type: Warning
+Values Found: ['no instruction', 'not found']
+Preferred Value: no instruction (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: NO INSTRUCTION
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: NOT FOUND
+======================================================================
+
+======================================================================
+Field: Level_Of_Studies
+Criticality: Low
+Issue Type: Warning
+Values Found: ['graduate', 'no instruction', 'bba']
+Preferred Value: graduate (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: Graduate
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: BBA
+======================================================================
+
+======================================================================
+Field: Employer_Address1
+Criticality: Low
+Issue Type: Warning
+Values Found: ['shree satare, shantadurga colony, pachgaon r k nagar road , shanti durg colony , kolhapur, maharashtra, 416013', 'no instruction']
+Preferred Value: shree satare, shantadurga colony, pachgaon r k nagar road , shanti durg colony , kolhapur, maharashtra, 416013 (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: SHREE SATARE, SHANTADURGA COLONY, Pachgaon R K nagar road , Shanti durg colony , Kolhapur, Maharashtra, 416013
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: NO INSTRUCTION
+======================================================================
+
+======================================================================
+Field: Employer_City
+Criticality: Low
+Issue Type: Warning
+Values Found: ['kolhapur', 'no instruction']
+Preferred Value: kolhapur (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: Kolhapur
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: NO INSTRUCTION
+======================================================================
+
+======================================================================
+Field: Basic_Salary
+Criticality: Low
+Issue Type: Warning
+Values Found: ['30,000', 'no instruction', '20000']
+Preferred Value: no instruction (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: NO INSTRUCTION
+  • Cam - Niranjan Bhosale: 20000
+  • PD FORMAT - SALARIED: 30,000
+======================================================================
+
+======================================================================
+Field: Cash_Salary
+Criticality: Low
+Issue Type: Warning
+Values Found: ['30,000', 'no instruction']
+Preferred Value: no instruction (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: NO INSTRUCTION
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: 30,000
+======================================================================
+
+======================================================================
+Field: PF
+Criticality: Low
+Issue Type: Warning
+Values Found: ['0', 'no instruction']
+Preferred Value: no instruction (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: NO INSTRUCTION
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: 0
+======================================================================
+
+======================================================================
+Field: Income_Tax
+Criticality: Low
+Issue Type: Warning
+Values Found: ['0', 'no instruction']
+Preferred Value: no instruction (from App Form - Bhosale)
+Document Sources:
+  • App Form - Bhosale: NO INSTRUCTION
+  • Cam - Niranjan Bhosale: NO INSTRUCTION
+  • PD FORMAT - SALARIED: 0
+======================================================================
+
+
+📎 ATTACHED: Complete extracted data for your records.

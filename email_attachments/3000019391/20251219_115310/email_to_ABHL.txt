@@ -1,0 +1,54 @@
+Subject: 🚨 HIGH Criticality Data Issues Detected - 49 Issue(s)
+================================================================================
+
+Dear Team at ABHL,
+
+🚨 CRITICAL DATA QUALITY ALERT
+
+We have identified 49 HIGH criticality issue(s) in the extracted data that require IMMEDIATE attention:
+
+❌ CONFLICTING VALUES: 'Loan_Number'
+   ⚠️  Different values found across documents:
+      • PD FORMAT - SALARIED: '3000019391'
+      • App Form - Bhosale: '3000019391'
+      • Data Type: 'VARCHAR2'
+      • Field length: '30'
+      • Primary Source Document: 'Email Subject'
+      • Secondary Source Document: 'Application Form'
+      • PD Description: 'In the PD document, the value can be extracted from the field “Application No.” positioned just below the Personal Discussion Report header. This value typically appears as a 10-digit numeric identifier (e.g., 300002010).'
+      • Application Form Description: 'It can be found in the Application Form under the field “Application Form Number,” usually shown at the top of the document. This value generally appears as a 10-digit numeric identifier (e.g., 300002010) and must be cross-validated with the corresponding 10-digit number in the email subject.'
+      • Email Subject Description: 'This value can be extracted from the Email Subject, where it typically appears as a 10-digit numeric identifier (e.g., 300002010).'
+
+❌ CONFLICTING VALUES: 'Sourcing_Region'
+   ⚠️  Different values found across documents:
+      • App Form - Bhosale: 'Kolhapur'
+      • Data Type: 'CLob'
+      • Field length: '25'
+      • Primary Source Document: 'Application Form'
+      • Application Form Description: 'It can be obtained from the Application Form under the Sourcing Channel Details section, in the field “Location Name.” The value for this field should be mapped based on the corresponding City and Branch.'
+
+... 
+
+[Due to the character limit, not all details are shown here. Please refer to the attached Excel file for complete details.] 
+
+📋 PROBLEM SUMMARY BY DOCUMENT:
+
+📄 PD FORMAT - SALARIED
+   Issues with 23 field(s): Loan_Number, Sourcing_City_Name, Branch_Name, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Foir, Borrower_First_Name, Borrower_Surname, Relationship_Of_Coborrower_To_The_Borrower, Employer_Type, Years_In_Current_Employment, Months_In_Current_Employment, Months_In_Total_Employment, Years_In_Total_Employment, Borrower_Entity_Type, Marital_Status, Number_Of_Dependents, Current_Residence, Employer_Name, DA, HRA
+
+📄 App Form - Bhosale
+   Issues with 29 field(s): Loan_Number, Sourcing_Region, Sourcing_City_Name, Branch_Name, Sourcing_Channel, Final_Sanctioned_Amount, Sanction_Loan_Period, Loan_Type, Type_Of_Employment_Loan, Borrower_First_Name, Borrower_Surname, Date_Of_Birth_Of_The_Borrower, Borrower_City, Borrower_PIN, Borrower_MobileNo, Employer_Type, Employer_Pin, Years_In_Current_Employment, Months_In_Current_Employment, Months_In_Total_Employment, Years_In_Total_Employment, Type_Of_Employment_Borrower, Account_Type, Borrower_Entity_Type, Gender, Marital_Status, Resident_Status, Current_Residence, Employer_Name
+
+... 
+
+⚠️ ACTION REQUIRED:
+These high criticality fields must be resolved before proceeding with data integration. Please review the attached Excel file for complete details and provide corrections.
+
+Thank you for your prompt attention to this matter.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Your Company]  
+[Your Contact Information]

@@ -1,0 +1,10 @@
+{
+  "sender": "yourmltales@gmail.com",
+  "timestamp": "Fri, 19 Dec 2025 07:42:13 -0800 (PST)",
+  "loan_id": "TMP1Q6RYKFXDQ",
+  "attachments": [
+    "extraction_results.xlsx"
+  ],
+  "subject": "📊 Data Extraction Report - 35 Low Criticality Issue(s) Found",
+  "mail_body_initial": "Dear IMGC Team,\n\nI hope this message finds you well.\n\nPlease find below the summary of the data extraction process, along with the details of low criticality issues identified after data cleaning and "
+}

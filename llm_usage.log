@@ -1,0 +1,19 @@
+2025-12-19 14:22:11,683 - model=gpt-4o doc=PD FORMAT - SALARIED.docx ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:22:28,720 - model=gpt-4o doc=App Form - Bhosale.pdf ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:22:53,383 - model=gpt-4o doc=Cam - Niranjan Bhosale.xlsx ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:24:12,827 - model=gpt-4o doc=PD FORMAT - SALARIED.docx ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:24:24,195 - model=gpt-4o doc=App Form - Bhosale.pdf ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:24:42,075 - model=gpt-4o doc=Cam - Niranjan Bhosale.xlsx ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:28:04,153 - model=gpt-4o doc=mail_subject.txt ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:28:12,118 - model=gpt-4o doc=PD FORMAT - SALARIED.docx ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:28:23,513 - model=gpt-4o doc=App Form - Bhosale.pdf ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:28:45,009 - model=gpt-4o doc=Cam - Niranjan Bhosale.xlsx ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:29:13,061 - model=gpt-4o doc=mail_body.txt ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:30:04,634 - model=gpt-4o doc=mail_subject.txt ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:30:15,723 - model=gpt-4o doc=mail_body.txt ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 14:30:26,438 - model=gpt-4o doc=extraction_results.xlsx ERROR: 'CompletionUsage' object has no attribute 'get'
+2025-12-19 15:40:46,712 - model=gpt-4o doc=Application form.pdf matched_column=Application Form Description selected_column=Application Form Description prompt_tokens=5769 completion_tokens=1131 total_tokens=6900
+2025-12-19 15:41:08,160 - model=gpt-4o doc=Word.docx matched_column=AUTO selected_column=PD (Word Doc) Description prompt_tokens=10477 completion_tokens=1099 total_tokens=11576
+2025-12-19 15:51:12,064 - model=gpt-4o doc=Application form.pdf matched_column=Application Form Description selected_column=Application Form Description prompt_tokens=5769 completion_tokens=1423 total_tokens=7192
+2025-12-19 15:58:49,036 - model=gpt-4o doc=Application form.pdf matched_column=Application Form Description selected_column=Application Form Description prompt_tokens=5769 completion_tokens=1423 total_tokens=7192
+2025-12-19 15:59:19,346 - model=gpt-4o doc=Word.docx matched_column=AUTO selected_column=PD (Word Doc) Description prompt_tokens=10477 completion_tokens=1138 total_tokens=11615

@@ -1,0 +1,79 @@
+Subject: 📊 Data Extraction Report - 35 Low Criticality Issues Identified
+================================================================================
+
+Dear IMGC Team,
+
+I hope this message finds you well. 
+
+I am writing to provide you with the report on the data extraction process, including details of the low criticality issues that were identified following data cleaning and normalization. Please find below the summary of the data extraction:
+
+📊 DATA EXTRACTION SUMMARY  
+======================================================================  
+Total Fields Processed: 84  
+Total Issues Identified: 84  
+Low Criticality Issues: 35  
+Data Extraction Status: ✅ Complete  
+Data Cleaning Applied: ✅ Yes (spaces trimmed, special chars removed, case-normalized)  
+======================================================================
+
+📋 LOW CRITICALITY ISSUE DETAILS  
+======================================================================
+
+Field: Borrower_Address1  
+Criticality: Low  
+Issue Type: Warning  
+Values Found: ['application form', 'in the application form, under the current/communication address section, the fields address 1, address 2, and address 3 typically contain address details such as ashoka society, arera colony, h. no. e7/112, bhopal, or similar address information.', 'plot no.42, sahajivan housing society, pachgaon r.k.nagar road, kolhapur', 'no instruction', '80']  
+Preferred Value: no instruction (from PD FORMAT - SALARIED)  
+Document Sources:  
+  • PD FORMAT - SALARIED: NO INSTRUCTION  
+  • App Form - Bhosale: Plot No.42, Sahajivan Housing Society, Pachgaon R.K.Nagar Road, Kolhapur  
+  • Cam - Niranjan Bhosale: NO INSTRUCTION  
+  • Field length: 80  
+  • Primary Source Document: Application Form  
+  • Application Form Description: In the Application Form, under the Current/Communication Address section, the fields Address 1, Address 2, and Address 3 typically contain address details such as Ashoka Society, Arera Colony, H. No. E7/112, Bhopal, or similar address information.  
+======================================================================
+
+Field: Employer_Department  
+Criticality: Low  
+Issue Type: Warning  
+Values Found: ['varchar2', 'in the pd document, under the applicant details section, there is a field labeled “department name.”', 'not found', 'pd', 'no instruction', '0']  
+Preferred Value: not found (from PD FORMAT - SALARIED)  
+Document Sources:  
+  • PD FORMAT - SALARIED: NOT FOUND  
+  • App Form - Bhosale: NOT FOUND  
+  • Cam - Niranjan Bhosale: NO INSTRUCTION  
+  • Data Type: VARCHAR2  
+  • Field length: 0  
+  • Primary Source Document: PD  
+  • PD Description: In the PD document, under the Applicant Details section, there is a field labeled “Department Name.”
+======================================================================
+
+Field: Employer_Designation  
+Criticality: Low  
+Issue Type: Warning  
+Values Found: ['maneger', 'in the pd document, under the applicant details section, the field “designation” typically contains values such as inspector, ceo, software engineer, analyst, consultant, and similar job roles.', 'varchar2', 'application form', 'in the application form, under the occupation/business details section, the field “designation” typically contains values such as inspector, ceo, software engineer, analyst, consultant, and similar job titles.', 'in the pd (word document), under the about applicants section, the values will typically appear as descriptive statements about the applicant — for example, “applicant is the proprietor of m/s om construction,” or other similar narrative statements.', 'not found', 'pd', 'no instruction', '0']  
+Preferred Value: not found (from PD FORMAT - SALARIED)  
+Document Sources:  
+  • PD FORMAT - SALARIED: NOT FOUND  
+  • App Form - Bhosale: Maneger  
+  • Cam - Niranjan Bhosale: NO INSTRUCTION  
+  • Data Type: VARCHAR2  
+  • Field length: 0  
+  • Primary Source Document: Application Form  
+  • Secondary Source Document: PD  
+  • PD Description: In the PD document, under the Applicant Details section, the field “Designation” typically contains values such as Inspector, CEO, Software Engineer, Analyst, Consultant, and similar job roles.  
+  • PD (Word Doc) Description: In the PD (Word document), under the About Applicants section, the values will typically appear as descriptive statements about the applicant — for example, “Applicant is the proprietor of M/S Om Construction,” or other similar narrative statements.
+======================================================================
+
+[...additional fields omitted for brevity...]
+
+📎 ATTACHED: Complete extracted data for your records.
+
+Should you have any questions or require further clarification regarding the report, please do not hesitate to reach out.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Your Company]  
+[Your Contact Information]

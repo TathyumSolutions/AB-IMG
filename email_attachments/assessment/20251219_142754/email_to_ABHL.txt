@@ -1,0 +1,76 @@
+Subject: 🚨 HIGH Criticality Data Issues Detected - 49 Issue(s)
+================================================================================
+
+Dear ABHL,
+
+🚨 **CRITICAL DATA QUALITY ALERT**
+
+We have identified **49 HIGH criticality issue(s)** in the extracted data that require **IMMEDIATE attention**:
+
+### ❌ CONFLICTING VALUES: 'Loan_Number'
+   ⚠️  Different values found across documents:
+      • mail_subject: 'ERROR'
+      • PD FORMAT - SALARIED: 'ERROR'
+      • App Form - Bhosale: 'ERROR'
+      • Cam - Niranjan Bhosale: 'ERROR'
+      • mail_body: 'ERROR'
+      • Data Type: 'VARCHAR2'
+      • Field length: '30'
+      • Primary Source Document: 'Email Subject'
+      • Secondary Source Document: 'Application Form'
+      • PD Description: 'In the PD document, the value can be extracted from the field “Application No.” positioned just below the Personal Discussion Report header. This value typically appears as a 10-character alpha numeric identifier (e.g., 300002010).'
+      • Application Form Description: 'It can be found in the Application Form under the field “Application Form Number,” usually shown at the top of the document. This value generally appears as a 10-character alpha numeric identifier (e.g., 300002010) and ideally should be cross-validated with the corresponding 10-character alpha numeric in the email subject.'
+      • Email Subject Description: 'This value can be extracted from the Email Subject, where it typically appears as a 10-digit numeric identifier (e.g., 300002010).It may or may not be at the end of complete subject line.'
+      • Email Body Description: 'This value can be extracted from the Email Subject, where it typically appears as a 10-digit numeric identifier (e.g., 300002010).'
+
+### ❌ CONFLICTING VALUES: 'Sourcing_Region'
+   ⚠️  Different values found across documents:
+      • mail_subject: 'ERROR'
+      • PD FORMAT - SALARIED: 'ERROR'
+      • App Form - Bhosale: 'ERROR'
+      • Cam - Niranjan Bhosale: 'ERROR'
+      • mail_body: 'ERROR'
+      • Data Type: 'CLob'
+      • Field length: '25'
+      • Primary Source Document: 'Application Form'
+      • Application Form Description: 'It can be obtained from the Application Form under the Sourcing Channel Details section, in the field “Location Name.” The value for this field should be mapped based on the corresponding City and Branch.'
+
+### ❌ CONFLICTING VALUES: 'Sourcing_City_Name'
+   ⚠️  Different values found across documents:
+      • mail_subject: 'ERROR'
+      • PD FORMAT - SALARIED: 'ERROR'
+      • App Form - Bhosale: 'ERROR'
+      • Cam - Niranjan Bhosale: 'ERROR'
+      • mail_body: 'ERROR'
+      • Data Type: 'VARCHAR2'
+      • Field length: '25'
+      • Primary Source Document: 'Email Subject'
+      • Secondary Source Document: 'Application Form'
+      • PD (Word Doc) Description: 'In the PD document, the sourcing city is generally referenced within the “About Applicants” section. For example, in the sentence “Applicant is married & residing in rented house at H No E7/112 Arera Colony Bhopal,” the city Bhopal is the sourcing city.'
+      • Application Form Description: 'In the Application Form, the city can be found under the Sourcing Channel Details section in the field “Location Name.” Typical entries include cities such as Indore, Lucknow, Mumbai, Noida, Kanpur, Ahmedabad, etc.'
+      • Email Subject Description: 'In the Email Subject, the sourcing city is usually mentioned directly. Examples include: Agra, Bhopal, Chennai, Bengaluru, etc.'
+
+### ❌ CONFLICTING VALUES: 'Branch_Name'
+   ⚠️  Different values found across documents:
+      • mail_subject: 'ERROR'
+      • PD FORMAT - SALARIED: 'ERROR'
+      • App Form - Bhosale: 'ERROR'
+      • Cam - Niranjan Bhosale: 'ERROR'
+      • mail_body: 'ERROR'
+      • Data Type: 'CLob'
+      • Field length: '40'
+      • Primary Source Document: 'Email Subject'
+      • Secondary Source Document: 'Application Form'
+      • PD (Word Doc) Description: 'In the PD Word document, the city reference that helps identify the branch is generally found within the “About Applicants” section.'
+      • Application Form Description: 'In the Application Form, the branch-related city information appears under the Sourcing Channel Details section in the field “Location Name.”'
+      • Email Subject Description: 'The branch or city reference can sometimes be inferred from the Email Subject.'
+
+### ⚠️ ACTION REQUIRED:
+These high criticality fields must be resolved before proceeding with data integration. Please review the attached Excel file for complete details and provide corrections.
+
+Best regards,
+
+[Your Name]  
+[Your Position]  
+[Your Company]  
+[Your Contact Information]
