@@ -8770,3 +8770,1122 @@ NameError: name 'get_description_columns' is not defined
 2025-12-20 12:37:26,095 -   [EMAIL GENERATION] ✓ Email generation and sending complete
 2025-12-20 12:37:26,097 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
 2025-12-20 12:37:32,098 - [2025-12-20 12:37:32] Checking emails...
+2025-12-20 14:01:44,342 - 
+============================================================
+2025-12-20 14:01:44,343 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 14:01:44,343 - ============================================================
+2025-12-20 14:01:44,343 - Email: yourmltales@gmail.com
+2025-12-20 14:01:44,343 - Server: imap.gmail.com:993
+2025-12-20 14:01:44,343 - Watching for subjects: 
+2025-12-20 14:01:44,343 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 14:01:44,343 - Root save location: email_attachments
+2025-12-20 14:01:44,343 - Check interval: 6s
+2025-12-20 14:01:44,343 - Only unseen emails: True
+2025-12-20 14:01:44,343 - Mark as read: False
+2025-12-20 14:01:44,343 - ============================================================
+
+2025-12-20 14:01:44,343 - Connecting to imap.gmail.com:993...
+2025-12-20 14:01:45,315 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 14:01:45,316 - [2025-12-20 14:01:45] Checking emails...
+2025-12-20 14:01:45,882 -   No new attachments
+2025-12-20 14:01:51,882 - [2025-12-20 14:01:51] Checking emails...
+2025-12-20 14:01:52,733 -   No new attachments
+2025-12-20 14:01:58,734 - [2025-12-20 14:01:58] Checking emails...
+2025-12-20 14:01:59,302 -   No new attachments
+2025-12-20 14:02:05,302 - [2025-12-20 14:02:05] Checking emails...
+2025-12-20 14:02:05,892 -   No new attachments
+2025-12-20 14:02:11,892 - [2025-12-20 14:02:11] Checking emails...
+2025-12-20 14:02:13,704 - 
+[NEW EMAIL] Subject: Fwd: Fw: Pre IMGC letter. HL P+C case of Mr. NIRANJAN SUBHASH BHOSALE
+ // Rs 9.00 lacs // 11.75% // 240 Months // CM assessment // Kolhapur // 3000019391
+2025-12-20 14:02:13,704 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-20 14:02:13,704 -   Date: Sat, 20 Dec 2025 19:32:08 +0530
+2025-12-20 14:02:13,708 -     [ATTACHMENT] App Form - Bhosale.pdf
+2025-12-20 14:02:13,715 -     [ATTACHMENT] Cam - Niranjan Bhosale.xlsx
+2025-12-20 14:02:13,716 -     [ATTACHMENT] PD FORMAT - SALARIED.docx
+2025-12-20 14:02:13,716 -   [SAVED] 3 attachment(s) to: email_attachments/3000019391_20251220_140213
+2025-12-20 14:02:13,717 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000019391_20251220_140213
+2025-12-20 14:02:13,717 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-20 14:02:15,872 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:02:15,872 -     [EXTRACTION] Processing: Cam - Niranjan Bhosale.xlsx (using column: CAM Description)
+2025-12-20 14:02:24,678 -     [EXTRACTION] ✓ Extracted 50 fields using column: CAM Description
+2025-12-20 14:02:24,678 -     [EXTRACTION] Processing: PD FORMAT - SALARIED.docx (using column: PD (Word Doc) Description)
+2025-12-20 14:02:28,718 -     [EXTRACTION] ✓ Extracted 21 fields using column: PD (Word Doc) Description
+2025-12-20 14:02:28,718 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:02:30,254 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:02:30,254 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:02:31,431 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:02:31,431 -     [EXTRACTION] Processing: App Form - Bhosale.pdf (using column: Application Form Description)
+2025-12-20 14:02:37,553 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-20 14:02:37,670 -   [EXTRACTION ERROR] name 'doc_columns' is not defined
+2025-12-20 14:02:37,681 - Traceback: Traceback (most recent call last):
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 927, in run_field_extraction
+    merge_results_to_excel(all_results, self.pas_fields, output_path, column_selections)
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 558, in merge_results_to_excel
+    for col in doc_columns:
+               ^^^^^^^^^^^
+NameError: name 'doc_columns' is not defined
+
+2025-12-20 14:02:37,682 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-20 14:02:43,682 - [2025-12-20 14:02:43] Checking emails...
+2025-12-20 14:02:44,378 -   No new attachments
+2025-12-20 14:02:50,378 - [2025-12-20 14:02:50] Checking emails...
+2025-12-20 14:02:50,957 -   No new attachments
+2025-12-20 14:02:56,957 - [2025-12-20 14:02:56] Checking emails...
+2025-12-20 14:02:57,525 -   No new attachments
+2025-12-20 14:03:03,525 - [2025-12-20 14:03:03] Checking emails...
+2025-12-20 14:03:04,088 -   No new attachments
+2025-12-20 14:03:10,089 - [2025-12-20 14:03:10] Checking emails...
+2025-12-20 14:03:10,654 -   No new attachments
+2025-12-20 14:03:16,655 - [2025-12-20 14:03:16] Checking emails...
+2025-12-20 14:03:17,235 -   No new attachments
+2025-12-20 14:03:23,236 - [2025-12-20 14:03:23] Checking emails...
+2025-12-20 14:03:23,784 -   No new attachments
+2025-12-20 14:03:29,785 - [2025-12-20 14:03:29] Checking emails...
+2025-12-20 14:03:30,330 -   No new attachments
+2025-12-20 14:03:36,330 - [2025-12-20 14:03:36] Checking emails...
+2025-12-20 14:03:36,895 -   No new attachments
+2025-12-20 14:03:42,895 - [2025-12-20 14:03:42] Checking emails...
+2025-12-20 14:03:43,460 -   No new attachments
+2025-12-20 14:03:49,461 - [2025-12-20 14:03:49] Checking emails...
+2025-12-20 14:03:50,005 -   No new attachments
+2025-12-20 14:03:56,006 - [2025-12-20 14:03:56] Checking emails...
+2025-12-20 14:03:56,567 -   No new attachments
+2025-12-20 14:04:02,567 - [2025-12-20 14:04:02] Checking emails...
+2025-12-20 14:04:03,131 -   No new attachments
+2025-12-20 14:04:09,132 - [2025-12-20 14:04:09] Checking emails...
+2025-12-20 14:04:09,696 -   No new attachments
+2025-12-20 14:04:15,697 - [2025-12-20 14:04:15] Checking emails...
+2025-12-20 14:04:16,279 -   No new attachments
+2025-12-20 14:04:22,279 - [2025-12-20 14:04:22] Checking emails...
+2025-12-20 14:04:22,844 -   No new attachments
+2025-12-20 14:04:28,845 - [2025-12-20 14:04:28] Checking emails...
+2025-12-20 14:04:29,422 -   No new attachments
+2025-12-20 14:04:35,422 - [2025-12-20 14:04:35] Checking emails...
+2025-12-20 14:04:36,026 -   No new attachments
+2025-12-20 14:04:42,027 - [2025-12-20 14:04:42] Checking emails...
+2025-12-20 14:04:42,599 -   No new attachments
+2025-12-20 14:04:48,600 - [2025-12-20 14:04:48] Checking emails...
+2025-12-20 14:04:49,178 -   No new attachments
+2025-12-20 14:04:55,178 - [2025-12-20 14:04:55] Checking emails...
+2025-12-20 14:04:55,722 -   No new attachments
+2025-12-20 14:05:01,723 - [2025-12-20 14:05:01] Checking emails...
+2025-12-20 14:05:02,443 -   No new attachments
+2025-12-20 14:05:08,443 - [2025-12-20 14:05:08] Checking emails...
+2025-12-20 14:05:09,006 -   No new attachments
+2025-12-20 14:05:15,009 - [2025-12-20 14:05:15] Checking emails...
+2025-12-20 14:05:15,582 -   No new attachments
+2025-12-20 14:05:21,583 - [2025-12-20 14:05:21] Checking emails...
+2025-12-20 14:05:22,148 -   No new attachments
+2025-12-20 14:05:28,149 - [2025-12-20 14:05:28] Checking emails...
+2025-12-20 14:05:28,711 -   No new attachments
+2025-12-20 14:05:34,711 - [2025-12-20 14:05:34] Checking emails...
+2025-12-20 14:05:35,281 -   No new attachments
+2025-12-20 14:05:41,282 - [2025-12-20 14:05:41] Checking emails...
+2025-12-20 14:05:41,829 -   No new attachments
+2025-12-20 14:05:47,830 - [2025-12-20 14:05:47] Checking emails...
+2025-12-20 14:05:48,374 -   No new attachments
+2025-12-20 14:05:54,374 - [2025-12-20 14:05:54] Checking emails...
+2025-12-20 14:05:54,925 -   No new attachments
+2025-12-20 14:06:00,926 - [2025-12-20 14:06:00] Checking emails...
+2025-12-20 14:06:01,531 -   No new attachments
+2025-12-20 14:06:07,531 - [2025-12-20 14:06:07] Checking emails...
+2025-12-20 14:06:08,120 -   No new attachments
+2025-12-20 14:06:14,121 - [2025-12-20 14:06:14] Checking emails...
+2025-12-20 14:06:14,671 -   No new attachments
+2025-12-20 14:06:20,672 - [2025-12-20 14:06:20] Checking emails...
+2025-12-20 14:06:21,224 -   No new attachments
+2025-12-20 14:06:27,225 - [2025-12-20 14:06:27] Checking emails...
+2025-12-20 14:06:27,774 -   No new attachments
+2025-12-20 14:06:33,775 - [2025-12-20 14:06:33] Checking emails...
+2025-12-20 14:06:34,337 -   No new attachments
+2025-12-20 14:06:40,338 - [2025-12-20 14:06:40] Checking emails...
+2025-12-20 14:06:40,893 -   No new attachments
+2025-12-20 14:06:46,894 - [2025-12-20 14:06:46] Checking emails...
+2025-12-20 14:06:47,438 -   No new attachments
+2025-12-20 14:06:53,439 - [2025-12-20 14:06:53] Checking emails...
+2025-12-20 14:06:53,992 -   No new attachments
+2025-12-20 14:06:59,992 - [2025-12-20 14:06:59] Checking emails...
+2025-12-20 14:07:00,537 -   No new attachments
+2025-12-20 14:07:06,538 - [2025-12-20 14:07:06] Checking emails...
+2025-12-20 14:07:07,094 -   No new attachments
+2025-12-20 14:07:13,094 - [2025-12-20 14:07:13] Checking emails...
+2025-12-20 14:07:13,645 -   No new attachments
+2025-12-20 14:07:19,646 - [2025-12-20 14:07:19] Checking emails...
+2025-12-20 14:07:20,648 -   No new attachments
+2025-12-20 14:07:26,649 - [2025-12-20 14:07:26] Checking emails...
+2025-12-20 14:07:27,261 -   No new attachments
+2025-12-20 14:07:33,262 - [2025-12-20 14:07:33] Checking emails...
+2025-12-20 14:07:33,825 -   No new attachments
+2025-12-20 14:07:39,826 - [2025-12-20 14:07:39] Checking emails...
+2025-12-20 14:07:40,397 -   No new attachments
+2025-12-20 14:07:46,400 - [2025-12-20 14:07:46] Checking emails...
+2025-12-20 14:07:46,971 -   No new attachments
+2025-12-20 14:07:52,971 - [2025-12-20 14:07:52] Checking emails...
+2025-12-20 14:07:53,544 -   No new attachments
+2025-12-20 14:07:59,544 - [2025-12-20 14:07:59] Checking emails...
+2025-12-20 14:08:00,248 -   No new attachments
+2025-12-20 14:08:06,249 - [2025-12-20 14:08:06] Checking emails...
+2025-12-20 14:08:06,817 -   No new attachments
+2025-12-20 14:08:12,818 - [2025-12-20 14:08:12] Checking emails...
+2025-12-20 14:08:13,397 -   No new attachments
+2025-12-20 14:08:19,398 - [2025-12-20 14:08:19] Checking emails...
+2025-12-20 14:08:19,966 -   No new attachments
+2025-12-20 14:08:25,967 - [2025-12-20 14:08:25] Checking emails...
+2025-12-20 14:08:26,533 -   No new attachments
+2025-12-20 14:08:32,534 - [2025-12-20 14:08:32] Checking emails...
+2025-12-20 14:08:33,099 -   No new attachments
+2025-12-20 14:08:39,100 - [2025-12-20 14:08:39] Checking emails...
+2025-12-20 14:08:39,662 -   No new attachments
+2025-12-20 14:08:45,663 - [2025-12-20 14:08:45] Checking emails...
+2025-12-20 14:08:46,305 -   No new attachments
+2025-12-20 14:08:52,306 - [2025-12-20 14:08:52] Checking emails...
+2025-12-20 14:08:52,870 -   No new attachments
+2025-12-20 14:08:58,870 - [2025-12-20 14:08:58] Checking emails...
+2025-12-20 14:08:59,433 -   No new attachments
+2025-12-20 14:09:05,433 - [2025-12-20 14:09:05] Checking emails...
+2025-12-20 14:09:05,997 -   No new attachments
+2025-12-20 14:09:11,997 - [2025-12-20 14:09:11] Checking emails...
+2025-12-20 14:09:12,570 -   No new attachments
+2025-12-20 14:09:18,570 - [2025-12-20 14:09:18] Checking emails...
+2025-12-20 14:09:19,140 -   No new attachments
+2025-12-20 14:09:25,141 - [2025-12-20 14:09:25] Checking emails...
+2025-12-20 14:09:25,704 -   No new attachments
+2025-12-20 14:09:31,705 - [2025-12-20 14:09:31] Checking emails...
+2025-12-20 14:09:32,293 -   No new attachments
+2025-12-20 14:09:38,294 - [2025-12-20 14:09:38] Checking emails...
+2025-12-20 14:09:38,886 -   No new attachments
+2025-12-20 14:09:44,888 - [2025-12-20 14:09:44] Checking emails...
+2025-12-20 14:09:45,442 -   No new attachments
+2025-12-20 14:09:51,443 - [2025-12-20 14:09:51] Checking emails...
+2025-12-20 14:09:51,984 -   No new attachments
+2025-12-20 14:09:57,984 - [2025-12-20 14:09:57] Checking emails...
+2025-12-20 14:09:58,707 -   No new attachments
+2025-12-20 14:10:04,708 - [2025-12-20 14:10:04] Checking emails...
+2025-12-20 14:10:05,295 -   No new attachments
+2025-12-20 14:10:11,296 - [2025-12-20 14:10:11] Checking emails...
+2025-12-20 14:10:11,844 -   No new attachments
+2025-12-20 14:10:17,845 - [2025-12-20 14:10:17] Checking emails...
+2025-12-20 14:10:18,394 -   No new attachments
+2025-12-20 14:10:24,394 - [2025-12-20 14:10:24] Checking emails...
+2025-12-20 14:10:24,946 -   No new attachments
+2025-12-20 14:10:30,947 - [2025-12-20 14:10:30] Checking emails...
+2025-12-20 14:10:31,508 -   No new attachments
+2025-12-20 14:10:37,509 - [2025-12-20 14:10:37] Checking emails...
+2025-12-20 14:10:38,072 -   No new attachments
+2025-12-20 14:10:44,073 - [2025-12-20 14:10:44] Checking emails...
+2025-12-20 14:10:44,616 -   No new attachments
+2025-12-20 14:10:50,616 - [2025-12-20 14:10:50] Checking emails...
+2025-12-20 14:10:51,185 -   No new attachments
+2025-12-20 14:10:57,186 - [2025-12-20 14:10:57] Checking emails...
+2025-12-20 14:10:57,748 -   No new attachments
+2025-12-20 14:11:03,749 - [2025-12-20 14:11:03] Checking emails...
+2025-12-20 14:11:04,320 -   No new attachments
+2025-12-20 14:11:10,321 - [2025-12-20 14:11:10] Checking emails...
+2025-12-20 14:11:10,887 -   No new attachments
+2025-12-20 14:11:16,887 - [2025-12-20 14:11:16] Checking emails...
+2025-12-20 14:11:17,457 -   No new attachments
+2025-12-20 14:11:23,458 - [2025-12-20 14:11:23] Checking emails...
+2025-12-20 14:11:24,023 -   No new attachments
+2025-12-20 14:11:30,023 - [2025-12-20 14:11:30] Checking emails...
+2025-12-20 14:11:30,590 -   No new attachments
+2025-12-20 14:11:36,591 - [2025-12-20 14:11:36] Checking emails...
+2025-12-20 14:11:37,158 -   No new attachments
+2025-12-20 14:11:43,159 - [2025-12-20 14:11:43] Checking emails...
+2025-12-20 14:11:43,730 -   No new attachments
+2025-12-20 14:11:49,730 - [2025-12-20 14:11:49] Checking emails...
+2025-12-20 14:11:50,325 -   No new attachments
+2025-12-20 14:11:56,326 - [2025-12-20 14:11:56] Checking emails...
+2025-12-20 14:11:56,880 -   No new attachments
+2025-12-20 14:12:02,881 - [2025-12-20 14:12:02] Checking emails...
+2025-12-20 14:12:03,429 -   No new attachments
+2025-12-20 14:12:09,430 - [2025-12-20 14:12:09] Checking emails...
+2025-12-20 14:12:10,035 -   No new attachments
+2025-12-20 14:12:16,036 - [2025-12-20 14:12:16] Checking emails...
+2025-12-20 14:12:16,592 -   No new attachments
+2025-12-20 14:12:22,593 - [2025-12-20 14:12:22] Checking emails...
+2025-12-20 14:12:23,155 -   No new attachments
+2025-12-20 14:12:29,156 - [2025-12-20 14:12:29] Checking emails...
+2025-12-20 14:12:29,725 -   No new attachments
+2025-12-20 14:12:35,726 - [2025-12-20 14:12:35] Checking emails...
+2025-12-20 14:12:36,292 -   No new attachments
+2025-12-20 14:12:42,293 - [2025-12-20 14:12:42] Checking emails...
+2025-12-20 14:12:42,855 -   No new attachments
+2025-12-20 14:12:48,856 - [2025-12-20 14:12:48] Checking emails...
+2025-12-20 14:12:49,421 -   No new attachments
+2025-12-20 14:12:55,422 - [2025-12-20 14:12:55] Checking emails...
+2025-12-20 14:12:55,987 -   No new attachments
+2025-12-20 14:13:01,988 - [2025-12-20 14:13:01] Checking emails...
+2025-12-20 14:13:02,560 -   No new attachments
+2025-12-20 14:13:08,560 - [2025-12-20 14:13:08] Checking emails...
+2025-12-20 14:13:09,129 -   No new attachments
+2025-12-20 14:13:15,129 - [2025-12-20 14:13:15] Checking emails...
+2025-12-20 14:13:15,704 -   No new attachments
+2025-12-20 14:13:21,705 - [2025-12-20 14:13:21] Checking emails...
+2025-12-20 14:13:22,257 -   No new attachments
+2025-12-20 14:13:28,258 - [2025-12-20 14:13:28] Checking emails...
+2025-12-20 14:13:28,806 -   No new attachments
+2025-12-20 14:13:34,806 - [2025-12-20 14:13:34] Checking emails...
+2025-12-20 14:13:35,374 -   No new attachments
+2025-12-20 14:13:41,375 - [2025-12-20 14:13:41] Checking emails...
+2025-12-20 14:13:41,921 -   No new attachments
+2025-12-20 14:13:47,921 - [2025-12-20 14:13:47] Checking emails...
+2025-12-20 14:13:48,485 -   No new attachments
+2025-12-20 14:13:54,486 - [2025-12-20 14:13:54] Checking emails...
+2025-12-20 14:13:55,079 -   No new attachments
+2025-12-20 14:14:01,079 - [2025-12-20 14:14:01] Checking emails...
+2025-12-20 14:14:01,654 -   No new attachments
+2025-12-20 14:14:07,655 - [2025-12-20 14:14:07] Checking emails...
+2025-12-20 14:14:08,200 -   No new attachments
+2025-12-20 14:14:14,200 - [2025-12-20 14:14:14] Checking emails...
+2025-12-20 14:14:14,766 -   No new attachments
+2025-12-20 14:14:20,767 - [2025-12-20 14:14:20] Checking emails...
+2025-12-20 14:14:21,376 -   No new attachments
+2025-12-20 14:14:27,377 - [2025-12-20 14:14:27] Checking emails...
+2025-12-20 14:14:27,941 -   No new attachments
+2025-12-20 14:14:33,941 - [2025-12-20 14:14:33] Checking emails...
+2025-12-20 14:14:34,508 -   No new attachments
+2025-12-20 14:14:40,508 - [2025-12-20 14:14:40] Checking emails...
+2025-12-20 14:14:41,082 -   No new attachments
+2025-12-20 14:14:47,082 - [2025-12-20 14:14:47] Checking emails...
+2025-12-20 14:14:47,663 -   No new attachments
+2025-12-20 14:14:53,663 - [2025-12-20 14:14:53] Checking emails...
+2025-12-20 14:14:54,208 -   No new attachments
+2025-12-20 14:15:00,209 - [2025-12-20 14:15:00] Checking emails...
+2025-12-20 14:15:00,757 -   No new attachments
+2025-12-20 14:15:06,757 - [2025-12-20 14:15:06] Checking emails...
+2025-12-20 14:15:07,329 -   No new attachments
+2025-12-20 14:15:13,330 - [2025-12-20 14:15:13] Checking emails...
+2025-12-20 14:15:13,925 -   No new attachments
+2025-12-20 14:15:19,926 - [2025-12-20 14:15:19] Checking emails...
+2025-12-20 14:15:20,492 -   No new attachments
+2025-12-20 14:15:26,492 - [2025-12-20 14:15:26] Checking emails...
+2025-12-20 14:15:27,062 -   No new attachments
+2025-12-20 14:15:33,063 - [2025-12-20 14:15:33] Checking emails...
+2025-12-20 14:15:33,715 -   No new attachments
+2025-12-20 14:15:39,716 - [2025-12-20 14:15:39] Checking emails...
+2025-12-20 14:15:40,281 -   No new attachments
+2025-12-20 14:15:46,284 - [2025-12-20 14:15:46] Checking emails...
+2025-12-20 14:15:46,911 -   No new attachments
+2025-12-20 14:15:52,912 - [2025-12-20 14:15:52] Checking emails...
+2025-12-20 14:15:53,581 -   No new attachments
+2025-12-20 14:15:54,956 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 14:15:55,437 - [DISCONNECTED] Logged out from email server
+2025-12-20 14:15:58,857 - 
+============================================================
+2025-12-20 14:15:58,857 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 14:15:58,857 - ============================================================
+2025-12-20 14:15:58,857 - Email: yourmltales@gmail.com
+2025-12-20 14:15:58,857 - Server: imap.gmail.com:993
+2025-12-20 14:15:58,858 - Watching for subjects: 
+2025-12-20 14:15:58,858 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 14:15:58,858 - Root save location: email_attachments
+2025-12-20 14:15:58,858 - Check interval: 6s
+2025-12-20 14:15:58,858 - Only unseen emails: True
+2025-12-20 14:15:58,858 - Mark as read: False
+2025-12-20 14:15:58,858 - ============================================================
+
+2025-12-20 14:15:58,858 - Connecting to imap.gmail.com:993...
+2025-12-20 14:16:00,015 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 14:16:00,016 - [2025-12-20 14:16:00] Checking emails...
+2025-12-20 14:16:00,644 -   No new attachments
+2025-12-20 14:16:06,645 - [2025-12-20 14:16:06] Checking emails...
+2025-12-20 14:16:07,205 -   No new attachments
+2025-12-20 14:16:13,206 - [2025-12-20 14:16:13] Checking emails...
+2025-12-20 14:16:13,775 -   No new attachments
+2025-12-20 14:16:19,776 - [2025-12-20 14:16:19] Checking emails...
+2025-12-20 14:16:21,601 - 
+[NEW EMAIL] Subject: Fwd: Fw: Pre IMGC letter. HL P+C case of Mr. NIRANJAN SUBHASH BHOSALE
+ // Rs 9.00 lacs // 11.75% // 240 Months // CM assessment // Kolhapur // 3000019391
+2025-12-20 14:16:21,601 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-20 14:16:21,601 -   Date: Sat, 20 Dec 2025 19:46:12 +0530
+2025-12-20 14:16:21,604 -     [ATTACHMENT] App Form - Bhosale.pdf
+2025-12-20 14:16:21,611 -     [ATTACHMENT] Cam - Niranjan Bhosale.xlsx
+2025-12-20 14:16:21,612 -     [ATTACHMENT] PD FORMAT - SALARIED.docx
+2025-12-20 14:16:21,612 -   [SAVED] 3 attachment(s) to: email_attachments/3000019391_20251220_141621
+2025-12-20 14:16:21,612 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000019391_20251220_141621
+2025-12-20 14:16:21,613 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-20 14:16:23,742 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:16:23,742 -     [EXTRACTION] Processing: Cam - Niranjan Bhosale.xlsx (using column: CAM Description)
+2025-12-20 14:16:33,284 -     [EXTRACTION] ✓ Extracted 50 fields using column: CAM Description
+2025-12-20 14:16:33,285 -     [EXTRACTION] Processing: PD FORMAT - SALARIED.docx (using column: PD (Word Doc) Description)
+2025-12-20 14:16:36,388 -     [EXTRACTION] ✓ Extracted 21 fields using column: PD (Word Doc) Description
+2025-12-20 14:16:36,388 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:16:38,036 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:16:38,036 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:16:39,480 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:16:39,480 -     [EXTRACTION] Processing: App Form - Bhosale.pdf (using column: Application Form Description)
+2025-12-20 14:16:44,602 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-20 14:16:44,910 -   [EXTRACTION] Results saved to email_attachments/3000019391_20251220_141621/extraction_results.xlsx
+2025-12-20 14:16:44,911 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000019391_20251220_141621/extraction_results.xlsx
+2025-12-20 14:16:44,949 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:16:51,982 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:16:51,983 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-20 14:16:57,983 - [2025-12-20 14:16:57] Checking emails...
+2025-12-20 14:16:59,099 - 
+[NEW EMAIL] Subject: 🚨 HIGH Criticality Data Issues Detected - 46 Issue(s)
+2025-12-20 14:16:59,099 -   From: yourmltales@gmail.com
+2025-12-20 14:16:59,100 -   Date: Sat, 20 Dec 2025 06:16:47 -0800 (PST)
+2025-12-20 14:16:59,108 -     [ATTACHMENT] High_Criticality_Issues_20251220_141645.xlsx
+2025-12-20 14:16:59,110 -   [SAVED] 1 attachment(s) to: email_attachments/VX41GF7O_20251220_141659
+2025-12-20 14:16:59,111 - 
+  [EXTRACTION] Starting field extraction for email_attachments/VX41GF7O_20251220_141659
+2025-12-20 14:16:59,111 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-20 14:17:00,771 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:17:00,771 -     [EXTRACTION] Document 'High_Criticality_Issues_20251220_141645.xlsx' has no matching column. Skipping.
+2025-12-20 14:17:00,772 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:17:02,287 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:17:02,287 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:17:03,796 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:17:03,959 -   [EXTRACTION] Results saved to email_attachments/VX41GF7O_20251220_141659/extraction_results.xlsx
+2025-12-20 14:17:03,959 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/VX41GF7O_20251220_141659/extraction_results.xlsx
+2025-12-20 14:17:03,978 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:17:10,314 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:17:10,714 - 
+[NEW EMAIL] Subject: 📊 Data Extraction Report - 31 Low Criticality Issue(s) Found
+2025-12-20 14:17:10,714 -   From: yourmltales@gmail.com
+2025-12-20 14:17:10,714 -   Date: Sat, 20 Dec 2025 06:16:51 -0800 (PST)
+2025-12-20 14:17:10,715 - 
+  [EXTRACTION] Starting field extraction for email_attachments/5LFEBTM0_20251220_141710
+2025-12-20 14:17:10,716 -   [EXTRACTION] Found 2 document(s) to process
+2025-12-20 14:17:11,985 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:17:11,985 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:17:13,378 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:17:13,378 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:17:14,852 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:17:15,118 -   [EXTRACTION] Results saved to email_attachments/5LFEBTM0_20251220_141710/extraction_results.xlsx
+2025-12-20 14:17:15,119 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/5LFEBTM0_20251220_141710/extraction_results.xlsx
+2025-12-20 14:17:15,158 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:17:21,958 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:17:21,959 - [SUCCESS] Downloaded 1 attachment(s) into 1 folder(s)
+2025-12-20 14:17:27,959 - [2025-12-20 14:17:27] Checking emails...
+2025-12-20 14:17:29,032 - 
+[NEW EMAIL] Subject: 🚨 HIGH Criticality Data Issues Detected - 5 Issue(s)
+2025-12-20 14:17:29,033 -   From: yourmltales@gmail.com
+2025-12-20 14:17:29,033 -   Date: Sat, 20 Dec 2025 06:17:06 -0800 (PST)
+2025-12-20 14:17:29,034 -     [ATTACHMENT] High_Criticality_Issues_20251220_141704.xlsx
+2025-12-20 14:17:29,035 -   [SAVED] 1 attachment(s) to: email_attachments/YYU52R53_20251220_141729
+2025-12-20 14:17:29,035 - 
+  [EXTRACTION] Starting field extraction for email_attachments/YYU52R53_20251220_141729
+2025-12-20 14:17:29,035 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-20 14:17:30,400 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:17:30,400 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:17:31,942 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:17:31,942 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:17:33,144 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:17:33,144 -     [EXTRACTION] Document 'High_Criticality_Issues_20251220_141704.xlsx' has no matching column. Skipping.
+2025-12-20 14:17:33,338 -   [EXTRACTION] Results saved to email_attachments/YYU52R53_20251220_141729/extraction_results.xlsx
+2025-12-20 14:17:33,338 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/YYU52R53_20251220_141729/extraction_results.xlsx
+2025-12-20 14:17:33,356 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:17:39,843 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:17:40,229 - 
+[NEW EMAIL] Subject: 📊 Data Extraction Report - 0 Low Criticality Issue(s) Found
+2025-12-20 14:17:40,230 -   From: yourmltales@gmail.com
+2025-12-20 14:17:40,230 -   Date: Sat, 20 Dec 2025 06:17:09 -0800 (PST)
+2025-12-20 14:17:40,231 - 
+  [EXTRACTION] Starting field extraction for email_attachments/5SIXJ6VE_20251220_141740
+2025-12-20 14:17:40,232 -   [EXTRACTION] Found 2 document(s) to process
+2025-12-20 14:17:41,440 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:17:41,440 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:17:43,080 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:17:43,080 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:17:44,473 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:17:44,632 -   [EXTRACTION] Results saved to email_attachments/5SIXJ6VE_20251220_141740/extraction_results.xlsx
+2025-12-20 14:17:44,632 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/5SIXJ6VE_20251220_141740/extraction_results.xlsx
+2025-12-20 14:17:44,650 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:17:51,246 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:17:51,689 - 
+[NEW EMAIL] Subject: 🚨 HIGH Criticality Data Issues Detected - 4 Issue(s)
+2025-12-20 14:17:51,689 -   From: yourmltales@gmail.com
+2025-12-20 14:17:51,689 -   Date: Sat, 20 Dec 2025 06:17:17 -0800 (PST)
+2025-12-20 14:17:51,691 -     [ATTACHMENT] High_Criticality_Issues_20251220_141715.xlsx
+2025-12-20 14:17:51,691 -   [SAVED] 1 attachment(s) to: email_attachments/0W7K9QWD_20251220_141751
+2025-12-20 14:17:51,691 - 
+  [EXTRACTION] Starting field extraction for email_attachments/0W7K9QWD_20251220_141751
+2025-12-20 14:17:51,692 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-20 14:17:53,130 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:17:53,130 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:17:54,668 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:17:54,669 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:17:55,995 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:17:55,995 -     [EXTRACTION] Document 'High_Criticality_Issues_20251220_141715.xlsx' has no matching column. Skipping.
+2025-12-20 14:17:56,224 -   [EXTRACTION] Results saved to email_attachments/0W7K9QWD_20251220_141751/extraction_results.xlsx
+2025-12-20 14:17:56,224 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/0W7K9QWD_20251220_141751/extraction_results.xlsx
+2025-12-20 14:17:56,255 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:18:02,916 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:18:03,306 - 
+[NEW EMAIL] Subject: 📊 Data Extraction Report - 0 Low Criticality Issue(s) Found
+2025-12-20 14:18:03,306 -   From: yourmltales@gmail.com
+2025-12-20 14:18:03,306 -   Date: Sat, 20 Dec 2025 06:17:21 -0800 (PST)
+2025-12-20 14:18:03,307 - 
+  [EXTRACTION] Starting field extraction for email_attachments/HD349ARY_20251220_141803
+2025-12-20 14:18:03,307 -   [EXTRACTION] Found 2 document(s) to process
+2025-12-20 14:18:04,549 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:18:04,549 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:18:06,147 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:18:06,147 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:18:07,650 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:18:07,829 -   [EXTRACTION] Results saved to email_attachments/HD349ARY_20251220_141803/extraction_results.xlsx
+2025-12-20 14:18:07,829 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/HD349ARY_20251220_141803/extraction_results.xlsx
+2025-12-20 14:18:07,847 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:18:14,185 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:18:14,186 - [SUCCESS] Downloaded 2 attachment(s) into 2 folder(s)
+2025-12-20 14:18:20,188 - [2025-12-20 14:18:20] Checking emails...
+2025-12-20 14:18:21,300 - 
+[NEW EMAIL] Subject: 🚨 HIGH Criticality Data Issues Detected - 5 Issue(s)
+2025-12-20 14:18:21,300 -   From: yourmltales@gmail.com
+2025-12-20 14:18:21,301 -   Date: Sat, 20 Dec 2025 06:17:35 -0800 (PST)
+2025-12-20 14:18:21,306 -     [ATTACHMENT] High_Criticality_Issues_20251220_141733.xlsx
+2025-12-20 14:18:21,306 -   [SAVED] 1 attachment(s) to: email_attachments/G6RMBFI4_20251220_141821
+2025-12-20 14:18:21,307 - 
+  [EXTRACTION] Starting field extraction for email_attachments/G6RMBFI4_20251220_141821
+2025-12-20 14:18:21,308 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-20 14:18:22,899 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:18:22,899 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:18:24,318 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:18:24,318 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:18:25,625 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:18:25,625 -     [EXTRACTION] Document 'High_Criticality_Issues_20251220_141733.xlsx' has no matching column. Skipping.
+2025-12-20 14:18:25,801 -   [EXTRACTION] Results saved to email_attachments/G6RMBFI4_20251220_141821/extraction_results.xlsx
+2025-12-20 14:18:25,801 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/G6RMBFI4_20251220_141821/extraction_results.xlsx
+2025-12-20 14:18:25,821 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:18:32,431 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:18:32,802 - 
+[NEW EMAIL] Subject: 📊 Data Extraction Report - 0 Low Criticality Issue(s) Found
+2025-12-20 14:18:32,802 -   From: yourmltales@gmail.com
+2025-12-20 14:18:32,802 -   Date: Sat, 20 Dec 2025 06:17:39 -0800 (PST)
+2025-12-20 14:18:32,804 - 
+  [EXTRACTION] Starting field extraction for email_attachments/2EP3URYC_20251220_141832
+2025-12-20 14:18:32,804 -   [EXTRACTION] Found 2 document(s) to process
+2025-12-20 14:18:34,027 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:18:34,028 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:18:35,534 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:18:35,534 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:18:36,879 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:18:37,051 -   [EXTRACTION] Results saved to email_attachments/2EP3URYC_20251220_141832/extraction_results.xlsx
+2025-12-20 14:18:37,051 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/2EP3URYC_20251220_141832/extraction_results.xlsx
+2025-12-20 14:18:37,070 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:18:43,513 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:18:43,919 - 
+[NEW EMAIL] Subject: 🚨 HIGH Criticality Data Issues Detected - 4 Issue(s)
+2025-12-20 14:18:43,920 -   From: yourmltales@gmail.com
+2025-12-20 14:18:43,920 -   Date: Sat, 20 Dec 2025 06:17:47 -0800 (PST)
+2025-12-20 14:18:43,926 -     [ATTACHMENT] High_Criticality_Issues_20251220_141744.xlsx
+2025-12-20 14:18:43,926 -   [SAVED] 1 attachment(s) to: email_attachments/EZ4G5EZE_20251220_141843
+2025-12-20 14:18:43,928 - 
+  [EXTRACTION] Starting field extraction for email_attachments/EZ4G5EZE_20251220_141843
+2025-12-20 14:18:43,928 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-20 14:18:45,439 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:18:45,439 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:18:46,882 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:18:46,882 -     [EXTRACTION] Document 'High_Criticality_Issues_20251220_141744.xlsx' has no matching column. Skipping.
+2025-12-20 14:18:46,882 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:18:48,179 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:18:48,408 -   [EXTRACTION] Results saved to email_attachments/EZ4G5EZE_20251220_141843/extraction_results.xlsx
+2025-12-20 14:18:48,408 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/EZ4G5EZE_20251220_141843/extraction_results.xlsx
+2025-12-20 14:18:48,440 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:18:54,937 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:18:55,312 - 
+[NEW EMAIL] Subject: 📊 Data Extraction Report - 0 Low Criticality Issue(s) Found
+2025-12-20 14:18:55,313 -   From: yourmltales@gmail.com
+2025-12-20 14:18:55,313 -   Date: Sat, 20 Dec 2025 06:17:50 -0800 (PST)
+2025-12-20 14:18:55,315 - 
+  [EXTRACTION] Starting field extraction for email_attachments/OT2OGPWW_20251220_141855
+2025-12-20 14:18:55,315 -   [EXTRACTION] Found 2 document(s) to process
+2025-12-20 14:18:56,682 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:18:56,683 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:18:58,308 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:18:58,308 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:18:59,684 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:18:59,865 -   [EXTRACTION] Results saved to email_attachments/OT2OGPWW_20251220_141855/extraction_results.xlsx
+2025-12-20 14:18:59,866 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/OT2OGPWW_20251220_141855/extraction_results.xlsx
+2025-12-20 14:18:59,892 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:19:06,534 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:19:06,953 - 
+[NEW EMAIL] Subject: 🚨 HIGH Criticality Data Issues Detected - 4 Issue(s)
+2025-12-20 14:19:06,954 -   From: yourmltales@gmail.com
+2025-12-20 14:19:06,954 -   Date: Sat, 20 Dec 2025 06:17:58 -0800 (PST)
+2025-12-20 14:19:06,955 -     [ATTACHMENT] High_Criticality_Issues_20251220_141756.xlsx
+2025-12-20 14:19:06,956 -   [SAVED] 1 attachment(s) to: email_attachments/E9TV1SB4_20251220_141906
+2025-12-20 14:19:06,956 - 
+  [EXTRACTION] Starting field extraction for email_attachments/E9TV1SB4_20251220_141906
+2025-12-20 14:19:06,956 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-20 14:19:08,323 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:19:08,323 -     [EXTRACTION] Document 'High_Criticality_Issues_20251220_141756.xlsx' has no matching column. Skipping.
+2025-12-20 14:19:08,323 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:19:09,782 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:19:09,783 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:19:11,108 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:19:11,322 -   [EXTRACTION] Results saved to email_attachments/E9TV1SB4_20251220_141906/extraction_results.xlsx
+2025-12-20 14:19:11,323 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/E9TV1SB4_20251220_141906/extraction_results.xlsx
+2025-12-20 14:19:11,352 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:19:17,987 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:19:18,364 - 
+[NEW EMAIL] Subject: 📊 Data Extraction Report - 0 Low Criticality Issue(s) Found
+2025-12-20 14:19:18,364 -   From: yourmltales@gmail.com
+2025-12-20 14:19:18,364 -   Date: Sat, 20 Dec 2025 06:18:02 -0800 (PST)
+2025-12-20 14:19:18,365 - 
+  [EXTRACTION] Starting field extraction for email_attachments/NF8ABL9R_20251220_141918
+2025-12-20 14:19:18,366 -   [EXTRACTION] Found 2 document(s) to process
+2025-12-20 14:19:19,769 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:19:19,769 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:19:21,559 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:19:21,559 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:19:22,981 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:19:23,157 -   [EXTRACTION] Results saved to email_attachments/NF8ABL9R_20251220_141918/extraction_results.xlsx
+2025-12-20 14:19:23,158 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/NF8ABL9R_20251220_141918/extraction_results.xlsx
+2025-12-20 14:19:23,176 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:19:29,677 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:19:30,089 - 
+[NEW EMAIL] Subject: 🚨 HIGH Criticality Data Issues Detected - 4 Issue(s)
+2025-12-20 14:19:30,089 -   From: yourmltales@gmail.com
+2025-12-20 14:19:30,089 -   Date: Sat, 20 Dec 2025 06:18:10 -0800 (PST)
+2025-12-20 14:19:30,091 -     [ATTACHMENT] High_Criticality_Issues_20251220_141807.xlsx
+2025-12-20 14:19:30,091 -   [SAVED] 1 attachment(s) to: email_attachments/KC08OANG_20251220_141930
+2025-12-20 14:19:30,091 - 
+  [EXTRACTION] Starting field extraction for email_attachments/KC08OANG_20251220_141930
+2025-12-20 14:19:30,091 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-20 14:19:31,594 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:19:31,594 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:19:33,064 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:19:33,064 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:19:34,389 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:19:34,389 -     [EXTRACTION] Document 'High_Criticality_Issues_20251220_141807.xlsx' has no matching column. Skipping.
+2025-12-20 14:19:34,683 -   [EXTRACTION] Results saved to email_attachments/KC08OANG_20251220_141930/extraction_results.xlsx
+2025-12-20 14:19:34,684 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/KC08OANG_20251220_141930/extraction_results.xlsx
+2025-12-20 14:19:34,711 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:19:41,195 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:19:41,570 - 
+[NEW EMAIL] Subject: 📊 Data Extraction Report - 0 Low Criticality Issue(s) Found
+2025-12-20 14:19:41,570 -   From: yourmltales@gmail.com
+2025-12-20 14:19:41,571 -   Date: Sat, 20 Dec 2025 06:18:13 -0800 (PST)
+2025-12-20 14:19:41,572 - 
+  [EXTRACTION] Starting field extraction for email_attachments/M4NTJ6DB_20251220_141941
+2025-12-20 14:19:41,572 -   [EXTRACTION] Found 2 document(s) to process
+2025-12-20 14:19:42,969 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:19:42,970 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:19:44,481 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:19:44,481 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:19:45,890 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:19:46,084 -   [EXTRACTION] Results saved to email_attachments/M4NTJ6DB_20251220_141941/extraction_results.xlsx
+2025-12-20 14:19:46,084 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/M4NTJ6DB_20251220_141941/extraction_results.xlsx
+2025-12-20 14:19:46,104 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:19:52,499 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:19:52,500 - [SUCCESS] Downloaded 4 attachment(s) into 4 folder(s)
+2025-12-20 14:19:58,501 - [2025-12-20 14:19:58] Checking emails...
+2025-12-20 14:19:59,515 - 
+[NEW EMAIL] Subject: 🚨 HIGH Criticality Data Issues Detected - 5 Issue(s)
+2025-12-20 14:19:59,515 -   From: yourmltales@gmail.com
+2025-12-20 14:19:59,515 -   Date: Sat, 20 Dec 2025 06:18:28 -0800 (PST)
+2025-12-20 14:19:59,518 -     [ATTACHMENT] High_Criticality_Issues_20251220_141825.xlsx
+2025-12-20 14:19:59,518 -   [SAVED] 1 attachment(s) to: email_attachments/7D2OI2N7_20251220_141959
+2025-12-20 14:19:59,518 - 
+  [EXTRACTION] Starting field extraction for email_attachments/7D2OI2N7_20251220_141959
+2025-12-20 14:19:59,518 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-20 14:20:00,938 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:20:00,938 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:20:02,506 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:20:02,506 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:20:03,708 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:20:03,709 -     [EXTRACTION] Document 'High_Criticality_Issues_20251220_141825.xlsx' has no matching column. Skipping.
+2025-12-20 14:20:03,924 -   [EXTRACTION] Results saved to email_attachments/7D2OI2N7_20251220_141959/extraction_results.xlsx
+2025-12-20 14:20:03,924 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/7D2OI2N7_20251220_141959/extraction_results.xlsx
+2025-12-20 14:20:03,952 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:20:10,981 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:20:11,364 - 
+[NEW EMAIL] Subject: 📊 Data Extraction Report - 0 Low Criticality Issue(s) Found
+2025-12-20 14:20:11,365 -   From: yourmltales@gmail.com
+2025-12-20 14:20:11,365 -   Date: Sat, 20 Dec 2025 06:18:31 -0800 (PST)
+2025-12-20 14:20:11,366 - 
+  [EXTRACTION] Starting field extraction for email_attachments/J6W9MMZ1_20251220_142011
+2025-12-20 14:20:11,366 -   [EXTRACTION] Found 2 document(s) to process
+2025-12-20 14:20:12,673 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:20:12,673 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:20:14,278 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:20:14,278 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:20:15,534 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:20:15,700 -   [EXTRACTION] Results saved to email_attachments/J6W9MMZ1_20251220_142011/extraction_results.xlsx
+2025-12-20 14:20:15,700 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/J6W9MMZ1_20251220_142011/extraction_results.xlsx
+2025-12-20 14:20:15,719 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:20:22,302 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:20:22,713 - 
+[NEW EMAIL] Subject: 🚨 HIGH Criticality Data Issues Detected - 4 Issue(s)
+2025-12-20 14:20:22,713 -   From: yourmltales@gmail.com
+2025-12-20 14:20:22,713 -   Date: Sat, 20 Dec 2025 06:18:39 -0800 (PST)
+2025-12-20 14:20:22,715 -     [ATTACHMENT] High_Criticality_Issues_20251220_141837.xlsx
+2025-12-20 14:20:22,715 -   [SAVED] 1 attachment(s) to: email_attachments/BLKW02GM_20251220_142022
+2025-12-20 14:20:22,715 - 
+  [EXTRACTION] Starting field extraction for email_attachments/BLKW02GM_20251220_142022
+2025-12-20 14:20:22,716 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-20 14:20:24,189 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:20:24,189 -     [EXTRACTION] Document 'High_Criticality_Issues_20251220_141837.xlsx' has no matching column. Skipping.
+2025-12-20 14:20:24,189 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:20:25,645 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:20:25,645 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:20:26,894 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:20:27,074 -   [EXTRACTION] Results saved to email_attachments/BLKW02GM_20251220_142022/extraction_results.xlsx
+2025-12-20 14:20:27,074 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/BLKW02GM_20251220_142022/extraction_results.xlsx
+2025-12-20 14:20:27,100 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:20:33,923 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:20:34,317 - 
+[NEW EMAIL] Subject: 📊 Data Extraction Report - 0 Low Criticality Issue(s) Found
+2025-12-20 14:20:34,317 -   From: yourmltales@gmail.com
+2025-12-20 14:20:34,317 -   Date: Sat, 20 Dec 2025 06:18:42 -0800 (PST)
+2025-12-20 14:20:34,318 - 
+  [EXTRACTION] Starting field extraction for email_attachments/7KC5DONA_20251220_142034
+2025-12-20 14:20:34,318 -   [EXTRACTION] Found 2 document(s) to process
+2025-12-20 14:20:35,646 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:20:35,647 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:20:37,275 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:20:37,275 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:20:38,705 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:20:38,920 -   [EXTRACTION] Results saved to email_attachments/7KC5DONA_20251220_142034/extraction_results.xlsx
+2025-12-20 14:20:38,920 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/7KC5DONA_20251220_142034/extraction_results.xlsx
+2025-12-20 14:20:38,946 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:20:44,445 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 14:20:44,727 - [DISCONNECTED] Logged out from email server
+2025-12-20 14:24:04,322 - 
+============================================================
+2025-12-20 14:24:04,323 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 14:24:04,324 - ============================================================
+2025-12-20 14:24:04,324 - Email: yourmltales@gmail.com
+2025-12-20 14:24:04,324 - Server: imap.gmail.com:993
+2025-12-20 14:24:04,325 - Watching for subjects: 
+2025-12-20 14:24:04,325 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 14:24:04,325 - Root save location: email_attachments
+2025-12-20 14:24:04,326 - Check interval: 60s
+2025-12-20 14:24:04,326 - Only unseen emails: True
+2025-12-20 14:24:04,326 - Mark as read: False
+2025-12-20 14:24:04,327 - ============================================================
+
+2025-12-20 14:24:04,327 - Connecting to imap.gmail.com:993...
+2025-12-20 14:24:05,325 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 14:24:05,326 - [2025-12-20 14:24:05] Checking emails...
+2025-12-20 14:24:05,912 -   No new attachments
+2025-12-20 14:25:05,912 - [2025-12-20 14:25:05] Checking emails...
+2025-12-20 14:25:07,791 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-20 14:25:07,791 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-20 14:25:07,791 -   Date: Sat, 20 Dec 2025 19:54:27 +0530
+2025-12-20 14:25:07,794 -     [ATTACHMENT] Application Form.pdf
+2025-12-20 14:25:07,801 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-20 14:25:07,802 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-20 14:25:07,802 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251220_142507
+2025-12-20 14:25:07,802 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251220_142507
+2025-12-20 14:25:07,802 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-20 14:25:09,832 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:25:09,832 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-20 14:25:20,034 -     [EXTRACTION] ✓ Extracted 50 fields using column: CAM Description
+2025-12-20 14:25:20,034 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:25:21,695 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:25:21,699 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:25:23,024 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:25:23,024 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-20 14:25:32,413 -     [EXTRACTION] ✓ Extracted 21 fields using column: PD (Word Doc) Description
+2025-12-20 14:25:32,413 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-20 14:25:37,587 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-20 14:25:37,821 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251220_142507/extraction_results.xlsx
+2025-12-20 14:25:37,821 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251220_142507/extraction_results.xlsx
+2025-12-20 14:25:37,843 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:25:44,828 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:25:44,829 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-20 14:26:44,829 - [2025-12-20 14:26:44] Checking emails...
+2025-12-20 14:26:45,497 -   No new attachments
+2025-12-20 14:27:45,498 - [2025-12-20 14:27:45] Checking emails...
+2025-12-20 14:27:46,619 - 
+[NEW EMAIL] Subject: 🚨 HIGH Criticality Data Issues Detected - 46 Issue(s)
+2025-12-20 14:27:46,620 -   From: yourmltales@gmail.com
+2025-12-20 14:27:46,620 -   Date: Sat, 20 Dec 2025 06:25:40 -0800 (PST)
+2025-12-20 14:27:46,623 -     [ATTACHMENT] High_Criticality_Issues_20251220_142538.xlsx
+2025-12-20 14:27:46,624 -   [SAVED] 1 attachment(s) to: email_attachments/Y8Y5UTD0_20251220_142746
+2025-12-20 14:27:46,624 - 
+  [EXTRACTION] Starting field extraction for email_attachments/Y8Y5UTD0_20251220_142746
+2025-12-20 14:27:46,625 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-20 14:27:48,212 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:27:48,212 -     [EXTRACTION] Document 'High_Criticality_Issues_20251220_142538.xlsx' has no matching column. Skipping.
+2025-12-20 14:27:48,212 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:27:49,565 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:27:49,566 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:27:51,193 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:27:51,402 -   [EXTRACTION] Results saved to email_attachments/Y8Y5UTD0_20251220_142746/extraction_results.xlsx
+2025-12-20 14:27:51,402 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/Y8Y5UTD0_20251220_142746/extraction_results.xlsx
+2025-12-20 14:27:51,429 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:27:57,954 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:27:58,319 - 
+[NEW EMAIL] Subject: 📊 Data Extraction Report - 31 Low Criticality Issue(s) Found
+2025-12-20 14:27:58,319 -   From: yourmltales@gmail.com
+2025-12-20 14:27:58,319 -   Date: Sat, 20 Dec 2025 06:25:44 -0800 (PST)
+2025-12-20 14:27:58,331 - 
+  [EXTRACTION] Starting field extraction for email_attachments/YB80XVMW_20251220_142758
+2025-12-20 14:27:58,331 -   [EXTRACTION] Found 2 document(s) to process
+2025-12-20 14:27:59,678 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:27:59,678 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:28:01,031 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:28:01,032 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:28:02,429 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:28:02,800 -   [EXTRACTION] Results saved to email_attachments/YB80XVMW_20251220_142758/extraction_results.xlsx
+2025-12-20 14:28:02,800 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/YB80XVMW_20251220_142758/extraction_results.xlsx
+2025-12-20 14:28:02,842 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:28:09,376 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:28:09,376 - [SUCCESS] Downloaded 1 attachment(s) into 1 folder(s)
+2025-12-20 14:29:09,377 - [2025-12-20 14:29:09] Checking emails...
+2025-12-20 14:29:10,065 -   No new attachments
+2025-12-20 14:30:10,066 - [2025-12-20 14:30:10] Checking emails...
+2025-12-20 14:30:10,640 -   No new attachments
+2025-12-20 14:31:10,641 - [2025-12-20 14:31:10] Checking emails...
+2025-12-20 14:31:11,213 -   No new attachments
+2025-12-20 14:32:11,214 - [2025-12-20 14:32:11] Checking emails...
+2025-12-20 14:32:11,793 -   No new attachments
+2025-12-20 14:33:11,794 - [2025-12-20 14:33:11] Checking emails...
+2025-12-20 14:33:12,339 -   No new attachments
+2025-12-20 14:34:12,339 - [2025-12-20 14:34:12] Checking emails...
+2025-12-20 14:34:12,887 -   No new attachments
+2025-12-20 14:35:12,887 - [2025-12-20 14:35:12] Checking emails...
+2025-12-20 14:35:13,429 -   No new attachments
+2025-12-20 14:36:13,429 - [2025-12-20 14:36:13] Checking emails...
+2025-12-20 14:36:13,984 -   No new attachments
+2025-12-20 14:37:13,984 - [2025-12-20 14:37:13] Checking emails...
+2025-12-20 14:37:14,534 -   No new attachments
+2025-12-20 14:38:14,535 - [2025-12-20 14:38:14] Checking emails...
+2025-12-20 14:38:15,094 -   No new attachments
+2025-12-20 14:39:15,095 - [2025-12-20 14:39:15] Checking emails...
+2025-12-20 14:39:15,689 -   No new attachments
+2025-12-20 14:40:15,689 - [2025-12-20 14:40:15] Checking emails...
+2025-12-20 14:40:16,274 -   No new attachments
+2025-12-20 14:41:16,274 - [2025-12-20 14:41:16] Checking emails...
+2025-12-20 14:41:16,838 -   No new attachments
+2025-12-20 14:42:16,839 - [2025-12-20 14:42:16] Checking emails...
+2025-12-20 14:42:17,412 -   No new attachments
+2025-12-20 14:43:17,413 - [2025-12-20 14:43:17] Checking emails...
+2025-12-20 14:43:18,012 -   No new attachments
+2025-12-20 14:44:18,012 - [2025-12-20 14:44:18] Checking emails...
+2025-12-20 14:44:18,581 -   No new attachments
+2025-12-20 14:45:18,581 - [2025-12-20 14:45:18] Checking emails...
+2025-12-20 14:45:19,158 -   No new attachments
+2025-12-20 14:46:19,158 - [2025-12-20 14:46:19] Checking emails...
+2025-12-20 14:46:19,789 -   No new attachments
+2025-12-20 14:47:19,790 - [2025-12-20 14:47:19] Checking emails...
+2025-12-20 14:47:20,348 -   No new attachments
+2025-12-20 14:48:20,348 - [2025-12-20 14:48:20] Checking emails...
+2025-12-20 14:48:20,899 -   No new attachments
+2025-12-20 14:49:20,900 - [2025-12-20 14:49:20] Checking emails...
+2025-12-20 14:49:21,489 -   No new attachments
+2025-12-20 14:50:21,491 - [2025-12-20 14:50:21] Checking emails...
+2025-12-20 14:50:22,067 -   No new attachments
+2025-12-20 14:51:22,067 - [2025-12-20 14:51:22] Checking emails...
+2025-12-20 14:51:22,640 -   No new attachments
+2025-12-20 14:52:06,545 - 
+
+[STOPPED] Agent stopped by user
+2025-12-20 14:52:06,816 - [DISCONNECTED] Logged out from email server
+2025-12-20 14:53:01,783 - 
+============================================================
+2025-12-20 14:53:01,783 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-20 14:53:01,783 - ============================================================
+2025-12-20 14:53:01,783 - Email: yourmltales@gmail.com
+2025-12-20 14:53:01,783 - Server: imap.gmail.com:993
+2025-12-20 14:53:01,783 - Watching for subjects: 
+2025-12-20 14:53:01,783 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-20 14:53:01,784 - Root save location: email_attachments
+2025-12-20 14:53:01,784 - Check interval: 60s
+2025-12-20 14:53:01,784 - Only unseen emails: True
+2025-12-20 14:53:01,784 - Mark as read: False
+2025-12-20 14:53:01,784 - ============================================================
+
+2025-12-20 14:53:01,784 - Connecting to imap.gmail.com:993...
+2025-12-20 14:53:02,777 - [SUCCESS] Connected to imap.gmail.com
+2025-12-20 14:53:02,777 - [2025-12-20 14:53:02] Checking emails...
+2025-12-20 14:53:03,348 -   No new attachments
+2025-12-20 14:54:03,349 - [2025-12-20 14:54:03] Checking emails...
+2025-12-20 14:54:05,236 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-20 14:54:05,237 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-20 14:54:05,237 -   Date: Sat, 20 Dec 2025 20:23:20 +0530
+2025-12-20 14:54:05,240 -     [ATTACHMENT] Application Form.pdf
+2025-12-20 14:54:05,248 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-20 14:54:05,250 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-20 14:54:05,250 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251220_145405
+2025-12-20 14:54:05,251 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251220_145405
+2025-12-20 14:54:05,251 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-20 14:54:07,085 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-20 14:54:07,085 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-20 14:54:16,541 -     [EXTRACTION] ✓ Extracted 50 fields using column: CAM Description
+2025-12-20 14:54:16,541 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-20 14:54:18,193 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-20 14:54:18,193 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-20 14:54:19,499 -     [EXTRACTION] ✓ Extracted 1 fields using column: Email Body Description
+2025-12-20 14:54:19,500 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-20 14:54:24,707 -     [EXTRACTION] ✓ Extracted 21 fields using column: PD (Word Doc) Description
+2025-12-20 14:54:24,707 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-20 14:54:29,692 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-20 14:54:30,012 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251220_145405/extraction_results.xlsx
+2025-12-20 14:54:30,012 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251220_145405/extraction_results.xlsx
+2025-12-20 14:54:30,053 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-20 14:54:36,945 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-20 14:54:36,946 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-20 14:55:36,946 - [2025-12-20 14:55:36] Checking emails...
+2025-12-20 14:55:37,514 -   No new attachments
+2025-12-20 14:56:37,515 - [2025-12-20 14:56:37] Checking emails...
+2025-12-20 14:56:38,079 -   No new attachments
+2025-12-20 14:57:38,079 - [2025-12-20 14:57:38] Checking emails...
+2025-12-20 14:57:38,645 -   No new attachments
+2025-12-20 14:58:38,647 - [2025-12-20 14:58:38] Checking emails...
+2025-12-20 14:58:39,222 -   No new attachments
+2025-12-20 14:59:39,223 - [2025-12-20 14:59:39] Checking emails...
+2025-12-20 14:59:39,797 -   No new attachments
+2025-12-20 15:00:39,797 - [2025-12-20 15:00:39] Checking emails...
+2025-12-20 15:00:40,371 -   No new attachments
+2025-12-20 15:01:40,372 - [2025-12-20 15:01:40] Checking emails...
+2025-12-20 15:01:41,109 -   No new attachments
+2025-12-20 15:02:41,109 - [2025-12-20 15:02:41] Checking emails...
+2025-12-20 15:02:41,681 -   No new attachments
+2025-12-20 15:03:41,681 - [2025-12-20 15:03:41] Checking emails...
+2025-12-20 15:03:42,249 -   No new attachments
+2025-12-20 15:04:42,249 - [2025-12-20 15:04:42] Checking emails...
+2025-12-20 15:04:42,820 -   No new attachments
+2025-12-20 15:05:42,821 - [2025-12-20 15:05:42] Checking emails...
+2025-12-20 15:05:43,385 -   No new attachments
+2025-12-20 15:06:43,386 - [2025-12-20 15:06:43] Checking emails...
+2025-12-20 15:06:43,960 -   No new attachments
+2025-12-20 15:07:43,961 - [2025-12-20 15:07:43] Checking emails...
+2025-12-20 15:07:44,529 -   No new attachments
+2025-12-20 15:08:44,530 - [2025-12-20 15:08:44] Checking emails...
+2025-12-20 15:08:45,100 -   No new attachments
+2025-12-20 15:09:45,101 - [2025-12-20 15:09:45] Checking emails...
+2025-12-20 15:09:45,673 -   No new attachments
+2025-12-20 15:10:45,673 - [2025-12-20 15:10:45] Checking emails...
+2025-12-20 15:10:46,243 -   No new attachments
+2025-12-20 15:11:46,244 - [2025-12-20 15:11:46] Checking emails...
+2025-12-20 15:11:46,821 -   No new attachments
+2025-12-20 15:12:46,821 - [2025-12-20 15:12:46] Checking emails...
+2025-12-20 15:12:47,409 -   No new attachments
+2025-12-20 15:13:47,409 - [2025-12-20 15:13:47] Checking emails...
+2025-12-20 15:13:47,997 -   No new attachments
+2025-12-20 15:14:47,998 - [2025-12-20 15:14:47] Checking emails...
+2025-12-20 15:14:48,569 -   No new attachments
+2025-12-20 15:15:48,570 - [2025-12-20 15:15:48] Checking emails...
+2025-12-20 15:15:49,141 -   No new attachments
+2025-12-20 15:16:49,141 - [2025-12-20 15:16:49] Checking emails...
+2025-12-20 15:16:49,747 -   No new attachments
+2025-12-20 15:17:49,747 - [2025-12-20 15:17:49] Checking emails...
+2025-12-20 15:17:50,334 -   No new attachments
+2025-12-20 15:18:50,335 - [2025-12-20 15:18:50] Checking emails...
+2025-12-20 15:18:50,915 -   No new attachments
+2025-12-20 15:19:50,915 - [2025-12-20 15:19:50] Checking emails...
+2025-12-20 15:19:51,555 -   No new attachments
+2025-12-20 15:20:51,556 - [2025-12-20 15:20:51] Checking emails...
+2025-12-20 15:20:52,134 -   No new attachments
+2025-12-20 15:21:52,135 - [2025-12-20 15:21:52] Checking emails...
+2025-12-20 15:21:52,716 -   No new attachments
+2025-12-20 15:22:52,717 - [2025-12-20 15:22:52] Checking emails...
+2025-12-20 15:22:54,997 -   No new attachments
+2025-12-20 15:23:54,997 - [2025-12-20 15:23:54] Checking emails...
+2025-12-20 15:23:55,581 -   No new attachments
+2025-12-20 15:24:55,581 - [2025-12-20 15:24:55] Checking emails...
+2025-12-20 15:24:56,159 -   No new attachments
+2025-12-20 15:25:56,159 - [2025-12-20 15:25:56] Checking emails...
+2025-12-20 15:25:56,746 -   No new attachments
+2025-12-20 15:26:56,746 - [2025-12-20 15:26:56] Checking emails...
+2025-12-20 15:26:57,330 -   No new attachments
+2025-12-20 15:27:57,331 - [2025-12-20 15:27:57] Checking emails...
+2025-12-20 15:27:57,918 -   No new attachments
+2025-12-20 15:28:57,918 - [2025-12-20 15:28:57] Checking emails...
+2025-12-20 15:28:58,487 -   No new attachments
+2025-12-20 15:29:58,487 - [2025-12-20 15:29:58] Checking emails...
+2025-12-20 15:29:59,064 -   No new attachments
+2025-12-20 15:30:59,065 - [2025-12-20 15:30:59] Checking emails...
+2025-12-20 15:30:59,639 -   No new attachments
+2025-12-20 15:31:59,640 - [2025-12-20 15:31:59] Checking emails...
+2025-12-20 15:32:00,241 -   No new attachments
+2025-12-20 15:33:00,242 - [2025-12-20 15:33:00] Checking emails...
+2025-12-20 15:33:00,918 -   No new attachments
+2025-12-20 15:34:00,919 - [2025-12-20 15:34:00] Checking emails...
+2025-12-20 15:34:01,491 -   No new attachments
+2025-12-20 15:35:01,492 - [2025-12-20 15:35:01] Checking emails...
+2025-12-20 15:35:02,061 -   No new attachments
+2025-12-20 15:36:02,062 - [2025-12-20 15:36:02] Checking emails...
+2025-12-20 15:36:02,641 -   No new attachments
+2025-12-20 15:37:02,642 - [2025-12-20 15:37:02] Checking emails...
+2025-12-20 15:37:03,210 -   No new attachments
+2025-12-20 15:38:03,211 - [2025-12-20 15:38:03] Checking emails...
+2025-12-20 15:38:04,164 -   No new attachments
+2025-12-20 15:39:04,165 - [2025-12-20 15:39:04] Checking emails...
+2025-12-20 15:39:04,736 -   No new attachments
+2025-12-20 15:40:04,736 - [2025-12-20 15:40:04] Checking emails...
+2025-12-20 15:40:05,318 -   No new attachments
+2025-12-20 15:41:05,318 - [2025-12-20 15:41:05] Checking emails...
+2025-12-20 15:41:05,912 -   No new attachments
+2025-12-20 15:42:05,913 - [2025-12-20 15:42:05] Checking emails...
+2025-12-20 15:42:06,538 -   No new attachments
+2025-12-20 15:43:06,539 - [2025-12-20 15:43:06] Checking emails...
+2025-12-20 15:43:07,126 -   No new attachments
+2025-12-20 15:44:07,127 - [2025-12-20 15:44:07] Checking emails...
+2025-12-20 15:44:07,732 -   No new attachments
+2025-12-20 15:45:07,736 - [2025-12-20 15:45:07] Checking emails...
+2025-12-20 15:45:08,327 -   No new attachments
+2025-12-20 15:46:08,328 - [2025-12-20 15:46:08] Checking emails...
+2025-12-20 15:46:09,054 -   No new attachments
+2025-12-20 15:47:09,054 - [2025-12-20 15:47:09] Checking emails...
+2025-12-20 15:47:09,643 -   No new attachments
+2025-12-20 15:48:09,643 - [2025-12-20 15:48:09] Checking emails...
+2025-12-20 15:48:10,230 -   No new attachments
+2025-12-20 15:49:10,231 - [2025-12-20 15:49:10] Checking emails...
+2025-12-20 15:49:10,820 -   No new attachments
+2025-12-20 15:50:10,821 - [2025-12-20 15:50:10] Checking emails...
+2025-12-20 15:50:11,407 -   No new attachments
+2025-12-20 15:51:11,407 - [2025-12-20 15:51:11] Checking emails...
+2025-12-20 15:51:11,997 -   No new attachments
+2025-12-20 15:52:11,998 - [2025-12-20 15:52:11] Checking emails...
+2025-12-20 15:52:12,591 -   No new attachments
+2025-12-20 15:53:12,591 - [2025-12-20 15:53:12] Checking emails...
+2025-12-20 15:53:13,187 -   No new attachments
+2025-12-20 15:54:13,187 - [2025-12-20 15:54:13] Checking emails...
+2025-12-20 15:54:13,784 -   No new attachments
+2025-12-20 15:55:13,784 - [2025-12-20 15:55:13] Checking emails...
+2025-12-20 15:55:14,349 -   No new attachments
+2025-12-20 15:56:14,350 - [2025-12-20 15:56:14] Checking emails...
+2025-12-20 15:56:14,905 -   No new attachments
+2025-12-20 15:57:14,906 - [2025-12-20 15:57:14] Checking emails...
+2025-12-20 15:57:15,461 -   No new attachments
+2025-12-20 15:58:15,461 - [2025-12-20 15:58:15] Checking emails...
+2025-12-20 15:58:16,042 -   No new attachments
+2025-12-20 15:59:16,042 - [2025-12-20 15:59:16] Checking emails...
+2025-12-20 15:59:16,587 -   No new attachments
+2025-12-20 16:00:16,588 - [2025-12-20 16:00:16] Checking emails...
+2025-12-20 16:00:17,159 -   No new attachments
+2025-12-20 16:01:17,159 - [2025-12-20 16:01:17] Checking emails...
+2025-12-20 16:01:17,748 -   No new attachments
+2025-12-20 16:02:17,749 - [2025-12-20 16:02:17] Checking emails...
+2025-12-20 16:02:18,358 -   No new attachments
+2025-12-20 16:03:18,358 - [2025-12-20 16:03:18] Checking emails...
+2025-12-20 16:03:18,964 -   No new attachments
+2025-12-20 16:04:18,965 - [2025-12-20 16:04:18] Checking emails...
+2025-12-20 16:04:19,554 -   No new attachments
+2025-12-20 16:05:19,555 - [2025-12-20 16:05:19] Checking emails...
+2025-12-20 16:05:20,127 -   No new attachments
+2025-12-20 16:06:20,127 - [2025-12-20 16:06:20] Checking emails...
+2025-12-20 16:06:20,715 -   No new attachments
+2025-12-20 16:07:20,715 - [2025-12-20 16:07:20] Checking emails...
+2025-12-20 16:07:21,308 -   No new attachments
+2025-12-20 16:08:21,309 - [2025-12-20 16:08:21] Checking emails...
+2025-12-20 16:08:21,909 -   No new attachments
+2025-12-20 16:09:21,910 - [2025-12-20 16:09:21] Checking emails...
+2025-12-20 16:09:22,518 -   No new attachments
+2025-12-20 16:10:22,519 - [2025-12-20 16:10:22] Checking emails...
+2025-12-20 16:10:23,100 -   No new attachments
+2025-12-20 16:11:23,101 - [2025-12-20 16:11:23] Checking emails...
+2025-12-20 16:11:23,690 -   No new attachments
+2025-12-20 16:12:23,690 - [2025-12-20 16:12:23] Checking emails...
+2025-12-20 16:12:24,267 -   No new attachments
+2025-12-20 16:13:24,268 - [2025-12-20 16:13:24] Checking emails...
+2025-12-20 16:13:24,833 -   No new attachments
+2025-12-20 16:14:24,833 - [2025-12-20 16:14:24] Checking emails...
+2025-12-20 16:14:25,407 -   No new attachments
+2025-12-20 16:15:25,408 - [2025-12-20 16:15:25] Checking emails...
+2025-12-20 16:15:25,976 -   No new attachments
+2025-12-20 16:16:25,976 - [2025-12-20 16:16:25] Checking emails...
+2025-12-20 16:16:26,547 -   No new attachments
+2025-12-20 16:17:26,548 - [2025-12-20 16:17:26] Checking emails...
+2025-12-20 16:17:27,116 -   No new attachments
+2025-12-20 16:18:27,116 - [2025-12-20 16:18:27] Checking emails...
+2025-12-20 16:18:27,688 -   No new attachments
+2025-12-20 16:19:27,688 - [2025-12-20 16:19:27] Checking emails...
+2025-12-20 16:19:28,259 -   No new attachments
+2025-12-20 16:20:28,259 - [2025-12-20 16:20:28] Checking emails...
+2025-12-20 16:20:28,839 -   No new attachments
+2025-12-20 16:21:28,840 - [2025-12-20 16:21:28] Checking emails...
+2025-12-20 16:21:29,408 -   No new attachments
+2025-12-20 16:22:29,408 - [2025-12-20 16:22:29] Checking emails...
+2025-12-20 16:22:29,985 -   No new attachments
+2025-12-20 16:23:29,986 - [2025-12-20 16:23:29] Checking emails...
+2025-12-20 16:23:30,580 -   No new attachments
+2025-12-20 16:24:30,580 - [2025-12-20 16:24:30] Checking emails...
+2025-12-20 16:24:31,178 -   No new attachments
+2025-12-20 16:25:31,178 - [2025-12-20 16:25:31] Checking emails...
+2025-12-20 16:25:31,745 -   No new attachments
+2025-12-20 16:26:31,745 - [2025-12-20 16:26:31] Checking emails...
+2025-12-20 16:26:32,342 -   No new attachments
+2025-12-20 16:27:32,342 - [2025-12-20 16:27:32] Checking emails...
+2025-12-20 16:27:32,913 -   No new attachments
+2025-12-20 16:28:32,914 - [2025-12-20 16:28:32] Checking emails...
+2025-12-20 16:28:33,502 -   No new attachments
+2025-12-20 16:29:33,503 - [2025-12-20 16:29:33] Checking emails...
+2025-12-20 16:29:34,069 -   No new attachments
+2025-12-21 08:50:31,571 - 
+============================================================
+2025-12-21 08:50:31,601 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-21 08:50:31,602 - ============================================================
+2025-12-21 08:50:31,602 - Email: yourmltales@gmail.com
+2025-12-21 08:50:31,602 - Server: imap.gmail.com:993
+2025-12-21 08:50:31,602 - Watching for subjects: 
+2025-12-21 08:50:31,603 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-21 08:50:31,603 - Root save location: email_attachments
+2025-12-21 08:50:31,603 - Check interval: 60s
+2025-12-21 08:50:31,603 - Only unseen emails: True
+2025-12-21 08:50:31,603 - Mark as read: False
+2025-12-21 08:50:31,603 - ============================================================
+
+2025-12-21 08:50:31,605 - Connecting to imap.gmail.com:993...
+2025-12-21 08:50:32,758 - [SUCCESS] Connected to imap.gmail.com
+2025-12-21 08:50:32,759 - [2025-12-21 08:50:32] Checking emails...
+2025-12-21 08:50:35,064 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 08:50:35,064 -   From: "rakesh ai.consult" <rakeshaiconsult@gmail.com>
+2025-12-21 08:50:35,064 -   Date: Sun, 21 Dec 2025 14:14:50 +0530
+2025-12-21 08:50:35,076 -     [ATTACHMENT] Application Form.pdf
+2025-12-21 08:50:35,088 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-21 08:50:35,089 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-21 08:50:35,089 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251221_085035
+2025-12-21 08:50:35,089 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251221_085035
+2025-12-21 08:50:35,089 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-21 08:50:37,355 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 08:50:37,355 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-21 08:50:46,779 -     [EXTRACTION] ✓ Extracted 50 fields using column: CAM Description
+2025-12-21 08:50:46,779 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-21 08:50:48,445 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-21 08:50:48,445 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-21 08:50:48,446 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-21 08:50:52,123 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-21 08:50:52,123 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-21 08:50:57,294 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-21 08:50:57,582 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251221_085035/extraction_results.xlsx
+2025-12-21 08:50:57,583 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251221_085035/extraction_results.xlsx
+2025-12-21 08:50:57,611 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-21 08:51:04,188 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-21 08:51:04,189 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)

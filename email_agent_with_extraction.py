@@ -495,6 +495,7 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
         config_df = None
 
     results_data = []
+    doc_columns = list(all_results.keys())
     for field in pas_fields:
         row = {'PAS Field Name': field}
         for doc_name, extracted_data in all_results.items():
@@ -1040,9 +1041,9 @@ def main():
         print(f"[ERROR] Field extraction config not found: {CONFIG_FILE_PATH}")
         return
     
-    if not OPENAI_API_KEY:
-        print(f"[ERROR] OPENAI_API_KEY not set in environment.")
-        return
+    # if not OPENAI_API_KEY:
+    #     print(f"[ERROR] OPENAI_API_KEY not set in environment.")
+    #     return
     print("Loading config...",args.config)
     config = load_config(args.config)
     agent = EmailAgentWithExtraction(config)

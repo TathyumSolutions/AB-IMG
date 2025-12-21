@@ -20,7 +20,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
-from email_agent_with_extraction import llm_logger
+# from email_agent_with_extraction import llm_logger
 import glob
 
 class CompleteEmailGenerator:

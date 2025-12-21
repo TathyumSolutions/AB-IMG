@@ -179,9 +179,9 @@ def main():
         print(f"[ERROR] Field extraction config not found: {CONFIG_FILE_PATH}")
         return
     
-    if not OPENAI_API_KEY:
-        print(f"[ERROR] OPENAI_API_KEY not set in environment.")
-        return
+    # if not OPENAI_API_KEY:
+    #     print(f"[ERROR] OPENAI_API_KEY not set in environment.")
+    #     return
     print("Loading config...",args.config)
     config = load_config(args.config)
     print(f"[INFO] Loaded config from {args.config}")

@@ -1,0 +1,514 @@
+
+📊 DATA EXTRACTION SUMMARY
+======================================================================
+
+Total Fields Processed: 84
+Total Issues Identified: 77
+Low Criticality Issues: 31
+Data Extraction Status: ✅ Complete
+Data Cleaning Applied: ✅ Yes (spaces trimmed, special chars removed, case-normalized)
+
+
+======================================================================
+LOW CRITICALITY ISSUE DETAILS
+======================================================================
+
+
+======================================================================
+Field: Borrower_Address1
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not applicable', 'plot no.42, sahajivan housing society pachgaon r.k.nagar road']
+Preferred Value: not applicable (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Applicable
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Plot No.42, Sahajivan Housing Society Pachgaon R.K.Nagar Road
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Employer_Designation
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not applicable', 'maneger', 'manager']
+Preferred Value: not applicable (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Applicable
+  • PD FORMAT - SALARIED: Manager
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Maneger
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Mode_Of_Salary
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Office_SetUp
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Found
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Date_Of_Filing_LatestYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Financial_Status_LatestYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Gross_Profit_LatestYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Gross_Profit_PreviousYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Gross_Profit_Previous_To_PreviousYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Amount_Of_Salary_Credit
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: No_Of_Months_Banking_Available
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: No_Of_Debit_Entries
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Level_Of_Studies
+Criticality: Low
+Issue Type: Warning
+Values Found: ['bba', 'graduate', 'not applicable']
+Preferred Value: not applicable (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Applicable
+  • PD FORMAT - SALARIED: BBA
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Graduate
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Employer_Address1
+Criticality: Low
+Issue Type: Warning
+Values Found: ['shree satare, shantadurga colony, pachgaon r k nagar road , kolhapur, maharashtra, 416013', 'not applicable']
+Preferred Value: not applicable (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Applicable
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: SHREE SATARE, SHANTADURGA COLONY, Pachgaon R K nagar road , Kolhapur, Maharashtra, 416013
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Employer_City
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not applicable', 'kolhapur']
+Preferred Value: not applicable (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Applicable
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Kolhapur
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Office_Ownership
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Basic_Salary
+Criticality: Low
+Issue Type: Warning
+Values Found: ['20000', 'not applicable']
+Preferred Value: 20000 (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: 20000
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Cash_Salary
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Existing_Pension_Income
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: PF
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Income_Tax
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: TaxPaid_LatestYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Rental_Income_Source_Cash
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Total_Inflow_Credits
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: No_Of_Credit_Entries
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Type_Of_Bank_Statement
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Date_Of_Salary_Credit
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Assesed_Income
+Criticality: Low
+Issue Type: Warning
+Values Found: ['240000', 'not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: 240000
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Gross_Turnover_PreviousYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Gross_Turnover_LatestYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+======================================================================
+Field: Gross_Turnover_Previous_To_PreviousYear
+Criticality: Low
+Issue Type: Warning
+Values Found: ['not found', 'not applicable']
+Preferred Value: not found (from Cam - Niranjan Bhosale)
+Document Sources:
+  • Cam - Niranjan Bhosale: Not Found
+  • PD FORMAT - SALARIED: Not Applicable
+  • mail_subject: Not Applicable
+  • mail_body: Not Applicable
+  • App Form - Bhosale: Not Applicable
+  • Email Subject: Not Applicable
+  • Email Body: Not Applicable
+======================================================================
+
+
+📎 ATTACHED: Complete extracted data for your records.
