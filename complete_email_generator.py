@@ -226,17 +226,17 @@ class CompleteEmailGenerator:
                 files_to_attach.append(attachment_path)
 
             for path in files_to_attach:
-                if not attachment_path:
+                if not path:
                     continue
-                if not os.path.exists(attachment_path):
-                    print(f"[WARNING] Attachment path provided but file does not exist: {attachment_path}")
+                if not os.path.exists(path):
+                    print(f"[WARNING] Attachment path provided but file does not exist: {path}")
                     continue
-                print(f"[LOG] Attaching file: {attachment_path}")
-                with open(attachment_path, 'rb') as attachment:
+                print(f"[LOG] Attaching file: {path}")
+                with open(path, 'rb') as attachment:
                     part = MIMEBase('application', 'octet-stream')
                     part.set_payload(attachment.read())
                 encoders.encode_base64(part)
-                filename = os.path.basename(attachment_path)
+                filename = os.path.basename(path)
                 part.add_header('Content-Disposition', f'attachment; filename= {filename}')
                 msg.attach(part)
             else:

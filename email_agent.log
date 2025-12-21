@@ -10266,3 +10266,88 @@ NameError: name 'doc_columns' is not defined
 2025-12-21 10:13:47,211 -   No new attachments
 2025-12-21 10:14:47,212 - [2025-12-21 10:14:47] Checking emails...
 2025-12-21 10:14:47,807 -   No new attachments
+2025-12-21 10:15:47,807 - [2025-12-21 10:15:47] Checking emails...
+2025-12-21 10:15:48,384 -   No new attachments
+2025-12-21 10:16:48,384 - [2025-12-21 10:16:48] Checking emails...
+2025-12-21 10:16:49,058 -   No new attachments
+2025-12-21 10:17:49,059 - [2025-12-21 10:17:49] Checking emails...
+2025-12-21 10:17:49,635 -   No new attachments
+2025-12-21 10:18:49,636 - [2025-12-21 10:18:49] Checking emails...
+2025-12-21 10:18:50,228 -   No new attachments
+2025-12-21 10:19:50,228 - [2025-12-21 10:19:50] Checking emails...
+2025-12-21 10:19:50,810 -   No new attachments
+2025-12-21 10:20:50,811 - [2025-12-21 10:20:50] Checking emails...
+2025-12-21 10:20:51,433 -   No new attachments
+2025-12-21 10:21:51,433 - [2025-12-21 10:21:51] Checking emails...
+2025-12-21 10:21:52,032 -   No new attachments
+2025-12-21 10:22:52,033 - [2025-12-21 10:22:52] Checking emails...
+2025-12-21 10:22:52,631 -   No new attachments
+2025-12-21 10:23:52,632 - [2025-12-21 10:23:52] Checking emails...
+2025-12-21 10:23:53,209 -   No new attachments
+2025-12-21 10:24:53,209 - [2025-12-21 10:24:53] Checking emails...
+2025-12-21 10:24:53,796 -   No new attachments
+2025-12-21 10:25:53,796 - [2025-12-21 10:25:53] Checking emails...
+2025-12-21 10:25:54,371 -   No new attachments
+2025-12-21 10:26:54,372 - [2025-12-21 10:26:54] Checking emails...
+2025-12-21 10:26:54,953 -   No new attachments
+2025-12-21 10:27:54,953 - [2025-12-21 10:27:54] Checking emails...
+2025-12-21 10:27:55,544 -   No new attachments
+2025-12-21 10:28:55,545 - [2025-12-21 10:28:55] Checking emails...
+2025-12-21 10:28:56,137 -   No new attachments
+2025-12-21 10:29:56,137 - [2025-12-21 10:29:56] Checking emails...
+2025-12-21 10:29:56,716 -   No new attachments
+2025-12-21 10:30:56,716 - [2025-12-21 10:30:56] Checking emails...
+2025-12-21 10:30:57,308 -   No new attachments
+2025-12-21 10:30:58,308 - 
+
+[STOPPED] Agent stopped by user
+2025-12-21 10:30:58,594 - [DISCONNECTED] Logged out from email server
+2025-12-21 10:31:01,551 - 
+============================================================
+2025-12-21 10:31:01,552 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-21 10:31:01,552 - ============================================================
+2025-12-21 10:31:01,552 - Email: yourmltales@gmail.com
+2025-12-21 10:31:01,552 - Server: imap.gmail.com:993
+2025-12-21 10:31:01,552 - Watching for subjects: 
+2025-12-21 10:31:01,552 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-21 10:31:01,552 - Root save location: email_attachments
+2025-12-21 10:31:01,552 - Check interval: 60s
+2025-12-21 10:31:01,552 - Only unseen emails: True
+2025-12-21 10:31:01,552 - Mark as read: False
+2025-12-21 10:31:01,552 - ============================================================
+
+2025-12-21 10:31:01,552 - Connecting to imap.gmail.com:993...
+2025-12-21 10:31:02,824 - [SUCCESS] Connected to imap.gmail.com
+2025-12-21 10:31:02,824 - [2025-12-21 10:31:02] Checking emails...
+2025-12-21 10:31:03,403 -   No new attachments
+2025-12-21 10:32:03,404 - [2025-12-21 10:32:03] Checking emails...
+2025-12-21 10:32:05,388 - 
+[NEW EMAIL] Subject: Fwd: Fw: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 10:32:05,388 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-21 10:32:05,388 -   Date: Sun, 21 Dec 2025 16:01:14 +0530
+2025-12-21 10:32:05,390 -     [ATTACHMENT] Application Form.pdf
+2025-12-21 10:32:05,397 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-21 10:32:05,397 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-21 10:32:05,397 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251221_103205
+2025-12-21 10:32:05,397 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251221_103205
+2025-12-21 10:32:05,397 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-21 10:32:07,384 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 10:32:07,384 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-21 10:32:15,213 -     [EXTRACTION] ✓ Extracted 50 fields using column: CAM Description
+2025-12-21 10:32:15,214 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-21 10:32:16,892 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-21 10:32:16,892 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-21 10:32:16,892 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-21 10:32:20,485 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-21 10:32:20,485 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-21 10:32:26,195 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-21 10:32:26,394 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251221_103205/extraction_results.xlsx
+2025-12-21 10:32:26,394 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251221_103205/extraction_results.xlsx
+2025-12-21 10:32:26,417 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-21 10:32:33,860 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-21 10:32:33,861 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-21 10:33:33,861 - [2025-12-21 10:33:33] Checking emails...
+2025-12-21 10:33:34,488 -   No new attachments
