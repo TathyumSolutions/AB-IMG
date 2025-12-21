@@ -208,7 +208,12 @@ class CompleteEmailGenerator:
         try:
             msg = MIMEMultipart()
             msg['From'] = self.smtp_config['address']
-            msg['To'] = to_email
+            if isinstance(to_email, (list, tuple)):
+                msg['To'] = ', '.join(to_email)
+                recipients = list(to_email)
+            else:
+                msg['To'] = to_email
+                recipients = [to_email]
             msg['Subject'] = subject
             msg.attach(MIMEText(body, 'plain'))
             files_to_attach = []
@@ -243,9 +248,9 @@ class CompleteEmailGenerator:
             print(f"[LOG] Logging in with email: {self.smtp_config['address']}")
             server.login(self.smtp_config['address'], self.smtp_config['password'])
             text = msg.as_string()
-            server.sendmail(self.smtp_config['address'], to_email, text)
+            server.sendmail(self.smtp_config['address'], recipients, text)
             server.quit()
-            print(f"[LOG] ✅ Email sent successfully to {to_email}")
+            print(f"[LOG] ✅ Email sent successfully to {recipients}")
             return True
         except Exception as e:
             print(f"[ERROR] Failed to send email: {e}")

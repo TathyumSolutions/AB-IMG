@@ -17,7 +17,7 @@
         "log_file": "email_agent.log"
     },
     "abhl_imgc": {
-        "abhl_email_id": "prakhar.singh1qualtech@gmail.com",
-        "imgc_email_id": "prakhar.singh1@qualtechedge.com"
+        "abhl_email_id": ["prakhar.singh1qualtech@gmail.com","pujunchiya@gmail.com"],
+        "imgc_email_id": ["prakhar.singh1@qualtechedge.com","pujunchiya@gmail.com"]
     }
 }

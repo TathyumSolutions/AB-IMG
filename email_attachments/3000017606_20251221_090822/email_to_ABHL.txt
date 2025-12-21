@@ -1,0 +1,402 @@
+Subject: 🚨 HIGH Criticality Data Issues Detected - 41 Issue(s)
+================================================================================
+
+🚨 CRITICAL DATA QUALITY ALERT
+
+We have identified 41 HIGH criticality issue(s) in the extracted data that require IMMEDIATE attention:
+
+
+❌ CONFLICTING VALUES: 'Loan_Number'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: '3000017606'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: '3000017606'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: '3000017606'
+
+❌ CONFLICTING VALUES: 'Sourcing_City_Name'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Bhopal'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Bhopal'
+
+❌ CONFLICTING VALUES: 'Branch_Name'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Bhopal'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Bhopal'
+
+❌ CONFLICTING VALUES: 'Final_Sanctioned_Amount'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Rs 12 lacs'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: '1200000'
+      • Email Subject: 'Rs 12 lacs'
+
+❌ CONFLICTING VALUES: 'Sanction_Loan_Period'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: '240 months'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: '240'
+      • Email Subject: '240 months'
+
+❌ CONFLICTING VALUES: 'Sanction_Interest_Rate'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: '0.111'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Loan_Type'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Home Loan'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Type_Of_Employment_Loan'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Self Employed'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Self-employed Non-Professional (SENP)'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Foir'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Found'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Borrower_First_Name'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Bhanu'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Borrower_Surname'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Pratap'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Relationship_Of_Coborrower_To_The_Borrower'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Mother'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Mother'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Sole_Child'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'No'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Employer_Type'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Proprietorship'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Years_In_Current_Employment'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Months_In_Current_Employment'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Months_In_Total_Employment'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Found'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Years_In_Total_Employment'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Found'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Personal_Discussion'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Arvind Rajput'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Lender_PD_Status'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Positive'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Type_Of_Employment_Borrower'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Self-employed Non-Professional (SENP)'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Manual_ABB'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Existing_Obligation_Out_AMT'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Found'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Existing_Obligation_EMI'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Account_Type'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Date_Of_Legal'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: '04.03.2024'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Obligation_Status'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Date_Of_Title'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Found'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Borrower_Entity_Type'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Individual'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Marital_Status'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Found'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Number_Of_Dependents'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: '4'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Resident_Status'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Found'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Current_Residence'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Rented'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Employer_Name'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Found'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Applicable'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'DA'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'HRA'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Performance_Linked_Bonus'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Fixed_Bonus'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Other_Annual_Benefits'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Rental_Income_Bank_ITR'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+❌ CONFLICTING VALUES: 'Rental_Income_Cash'
+   ⚠️  Different values found across documents:
+      • ABHFL_PD_BhanuPratap_Mandideep_: 'Not Applicable'
+      • Legal Report: 'Not Applicable'
+      • mail_subject: 'Not Applicable'
+      • CAM Report_Disbursement
+ Documents_M_22022024_062000PM: 'Not Found'
+      • Email Subject: 'Not Applicable'
+
+======================================================================
+📋 PROBLEM SUMMARY BY DOCUMENT:
+======================================================================
+
+📄 ABHFL_PD_BhanuPratap_Mandideep_
+   Issues with 41 field(s): Loan_Number, Sourcing_City_Name, Branch_Name, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Relationship_Of_Coborrower_To_The_Borrower, Sole_Child, Employer_Type, Years_In_Current_Employment, Months_In_Current_Employment, Months_In_Total_Employment, Years_In_Total_Employment, Personal_Discussion, Lender_PD_Status, Type_Of_Employment_Borrower, Manual_ABB, Existing_Obligation_Out_AMT, Existing_Obligation_EMI, Account_Type, Date_Of_Legal, Obligation_Status, Date_Of_Title, Borrower_Entity_Type, Marital_Status, Number_Of_Dependents, Resident_Status, Current_Residence, Employer_Name, DA, HRA, Performance_Linked_Bonus, Fixed_Bonus, Other_Annual_Benefits, Rental_Income_Bank_ITR, Rental_Income_Cash
+
+📄 Legal Report
+   Issues with 41 field(s): Loan_Number, Sourcing_City_Name, Branch_Name, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Relationship_Of_Coborrower_To_The_Borrower, Sole_Child, Employer_Type, Years_In_Current_Employment, Months_In_Current_Employment, Months_In_Total_Employment, Years_In_Total_Employment, Personal_Discussion, Lender_PD_Status, Type_Of_Employment_Borrower, Manual_ABB, Existing_Obligation_Out_AMT, Existing_Obligation_EMI, Account_Type, Date_Of_Legal, Obligation_Status, Date_Of_Title, Borrower_Entity_Type, Marital_Status, Number_Of_Dependents, Resident_Status, Current_Residence, Employer_Name, DA, HRA, Performance_Linked_Bonus, Fixed_Bonus, Other_Annual_Benefits, Rental_Income_Bank_ITR, Rental_Income_Cash
+
+📄 mail_subject
+   Issues with 41 field(s): Loan_Number, Sourcing_City_Name, Branch_Name, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Relationship_Of_Coborrower_To_The_Borrower, Sole_Child, Employer_Type, Years_In_Current_Employment, Months_In_Current_Employment, Months_In_Total_Employment, Years_In_Total_Employment, Personal_Discussion, Lender_PD_Status, Type_Of_Employment_Borrower, Manual_ABB, Existing_Obligation_Out_AMT, Existing_Obligation_EMI, Account_Type, Date_Of_Legal, Obligation_Status, Date_Of_Title, Borrower_Entity_Type, Marital_Status, Number_Of_Dependents, Resident_Status, Current_Residence, Employer_Name, DA, HRA, Performance_Linked_Bonus, Fixed_Bonus, Other_Annual_Benefits, Rental_Income_Bank_ITR, Rental_Income_Cash
+
+📄 CAM Report_Disbursement
+ Documents_M_22022024_062000PM
+   Issues with 41 field(s): Loan_Number, Sourcing_City_Name, Branch_Name, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Relationship_Of_Coborrower_To_The_Borrower, Sole_Child, Employer_Type, Years_In_Current_Employment, Months_In_Current_Employment, Months_In_Total_Employment, Years_In_Total_Employment, Personal_Discussion, Lender_PD_Status, Type_Of_Employment_Borrower, Manual_ABB, Existing_Obligation_Out_AMT, Existing_Obligation_EMI, Account_Type, Date_Of_Legal, Obligation_Status, Date_Of_Title, Borrower_Entity_Type, Marital_Status, Number_Of_Dependents, Resident_Status, Current_Residence, Employer_Name, DA, HRA, Performance_Linked_Bonus, Fixed_Bonus, Other_Annual_Benefits, Rental_Income_Bank_ITR, Rental_Income_Cash
+
+📄 Email Subject
+   Issues with 41 field(s): Loan_Number, Sourcing_City_Name, Branch_Name, Final_Sanctioned_Amount, Sanction_Loan_Period, Sanction_Interest_Rate, Loan_Type, Type_Of_Employment_Loan, Foir, Borrower_First_Name, Borrower_Surname, Relationship_Of_Coborrower_To_The_Borrower, Sole_Child, Employer_Type, Years_In_Current_Employment, Months_In_Current_Employment, Months_In_Total_Employment, Years_In_Total_Employment, Personal_Discussion, Lender_PD_Status, Type_Of_Employment_Borrower, Manual_ABB, Existing_Obligation_Out_AMT, Existing_Obligation_EMI, Account_Type, Date_Of_Legal, Obligation_Status, Date_Of_Title, Borrower_Entity_Type, Marital_Status, Number_Of_Dependents, Resident_Status, Current_Residence, Employer_Name, DA, HRA, Performance_Linked_Bonus, Fixed_Bonus, Other_Annual_Benefits, Rental_Income_Bank_ITR, Rental_Income_Cash
+
+======================================================================
+⚠️ ACTION REQUIRED:
+These high criticality fields must be resolved before proceeding with data integration.
+Please review the attached Excel file for complete details and provide corrections.
+======================================================================
