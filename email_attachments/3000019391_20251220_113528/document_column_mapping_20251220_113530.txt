@@ -1,5 +1,0 @@
-mail_subject.txt -> Email Subject Description
-PD FORMAT - SALARIED.docx -> PD (Word Doc) Description
-App Form - Bhosale.pdf -> Application Form Description
-Cam - Niranjan Bhosale.xlsx -> CAM Description
-mail_body.txt -> Email Body Description

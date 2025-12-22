@@ -590,20 +590,21 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
                 row['Email Body'] = str(body_val).strip() if _is_valid_value(body_val) else ""
 
                 # Add selected columns from the configuration file, excluding unwanted metadata/description columns
-                excluded_columns = {
-                    'Data Type',
-                    'Field length',
-                    'Primary Source Document',
-                    'Secondary Source Document',
-                    'CAM Description',
-                    'PD Description',
-                    'PD (Word Doc) Description',
-                    'Application Form Description',
-                    'Legal Doc Description',
-                    'Technical Doc Description',
-                    'Email Subject Description',
-                    'Email Body Description',
-                }
+                # excluded_columns = {
+                #     'Data Type',
+                #     'Field length',
+                #     'Primary Source Document',
+                #     'Secondary Source Document',
+                #     'CAM Description',
+                #     'PD Description',
+                #     'PD (Word Doc) Description',
+                #     'Application Form Description',
+                #     'Legal Doc Description',
+                #     'Technical Doc Description',
+                #     'Email Subject Description',
+                #     'Email Body Description',
+                # }
+                excluded_columns={}
                 for col in config_df.columns:
                     if col == 'PAS Field Name':
                         continue
@@ -616,6 +617,10 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
         results_data.append(row)
 
     results_df = pd.DataFrame(results_data)
+    print("results_df columns:",results_df.head(5))
+    print(f"\n  ➤ Merging results into Excel with {len(results_df)} fields and {len(doc_columns)} documents")
+    results_df = results_df.merge(config_df, on='PAS Field Name', how='left')
+    print("merged results_df columns:",results_df.head(5))
     try:
         required_cols = ['PAS Field Name', 'Final Data for PAS System']
         missing_cols = [c for c in required_cols if c not in results_df.columns]

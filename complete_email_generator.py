@@ -330,16 +330,44 @@ Return ONLY in this exact JSON format:
                 'body': body_content
             }
 
-    def create_high_criticality_excel(self, output_folder):
-        """Create an Excel file containing only high criticality rows, with filtered columns."""
-        print(f"[LOG] Creating Excel file with high criticality rows")
-        crit_col = 'Mismatch Criticality' if 'Mismatch Criticality' in self.merged_df.columns else 'Criticality'
-        high_crit_df = self.merged_df[self.merged_df[crit_col].astype(str).str.upper() == 'HIGH'].copy()
+    # def create_high_criticality_excel(self, output_folder):
+    #     """Create an Excel file containing only high criticality rows, with filtered columns."""
+    #     print(f"[LOG] Creating Excel file with high criticality rows")
+    #     crit_col = 'Mismatch Criticality' if 'Mismatch Criticality' in self.merged_df.columns else 'Criticality'
+    #     high_crit_df = self.merged_df[self.merged_df[crit_col].astype(str).str.upper() == 'HIGH'].copy()
 
-        if high_crit_df.empty:
-            print("[LOG] No high criticality rows found.")
-            return None
+    #     if high_crit_df.empty:
+    #         print("[LOG] No high criticality rows found.")
+    #         return None
 
+    #     # Load config to get all columns
+    #     config_df = pd.read_excel(self.config_file)
+    #     all_columns = config_df.columns.tolist()
+
+    #     # Columns to exclude
+    #     exclude_keywords = ['Data Type', 'Field length', 'Primary Source Document', 'Secondary Source Document']
+    #     exclude_columns = [col for col in all_columns if any(key in col for key in exclude_keywords) or 'Description' in col]
+
+    #     # Columns to keep
+    #     keep_columns = [col for col in all_columns if col not in exclude_columns]
+
+    #     # Reorder and filter columns
+    #     filtered_df = high_crit_df.reindex(columns=keep_columns)
+
+    #     # Create filename with timestamp
+    #     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    #     filename = os.path.join(output_folder, f"High_Criticality_Issues_{timestamp}.xlsx")
+
+    #     # Save to Excel
+    #     filtered_df.to_excel(filename, index=False)
+    #     print(f"[LOG] High criticality Excel file created: {filename}")
+    #     print(f"[LOG] Rows in high criticality file: {len(filtered_df)}")
+
+    #     return filename
+
+    def create_issues_excel(self, output_folder):
+        """Create an Excel file with all rows, filtered columns (for both ABHL and IMGC)."""
+        print(f"[LOG] Creating issues Excel file for both ABHL and IMGC")
         # Load config to get all columns
         config_df = pd.read_excel(self.config_file)
         all_columns = config_df.columns.tolist()
@@ -349,20 +377,15 @@ Return ONLY in this exact JSON format:
         exclude_columns = [col for col in all_columns if any(key in col for key in exclude_keywords) or 'Description' in col]
 
         # Columns to keep
-        keep_columns = [col for col in all_columns if col not in exclude_columns]
+        keep_columns = [col for col in self.merged_df.columns if col not in exclude_columns]
 
-        # Reorder and filter columns
-        filtered_df = high_crit_df.reindex(columns=keep_columns)
+        # Filter DataFrame
+        filtered_df = self.merged_df[keep_columns]
 
-        # Create filename with timestamp
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = os.path.join(output_folder, f"High_Criticality_Issues_{timestamp}.xlsx")
-
-        # Save to Excel
+        # Create filename
+        filename = os.path.join(output_folder, "issues.xlsx")
         filtered_df.to_excel(filename, index=False)
-        print(f"[LOG] High criticality Excel file created: {filename}")
-        print(f"[LOG] Rows in high criticality file: {len(filtered_df)}")
-
+        print(f"[LOG] Issues Excel file created: {filename}")
         return filename
 
     def generate_abhl_email(self):
@@ -498,10 +521,14 @@ All fields have consistent values across all source documents.
         abhl_file = f"{output_dir}/email_to_ABHL.txt"
         self.save_email_to_file(abhl_email, abhl_file)
         
-        # Create high criticality Excel attachment for ABHL
-        print("📊 Creating high criticality Excel file for ABHL...")
-        abhl_attachment = self.create_high_criticality_excel(output_dir)
+        # # Create high criticality Excel attachment for ABHL
+        # print("📊 Creating high criticality Excel file for ABHL...")
+        # abhl_attachment = self.create_high_criticality_excel(output_dir)
         
+        # Create issues Excel attachment for both ABHL and IMGC
+        print("📊 Creating issues Excel file for both ABHL and IMGC...")
+        issues_attachment = self.create_issues_excel(output_dir)
+
         # Send ABHL email with attachment
         abhl_sent = False
         if send_emails and self.recipients.get('ABHL'):
@@ -510,8 +537,19 @@ All fields have consistent values across all source documents.
                 to_email=self.recipients['ABHL'],
                 subject=abhl_email['subject'],
                 body=abhl_email['body'],
-                attachment_path=abhl_attachment
+                attachment_path=issues_attachment
             )
+
+        # # Send IMGC email with the same attachment
+        # imgc_sent = False
+        # if send_emails and self.recipients.get('IMGC'):
+        #     print(f"\n📤 Sending email to IMGC ({self.recipients['IMGC']})...")
+        #     imgc_sent = self.send_email(
+        #         to_email=self.recipients['IMGC'],
+        #         subject=imgc_email['subject'],
+        #         body=imgc_email['body'],
+        #         attachment_path=issues_attachment
+        #     )
         
         # Generate IMGC email
         print("\n📧 Generating IMGC email (Low Criticality Issues)...")
@@ -519,20 +557,19 @@ All fields have consistent values across all source documents.
         imgc_file = f"{output_dir}/email_to_IMGC.txt"
         self.save_email_to_file(imgc_email, imgc_file)
         
-        # IMGC gets the full extraction results
-        extraction_attachment = self.extraction_file
+        # IMGC gets issues.xlsx and latest JSON
         imgc_sent = False
         if send_emails and self.recipients.get('IMGC'):
             print(f"\n📤 Sending email to IMGC ({self.recipients['IMGC']})...")
             json_candidates = []
             try:
-                extraction_dir = os.path.dirname(str(extraction_attachment))
+                extraction_dir = os.path.dirname(str(self.extraction_file))
                 json_candidates = glob.glob(os.path.join(extraction_dir, 'pas_field_map_*.json'))
             except Exception:
                 json_candidates = []
 
             latest_json = max(json_candidates, key=os.path.getmtime) if json_candidates else None
-            attachments = [extraction_attachment]
+            attachments = [issues_attachment]
             if latest_json:
                 attachments.append(latest_json)
             imgc_sent = self.send_email(
@@ -547,14 +584,14 @@ All fields have consistent values across all source documents.
         print("SUMMARY")
         print("="*80)
         print(f"✅ ABHL Email: {abhl_file}")
-        if abhl_attachment:
-            print(f"   📎 Attachment: {abhl_attachment}")
+        if issues_attachment:
+            print(f"   📎 Attachment: {issues_attachment}")
         if send_emails:
             print(f"   {'✅ Sent' if abhl_sent else '❌ Not sent'} to {self.recipients.get('ABHL', 'N/A')}")
         print(f"✅ IMGC Email: {imgc_file}")
         if send_emails:
             print(f"   {'✅ Sent' if imgc_sent else '❌ Not sent'} to {self.recipients.get('IMGC', 'N/A')}")
-        print(f"   📎 Attachment: {extraction_attachment}")
+        print(f"   📎 Attachment: {issues_attachment}")
         print("="*80 + "\n")
         
         return {
@@ -562,7 +599,7 @@ All fields have consistent values across all source documents.
             'imgc_email': imgc_email,
             'abhl_file': abhl_file,
             'imgc_file': imgc_file,
-            'abhl_attachment': abhl_attachment,
+            'abhl_attachment': issues_attachment,
             'extraction_attachment': extraction_attachment,
             'abhl_sent': abhl_sent,
             'imgc_sent': imgc_sent
