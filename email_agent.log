@@ -11720,3 +11720,5 @@ Father Name : gokal bha
 NameError: name 'extraction_attachment' is not defined
 
 2025-12-22 06:48:23,958 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 06:49:23,959 - [2025-12-22 06:49:23] Checking emails...
+2025-12-22 06:49:24,522 -   No new attachments
