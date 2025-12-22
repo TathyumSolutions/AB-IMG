@@ -388,16 +388,20 @@ Return ONLY in this exact JSON format:
         print(f"[LOG] Issues Excel file created: {filename}")
         return filename
 
-    def generate_abhl_email(self):
-        print(f"[LOG] Generating ABHL email (high criticality issues)")
-        major_issues = self.get_major_issues()
-        loan_id = self._extract_loan_id()  # Implement this method to extract loan ID from your data or filename
+    def _get_document_names_from_mapping(self, mapping_json_path):
+        with open(mapping_json_path, 'r') as f:
+            mapping = json.load(f)
+        return list(mapping.keys())
 
-        # Get document names dynamically
-        exclude_cols = ['PAS Field Name', 'Mismatch Criticality', 'Criticality', 'First Preference', 'Second Preference', 'Final Data for PAS System']
-        doc_columns = [col for col in self.merged_df.columns if col not in exclude_cols]
-        num_docs = len(doc_columns)
-        doc_list = '\n'.join([f"• {doc}" for doc in doc_columns])
+    def generate_abhl_email(self, mapping_json_path):
+        print(f"[LOG] Generating ABHL email (high criticality issues)")
+        print("[LOG] Loading major issues for ABHL email mapping JSON ", mapping_json_path  )
+        major_issues = self.get_major_issues()
+        loan_id = self._extract_loan_id()
+
+        doc_names = self._get_document_names_from_mapping(mapping_json_path)
+        num_docs = len(doc_names)
+        doc_list = '\n'.join([f"• {doc}" for doc in doc_names])
 
         if major_issues.empty:
             body_content = f"""Dear ABHFL Team,
@@ -457,27 +461,15 @@ For Implementation Use Only
         print(f"[LOG] ABHL email generated")
         return email
 
-    def _extract_loan_id(self):
-        # Example: Extract loan ID from extraction_file name or from merged_df if available
-        # Customize this logic as needed
-        import re
-        match = re.search(r'(\d{10,})', str(self.extraction_file))
-        if match:
-            return match.group(1)
-        # Fallback: Try to get from DataFrame if available
-        if 'Loan ID' in self.merged_df.columns:
-            return str(self.merged_df['Loan ID'].iloc[0])
-        return "Unknown"
-
-    def generate_imgc_email(self):
+    def generate_imgc_email(self, mapping_json_path):
         print(f"[LOG] Generating IMGC email (criticality analysis)")
         loan_id = self._extract_loan_id()
-
-        # Dynamically get document columns and names
-        exclude_cols = ['PAS Field Name', 'Mismatch Criticality', 'Criticality', 'First Preference', 'Second Preference', 'Final Data for PAS System']
-        doc_columns = [col for col in self.merged_df.columns if col not in exclude_cols]
-        num_docs = len(doc_columns)
-        doc_list = '\n'.join([f"• {doc}" for doc in doc_columns])
+        print("IMGC Loan Id:", loan_id)
+        doc_names = self._get_document_names_from_mapping(mapping_json_path)
+        num_docs = len(doc_names)
+        print("IMGC JSON path:",mapping_json_path)
+        print("IMGC doc_names:",doc_names)
+        doc_list = '\n'.join([f"• {doc}" for doc in doc_names])
 
         # Extraction statistics
         total_fields = len(self.merged_df)
@@ -534,7 +526,8 @@ This is a system-generated email. Please do not reply to this message.
         
         # Generate ABHL email
         print("📧 Generating ABHL email (High Criticality Issues)...")
-        abhl_email = self.generate_abhl_email()
+        mapping_json=os.path.join(output_dir, f"document_column_mapping.json")
+        abhl_email = self.generate_abhl_email(mapping_json)
         abhl_file = f"{output_dir}/email_to_ABHL.txt"
         self.save_email_to_file(abhl_email, abhl_file)
         
@@ -570,9 +563,12 @@ This is a system-generated email. Please do not reply to this message.
         
         # Generate IMGC email
         print("\n📧 Generating IMGC email (Low Criticality Issues)...")
-        imgc_email = self.generate_imgc_email()
+        mapping_json=os.path.join(output_dir, f"document_column_mapping.json")
+        imgc_email = self.generate_imgc_email(mapping_json)
         imgc_file = f"{output_dir}/email_to_IMGC.txt"
         self.save_email_to_file(imgc_email, imgc_file)
+        
+        print("[DEBUG] IMGC email body to be sent:\n", imgc_email['body'])
         
         # IMGC gets issues.xlsx and latest JSON
         imgc_sent = False
@@ -616,25 +612,40 @@ This is a system-generated email. Please do not reply to this message.
             'imgc_email': imgc_email,
             'abhl_file': abhl_file,
             'imgc_file': imgc_file,
-            'abhl_attachment': issues_attachment,
-            'extraction_attachment': extraction_attachment,
+            'abhl_attachment': issues_attachment,            
             'abhl_sent': abhl_sent,
             'imgc_sent': imgc_sent
         }
 
+    def _extract_loan_id(self):
+        """
+        Extracts the loan ID from the extraction file path or from the merged DataFrame.
+        Returns 'Unknown' if not found.
+        """
+        import re
+        # Try to extract from extraction_file path
+        if hasattr(self, 'extraction_file'):
+            match = re.search(r'(\d{9,})', str(self.extraction_file))
+            if match:
+                return match.group(1)
+        # Try to extract from merged_df
+        if hasattr(self, 'merged_df') and 'Loan ID' in self.merged_df.columns:
+            return str(self.merged_df['Loan ID'].iloc[0])
+        return "Unknown"
+
 def main():
+    import sys
     from pathlib import Path
-    print("[LOG] Starting main workflow")
-    base_dir = Path("email_attachments")
-    if not base_dir.exists():
-        print("[ERROR] email_attachments folder not found.")
-        return
-    for folder in base_dir.glob("*/"):
-        for subfolder in folder.glob("*/"):
-            extraction_file = subfolder / "extraction_results.xlsx"
-            print(f"\n[LOG] Processing folder: {subfolder}")
-            if extraction_file.exists():
-                process_extraction_results(extraction_file, subfolder)
+
+    # Use the current working directory as the output folder
+    output_folder = Path.cwd()
+    extraction_file = output_folder / "extraction_results.xlsx"
+
+    print(f"[LOG] Processing only current folder: {output_folder}")
+    if extraction_file.exists():
+        process_extraction_results(extraction_file, output_folder)
+    else:
+        print(f"[ERROR] extraction_results.xlsx not found in {output_folder}")
 
 def process_extraction_results(extraction_file, output_folder):
     import pandas as pd

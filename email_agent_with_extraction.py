@@ -343,12 +343,12 @@ Return ONLY valid JSON, no explanations."""
         
         # Save mapping to file with timestamp
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        mapping_file = os.path.join(folder_path, f"document_column_mapping_{timestamp}.json")
+        mapping_file = os.path.join(folder_path, f"document_column_mapping.json")
         with open(mapping_file, 'w', encoding='utf-8') as f:
             json.dump(validated_mapping, f, indent=2)
         
         # Also save human-readable version
-        readable_file = os.path.join(folder_path, f"document_column_mapping_{timestamp}.txt")
+        readable_file = os.path.join(folder_path, f"document_column_mapping.txt")
         with open(readable_file, 'w', encoding='utf-8') as f:
             for filename, column in validated_mapping.items():
                 f.write(f"{filename} -> {column if column else 'NO MATCH'}\n")
@@ -586,8 +586,8 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
                 subject_val = row.get(subject_doc) if subject_doc else None
                 body_val = row.get(body_doc) if body_doc else None
 
-                row['Email Subject'] = str(subject_val).strip() if _is_valid_value(subject_val) else ""
-                row['Email Body'] = str(body_val).strip() if _is_valid_value(body_val) else ""
+                # row['Email Subject'] = str(subject_val).strip() if _is_valid_value(subject_val) else ""
+                # row['Email Body'] = str(body_val).strip() if _is_valid_value(body_val) else ""
 
                 # Add selected columns from the configuration file, excluding unwanted metadata/description columns
                 # excluded_columns = {
@@ -617,10 +617,9 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
         results_data.append(row)
 
     results_df = pd.DataFrame(results_data)
-    print("results_df columns:",results_df.head(5))
-    print(f"\n  ➤ Merging results into Excel with {len(results_df)} fields and {len(doc_columns)} documents")
+    
     results_df = results_df.merge(config_df, on='PAS Field Name', how='left')
-    print("merged results_df columns:",results_df.head(5))
+    
     try:
         required_cols = ['PAS Field Name', 'Final Data for PAS System']
         missing_cols = [c for c in required_cols if c not in results_df.columns]

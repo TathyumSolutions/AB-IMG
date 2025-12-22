@@ -11797,3 +11797,525 @@ NameError: name 'extraction_attachment' is not defined
 Parties to the Loan |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
 S. No. | Name | Constitution (select from dropdown) | Capacity (Applicant / Co-applicant / Guarantor) 
 2025-12-22 07:12:32,252 - MAX_DOCUMENT_CHARS: 15000
+2025-12-22 07:14:37,722 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 07:14:37,723 - len(document_text): 140
+2025-12-22 07:14:37,723 - document_text[:500]: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 07:14:37,723 - MAX_DOCUMENT_CHARS: 15000
+2025-12-22 07:14:39,299 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 07:14:39,299 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 07:14:39,299 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 07:14:39,335 - len(document_text): 8225
+2025-12-22 07:14:39,336 - document_text[:500]: ============================================================
+[DOCUMENT CONTENT]
+============================================================
+Dear Sir,
+Recommending for financial sanction HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal.
+Collateral Details:
+Applicant is planning to purchase a plot in builder project at Kolar.
+Property is not identified yet.
+About Applicants:
+Applicant Mr. Kanhaiya Bharti is about 49 years of age & BA graduate
+2025-12-22 07:14:39,336 - MAX_DOCUMENT_CHARS: 15000
+2025-12-22 07:14:42,914 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 07:14:42,914 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 07:14:43,472 - len(document_text): 16980
+2025-12-22 07:14:43,472 - document_text[:500]: 
+============================================================
+[PAGE 1]
+============================================================
+
+Application Form
+LOAN DETAILS
+Application Form No : 3000023637
+Loan Amount requested : 3500000
+Loan Tenure (Months) : 240
+Plot purchase and
+Purpose of Loan :
+construction
+Product : HOME LOAN_AHF
+PLOT AND HOME
+Scheme :
+CONSTRUCTION LOAN
+Sub Scheme : New
+PMAY : NO
+APPLICANT DETAILS
+PERSONAL DETAILS
+Existing Customer : NO
+Name : KANHAIYA BHARTI
+Father Name : gokal bha
+2025-12-22 07:14:43,472 - MAX_DOCUMENT_CHARS: 15000
+2025-12-22 07:14:48,148 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 07:14:48,370 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_071227/extraction_results.xlsx
+2025-12-22 07:14:48,370 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_071227/extraction_results.xlsx
+2025-12-22 07:14:48,399 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 07:14:56,167 -   [EMAIL GENERATION ERROR] name 'extraction_attachment' is not defined
+2025-12-22 07:14:56,172 - Traceback: Traceback (most recent call last):
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 720, in run_email_generation
+    result = generator.generate_and_send_all_emails(folder_path, send_emails=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/complete_email_generator.py", line 620, in generate_and_send_all_emails
+    'extraction_attachment': extraction_attachment,
+                             ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'extraction_attachment' is not defined
+
+2025-12-22 07:14:56,173 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 07:15:56,173 - [2025-12-22 07:15:56] Checking emails...
+2025-12-22 07:15:56,758 -   No new attachments
+2025-12-22 07:16:56,759 - [2025-12-22 07:16:56] Checking emails...
+2025-12-22 07:16:57,339 -   No new attachments
+2025-12-22 07:17:03,881 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 07:17:04,164 - [DISCONNECTED] Logged out from email server
+2025-12-22 07:24:49,310 - 
+============================================================
+2025-12-22 07:24:49,310 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 07:24:49,310 - ============================================================
+2025-12-22 07:24:49,310 - Email: yourmltales@gmail.com
+2025-12-22 07:24:49,310 - Server: imap.gmail.com:993
+2025-12-22 07:24:49,310 - Watching for subjects: 
+2025-12-22 07:24:49,310 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 07:24:49,311 - Root save location: email_attachments
+2025-12-22 07:24:49,311 - Check interval: 60s
+2025-12-22 07:24:49,311 - Only unseen emails: True
+2025-12-22 07:24:49,311 - Mark as read: False
+2025-12-22 07:24:49,311 - ============================================================
+
+2025-12-22 07:24:49,311 - Connecting to imap.gmail.com:993...
+2025-12-22 07:24:50,549 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 07:24:50,549 - [2025-12-22 07:24:50] Checking emails...
+2025-12-22 07:24:51,152 -   No new attachments
+2025-12-22 07:25:51,153 - [2025-12-22 07:25:51] Checking emails...
+2025-12-22 07:25:53,094 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 07:25:53,094 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 07:25:53,094 -   Date: Mon, 22 Dec 2025 12:55:42 +0530
+2025-12-22 07:25:53,097 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 07:25:53,104 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 07:25:53,104 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 07:25:53,104 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_072553
+2025-12-22 07:25:53,104 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_072553
+2025-12-22 07:25:53,104 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 07:25:55,135 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 07:25:55,136 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 07:28:03,574 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 07:28:05,352 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 07:28:05,352 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 07:28:05,353 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 07:28:08,881 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 07:28:08,881 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 07:28:14,869 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 07:28:15,126 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_072553/extraction_results.xlsx
+2025-12-22 07:28:15,127 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_072553/extraction_results.xlsx
+2025-12-22 07:28:15,157 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 07:28:15,157 -   [EMAIL GENERATION ERROR] CompleteEmailGenerator.generate_abhl_email() missing 1 required positional argument: 'mapping_json_path'
+2025-12-22 07:28:15,158 - Traceback: Traceback (most recent call last):
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 720, in run_email_generation
+    result = generator.generate_and_send_all_emails(folder_path, send_emails=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/complete_email_generator.py", line 526, in generate_and_send_all_emails
+    abhl_email = self.generate_abhl_email()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CompleteEmailGenerator.generate_abhl_email() missing 1 required positional argument: 'mapping_json_path'
+
+2025-12-22 07:28:15,159 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 07:29:15,159 - [2025-12-22 07:29:15] Checking emails...
+2025-12-22 07:29:15,806 -   No new attachments
+2025-12-22 07:30:15,806 - [2025-12-22 07:30:15] Checking emails...
+2025-12-22 07:30:16,361 -   No new attachments
+2025-12-22 07:31:16,362 - [2025-12-22 07:31:16] Checking emails...
+2025-12-22 07:31:16,922 -   No new attachments
+2025-12-22 07:32:16,923 - [2025-12-22 07:32:16] Checking emails...
+2025-12-22 07:32:17,477 -   No new attachments
+2025-12-22 07:33:17,477 - [2025-12-22 07:33:17] Checking emails...
+2025-12-22 07:33:18,056 -   No new attachments
+2025-12-22 07:34:18,056 - [2025-12-22 07:34:18] Checking emails...
+2025-12-22 07:34:18,636 -   No new attachments
+2025-12-22 07:35:18,637 - [2025-12-22 07:35:18] Checking emails...
+2025-12-22 07:35:19,193 -   No new attachments
+2025-12-22 07:36:19,193 - [2025-12-22 07:36:19] Checking emails...
+2025-12-22 07:36:19,755 -   No new attachments
+2025-12-22 07:37:19,756 - [2025-12-22 07:37:19] Checking emails...
+2025-12-22 07:37:20,312 -   No new attachments
+2025-12-22 07:37:50,933 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 07:37:51,207 - [DISCONNECTED] Logged out from email server
+2025-12-22 07:37:54,545 - 
+============================================================
+2025-12-22 07:37:54,545 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 07:37:54,545 - ============================================================
+2025-12-22 07:37:54,545 - Email: yourmltales@gmail.com
+2025-12-22 07:37:54,545 - Server: imap.gmail.com:993
+2025-12-22 07:37:54,545 - Watching for subjects: 
+2025-12-22 07:37:54,545 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 07:37:54,545 - Root save location: email_attachments
+2025-12-22 07:37:54,545 - Check interval: 60s
+2025-12-22 07:37:54,545 - Only unseen emails: True
+2025-12-22 07:37:54,546 - Mark as read: False
+2025-12-22 07:37:54,546 - ============================================================
+
+2025-12-22 07:37:54,546 - Connecting to imap.gmail.com:993...
+2025-12-22 07:37:55,812 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 07:37:55,812 - [2025-12-22 07:37:55] Checking emails...
+2025-12-22 07:37:56,370 -   No new attachments
+2025-12-22 07:38:56,371 - [2025-12-22 07:38:56] Checking emails...
+2025-12-22 07:38:58,228 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 07:38:58,230 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 07:38:58,230 -   Date: Mon, 22 Dec 2025 13:08:16 +0530
+2025-12-22 07:38:58,237 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 07:38:58,248 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 07:38:58,249 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 07:38:58,250 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_073858
+2025-12-22 07:38:58,250 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_073858
+2025-12-22 07:38:58,250 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 07:39:00,165 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 07:39:00,165 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 07:41:09,023 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 07:41:10,772 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 07:41:10,773 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 07:41:10,773 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 07:41:14,163 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 07:41:14,163 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 07:41:20,503 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 07:41:20,731 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_073858/extraction_results.xlsx
+2025-12-22 07:41:20,734 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_073858/extraction_results.xlsx
+2025-12-22 07:41:20,793 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 07:41:21,228 -   [EMAIL GENERATION ERROR] 'CompleteEmailGenerator' object has no attribute '_extract_loan_id'
+2025-12-22 07:41:21,237 - Traceback: Traceback (most recent call last):
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 719, in run_email_generation
+    result = generator.generate_and_send_all_emails(folder_path, send_emails=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/complete_email_generator.py", line 527, in generate_and_send_all_emails
+    abhl_email = self.generate_abhl_email(mapping_json)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/complete_email_generator.py", line 399, in generate_abhl_email
+    loan_id = self._extract_loan_id()
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CompleteEmailGenerator' object has no attribute '_extract_loan_id'
+
+2025-12-22 07:41:21,239 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 07:42:21,240 - [2025-12-22 07:42:21] Checking emails...
+2025-12-22 07:42:21,808 -   No new attachments
+2025-12-22 07:43:21,808 - [2025-12-22 07:43:21] Checking emails...
+2025-12-22 07:43:22,369 -   No new attachments
+2025-12-22 07:44:22,370 - [2025-12-22 07:44:22] Checking emails...
+2025-12-22 07:44:22,914 -   No new attachments
+2025-12-22 07:44:28,426 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 07:44:28,689 - [DISCONNECTED] Logged out from email server
+2025-12-22 07:49:03,986 - 
+============================================================
+2025-12-22 07:49:03,986 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 07:49:03,986 - ============================================================
+2025-12-22 07:49:03,986 - Email: yourmltales@gmail.com
+2025-12-22 07:49:03,986 - Server: imap.gmail.com:993
+2025-12-22 07:49:03,986 - Watching for subjects: 
+2025-12-22 07:49:03,986 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 07:49:03,986 - Root save location: email_attachments
+2025-12-22 07:49:03,986 - Check interval: 60s
+2025-12-22 07:49:03,986 - Only unseen emails: True
+2025-12-22 07:49:03,986 - Mark as read: False
+2025-12-22 07:49:03,987 - ============================================================
+
+2025-12-22 07:49:03,987 - Connecting to imap.gmail.com:993...
+2025-12-22 07:49:04,906 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 07:49:04,907 - [2025-12-22 07:49:04] Checking emails...
+2025-12-22 07:49:06,350 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 07:49:06,350 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 07:49:06,350 -   Date: Mon, 22 Dec 2025 13:19:00 +0530
+2025-12-22 07:49:06,362 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 07:49:06,362 -   [SAVED] 1 attachment(s) to: email_attachments/3000023637_20251222_074906
+2025-12-22 07:49:06,362 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_074906
+2025-12-22 07:49:06,363 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-22 07:49:10,535 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 07:49:10,535 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 07:49:12,214 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 07:49:12,214 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 07:49:12,214 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 07:49:17,770 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 07:49:18,046 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_074906/extraction_results.xlsx
+2025-12-22 07:49:18,046 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_074906/extraction_results.xlsx
+2025-12-22 07:49:18,149 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 07:49:25,718 -   [EMAIL GENERATION ERROR] name 'extraction_attachment' is not defined
+2025-12-22 07:49:25,724 - Traceback: Traceback (most recent call last):
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 719, in run_email_generation
+    result = generator.generate_and_send_all_emails(folder_path, send_emails=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/complete_email_generator.py", line 612, in generate_and_send_all_emails
+    'extraction_attachment': extraction_attachment,
+                             ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'extraction_attachment' is not defined
+
+2025-12-22 07:49:25,724 - [SUCCESS] Downloaded 1 attachment(s) into 1 folder(s)
+2025-12-22 07:50:25,724 - [2025-12-22 07:50:25] Checking emails...
+2025-12-22 07:50:27,290 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 07:50:27,290 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 07:50:27,291 -   Date: Mon, 22 Dec 2025 13:20:26 +0530
+2025-12-22 07:50:27,293 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 07:50:27,300 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 07:50:27,300 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 07:50:27,300 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_075027
+2025-12-22 07:50:27,301 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_075027
+2025-12-22 07:50:27,301 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 07:50:28,863 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 07:50:28,863 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 07:52:37,486 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 07:52:39,033 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 07:52:39,033 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 07:52:39,033 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 07:52:42,609 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 07:52:42,609 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 07:52:48,896 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 07:52:49,104 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_075027/extraction_results.xlsx
+2025-12-22 07:52:49,104 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_075027/extraction_results.xlsx
+2025-12-22 07:52:49,267 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 07:52:56,573 -   [EMAIL GENERATION ERROR] name 'extraction_attachment' is not defined
+2025-12-22 07:52:56,577 - Traceback: Traceback (most recent call last):
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 719, in run_email_generation
+    result = generator.generate_and_send_all_emails(folder_path, send_emails=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/complete_email_generator.py", line 612, in generate_and_send_all_emails
+    'extraction_attachment': extraction_attachment,
+                             ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'extraction_attachment' is not defined
+
+2025-12-22 07:52:56,579 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 07:53:56,579 - [2025-12-22 07:53:56] Checking emails...
+2025-12-22 07:53:57,161 -   No new attachments
+2025-12-22 07:54:57,161 - [2025-12-22 07:54:57] Checking emails...
+2025-12-22 07:54:57,709 -   No new attachments
+2025-12-22 07:55:57,710 - [2025-12-22 07:55:57] Checking emails...
+2025-12-22 07:55:58,285 -   No new attachments
+2025-12-22 07:56:07,403 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 07:56:07,677 - [DISCONNECTED] Logged out from email server
+2025-12-22 08:02:06,481 - 
+============================================================
+2025-12-22 08:02:06,481 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 08:02:06,482 - ============================================================
+2025-12-22 08:02:06,482 - Email: yourmltales@gmail.com
+2025-12-22 08:02:06,482 - Server: imap.gmail.com:993
+2025-12-22 08:02:06,482 - Watching for subjects: 
+2025-12-22 08:02:06,482 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 08:02:06,482 - Root save location: email_attachments
+2025-12-22 08:02:06,482 - Check interval: 60s
+2025-12-22 08:02:06,482 - Only unseen emails: True
+2025-12-22 08:02:06,482 - Mark as read: False
+2025-12-22 08:02:06,482 - ============================================================
+
+2025-12-22 08:02:06,482 - Connecting to imap.gmail.com:993...
+2025-12-22 08:02:07,737 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 08:02:07,737 - [2025-12-22 08:02:07] Checking emails...
+2025-12-22 08:02:08,296 -   No new attachments
+2025-12-22 08:03:08,296 - [2025-12-22 08:03:08] Checking emails...
+2025-12-22 08:03:10,186 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 08:03:10,186 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 08:03:10,186 -   Date: Sat, 20 Dec 2025 00:07:12 +0530
+2025-12-22 08:03:10,189 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 08:03:10,195 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 08:03:10,196 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 08:03:10,196 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_080310
+2025-12-22 08:03:10,196 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_080310
+2025-12-22 08:03:10,196 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 08:03:12,299 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 08:03:12,299 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 08:05:21,501 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 08:05:23,134 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 08:05:23,135 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 08:05:23,135 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 08:05:27,190 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 08:05:27,190 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 08:05:32,239 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 08:05:32,460 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_080310/extraction_results.xlsx
+2025-12-22 08:05:32,460 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_080310/extraction_results.xlsx
+2025-12-22 08:05:32,516 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 08:05:40,555 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-22 08:05:41,664 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 08:05:41,664 -   From: "rakesh ai.consult" <rakeshaiconsult@gmail.com>
+2025-12-22 08:05:41,665 -   Date: Sat, 20 Dec 2025 06:16:52 +0530
+2025-12-22 08:05:41,670 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 08:05:41,679 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 08:05:41,680 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 08:05:41,680 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_080541
+2025-12-22 08:05:41,680 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_080541
+2025-12-22 08:05:41,680 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 08:05:43,263 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 08:05:43,263 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 08:05:57,275 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 08:05:57,548 - [DISCONNECTED] Logged out from email server
+2025-12-22 08:33:44,208 - 
+============================================================
+2025-12-22 08:33:44,208 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 08:33:44,208 - ============================================================
+2025-12-22 08:33:44,208 - Email: yourmltales@gmail.com
+2025-12-22 08:33:44,208 - Server: imap.gmail.com:993
+2025-12-22 08:33:44,209 - Watching for subjects: 
+2025-12-22 08:33:44,209 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 08:33:44,209 - Root save location: email_attachments
+2025-12-22 08:33:44,209 - Check interval: 60s
+2025-12-22 08:33:44,209 - Only unseen emails: True
+2025-12-22 08:33:44,209 - Mark as read: False
+2025-12-22 08:33:44,209 - ============================================================
+
+2025-12-22 08:33:44,209 - Connecting to imap.gmail.com:993...
+2025-12-22 08:33:45,288 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 08:33:45,288 - [2025-12-22 08:33:45] Checking emails...
+2025-12-22 08:33:47,432 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 08:33:47,432 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 08:33:47,432 -   Date: Mon, 22 Dec 2025 14:03:43 +0530
+2025-12-22 08:33:47,435 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 08:33:47,443 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 08:33:47,443 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 08:33:47,443 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_083347
+2025-12-22 08:33:47,443 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_083347
+2025-12-22 08:33:47,444 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 08:33:49,609 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 08:33:49,609 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 08:35:58,453 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 08:36:00,474 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 08:36:00,475 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 08:36:00,475 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 08:36:03,792 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 08:36:03,792 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 08:36:09,050 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 08:36:09,523 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_083347/extraction_results.xlsx
+2025-12-22 08:36:09,523 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_083347/extraction_results.xlsx
+2025-12-22 08:36:09,549 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 08:36:16,950 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-22 08:36:16,951 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 08:37:16,951 - [2025-12-22 08:37:16] Checking emails...
+2025-12-22 08:37:17,516 -   No new attachments
+2025-12-22 08:38:17,516 - [2025-12-22 08:38:17] Checking emails...
+2025-12-22 08:38:18,051 -   No new attachments
+2025-12-22 08:39:18,051 - [2025-12-22 08:39:18] Checking emails...
+2025-12-22 08:39:18,641 -   No new attachments
+2025-12-22 08:40:18,642 - [2025-12-22 08:40:18] Checking emails...
+2025-12-22 08:40:19,186 -   No new attachments
+2025-12-22 08:41:06,779 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 08:41:07,044 - [DISCONNECTED] Logged out from email server
+2025-12-22 09:01:41,404 - 
+============================================================
+2025-12-22 09:01:41,404 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 09:01:41,404 - ============================================================
+2025-12-22 09:01:41,404 - Email: yourmltales@gmail.com
+2025-12-22 09:01:41,404 - Server: imap.gmail.com:993
+2025-12-22 09:01:41,404 - Watching for subjects: 
+2025-12-22 09:01:41,404 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 09:01:41,404 - Root save location: email_attachments
+2025-12-22 09:01:41,404 - Check interval: 60s
+2025-12-22 09:01:41,404 - Only unseen emails: True
+2025-12-22 09:01:41,405 - Mark as read: False
+2025-12-22 09:01:41,405 - ============================================================
+
+2025-12-22 09:01:41,405 - Connecting to imap.gmail.com:993...
+2025-12-22 09:01:42,702 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 09:01:42,703 - [2025-12-22 09:01:42] Checking emails...
+2025-12-22 09:01:43,301 -   No new attachments
+2025-12-22 09:02:43,303 - [2025-12-22 09:02:43] Checking emails...
+2025-12-22 09:02:45,141 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 09:02:45,141 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 09:02:45,141 -   Date: Mon, 22 Dec 2025 14:32:24 +0530
+2025-12-22 09:02:45,144 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 09:02:45,150 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 09:02:45,150 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 09:02:45,151 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_090245
+2025-12-22 09:02:45,151 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_090245
+2025-12-22 09:02:45,151 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 09:02:47,069 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 09:02:47,069 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 09:04:26,271 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 09:04:26,536 - [DISCONNECTED] Logged out from email server
+2025-12-22 09:05:40,836 - 
+============================================================
+2025-12-22 09:05:40,836 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 09:05:40,836 - ============================================================
+2025-12-22 09:05:40,836 - Email: yourmltales@gmail.com
+2025-12-22 09:05:40,836 - Server: imap.gmail.com:993
+2025-12-22 09:05:40,836 - Watching for subjects: 
+2025-12-22 09:05:40,837 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 09:05:40,837 - Root save location: email_attachments
+2025-12-22 09:05:40,837 - Check interval: 60s
+2025-12-22 09:05:40,837 - Only unseen emails: True
+2025-12-22 09:05:40,837 - Mark as read: False
+2025-12-22 09:05:40,837 - ============================================================
+
+2025-12-22 09:05:40,837 - Connecting to imap.gmail.com:993...
+2025-12-22 09:05:42,177 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 09:05:42,177 - [2025-12-22 09:05:42] Checking emails...
+2025-12-22 09:05:42,797 -   No new attachments
+2025-12-22 09:06:42,798 - [2025-12-22 09:06:42] Checking emails...
+2025-12-22 09:06:44,767 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 09:06:44,767 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 09:06:44,767 -   Date: Mon, 22 Dec 2025 14:36:11 +0530
+2025-12-22 09:06:44,770 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 09:06:44,776 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 09:06:44,777 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 09:06:44,777 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_090644
+2025-12-22 09:06:44,777 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_090644
+2025-12-22 09:06:44,777 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 09:06:49,979 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 09:06:49,979 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 09:08:58,742 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 09:09:00,318 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 09:09:00,318 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 09:09:00,318 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 09:09:04,149 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 09:09:04,149 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 09:09:10,020 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 09:09:10,328 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_090644/extraction_results.xlsx
+2025-12-22 09:09:10,328 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_090644/extraction_results.xlsx
+2025-12-22 09:09:10,376 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 09:09:18,626 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-22 09:09:18,626 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 09:10:18,627 - [2025-12-22 09:10:18] Checking emails...
+2025-12-22 09:10:19,241 -   No new attachments
+2025-12-22 09:11:19,241 - [2025-12-22 09:11:19] Checking emails...
+2025-12-22 09:11:19,824 -   No new attachments
+2025-12-22 09:11:24,009 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 09:11:24,294 - [DISCONNECTED] Logged out from email server
