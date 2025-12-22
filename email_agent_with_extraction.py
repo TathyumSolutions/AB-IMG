@@ -38,6 +38,269 @@ from openai import OpenAI
 
 load_dotenv()
 
+
+def _coerce_jsonish_value(value):
+    if value is None:
+        return ""
+    if isinstance(value, (dict, list)):
+        return value
+    text = str(value).strip()
+    if not text:
+        return ""
+    if (text.startswith("{") and text.endswith("}")) or (text.startswith("[") and text.endswith("]")):
+        try:
+            return json.loads(text)
+        except Exception:
+            return text
+    return text
+
+
+def build_final_json_format_from_pas_map(pas_map: dict) -> dict:
+    def g(key: str) -> str:
+        return str(pas_map.get(key, "") or "")
+
+    def gj(key: str):
+        return _coerce_jsonish_value(pas_map.get(key, ""))
+
+    loan_deviation_details = gj("LoanDeviationDetails")
+    if not isinstance(loan_deviation_details, list):
+        loan_deviation_details = []
+
+    notes_details = gj("NotesDetails")
+    if not isinstance(notes_details, list):
+        notes_details = []
+
+    remkars_details = gj("RemkarsDetails")
+    if not isinstance(remkars_details, list):
+        remkars_details = []
+
+    loan_obligation_details = gj("LoanObligationDetails")
+    if not isinstance(loan_obligation_details, list):
+        loan_obligation_details = []
+
+    borrower_deviation_details = gj("BorrowerDeviationDetails")
+    if not isinstance(borrower_deviation_details, list):
+        borrower_deviation_details = []
+
+    bankwise_borrower_details = gj("BankWiseBorrowerDetails")
+    if not isinstance(bankwise_borrower_details, list):
+        bankwise_borrower_details = []
+
+    banking_details = gj("BankingDetails")
+    if not isinstance(banking_details, list):
+        banking_details = []
+
+    return {
+        "Loan_Details": {
+            "Loan_Number": g("Loan_Number"),
+            "Sourcing_City_Name": g("Sourcing_City_Name"),
+            "Branch_Name": g("Branch_Name"),
+            "Sourcing_Channel": g("Sourcing_Channel"),
+            "Final_Sanctioned_Amount": g("Final_Sanctioned_Amount"),
+            "Sanction_Loan_Period": g("Sanction_Loan_Period"),
+            "Repayment_Structure": g("Repayment_Structure"),
+            "Sanction_Interest_Rate": g("Sanction_Interest_Rate"),
+            "Sanction_Interest_Type": g("Sanction_Interest_Type"),
+            "Loan_Type": g("Loan_Type"),
+            "Loan_Purpose": g("Loan_Purpose"),
+            "Type_Of_Employment_Loan": g("Type_Of_Employment_Loan"),
+            "Total_Net_Monthly_Income_Considered_Across_All_Borrowers": g(
+                "Total_Net_Monthly_Income_Considered_Across_All_Borrowers"
+            ),
+            "Foir": g("Foir"),
+            "Is_Collateral_Crosslinked": g("Is_Collateral_Crosslinked"),
+            "Loan_Account_Number": g("Loan_Account_Number"),
+            "Lender_Promo_Code": g("Lender_Promo_Code"),
+            "Govt_Scheme": g("Govt_Scheme"),
+            "LoanID_Of_Cross_linked_loan": g("LoanID_Of_Cross_linked_loan"),
+            "Combined_LTV": g("Combined_LTV"),
+            "Total_Exposure": g("Total_Exposure"),
+            "Sourcing_Region": g("Sourcing_Region"),
+            "EMI_TO_ABB_RATIO": g("EMI_TO_ABB_RATIO"),
+            "Lender_Scheme_Code": g("Lender_Scheme_Code"),
+            "Lender_Internal_Score": g("Lender_Internal_Score"),
+            "Refinance_Payment_Period_In_Months": g("Refinance_Payment_Period_In_Months"),
+            "Refinance_Original_Mode_Of_payment": g("Refinance_Original_Mode_Of_payment"),
+            "CRE_Applicable": g("CRE_Applicable"),
+            "Manual_ABB": g("Manual_ABB"),
+            "Final_AMC": g("Final_AMC"),
+            "Total_Monthly_Obligations_Considered": g("Total_Monthly_Obligations_Considered"),
+            "Branch_Sales_Manager": g("Branch_Sales_Manager"),
+            "Branch_Credit_Manager": g("Branch_Credit_Manager"),
+            "Original_Sanction_Tenor_Of_BT_Loan": g("Original_Sanction_Tenor_Of_BT_Loan"),
+            "Date_Of_Legal": g("Date_Of_Legal"),
+            "Developer_Name": g("Developer_Name"),
+            "Date_Of_Title": g("Date_Of_Title"),
+            "Legal_Vendor": g("Legal_Vendor"),
+            "LoanDeviationDetails": loan_deviation_details,
+            "NotesDetails": notes_details,
+            "RemkarsDetails": remkars_details,
+        },
+        "BorrowersDetails": [
+            {
+                "Borrower_First_Name": g("Borrower_First_Name"),
+                "Borrower_Surname": g("Borrower_Surname"),
+                "Date_Of_Birth_Of_The_Borrower": g("Date_Of_Birth_Of_The_Borrower"),
+                "Gender": g("Gender"),
+                "Marital_Status": g("Marital_Status"),
+                "Borrower_City": g("Borrower_City"),
+                "Borrower_PIN": g("Borrower_PIN"),
+                "Borrower_MobileNo": g("Borrower_MobileNo"),
+                "Borrower_Address1": g("Borrower_Address1"),
+                "Borrower_Address2": g("Borrower_Address2"),
+                "Borrower_Address3": g("Borrower_Address3"),
+                "Resident_Status": g("Resident_Status"),
+                "Current_Residence": g("Current_Residence"),
+                "Id_Proof_Type": g("Id_Proof_Type"),
+                "Id_Number": g("Id_Number"),
+                "Type_Of_Employment_Borrower": g("Type_Of_Employment_Borrower"),
+                "Borrower_Entity_Type": g("Borrower_Entity_Type"),
+                "Level_Of_Studies": g("Level_Of_Studies"),
+                "Number_Of_Dependents": g("Number_Of_Dependents"),
+                "SE_Type": g("SE_Type"),
+                "Borrower_Retirement_Date": g("Borrower_Retirement_Date"),
+                "Work_Details": g("Work_Details"),
+                "Relationship_Of_Coborrower_To_The_Borrower": g(
+                    "Relationship_Of_Coborrower_To_The_Borrower"
+                ),
+                "Office_Ownership": g("Office_Ownership"),
+                "Satisfactory_TPC_Check": g("Satisfactory_TPC_Check"),
+                "Years_In_Current_Employment": g("Years_In_Current_Employment"),
+                "Months_In_Current_Employment": g("Months_In_Current_Employment"),
+                "Years_In_Total_Employment": g("Years_In_Total_Employment"),
+                "Contractual_PartTime_Employment": g("Contractual_PartTime_Employment"),
+                "Nature_Of_Employment": g("Nature_Of_Employment"),
+                "Pensionable_Borrower": g("Pensionable_Borrower"),
+                "Personal_Discussion": g("Personal_Discussion"),
+                "Mode_Of_Salary": g("Mode_Of_Salary"),
+                "Office_SetUp": g("Office_SetUp"),
+                "Lender_PD_Status": g("Lender_PD_Status"),
+                "Place_Of_PD_Conducted": g("Place_Of_PD_Conducted"),
+                "Comment_Negative_Remark_Redflag": g("Comment_Negative_Remark_Redflag"),
+                "CPV_Resi": g("CPV_Resi"),
+                "CPV_Office": g("CPV_Office"),
+                "DEDUPE": g("DEDUPE"),
+                "RCU_FCU": g("RCU_FCU"),
+                "Income_Considered": g("Income_Considered"),
+                "Program_Borrower": g("Program_Borrower"),
+                "Hunter_Status": g("Hunter_Status"),
+                "Basic_Salary": g("Basic_Salary"),
+                "DA": g("DA"),
+                "HRA": g("HRA"),
+                "Fixed_Component": g("Fixed_Component"),
+                "Incentives": g("Incentives"),
+                "Performance_Linked_Bonus": g("Performance_Linked_Bonus"),
+                "Any_Other_Variable_Component": g("Any_Other_Variable_Component"),
+                "Fixed_Bonus": g("Fixed_Bonus"),
+                "Other_Annual_Benefits": g("Other_Annual_Benefits"),
+                "Cash_Salary": g("Cash_Salary"),
+                "Rental_Income_Bank_ITR": g("Rental_Income_Bank_ITR"),
+                "Rental_Income_Cash": g("Rental_Income_Cash"),
+                "Agricultural_Income": g("Agricultural_Income"),
+                "Interest_Dividend_Income": g("Interest_Dividend_Income"),
+                "Future_Rental": g("Future_Rental"),
+                "Rental_Income_Source_Document_Bank": g("Rental_Income_Source_Document_Bank"),
+                "Other_Income": g("Other_Income"),
+                "Employer_Name": g("Employer_Name"),
+                "Employer_City": g("Employer_City"),
+                "Employer_Pin": g("Employer_Pin"),
+                "Employer_Address1": g("Employer_Address1"),
+                "Employer_Address2": g("Employer_Address2"),
+                "Employer_Address3": g("Employer_Address3"),
+                "Employer_Department": g("Employer_Department"),
+                "Employer_Designation": g("Employer_Designation"),
+                "Employer_Type": g("Employer_Type"),
+                "Date_Of_Filing_LatestYear": g("Date_Of_Filing_LatestYear"),
+                "Date_Of_Filing_PreviousYear": g("Date_Of_Filing_PreviousYear"),
+                "Financial_Status_LatestYear": g("Financial_Status_LatestYear"),
+                "Financial_Status_PreviousYear": g("Financial_Status_PreviousYear"),
+                "Financial_Status_Previous_To_PreviousYear": g("Financial_Status_Previous_To_PreviousYear"),
+                "Gross_Margin_As_Per_financials_LatestYear": g(
+                    "Gross_Margin_As_Per_financials_LatestYear"
+                ),
+                "Gross_Margin_As_Per_financials_PreviousYear": g(
+                    "Gross_Margin_As_Per_financials_PreviousYear"
+                ),
+                "Gross_Margin_As_Per_financials_Previous_To_PreviousYear": g(
+                    "Gross_Margin_As_Per_financials_Previous_To_PreviousYear"
+                ),
+                "Gross_Profit_LatestYear": g("Gross_Profit_LatestYear"),
+                "Gross_Profit_PreviousYear": g("Gross_Profit_PreviousYear"),
+                "Gross_Profit_Previous_To_PreviousYear": g("Gross_Profit_Previous_To_PreviousYear"),
+                "Financial_LatestYear": g("Financial_LatestYear"),
+                "Financial_PreviousYear": g("Financial_PreviousYear"),
+                "Financial_Previous_To_PreviousYear": g("Financial_Previous_To_PreviousYear"),
+                "Gross_Turnover_LatestYear": g("Gross_Turnover_LatestYear"),
+                "Gross_Turnover_PreviousYear": g("Gross_Turnover_PreviousYear"),
+                "Gross_Turnover_Previous_To_PreviousYear": g("Gross_Turnover_Previous_To_PreviousYear"),
+                "NetProfit_LatestYear": g("NetProfit_LatestYear"),
+                "NetProfit_PreviousYear": g("NetProfit_PreviousYear"),
+                "NetProfit_Previous_To_PreviousYear": g("NetProfit_Previous_To_PreviousYear"),
+                "TaxPaid_LatestYear": g("TaxPaid_LatestYear"),
+                "TaxPaid_PreviousYear": g("TaxPaid_PreviousYear"),
+                "TaxPaid_Previous_To_PreviousYear": g("TaxPaid_Previous_To_PreviousYear"),
+                "ExceptionalIncome_LatestYear": g("ExceptionalIncome_LatestYear"),
+                "ExceptionalIncome_PreviousYear": g("ExceptionalIncome_PreviousYear"),
+                "ExceptionalIncome_Previous_To_PreviousYear": g("ExceptionalIncome_Previous_To_PreviousYear"),
+                "Depreciation_LatestYear": g("Depreciation_LatestYear"),
+                "Depreciation_PreviousYear": g("Depreciation_PreviousYear"),
+                "Depreciation_Previous_To_PreviousYear": g("Depreciation_Previous_To_PreviousYear"),
+                "Interest_On_Loan_Repaid_LatestYear": g("Interest_On_Loan_Repaid_LatestYear"),
+                "Interest_On_Loan_Repaid_PreviousYear": g("Interest_On_Loan_Repaid_PreviousYear"),
+                "Interest_On_Loan_Repaid_Previous_To_PreviousYear": g(
+                    "Interest_On_Loan_Repaid_Previous_To_PreviousYear"
+                ),
+                "Interest_On_Partners_LatestYear": g("Interest_On_Partners_LatestYear"),
+                "Interest_On_Partners_PreviousYear": g("Interest_On_Partners_PreviousYear"),
+                "Interest_On_Partners_Previous_To_PreviousYear": g(
+                    "Interest_On_Partners_Previous_To_PreviousYear"
+                ),
+                "Director_Partners_Salary_LatestYear": g("Director_Partners_Salary_LatestYear"),
+                "Director_Partners_Salary_PreviousYear": g("Director_Partners_Salary_PreviousYear"),
+                "Director_Partners_Salary_Previous_To_PreviousYear": g(
+                    "Director_Partners_Salary_Previous_To_PreviousYear"
+                ),
+                "Exceptional_Expense_To_Be_Added_Back_LatestYear": g(
+                    "Exceptional_Expense_To_Be_Added_Back_LatestYear"
+                ),
+                "Exceptional_Expense_To_Be_Added_Back_PreviousYear": g(
+                    "Exceptional_Expense_To_Be_Added_Back_PreviousYear"
+                ),
+                "Exceptional_Expense_To_Be_Added_Back_Previous_To_PreviousYear": g(
+                    "Exceptional_Expense_To_Be_Added_Back_Previous_To_PreviousYear"
+                ),
+                "Assesed_Income": g("Assesed_Income"),
+                "Expected_Pension_Income": g("Expected_Pension_Income"),
+                "Property_Ownership_Status_At_Borrower_level": g(
+                    "Property_Ownership_Status_At_Borrower_level"
+                ),
+                "Number_Of_Owned_Homes": g("Number_Of_Owned_Homes"),
+                "Sole_Child": g("Sole_Child"),
+                "Paid_Up_Capital_In_lacs": g("Paid_Up_Capital_In_lacs"),
+                "Months_In_Total_Employment": g("Months_In_Total_Employment"),
+                "Date_Of_Filing_Previous_To_PreviousYear": g("Date_Of_Filing_Previous_To_PreviousYear"),
+                "ITR_Filling_Purpose": g("ITR_Filling_Purpose"),
+                "Net_Worth": g("Net_Worth"),
+                "CCA": g("CCA"),
+                "Flying_Allowance_And_Mileage_Allowance": g("Flying_Allowance_And_Mileage_Allowance"),
+                "Reimbursement_Against_Actual": g("Reimbursement_Against_Actual"),
+                "Existing_Pension_Income": g("Existing_Pension_Income"),
+                "PF": g("PF"),
+                "Income_Tax": g("Income_Tax"),
+                "Other_Deduction_Amount": g("Other_Deduction_Amount"),
+                "Part_Time_Salary_Income": g("Part_Time_Salary_Income"),
+                "Rental_Income_Source_Cash": g("Rental_Income_Source_Cash"),
+                "GST_Turnover": g("GST_Turnover"),
+                "Number_Of_Months_GST": g("Number_Of_Months_GST"),
+                "Score": g("Score"),
+                "LoanObligationDetails": loan_obligation_details,
+                "BorrowerDeviationDetails": borrower_deviation_details,
+                "BankWiseBorrowerDetails": bankwise_borrower_details,
+                "BankingDetails": banking_details,
+            }
+        ],
+    }
+
 # =============================================================================
 # CONFIGURATION SECTION
 # =============================================================================
@@ -343,12 +606,12 @@ Return ONLY valid JSON, no explanations."""
         
         # Save mapping to file with timestamp
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        mapping_file = os.path.join(folder_path, f"document_column_mapping.json")
+        mapping_file = os.path.join(folder_path, f"document_column_mapping_{timestamp}.json")
         with open(mapping_file, 'w', encoding='utf-8') as f:
             json.dump(validated_mapping, f, indent=2)
         
         # Also save human-readable version
-        readable_file = os.path.join(folder_path, f"document_column_mapping.txt")
+        readable_file = os.path.join(folder_path, f"document_column_mapping_{timestamp}.txt")
         with open(readable_file, 'w', encoding='utf-8') as f:
             for filename, column in validated_mapping.items():
                 f.write(f"{filename} -> {column if column else 'NO MATCH'}\n")
@@ -617,9 +880,10 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
         results_data.append(row)
 
     results_df = pd.DataFrame(results_data)
-    
+    print("results_df columns:",results_df.head(5))
+    print(f"\n  ➤ Merging results into Excel with {len(results_df)} fields and {len(doc_columns)} documents")
     results_df = results_df.merge(config_df, on='PAS Field Name', how='left')
-    
+    print("merged results_df columns:",results_df.head(5))
     try:
         required_cols = ['PAS Field Name', 'Final Data for PAS System']
         missing_cols = [c for c in required_cols if c not in results_df.columns]
@@ -637,6 +901,12 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
             with open(json_path, 'w', encoding='utf-8') as f:
                 json.dump(pas_map, f, indent=2, ensure_ascii=False)
             print(f"\n✓ PAS JSON map saved to: {json_path}")
+
+            final_json_path = os.path.join(out_dir, f"final_json_format_{ts}.json")
+            final_json_obj = build_final_json_format_from_pas_map(pas_map)
+            with open(final_json_path, 'w', encoding='utf-8') as f:
+                json.dump(final_json_obj, f, indent=2, ensure_ascii=False)
+            print(f"\n✓ Final JSON format saved to: {final_json_path}")
     except Exception as e:
         print(f"\n  ⚠ Warning: Could not write PAS JSON map: {e}")
     
