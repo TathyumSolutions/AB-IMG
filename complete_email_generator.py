@@ -577,7 +577,9 @@ This is a system-generated email. Please do not reply to this message.
             json_candidates = []
             try:
                 extraction_dir = os.path.dirname(str(self.extraction_file))
-                json_candidates = glob.glob(os.path.join(extraction_dir, 'pas_field_map_*.json'))
+            	json_candidates = glob.glob(os.path.join(extraction_dir, 'final_json_format_*.json'))
+                if not json_candidates:
+                    json_candidates = glob.glob(os.path.join(extraction_dir, 'pas_field_map_*.json'))
             except Exception:
                 json_candidates = []
 
