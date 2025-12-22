@@ -880,10 +880,13 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
         results_data.append(row)
 
     results_df = pd.DataFrame(results_data)
-    print("results_df columns:",results_df.head(5))
+    results_df=results_df.drop(columns=["Criticality"],errors='ignore')
+    print("results_df columns:",results_df.columns)
     print(f"\n  ➤ Merging results into Excel with {len(results_df)} fields and {len(doc_columns)} documents")
     results_df = results_df.merge(config_df, on='PAS Field Name', how='left')
-    print("merged results_df columns:",results_df.head(5))
+    print("merged results_df columns:",results_df.columns)
+    results_df=results_df.drop(columns=["Criticality"],errors='ignore')
+    print("results_df columns:",results_df.columns)
     try:
         required_cols = ['PAS Field Name', 'Final Data for PAS System']
         missing_cols = [c for c in required_cols if c not in results_df.columns]
@@ -912,6 +915,8 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
     
     try:
         with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
+            results_df=results_df.drop(columns=["Criticality"],errors='ignore')
+            print("results_df columns:",results_df.columns)
             results_df.to_excel(writer, sheet_name='Extracted Fields', index=False)
         print(f"\n✓ Results saved to: {output_path}")
     except Exception as e:

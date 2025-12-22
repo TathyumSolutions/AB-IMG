@@ -91,13 +91,13 @@ class CompleteEmailGenerator:
 
     def _clean_value(self, val):
         if val is None:
-            print(f"[LOG] Cleaning value: None -> ''")
+            #print(f"[LOG] Cleaning value: None -> ''")
             return ""
         if isinstance(val, float) and pd.isna(val):
-            print(f"[LOG] Cleaning value: NaN -> ''")
+            #print(f"[LOG] Cleaning value: NaN -> ''")
             return ""
         cleaned = str(val).strip().lower()
-        print(f"[LOG] Cleaning value: {val} -> {cleaned}")
+        #print(f"[LOG] Cleaning value: {val} -> {cleaned}")
         return cleaned
 
     def _get_preferred_value(self, row, doc_columns):
