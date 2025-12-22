@@ -331,53 +331,38 @@ Return ONLY in this exact JSON format:
             }
 
     def create_high_criticality_excel(self, output_folder):
-        """Create an Excel file containing only high criticality rows from extraction results"""
+        """Create an Excel file containing only high criticality rows, with filtered columns."""
         print(f"[LOG] Creating Excel file with high criticality rows")
-        
-        # Filter for high criticality rows
         crit_col = 'Mismatch Criticality' if 'Mismatch Criticality' in self.merged_df.columns else 'Criticality'
         high_crit_df = self.merged_df[self.merged_df[crit_col].astype(str).str.upper() == 'HIGH'].copy()
-        
+
         if high_crit_df.empty:
-            print(f"[LOG] No high criticality rows found in extraction results")
+            print("[LOG] No high criticality rows found.")
             return None
-        
-        # Re-enrich high criticality rows with all configuration metadata/description columns
-        # so the High Criticality Excel attachment contains all columns
-        try:
-            config_df = pd.read_excel(self.config_file, sheet_name='Sheet1')
-            if 'PAS Field Name' in config_df.columns and 'PAS Field Name' in high_crit_df.columns:
-                extra_cols = [
-                    'Data Type',
-                    'Field length',
-                    'Primary Source Document',
-                    'Secondary Source Document',
-                    'CAM Description',
-                    'PD Description',
-                    'PD (Word Doc) Description',
-                    'Application Form Description',
-                    'Legal Doc Description',
-                    'Technical Doc Description',
-                    'Email Subject Description',
-                    'Email Body Description',
-                ]
-                # Only use columns that actually exist in the config file
-                available_extra_cols = [c for c in extra_cols if c in config_df.columns]
-                if available_extra_cols:
-                    extra_config = config_df[['PAS Field Name'] + available_extra_cols]
-                    high_crit_df = high_crit_df.merge(extra_config, on='PAS Field Name', how='left')
-        except Exception as e:
-            print(f"[LOG] Warning: Could not enrich High Criticality Excel with config metadata: {e}")
-        
+
+        # Load config to get all columns
+        config_df = pd.read_excel(self.config_file)
+        all_columns = config_df.columns.tolist()
+
+        # Columns to exclude
+        exclude_keywords = ['Data Type', 'Field length', 'Primary Source Document', 'Secondary Source Document']
+        exclude_columns = [col for col in all_columns if any(key in col for key in exclude_keywords) or 'Description' in col]
+
+        # Columns to keep
+        keep_columns = [col for col in all_columns if col not in exclude_columns]
+
+        # Reorder and filter columns
+        filtered_df = high_crit_df.reindex(columns=keep_columns)
+
         # Create filename with timestamp
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = os.path.join(output_folder, f"High_Criticality_Issues_{timestamp}.xlsx")
-        
+
         # Save to Excel
-        high_crit_df.to_excel(filename, index=False)
+        filtered_df.to_excel(filename, index=False)
         print(f"[LOG] High criticality Excel file created: {filename}")
-        print(f"[LOG] Rows in high criticality file: {len(high_crit_df)}")
-        
+        print(f"[LOG] Rows in high criticality file: {len(filtered_df)}")
+
         return filename
 
     def generate_abhl_email(self):
