@@ -391,111 +391,128 @@ Return ONLY in this exact JSON format:
     def generate_abhl_email(self):
         print(f"[LOG] Generating ABHL email (high criticality issues)")
         major_issues = self.get_major_issues()
-        
+        loan_id = self._extract_loan_id()  # Implement this method to extract loan ID from your data or filename
+
+        # Get document names dynamically
+        exclude_cols = ['PAS Field Name', 'Mismatch Criticality', 'Criticality', 'First Preference', 'Second Preference', 'Final Data for PAS System']
+        doc_columns = [col for col in self.merged_df.columns if col not in exclude_cols]
+        num_docs = len(doc_columns)
+        doc_list = '\n'.join([f"• {doc}" for doc in doc_columns])
+
         if major_issues.empty:
-            body_content = "✅ Good news! No high criticality issues were found in the data extraction process.\n\nAll high criticality fields have consistent values across documents."
+            body_content = f"""Dear ABHFL Team,
+I hope this email finds you well.
+We are pleased to inform you that the documents shared to initiate the loan application have been successfully processed through our data extraction and quality check workflow.
+
+Quality Check Summary:
+• No discrepancies were identified
+• Data values are consistent across the submitted documents
+
+At this stage, no additional information or revised documents are required. However, we will keep you informed for any further inputs be needed during subsequent processing.
+
+Documents Processed
+A total of {num_docs} documents were received and processed, including:
+{doc_list}
+
+If you require any additional information or clarification, please feel free to reach out to us.
+Warm regards,
+IMGC Team
+________________________________________
+This is a system-generated email. Please do not reply to this message.
+________________________________________
+For Implementation Use Only
+"""
+            subject_hint = f"Loan ID: {loan_id} Loan Application Document Processing Update"
         else:
-            lines = ["🚨 CRITICAL DATA QUALITY ALERT\n"]
-            lines.append(f"We have identified {len(major_issues)} HIGH criticality issue(s) in the extracted data that require IMMEDIATE attention:\n")
-            
-            # Group issues by document to clearly identify which document has problems
-            document_issues = {}
-            
-            for idx, row in major_issues.iterrows():
-                field = row['Field Name']
-                docs = row['Document Sources'] if isinstance(row['Document Sources'], dict) else {}
-                values = docs.values() if docs else []
-                unique_values = set([str(v) for v in values if v not in [None, '', 'NOT FOUND', 'NO INSTRUCTION', 'nan', 'None']])
-                
-                if row['Preferred Value'] == 'None' or not unique_values:
-                    lines.append(f"\n❌ MISSING MANDATORY FIELD: '{field}'")
-                    lines.append(f"   ⚠️  This field is not found in ANY document")
-                    
-                elif len(unique_values) > 1:
-                    lines.append(f"\n❌ CONFLICTING VALUES: '{field}'")
-                    lines.append(f"   ⚠️  Different values found across documents:")
-                    
-                    # List each document with its value
-                    for doc, val in docs.items():
-                        if val not in [None, '', 'NOT FOUND', 'NO INSTRUCTION', 'nan', 'None']:
-                            lines.append(f"      • {doc}: '{val}'")
-                            
-                            # Track which documents have issues
-                            if doc not in document_issues:
-                                document_issues[doc] = []
-                            document_issues[doc].append(field)
-                else:
-                    lines.append(f"\n⚠️  FLAGGED ISSUE: '{field}'")
-                    lines.append(f"   Single value found but requires review: {', '.join(unique_values)}")
-            
-            # Add summary of problematic documents
-            if document_issues:
-                lines.append(f"\n{'='*70}")
-                lines.append("📋 PROBLEM SUMMARY BY DOCUMENT:")
-                lines.append(f"{'='*70}")
-                for doc, fields in document_issues.items():
-                    lines.append(f"\n📄 {doc}")
-                    lines.append(f"   Issues with {len(fields)} field(s): {', '.join(fields)}")
-            
-            lines.append(f"\n{'='*70}")
-            lines.append("⚠️ ACTION REQUIRED:")
-            lines.append("These high criticality fields must be resolved before proceeding with data integration.")
-            lines.append("Please review the attached Excel file for complete details and provide corrections.")
-            lines.append(f"{'='*70}")
-            
-            body_content = '\n'.join(lines)
-        
-        email = self.generate_email_with_gpt(
-            recipient="ABHL",
-            subject_hint=f"🚨 HIGH Criticality Data Issues Detected - {len(major_issues)} Issue(s)" if not major_issues.empty else "✅ Data Quality Check Passed",
-            body_content=body_content,
-            context="This email reports high criticality issues found during data extraction where values differ across source documents or mandatory fields are missing. An Excel attachment with the problematic data is included."
-        )
+            # Summarization report for major mismatches
+            summary_lines = [
+                f"Dear ABHFL Team,",
+                "I hope this email finds you well.",
+                "We have processed your documents, but major discrepancies were identified during our quality check.",
+                "",
+                "Quality Check Summary:",
+                f"• {len(major_issues)} major mismatches detected",
+                "• Revised documents or additional information may be required.",
+                "",
+                "Documents Processed",
+                f"A total of {num_docs} documents were received and processed, including:",
+                f"{doc_list}",
+                "",
+                "Please review the attached summarization report for details on the discrepancies.",
+                "If you require any additional information or clarification, please feel free to reach out to us.",
+                "Warm regards,",
+                "IMGC Team",
+                "________________________________________",
+                "This is a system-generated email. Please do not reply to this message.",
+                "________________________________________",
+                "For Implementation Use Only"
+            ]
+            body_content = '\n'.join(summary_lines)
+            subject_hint = f"Loan ID: {loan_id} Loan Application Document Processing Update - Major Discrepancies Found"
+
+        email = {
+            'subject': subject_hint,
+            'body': body_content
+        }
         print(f"[LOG] ABHL email generated")
         return email
 
+    def _extract_loan_id(self):
+        # Example: Extract loan ID from extraction_file name or from merged_df if available
+        # Customize this logic as needed
+        import re
+        match = re.search(r'(\d{10,})', str(self.extraction_file))
+        if match:
+            return match.group(1)
+        # Fallback: Try to get from DataFrame if available
+        if 'Loan ID' in self.merged_df.columns:
+            return str(self.merged_df['Loan ID'].iloc[0])
+        return "Unknown"
+
     def generate_imgc_email(self):
-        print(f"[LOG] Generating IMGC email (low criticality issues)")
+        print(f"[LOG] Generating IMGC email (criticality analysis)")
+        loan_id = self._extract_loan_id()
+
+        # Dynamically get document columns and names
+        exclude_cols = ['PAS Field Name', 'Mismatch Criticality', 'Criticality', 'First Preference', 'Second Preference', 'Final Data for PAS System']
+        doc_columns = [col for col in self.merged_df.columns if col not in exclude_cols]
+        num_docs = len(doc_columns)
+        doc_list = '\n'.join([f"• {doc}" for doc in doc_columns])
+
+        # Extraction statistics
         total_fields = len(self.merged_df)
         all_issues = self.identify_issues()
-        low_issues = self.get_low_issues()
         total_issues = len(all_issues)
-        low_count = len(low_issues) if not low_issues.empty else 0
-        summary = f"""
-📊 DATA EXTRACTION SUMMARY
-{'='*70}
+        high_issues = all_issues[all_issues['Criticality'].astype(str).str.upper() == 'HIGH']
+        low_issues = all_issues[all_issues['Criticality'].astype(str).str.upper() != 'HIGH']
+        high_count = len(high_issues)
+        low_count = len(low_issues)
 
-Total Fields Processed: {total_fields}
-Total Issues Identified: {total_issues}
-Low Criticality Issues: {low_count}
-Data Extraction Status: ✅ Complete
-Data Cleaning Applied: ✅ Yes (spaces trimmed, special chars removed, case-normalized)
+        subject = f"ABHFL – Loan ID: {loan_id} – Document Data Extraction Report with Criticality Analysis"
+        body = f"""Dear IMGC Team,
+
+Subject - ABHFL – Loan ID: {loan_id} – Document Data Extraction Report with Criticality Analysis
+I hope you are doing well.
+A total of {num_docs} loan-related documents were received and successfully processed as part of this request. The documents include:
+{doc_list}
+Please find below a summary of the data extraction performed on the received documents, including overall extraction statistics and the identified high- and low-criticality issues:
+
+📊 Data Extraction Summary
+• Total Fields Processed: {total_fields}
+• Total Issues Identified: {total_issues}
+  o High Criticality Issues: {high_count}
+  o Low Criticality Issues: {low_count}
+
+The complete extracted Excel file has been attached for review and audit purposes.
+If any clarification, correction, or follow-up action is required, please coordinate internally as per the defined workflow.
+________________________________________
+This is a system-generated email. Please do not reply to this message.
 """
-        if not low_issues.empty:
-            all_issues_text = self.format_issues_for_email(low_issues)
-            body_content = f"""{summary}
 
-{'='*70}
-LOW CRITICALITY ISSUE DETAILS
-{'='*70}
-
-{all_issues_text}
-
-📎 ATTACHED: Complete extracted data for your records.
-"""
-        else:
-            body_content = f"""{summary}
-
-✅ EXCELLENT! All data has been extracted successfully with no low criticality inconsistencies found.
-All fields have consistent values across all source documents.
-📎 ATTACHED: Complete extracted data for your records.
-"""
-        email = self.generate_email_with_gpt(
-            recipient="IMGC",
-            subject_hint=f"📊 Data Extraction Report - {low_count} Low Criticality Issue(s) Found",
-            body_content=body_content,
-            context="This email provides a report of all extracted data including details of all low criticality issues found after data cleaning and normalization."
-        )
+        email = {
+            'subject': subject,
+            'body': body
+        }
         print(f"[LOG] IMGC email generated")
         return email
 

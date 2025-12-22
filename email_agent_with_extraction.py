@@ -409,10 +409,10 @@ def extract_fields_with_intelligent_selection(
         return {}, matched_column
     
     print(f"  ➤ Extracting fields using column: {matched_column} ({len(fields_json)} fields)")
-    if logger:
-        logger.info(f"len(document_text): {len(document_text)}")
-        logger.info(f"document_text[:500]: {document_text[:500]}")
-        logger.info(f"MAX_DOCUMENT_CHARS: {MAX_DOCUMENT_CHARS}")
+    # if logger:
+    #     logger.info(f"len(document_text): {len(document_text)}")
+    #     logger.info(f"document_text[:500]: {document_text[:500]}")
+    #     logger.info(f"MAX_DOCUMENT_CHARS: {MAX_DOCUMENT_CHARS}")
     # Truncate document if too long
     # if len(document_text) > MAX_DOCUMENT_CHARS:
     #     document_text = document_text[:MAX_DOCUMENT_CHARS] + "\n...[Document truncated]"

@@ -11722,3 +11722,78 @@ NameError: name 'extraction_attachment' is not defined
 2025-12-22 06:48:23,958 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
 2025-12-22 06:49:23,959 - [2025-12-22 06:49:23] Checking emails...
 2025-12-22 06:49:24,522 -   No new attachments
+2025-12-22 06:50:24,522 - [2025-12-22 06:50:24] Checking emails...
+2025-12-22 06:50:25,087 -   No new attachments
+2025-12-22 06:51:25,087 - [2025-12-22 06:51:25] Checking emails...
+2025-12-22 06:51:25,694 -   No new attachments
+2025-12-22 06:52:25,694 - [2025-12-22 06:52:25] Checking emails...
+2025-12-22 06:52:26,263 -   No new attachments
+2025-12-22 06:53:26,264 - [2025-12-22 06:53:26] Checking emails...
+2025-12-22 06:53:26,821 -   No new attachments
+2025-12-22 06:54:26,822 - [2025-12-22 06:54:26] Checking emails...
+2025-12-22 06:54:27,367 -   No new attachments
+2025-12-22 06:55:27,368 - [2025-12-22 06:55:27] Checking emails...
+2025-12-22 06:55:27,957 -   No new attachments
+2025-12-22 06:56:27,957 - [2025-12-22 06:56:27] Checking emails...
+2025-12-22 06:56:28,525 -   No new attachments
+2025-12-22 06:57:28,525 - [2025-12-22 06:57:28] Checking emails...
+2025-12-22 06:57:29,125 -   No new attachments
+2025-12-22 06:58:29,126 - [2025-12-22 06:58:29] Checking emails...
+2025-12-22 06:58:29,701 -   No new attachments
+2025-12-22 06:59:29,702 - [2025-12-22 06:59:29] Checking emails...
+2025-12-22 06:59:30,273 -   No new attachments
+2025-12-22 07:00:30,274 - [2025-12-22 07:00:30] Checking emails...
+2025-12-22 07:00:30,852 -   No new attachments
+2025-12-22 07:01:30,852 - [2025-12-22 07:01:30] Checking emails...
+2025-12-22 07:01:31,438 -   No new attachments
+2025-12-22 07:02:31,440 - [2025-12-22 07:02:31] Checking emails...
+2025-12-22 07:02:32,548 -   No new attachments
+2025-12-22 07:03:32,548 - [2025-12-22 07:03:32] Checking emails...
+2025-12-22 07:03:33,119 -   No new attachments
+2025-12-22 07:04:33,119 - [2025-12-22 07:04:33] Checking emails...
+2025-12-22 07:04:33,655 -   No new attachments
+2025-12-22 07:05:33,655 - [2025-12-22 07:05:33] Checking emails...
+2025-12-22 07:05:34,211 -   No new attachments
+2025-12-22 07:06:25,246 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 07:06:25,531 - [DISCONNECTED] Logged out from email server
+2025-12-22 07:12:24,299 - 
+============================================================
+2025-12-22 07:12:24,300 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 07:12:24,300 - ============================================================
+2025-12-22 07:12:24,300 - Email: yourmltales@gmail.com
+2025-12-22 07:12:24,300 - Server: imap.gmail.com:993
+2025-12-22 07:12:24,300 - Watching for subjects: 
+2025-12-22 07:12:24,300 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 07:12:24,300 - Root save location: email_attachments
+2025-12-22 07:12:24,300 - Check interval: 60s
+2025-12-22 07:12:24,300 - Only unseen emails: True
+2025-12-22 07:12:24,300 - Mark as read: False
+2025-12-22 07:12:24,300 - ============================================================
+
+2025-12-22 07:12:24,300 - Connecting to imap.gmail.com:993...
+2025-12-22 07:12:25,347 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 07:12:25,347 - [2025-12-22 07:12:25] Checking emails...
+2025-12-22 07:12:27,391 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 07:12:27,391 -   From: "rakesh ai.consult" <rakeshaiconsult@gmail.com>
+2025-12-22 07:12:27,391 -   Date: Mon, 22 Dec 2025 12:41:21 +0530
+2025-12-22 07:12:27,394 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 07:12:27,400 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 07:12:27,401 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 07:12:27,401 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_071227
+2025-12-22 07:12:27,401 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_071227
+2025-12-22 07:12:27,401 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 07:12:29,203 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 07:12:29,203 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 07:12:32,252 - len(document_text): 802870
+2025-12-22 07:12:32,252 - document_text[:500]: ============================================================
+[SHEET: BasicInput]
+============================================================
+ | Segment (select from dropdown): | Affordable |  | Customer Type (select from dropdown): |  |  | Self-employed Non-Professional (SENP) |  |  |  |  |  |  |  |  |  |  |  |  | 
+Parties to the Loan |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+S. No. | Name | Constitution (select from dropdown) | Capacity (Applicant / Co-applicant / Guarantor) 
+2025-12-22 07:12:32,252 - MAX_DOCUMENT_CHARS: 15000
