@@ -606,12 +606,12 @@ Return ONLY valid JSON, no explanations."""
         
         # Save mapping to file with timestamp
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        mapping_file = os.path.join(folder_path, f"document_column_mapping_{timestamp}.json")
+        mapping_file = os.path.join(folder_path, f"document_column_mapping.json")
         with open(mapping_file, 'w', encoding='utf-8') as f:
             json.dump(validated_mapping, f, indent=2)
         
         # Also save human-readable version
-        readable_file = os.path.join(folder_path, f"document_column_mapping_{timestamp}.txt")
+        readable_file = os.path.join(folder_path, f"document_column_mapping.txt")
         with open(readable_file, 'w', encoding='utf-8') as f:
             for filename, column in validated_mapping.items():
                 f.write(f"{filename} -> {column if column else 'NO MATCH'}\n")

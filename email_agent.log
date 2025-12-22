@@ -12319,3 +12319,206 @@ NameError: name 'extraction_attachment' is not defined
 
 [STOPPED] Agent stopped by user
 2025-12-22 09:11:24,294 - [DISCONNECTED] Logged out from email server
+2025-12-22 13:13:05,697 - 
+============================================================
+2025-12-22 13:13:05,697 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 13:13:05,698 - ============================================================
+2025-12-22 13:13:05,698 - Email: yourmltales@gmail.com
+2025-12-22 13:13:05,698 - Server: imap.gmail.com:993
+2025-12-22 13:13:05,698 - Watching for subjects: 
+2025-12-22 13:13:05,698 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 13:13:05,698 - Root save location: email_attachments
+2025-12-22 13:13:05,698 - Check interval: 60s
+2025-12-22 13:13:05,698 - Only unseen emails: True
+2025-12-22 13:13:05,698 - Mark as read: False
+2025-12-22 13:13:05,698 - ============================================================
+
+2025-12-22 13:13:05,698 - Connecting to imap.gmail.com:993...
+2025-12-22 13:13:06,752 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 13:13:06,752 - [2025-12-22 13:13:06] Checking emails...
+2025-12-22 13:13:07,353 -   No new attachments
+2025-12-22 13:14:07,354 - [2025-12-22 13:14:07] Checking emails...
+2025-12-22 13:14:08,825 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 13:14:08,825 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 13:14:08,826 -   Date: Mon, 22 Dec 2025 18:43:50 +0530
+2025-12-22 13:14:08,828 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 13:14:08,829 -   [SAVED] 1 attachment(s) to: email_attachments/3000023637_20251222_131408
+2025-12-22 13:14:08,829 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_131408
+2025-12-22 13:14:08,829 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-22 13:14:10,536 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 13:14:10,537 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 13:14:12,077 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 13:14:12,077 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 13:14:12,078 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 13:14:18,009 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 13:14:18,195 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_131408/extraction_results.xlsx
+2025-12-22 13:14:18,195 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_131408/extraction_results.xlsx
+2025-12-22 13:14:18,218 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 13:14:18,543 -   [EMAIL GENERATION ERROR] [Errno 2] No such file or directory: 'email_attachments/3000023637_20251222_131408/document_column_mapping.json'
+2025-12-22 13:14:18,545 - Traceback: Traceback (most recent call last):
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 989, in run_email_generation
+    result = generator.generate_and_send_all_emails(folder_path, send_emails=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/complete_email_generator.py", line 530, in generate_and_send_all_emails
+    abhl_email = self.generate_abhl_email(mapping_json)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/complete_email_generator.py", line 402, in generate_abhl_email
+    doc_names = self._get_document_names_from_mapping(mapping_json_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/complete_email_generator.py", line 392, in _get_document_names_from_mapping
+    with open(mapping_json_path, 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'email_attachments/3000023637_20251222_131408/document_column_mapping.json'
+
+2025-12-22 13:14:18,546 - [SUCCESS] Downloaded 1 attachment(s) into 1 folder(s)
+2025-12-22 13:15:18,546 - [2025-12-22 13:15:18] Checking emails...
+2025-12-22 13:15:19,158 -   No new attachments
+2025-12-22 13:16:19,158 - [2025-12-22 13:16:19] Checking emails...
+2025-12-22 13:16:19,744 -   No new attachments
+2025-12-22 13:17:19,744 - [2025-12-22 13:17:19] Checking emails...
+2025-12-22 13:17:20,318 -   No new attachments
+2025-12-22 13:17:55,787 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 13:17:56,067 - [DISCONNECTED] Logged out from email server
+2025-12-22 13:18:00,774 - 
+============================================================
+2025-12-22 13:18:00,774 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 13:18:00,774 - ============================================================
+2025-12-22 13:18:00,774 - Email: yourmltales@gmail.com
+2025-12-22 13:18:00,774 - Server: imap.gmail.com:993
+2025-12-22 13:18:00,775 - Watching for subjects: 
+2025-12-22 13:18:00,775 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 13:18:00,775 - Root save location: email_attachments
+2025-12-22 13:18:00,775 - Check interval: 60s
+2025-12-22 13:18:00,775 - Only unseen emails: True
+2025-12-22 13:18:00,775 - Mark as read: False
+2025-12-22 13:18:00,775 - ============================================================
+
+2025-12-22 13:18:00,775 - Connecting to imap.gmail.com:993...
+2025-12-22 13:18:01,763 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 13:18:01,764 - [2025-12-22 13:18:01] Checking emails...
+2025-12-22 13:18:02,319 -   No new attachments
+2025-12-22 13:19:02,319 - [2025-12-22 13:19:02] Checking emails...
+2025-12-22 13:19:03,802 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 13:19:03,802 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 13:19:03,803 -   Date: Mon, 22 Dec 2025 18:48:48 +0530
+2025-12-22 13:19:03,806 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 13:19:03,806 -   [SAVED] 1 attachment(s) to: email_attachments/3000023637_20251222_131903
+2025-12-22 13:19:03,806 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_131903
+2025-12-22 13:19:03,807 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-22 13:19:05,476 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 13:19:05,476 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 13:19:07,066 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 13:19:07,067 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 13:19:07,067 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 13:19:12,376 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 13:19:12,558 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_131903/extraction_results.xlsx
+2025-12-22 13:19:12,558 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_131903/extraction_results.xlsx
+2025-12-22 13:19:12,581 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 13:19:20,790 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-22 13:19:20,791 - [SUCCESS] Downloaded 1 attachment(s) into 1 folder(s)
+2025-12-22 13:20:20,791 - [2025-12-22 13:20:20] Checking emails...
+2025-12-22 13:20:21,391 -   No new attachments
+2025-12-22 13:21:21,391 - [2025-12-22 13:21:21] Checking emails...
+2025-12-22 13:21:22,005 -   No new attachments
+2025-12-22 13:22:22,005 - [2025-12-22 13:22:22] Checking emails...
+2025-12-22 13:22:22,563 -   No new attachments
+2025-12-22 13:23:22,564 - [2025-12-22 13:23:22] Checking emails...
+2025-12-22 13:23:24,147 -   No new attachments
+2025-12-22 13:24:24,148 - [2025-12-22 13:24:24] Checking emails...
+2025-12-22 13:24:24,708 -   No new attachments
+2025-12-22 13:25:24,708 - [2025-12-22 13:25:24] Checking emails...
+2025-12-22 13:25:25,289 -   No new attachments
+2025-12-22 13:26:25,290 - [2025-12-22 13:26:25] Checking emails...
+2025-12-22 13:26:25,873 -   No new attachments
+2025-12-22 13:27:25,874 - [2025-12-22 13:27:25] Checking emails...
+2025-12-22 13:27:26,459 -   No new attachments
+2025-12-22 13:28:26,460 - [2025-12-22 13:28:26] Checking emails...
+2025-12-22 13:28:27,054 -   No new attachments
+2025-12-22 13:29:27,055 - [2025-12-22 13:29:27] Checking emails...
+2025-12-22 13:29:27,661 -   No new attachments
+2025-12-22 13:30:27,661 - [2025-12-22 13:30:27] Checking emails...
+2025-12-22 13:30:28,251 -   No new attachments
+2025-12-22 13:31:28,251 - [2025-12-22 13:31:28] Checking emails...
+2025-12-22 13:31:28,839 -   No new attachments
+2025-12-22 13:32:28,839 - [2025-12-22 13:32:28] Checking emails...
+2025-12-22 13:32:29,410 -   No new attachments
+2025-12-22 13:33:29,410 - [2025-12-22 13:33:29] Checking emails...
+2025-12-22 13:33:29,966 -   No new attachments
+2025-12-22 13:34:29,967 - [2025-12-22 13:34:29] Checking emails...
+2025-12-22 13:34:30,583 -   No new attachments
+2025-12-22 13:35:30,583 - [2025-12-22 13:35:30] Checking emails...
+2025-12-22 13:35:31,147 -   No new attachments
+2025-12-22 13:36:31,148 - [2025-12-22 13:36:31] Checking emails...
+2025-12-22 13:36:31,712 -   No new attachments
+2025-12-22 13:37:31,713 - [2025-12-22 13:37:31] Checking emails...
+2025-12-22 13:37:32,280 -   No new attachments
+2025-12-22 13:38:32,281 - [2025-12-22 13:38:32] Checking emails...
+2025-12-22 13:38:32,855 -   No new attachments
+2025-12-22 13:39:32,855 - [2025-12-22 13:39:32] Checking emails...
+2025-12-22 13:39:33,442 -   No new attachments
+2025-12-22 13:40:33,442 - [2025-12-22 13:40:33] Checking emails...
+2025-12-22 13:40:33,987 -   No new attachments
+2025-12-22 13:41:33,988 - [2025-12-22 13:41:33] Checking emails...
+2025-12-22 13:41:34,546 -   No new attachments
+2025-12-22 13:42:34,546 - [2025-12-22 13:42:34] Checking emails...
+2025-12-22 13:42:35,145 -   No new attachments
+2025-12-22 13:43:35,145 - [2025-12-22 13:43:35] Checking emails...
+2025-12-22 13:43:35,691 -   No new attachments
+2025-12-22 13:44:35,692 - [2025-12-22 13:44:35] Checking emails...
+2025-12-22 13:44:36,260 -   No new attachments
+2025-12-22 13:45:36,260 - [2025-12-22 13:45:36] Checking emails...
+2025-12-22 13:45:36,840 -   No new attachments
+2025-12-22 13:46:36,840 - [2025-12-22 13:46:36] Checking emails...
+2025-12-22 13:46:37,395 -   No new attachments
+2025-12-22 13:47:37,395 - [2025-12-22 13:47:37] Checking emails...
+2025-12-22 13:47:38,113 -   No new attachments
+2025-12-22 13:48:38,113 - [2025-12-22 13:48:38] Checking emails...
+2025-12-22 13:48:38,694 -   No new attachments
+2025-12-22 13:49:38,694 - [2025-12-22 13:49:38] Checking emails...
+2025-12-22 13:49:39,253 -   No new attachments
+2025-12-22 13:50:39,253 - [2025-12-22 13:50:39] Checking emails...
+2025-12-22 13:50:39,851 -   No new attachments
+2025-12-22 13:51:39,852 - [2025-12-22 13:51:39] Checking emails...
+2025-12-22 13:51:40,458 -   No new attachments
+2025-12-22 13:52:40,458 - [2025-12-22 13:52:40] Checking emails...
+2025-12-22 13:52:41,003 -   No new attachments
+2025-12-22 13:53:41,004 - [2025-12-22 13:53:41] Checking emails...
+2025-12-22 13:53:41,664 -   No new attachments
+2025-12-22 13:54:41,665 - [2025-12-22 13:54:41] Checking emails...
+2025-12-22 13:54:42,229 -   No new attachments
+2025-12-22 13:55:42,230 - [2025-12-22 13:55:42] Checking emails...
+2025-12-22 13:55:42,789 -   No new attachments
+2025-12-22 13:56:42,789 - [2025-12-22 13:56:42] Checking emails...
+2025-12-22 13:56:43,336 -   No new attachments
+2025-12-22 13:57:43,337 - [2025-12-22 13:57:43] Checking emails...
+2025-12-22 13:57:43,874 -   No new attachments
+2025-12-22 13:58:43,875 - [2025-12-22 13:58:43] Checking emails...
+2025-12-22 13:58:44,423 -   No new attachments
+2025-12-22 13:59:44,423 - [2025-12-22 13:59:44] Checking emails...
+2025-12-22 13:59:44,993 -   No new attachments
+2025-12-22 14:00:44,994 - [2025-12-22 14:00:44] Checking emails...
+2025-12-22 14:00:45,579 -   No new attachments
+2025-12-22 14:01:45,579 - [2025-12-22 14:01:45] Checking emails...
+2025-12-22 14:01:46,158 -   No new attachments
+2025-12-22 14:02:46,158 - [2025-12-22 14:02:46] Checking emails...
+2025-12-22 14:02:46,746 -   No new attachments
+2025-12-22 14:03:46,746 - [2025-12-22 14:03:46] Checking emails...
+2025-12-22 14:03:47,340 -   No new attachments
+2025-12-22 14:04:47,340 - [2025-12-22 14:04:47] Checking emails...
+2025-12-22 14:04:47,905 -   No new attachments
+2025-12-22 14:05:47,905 - [2025-12-22 14:05:47] Checking emails...
+2025-12-22 14:05:48,482 -   No new attachments
+2025-12-22 14:06:48,483 - [2025-12-22 14:06:48] Checking emails...
+2025-12-22 14:06:49,041 -   No new attachments
+2025-12-22 14:07:49,042 - [2025-12-22 14:07:49] Checking emails...
+2025-12-22 14:07:49,602 -   No new attachments
