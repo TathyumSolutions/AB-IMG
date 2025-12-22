@@ -10351,3 +10351,1014 @@ NameError: name 'doc_columns' is not defined
 2025-12-21 10:32:33,861 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
 2025-12-21 10:33:33,861 - [2025-12-21 10:33:33] Checking emails...
 2025-12-21 10:33:34,488 -   No new attachments
+2025-12-21 10:34:09,227 - 
+
+[STOPPED] Agent stopped by user
+2025-12-21 10:34:09,502 - [DISCONNECTED] Logged out from email server
+2025-12-21 10:34:13,789 - 
+============================================================
+2025-12-21 10:34:13,789 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-21 10:34:13,789 - ============================================================
+2025-12-21 10:34:13,789 - Email: yourmltales@gmail.com
+2025-12-21 10:34:13,789 - Server: imap.gmail.com:993
+2025-12-21 10:34:13,789 - Watching for subjects: 
+2025-12-21 10:34:13,789 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-21 10:34:13,789 - Root save location: email_attachments
+2025-12-21 10:34:13,789 - Check interval: 60s
+2025-12-21 10:34:13,789 - Only unseen emails: True
+2025-12-21 10:34:13,789 - Mark as read: False
+2025-12-21 10:34:13,789 - ============================================================
+
+2025-12-21 10:34:13,790 - Connecting to imap.gmail.com:993...
+2025-12-21 10:34:14,715 - [SUCCESS] Connected to imap.gmail.com
+2025-12-21 10:34:14,715 - [2025-12-21 10:34:14] Checking emails...
+2025-12-21 10:34:15,281 -   No new attachments
+2025-12-21 10:35:15,282 - [2025-12-21 10:35:15] Checking emails...
+2025-12-21 10:35:15,816 -   No new attachments
+2025-12-21 10:36:15,817 - [2025-12-21 10:36:15] Checking emails...
+2025-12-21 10:36:17,655 - 
+[NEW EMAIL] Subject: Fw: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 10:36:17,655 -   From: "prakhar.singh1 ." <prakhar.singh1@qualtechedge.com>
+2025-12-21 10:36:17,655 -   Date: Sun, 21 Dec 2025 10:35:59 +0000 (UTC)
+2025-12-21 10:36:17,658 -     [ATTACHMENT] Application Form.pdf
+2025-12-21 10:36:17,664 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-21 10:36:17,664 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-21 10:36:17,664 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251221_103617
+2025-12-21 10:36:17,664 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251221_103617
+2025-12-21 10:36:17,665 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-21 10:36:19,547 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 10:36:19,547 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-21 10:36:27,392 -     [EXTRACTION] ✓ Extracted 50 fields using column: CAM Description
+2025-12-21 10:36:27,392 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-21 10:36:28,935 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-21 10:36:28,935 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-21 10:36:28,937 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-21 10:36:32,317 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-21 10:36:32,317 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-21 10:36:37,401 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-21 10:36:37,599 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251221_103617/extraction_results.xlsx
+2025-12-21 10:36:37,599 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251221_103617/extraction_results.xlsx
+2025-12-21 10:36:37,620 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-21 10:36:45,590 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-21 10:36:45,590 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-21 10:37:45,590 - [2025-12-21 10:37:45] Checking emails...
+2025-12-21 10:37:46,186 -   No new attachments
+2025-12-21 10:38:46,187 - [2025-12-21 10:38:46] Checking emails...
+2025-12-21 10:38:46,796 -   No new attachments
+2025-12-21 10:39:46,796 - [2025-12-21 10:39:46] Checking emails...
+2025-12-21 10:39:47,347 -   No new attachments
+2025-12-21 10:40:47,347 - [2025-12-21 10:40:47] Checking emails...
+2025-12-21 10:40:47,892 -   No new attachments
+2025-12-21 10:41:47,892 - [2025-12-21 10:41:47] Checking emails...
+2025-12-21 10:41:48,435 -   No new attachments
+2025-12-21 10:42:48,435 - [2025-12-21 10:42:48] Checking emails...
+2025-12-21 10:42:48,981 -   No new attachments
+2025-12-21 10:43:48,981 - [2025-12-21 10:43:48] Checking emails...
+2025-12-21 10:43:49,526 -   No new attachments
+2025-12-21 10:44:49,527 - [2025-12-21 10:44:49] Checking emails...
+2025-12-21 10:44:50,099 -   No new attachments
+2025-12-21 10:45:50,100 - [2025-12-21 10:45:50] Checking emails...
+2025-12-21 10:45:50,643 -   No new attachments
+2025-12-21 10:46:50,644 - [2025-12-21 10:46:50] Checking emails...
+2025-12-21 10:46:51,263 -   No new attachments
+2025-12-21 10:47:51,263 - [2025-12-21 10:47:51] Checking emails...
+2025-12-21 10:47:51,801 -   No new attachments
+2025-12-21 10:48:51,802 - [2025-12-21 10:48:51] Checking emails...
+2025-12-21 10:48:52,774 - 
+[NEW EMAIL] Subject: Fw:  Pre IMGC letter. HL P+C case of Mr. NIRANJAN SUBHASH BHOSALE
+ // Rs 9.00 lacs // 11.75% // 240 Months // CM assessment // Kolhapur.
+ 3000019391
+2025-12-21 10:48:52,774 -   From: "prakhar.singh1 ." <prakhar.singh1@qualtechedge.com>
+2025-12-21 10:48:52,774 -   Date: Sun, 21 Dec 2025 10:48:30 +0000 (UTC)
+2025-12-21 10:48:52,775 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000019391_20251221_104852
+2025-12-21 10:48:52,775 -   [EXTRACTION] Found 2 document(s) to process
+2025-12-21 10:48:54,140 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 10:48:54,140 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-21 10:48:55,744 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-21 10:48:55,744 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-21 10:48:55,874 -   [EXTRACTION] Results saved to email_attachments/3000019391_20251221_104852/extraction_results.xlsx
+2025-12-21 10:48:55,874 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000019391_20251221_104852/extraction_results.xlsx
+2025-12-21 10:48:55,888 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-21 10:49:03,102 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-21 10:49:03,102 -   No new attachments
+2025-12-21 10:50:03,103 - [2025-12-21 10:50:03] Checking emails...
+2025-12-21 10:50:03,712 -   No new attachments
+2025-12-21 10:51:03,712 - [2025-12-21 10:51:03] Checking emails...
+2025-12-21 10:51:04,253 -   No new attachments
+2025-12-21 10:52:04,254 - [2025-12-21 10:52:04] Checking emails...
+2025-12-21 10:52:04,794 -   No new attachments
+2025-12-21 10:53:04,794 - [2025-12-21 10:53:04] Checking emails...
+2025-12-21 10:53:05,350 -   No new attachments
+2025-12-21 10:54:05,350 - [2025-12-21 10:54:05] Checking emails...
+2025-12-21 10:54:05,890 -   No new attachments
+2025-12-21 10:55:05,891 - [2025-12-21 10:55:05] Checking emails...
+2025-12-21 10:55:06,479 -   No new attachments
+2025-12-21 10:56:06,479 - [2025-12-21 10:56:06] Checking emails...
+2025-12-21 10:56:07,027 -   No new attachments
+2025-12-21 10:57:07,027 - [2025-12-21 10:57:07] Checking emails...
+2025-12-21 10:57:07,568 -   No new attachments
+2025-12-21 10:58:07,569 - [2025-12-21 10:58:07] Checking emails...
+2025-12-21 10:58:08,337 -   No new attachments
+2025-12-21 10:59:08,337 - [2025-12-21 10:59:08] Checking emails...
+2025-12-21 10:59:09,788 -   No new attachments
+2025-12-21 11:00:09,789 - [2025-12-21 11:00:09] Checking emails...
+2025-12-21 11:00:10,411 -   No new attachments
+2025-12-21 11:01:10,412 - [2025-12-21 11:01:10] Checking emails...
+2025-12-21 11:01:10,997 -   No new attachments
+2025-12-21 11:02:10,998 - [2025-12-21 11:02:10] Checking emails...
+2025-12-21 11:02:11,558 -   No new attachments
+2025-12-21 11:03:11,558 - [2025-12-21 11:03:11] Checking emails...
+2025-12-21 11:03:12,118 -   No new attachments
+2025-12-21 11:04:12,118 - [2025-12-21 11:04:12] Checking emails...
+2025-12-21 11:04:12,686 -   No new attachments
+2025-12-21 11:05:12,686 - [2025-12-21 11:05:12] Checking emails...
+2025-12-21 11:05:13,291 -   No new attachments
+2025-12-21 11:06:13,291 - [2025-12-21 11:06:13] Checking emails...
+2025-12-21 11:06:13,851 -   No new attachments
+2025-12-21 11:07:13,852 - [2025-12-21 11:07:13] Checking emails...
+2025-12-21 11:07:14,414 -   No new attachments
+2025-12-21 15:12:45,903 - 
+============================================================
+2025-12-21 15:12:45,903 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-21 15:12:45,903 - ============================================================
+2025-12-21 15:12:45,903 - Email: yourmltales@gmail.com
+2025-12-21 15:12:45,903 - Server: imap.gmail.com:993
+2025-12-21 15:12:45,903 - Watching for subjects: 
+2025-12-21 15:12:45,904 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-21 15:12:45,904 - Root save location: email_attachments
+2025-12-21 15:12:45,904 - Check interval: 60s
+2025-12-21 15:12:45,904 - Only unseen emails: True
+2025-12-21 15:12:45,904 - Mark as read: False
+2025-12-21 15:12:45,904 - ============================================================
+
+2025-12-21 15:12:45,904 - Connecting to imap.gmail.com:993...
+2025-12-21 15:12:46,932 - [SUCCESS] Connected to imap.gmail.com
+2025-12-21 15:12:46,932 - [2025-12-21 15:12:46] Checking emails...
+2025-12-21 15:12:56,071 - 
+
+[STOPPED] Agent stopped by user
+2025-12-21 15:15:57,187 - 
+============================================================
+2025-12-21 15:15:57,187 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-21 15:15:57,187 - ============================================================
+2025-12-21 15:15:57,187 - Email: yourmltales@gmail.com
+2025-12-21 15:15:57,187 - Server: imap.gmail.com:993
+2025-12-21 15:15:57,187 - Watching for subjects: 
+2025-12-21 15:15:57,187 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-21 15:15:57,187 - Root save location: email_attachments
+2025-12-21 15:15:57,187 - Check interval: 60s
+2025-12-21 15:15:57,187 - Only unseen emails: True
+2025-12-21 15:15:57,187 - Mark as read: False
+2025-12-21 15:15:57,188 - ============================================================
+
+2025-12-21 15:15:57,188 - Connecting to imap.gmail.com:993...
+2025-12-21 15:15:58,158 - [SUCCESS] Connected to imap.gmail.com
+2025-12-21 15:15:58,158 - [2025-12-21 15:15:58] Checking emails...
+2025-12-21 15:16:00,152 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 15:16:00,152 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-21 15:16:00,152 -   Date: Sun, 21 Dec 2025 20:45:52 +0530
+2025-12-21 15:16:00,173 -     [ATTACHMENT] Application Form.pdf
+2025-12-21 15:16:00,189 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-21 15:16:00,190 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-21 15:16:00,190 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251221_151600
+2025-12-21 15:16:00,191 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251221_151600
+2025-12-21 15:16:00,191 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-21 15:16:02,466 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 15:16:02,466 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-21 15:16:11,238 -     [EXTRACTION] ✓ Extracted 50 fields using column: CAM Description
+2025-12-21 15:16:11,238 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-21 15:16:12,788 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-21 15:16:12,789 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-21 15:16:12,789 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-21 15:16:21,642 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-21 15:16:21,642 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-21 15:16:26,517 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-21 15:16:26,746 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251221_151600/extraction_results.xlsx
+2025-12-21 15:16:26,746 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251221_151600/extraction_results.xlsx
+2025-12-21 15:16:26,767 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-21 15:16:34,576 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-21 15:16:34,576 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-21 15:17:34,577 - [2025-12-21 15:17:34] Checking emails...
+2025-12-21 15:17:35,247 -   No new attachments
+2025-12-21 15:18:35,248 - [2025-12-21 15:18:35] Checking emails...
+2025-12-21 15:18:35,921 -   No new attachments
+2025-12-21 15:19:35,921 - [2025-12-21 15:19:35] Checking emails...
+2025-12-21 15:19:36,511 -   No new attachments
+2025-12-21 15:20:36,513 - [2025-12-21 15:20:36] Checking emails...
+2025-12-21 15:20:37,092 -   No new attachments
+2025-12-21 15:21:37,092 - [2025-12-21 15:21:37] Checking emails...
+2025-12-21 15:21:37,672 -   No new attachments
+2025-12-21 15:22:37,673 - [2025-12-21 15:22:37] Checking emails...
+2025-12-21 15:22:39,369 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 15:22:39,369 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-21 15:22:39,369 -   Date: Sun, 21 Dec 2025 20:52:33 +0530
+2025-12-21 15:22:39,375 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-21 15:22:39,375 -   [SAVED] 1 attachment(s) to: email_attachments/3000023637_20251221_152239
+2025-12-21 15:22:39,375 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251221_152239
+2025-12-21 15:22:39,375 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-21 15:22:40,688 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 15:22:40,688 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-21 15:22:49,777 -     [EXTRACTION] ✓ Extracted 50 fields using column: CAM Description
+2025-12-21 15:22:49,777 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-21 15:22:51,299 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-21 15:22:51,300 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-21 15:22:51,465 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251221_152239/extraction_results.xlsx
+2025-12-21 15:22:51,465 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251221_152239/extraction_results.xlsx
+2025-12-21 15:22:51,482 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-21 15:22:58,828 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-21 15:22:58,828 - [SUCCESS] Downloaded 1 attachment(s) into 1 folder(s)
+2025-12-21 15:23:58,828 - [2025-12-21 15:23:58] Checking emails...
+2025-12-21 15:23:59,439 -   No new attachments
+2025-12-21 15:24:59,440 - [2025-12-21 15:24:59] Checking emails...
+2025-12-21 15:25:00,028 -   No new attachments
+2025-12-21 15:26:00,029 - [2025-12-21 15:26:00] Checking emails...
+2025-12-21 15:26:00,624 -   No new attachments
+2025-12-21 15:27:00,625 - [2025-12-21 15:27:00] Checking emails...
+2025-12-21 15:27:01,211 -   No new attachments
+2025-12-21 15:28:01,211 - [2025-12-21 15:28:01] Checking emails...
+2025-12-21 15:28:01,790 -   No new attachments
+2025-12-21 15:29:01,790 - [2025-12-21 15:29:01] Checking emails...
+2025-12-21 15:29:02,404 -   No new attachments
+2025-12-21 15:30:02,405 - [2025-12-21 15:30:02] Checking emails...
+2025-12-21 15:30:03,007 -   No new attachments
+2025-12-21 15:31:03,007 - [2025-12-21 15:31:03] Checking emails...
+2025-12-21 15:31:03,589 -   No new attachments
+2025-12-21 15:32:03,589 - [2025-12-21 15:32:03] Checking emails...
+2025-12-21 15:32:04,178 -   No new attachments
+2025-12-21 15:33:04,178 - [2025-12-21 15:33:04] Checking emails...
+2025-12-21 15:33:04,787 -   No new attachments
+2025-12-21 15:34:04,787 - [2025-12-21 15:34:04] Checking emails...
+2025-12-21 15:34:05,368 -   No new attachments
+2025-12-21 15:35:05,368 - [2025-12-21 15:35:05] Checking emails...
+2025-12-21 15:35:05,953 -   No new attachments
+2025-12-21 15:36:05,953 - [2025-12-21 15:36:05] Checking emails...
+2025-12-21 15:36:06,540 -   No new attachments
+2025-12-21 15:37:06,540 - [2025-12-21 15:37:06] Checking emails...
+2025-12-21 15:37:07,128 -   No new attachments
+2025-12-21 15:38:07,128 - [2025-12-21 15:38:07] Checking emails...
+2025-12-21 15:38:07,732 -   No new attachments
+2025-12-21 15:39:07,733 - [2025-12-21 15:39:07] Checking emails...
+2025-12-21 15:39:08,317 -   No new attachments
+2025-12-21 15:40:08,317 - [2025-12-21 15:40:08] Checking emails...
+2025-12-21 15:40:08,906 -   No new attachments
+2025-12-21 15:41:08,907 - [2025-12-21 15:41:08] Checking emails...
+2025-12-21 15:41:09,483 -   No new attachments
+2025-12-21 15:42:09,483 - [2025-12-21 15:42:09] Checking emails...
+2025-12-21 15:42:10,065 -   No new attachments
+2025-12-21 15:43:10,066 - [2025-12-21 15:43:10] Checking emails...
+2025-12-21 15:43:10,645 -   No new attachments
+2025-12-21 15:44:10,646 - [2025-12-21 15:44:10] Checking emails...
+2025-12-21 15:44:11,226 -   No new attachments
+2025-12-21 15:45:11,227 - [2025-12-21 15:45:11] Checking emails...
+2025-12-21 15:45:11,806 -   No new attachments
+2025-12-21 15:46:11,806 - [2025-12-21 15:46:11] Checking emails...
+2025-12-21 15:46:12,425 -   No new attachments
+2025-12-21 15:47:07,814 - 
+
+[STOPPED] Agent stopped by user
+2025-12-21 15:47:08,101 - [DISCONNECTED] Logged out from email server
+2025-12-21 15:47:12,941 - 
+============================================================
+2025-12-21 15:47:12,941 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-21 15:47:12,941 - ============================================================
+2025-12-21 15:47:12,941 - Email: yourmltales@gmail.com
+2025-12-21 15:47:12,942 - Server: imap.gmail.com:993
+2025-12-21 15:47:12,942 - Watching for subjects: 
+2025-12-21 15:47:12,942 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-21 15:47:12,942 - Root save location: email_attachments
+2025-12-21 15:47:12,942 - Check interval: 60s
+2025-12-21 15:47:12,942 - Only unseen emails: True
+2025-12-21 15:47:12,942 - Mark as read: False
+2025-12-21 15:47:12,942 - ============================================================
+
+2025-12-21 15:47:12,943 - Connecting to imap.gmail.com:993...
+2025-12-21 15:47:14,265 - [SUCCESS] Connected to imap.gmail.com
+2025-12-21 15:47:14,265 - [2025-12-21 15:47:14] Checking emails...
+2025-12-21 15:47:14,845 -   No new attachments
+2025-12-21 15:48:14,845 - [2025-12-21 15:48:14] Checking emails...
+2025-12-21 15:48:16,613 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 15:48:16,614 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-21 15:48:16,614 -   Date: Sun, 21 Dec 2025 21:17:35 +0530
+2025-12-21 15:48:16,619 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-21 15:48:16,619 -   [SAVED] 1 attachment(s) to: email_attachments/3000023637_20251221_154816
+2025-12-21 15:48:16,620 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251221_154816
+2025-12-21 15:48:16,620 -   [EXTRACTION] Found 3 document(s) to process
+2025-12-21 15:48:18,323 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 15:48:18,324 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-21 15:48:21,166 -   [EXTRACTION ERROR] name 'self' is not defined
+2025-12-21 15:48:21,168 - Traceback: Traceback (most recent call last):
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 918, in run_field_extraction
+    extracted_data, _ = extract_fields_with_intelligent_selection(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 411, in extract_fields_with_intelligent_selection
+    self.logger.info(f"len(document_text): {len(document_text)}")
+    ^^^^
+NameError: name 'self' is not defined
+
+2025-12-21 15:48:21,168 - [SUCCESS] Downloaded 1 attachment(s) into 1 folder(s)
+2025-12-21 15:49:21,168 - [2025-12-21 15:49:21] Checking emails...
+2025-12-21 15:49:21,816 -   No new attachments
+2025-12-21 15:50:21,817 - [2025-12-21 15:50:21] Checking emails...
+2025-12-21 15:50:22,399 -   No new attachments
+2025-12-21 15:51:22,400 - [2025-12-21 15:51:22] Checking emails...
+2025-12-21 15:51:22,985 -   No new attachments
+2025-12-21 15:52:22,986 - [2025-12-21 15:52:22] Checking emails...
+2025-12-21 15:52:23,568 -   No new attachments
+2025-12-21 15:53:23,569 - [2025-12-21 15:53:23] Checking emails...
+2025-12-21 15:53:24,154 -   No new attachments
+2025-12-21 15:54:24,154 - [2025-12-21 15:54:24] Checking emails...
+2025-12-21 15:54:24,745 -   No new attachments
+2025-12-21 15:55:24,745 - [2025-12-21 15:55:24] Checking emails...
+2025-12-21 15:55:25,351 -   No new attachments
+2025-12-21 15:56:25,351 - [2025-12-21 15:56:25] Checking emails...
+2025-12-21 15:56:25,936 -   No new attachments
+2025-12-21 15:57:25,937 - [2025-12-21 15:57:25] Checking emails...
+2025-12-21 15:57:26,558 -   No new attachments
+2025-12-21 15:58:26,559 - [2025-12-21 15:58:26] Checking emails...
+2025-12-21 15:58:27,965 -   No new attachments
+2025-12-21 15:59:27,965 - [2025-12-21 15:59:27] Checking emails...
+2025-12-21 15:59:28,545 -   No new attachments
+2025-12-21 16:00:28,546 - [2025-12-21 16:00:28] Checking emails...
+2025-12-21 16:00:29,121 -   No new attachments
+2025-12-21 16:01:29,121 - [2025-12-21 16:01:29] Checking emails...
+2025-12-21 16:01:29,694 -   No new attachments
+2025-12-21 16:02:29,694 - [2025-12-21 16:02:29] Checking emails...
+2025-12-21 16:02:30,256 -   No new attachments
+2025-12-21 16:03:30,256 - [2025-12-21 16:03:30] Checking emails...
+2025-12-21 16:03:30,836 -   No new attachments
+2025-12-21 16:04:30,836 - [2025-12-21 16:04:30] Checking emails...
+2025-12-21 16:04:31,399 -   No new attachments
+2025-12-21 16:05:31,399 - [2025-12-21 16:05:31] Checking emails...
+2025-12-21 16:05:31,958 -   No new attachments
+2025-12-21 16:06:31,959 - [2025-12-21 16:06:31] Checking emails...
+2025-12-21 16:06:32,521 -   No new attachments
+2025-12-21 16:07:32,522 - [2025-12-21 16:07:32] Checking emails...
+2025-12-21 16:07:33,087 -   No new attachments
+2025-12-21 16:08:33,088 - [2025-12-21 16:08:33] Checking emails...
+2025-12-21 16:08:33,648 -   No new attachments
+2025-12-21 16:09:33,648 - [2025-12-21 16:09:33] Checking emails...
+2025-12-21 16:09:34,210 -   No new attachments
+2025-12-21 16:10:34,210 - [2025-12-21 16:10:34] Checking emails...
+2025-12-21 16:10:34,901 -   No new attachments
+2025-12-21 16:11:34,901 - [2025-12-21 16:11:34] Checking emails...
+2025-12-21 16:11:35,479 -   No new attachments
+2025-12-21 16:12:35,479 - [2025-12-21 16:12:35] Checking emails...
+2025-12-21 16:12:36,049 -   No new attachments
+2025-12-21 16:13:36,050 - [2025-12-21 16:13:36] Checking emails...
+2025-12-21 16:13:36,635 -   No new attachments
+2025-12-21 16:14:36,635 - [2025-12-21 16:14:36] Checking emails...
+2025-12-21 16:14:37,202 -   No new attachments
+2025-12-21 16:15:37,202 - [2025-12-21 16:15:37] Checking emails...
+2025-12-21 16:15:37,775 -   No new attachments
+2025-12-21 16:16:37,776 - [2025-12-21 16:16:37] Checking emails...
+2025-12-21 16:16:38,335 -   No new attachments
+2025-12-21 16:17:38,335 - [2025-12-21 16:17:38] Checking emails...
+2025-12-21 16:17:38,904 -   No new attachments
+2025-12-21 16:18:38,904 - [2025-12-21 16:18:38] Checking emails...
+2025-12-21 16:18:39,492 -   No new attachments
+2025-12-21 16:19:39,493 - [2025-12-21 16:19:39] Checking emails...
+2025-12-21 16:19:40,072 -   No new attachments
+2025-12-21 16:20:40,072 - [2025-12-21 16:20:40] Checking emails...
+2025-12-21 16:20:40,696 -   No new attachments
+2025-12-21 16:21:40,697 - [2025-12-21 16:21:40] Checking emails...
+2025-12-21 16:21:41,254 -   No new attachments
+2025-12-21 16:22:41,255 - [2025-12-21 16:22:41] Checking emails...
+2025-12-21 16:22:41,816 -   No new attachments
+2025-12-21 16:23:41,817 - [2025-12-21 16:23:41] Checking emails...
+2025-12-21 16:23:42,395 -   No new attachments
+2025-12-21 16:24:42,396 - [2025-12-21 16:24:42] Checking emails...
+2025-12-21 16:24:42,945 -   No new attachments
+2025-12-21 16:25:42,946 - [2025-12-21 16:25:42] Checking emails...
+2025-12-21 16:25:43,487 -   No new attachments
+2025-12-21 16:26:43,487 - [2025-12-21 16:26:43] Checking emails...
+2025-12-21 16:26:44,068 -   No new attachments
+2025-12-21 16:27:44,069 - [2025-12-21 16:27:44] Checking emails...
+2025-12-21 16:27:44,640 -   No new attachments
+2025-12-21 16:28:44,641 - [2025-12-21 16:28:44] Checking emails...
+2025-12-21 16:28:45,181 -   No new attachments
+2025-12-21 16:29:45,181 - [2025-12-21 16:29:45] Checking emails...
+2025-12-21 16:29:45,746 -   No new attachments
+2025-12-21 16:30:45,746 - [2025-12-21 16:30:45] Checking emails...
+2025-12-21 16:30:46,311 -   No new attachments
+2025-12-21 16:31:46,312 - [2025-12-21 16:31:46] Checking emails...
+2025-12-21 16:31:46,966 -   No new attachments
+2025-12-21 16:32:46,967 - [2025-12-21 16:32:46] Checking emails...
+2025-12-21 16:32:47,545 -   No new attachments
+2025-12-21 16:33:47,545 - [2025-12-21 16:33:47] Checking emails...
+2025-12-21 16:33:48,143 -   No new attachments
+2025-12-21 16:34:48,144 - [2025-12-21 16:34:48] Checking emails...
+2025-12-21 16:34:48,728 -   No new attachments
+2025-12-21 16:35:48,728 - [2025-12-21 16:35:48] Checking emails...
+2025-12-21 16:35:49,294 -   No new attachments
+2025-12-21 16:36:49,294 - [2025-12-21 16:36:49] Checking emails...
+2025-12-21 16:36:49,877 -   No new attachments
+2025-12-21 16:37:49,878 - [2025-12-21 16:37:49] Checking emails...
+2025-12-21 16:37:50,445 -   No new attachments
+2025-12-21 16:38:50,445 - [2025-12-21 16:38:50] Checking emails...
+2025-12-21 16:38:51,024 -   No new attachments
+2025-12-21 16:39:51,025 - [2025-12-21 16:39:51] Checking emails...
+2025-12-21 16:39:51,593 -   No new attachments
+2025-12-21 16:40:51,594 - [2025-12-21 16:40:51] Checking emails...
+2025-12-21 16:40:52,171 -   No new attachments
+2025-12-21 16:41:52,172 - [2025-12-21 16:41:52] Checking emails...
+2025-12-21 16:41:52,733 -   No new attachments
+2025-12-21 16:42:52,733 - [2025-12-21 16:42:52] Checking emails...
+2025-12-21 16:42:53,292 -   No new attachments
+2025-12-21 16:43:53,293 - [2025-12-21 16:43:53] Checking emails...
+2025-12-21 16:43:53,851 -   No new attachments
+2025-12-21 16:44:53,851 - [2025-12-21 16:44:53] Checking emails...
+2025-12-21 16:44:54,429 -   No new attachments
+2025-12-21 16:45:54,429 - [2025-12-21 16:45:54] Checking emails...
+2025-12-21 16:45:54,990 -   No new attachments
+2025-12-21 16:46:54,990 - [2025-12-21 16:46:54] Checking emails...
+2025-12-21 16:46:55,554 -   No new attachments
+2025-12-21 16:47:55,554 - [2025-12-21 16:47:55] Checking emails...
+2025-12-21 16:47:56,119 -   No new attachments
+2025-12-21 16:48:56,119 - [2025-12-21 16:48:56] Checking emails...
+2025-12-21 16:48:56,684 -   No new attachments
+2025-12-21 16:49:56,685 - [2025-12-21 16:49:56] Checking emails...
+2025-12-21 16:49:57,243 -   No new attachments
+2025-12-21 16:50:39,585 - 
+
+[STOPPED] Agent stopped by user
+2025-12-21 16:50:39,870 - [DISCONNECTED] Logged out from email server
+2025-12-21 19:24:25,089 - 
+============================================================
+2025-12-21 19:24:25,117 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-21 19:24:25,117 - ============================================================
+2025-12-21 19:24:25,117 - Email: yourmltales@gmail.com
+2025-12-21 19:24:25,117 - Server: imap.gmail.com:993
+2025-12-21 19:24:25,118 - Watching for subjects: 
+2025-12-21 19:24:25,118 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-21 19:24:25,118 - Root save location: email_attachments
+2025-12-21 19:24:25,118 - Check interval: 60s
+2025-12-21 19:24:25,118 - Only unseen emails: True
+2025-12-21 19:24:25,118 - Mark as read: False
+2025-12-21 19:24:25,118 - ============================================================
+
+2025-12-21 19:24:25,118 - Connecting to imap.gmail.com:993...
+2025-12-21 19:24:26,193 - [SUCCESS] Connected to imap.gmail.com
+2025-12-21 19:24:26,195 - [2025-12-21 19:24:26] Checking emails...
+2025-12-21 19:24:38,955 - 
+[NEW EMAIL] Subject: Pre & FINAL IMGC Sanction for P+C in case of Mrs. Sona Navani // Rs
+ 15 lacs // 10.50 % // 240 months // Agra// 3000023573
+2025-12-21 19:24:38,955 -   From: "prakhar.singh1 ." <prakhar.singh1@qualtechedge.com>
+2025-12-21 19:24:38,955 -   Date: Sun, 21 Dec 2025 11:50:37 +0000 (UTC)
+2025-12-21 19:24:38,999 -     [ATTACHMENT] 3000017606 IND Report.pdf
+2025-12-21 19:24:39,022 -     [ATTACHMENT] AF.pdf
+2025-12-21 19:24:39,031 -     [ATTACHMENT] CAM Soft.xlsx
+2025-12-21 19:24:39,033 -     [ATTACHMENT] Legal Report.pdf
+2025-12-21 19:24:39,074 -     [ATTACHMENT] Proposal Note Soft.docx
+2025-12-21 19:24:39,074 -   [SAVED] 5 attachment(s) to: email_attachments/3000023573_20251221_192438
+2025-12-21 19:24:39,074 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023573_20251221_192438
+2025-12-21 19:24:39,075 -   [EXTRACTION] Found 7 document(s) to process
+2025-12-21 19:24:41,574 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 19:24:41,574 -     [EXTRACTION] Document 'Proposal Note Soft.docx' has no matching column. Skipping.
+2025-12-21 19:24:41,574 -     [EXTRACTION] Document 'AF.pdf' has no matching column. Skipping.
+2025-12-21 19:24:41,574 -     [EXTRACTION] Processing: Legal Report.pdf (using column: Legal Doc Description)
+2025-12-21 19:24:42,314 - len(document_text): 24897
+2025-12-21 19:24:42,314 - document_text[:500]: 
+============================================================
+[PAGE 1]
+============================================================
+
+Rajendra Prasad Tripathi
+Advocate
+High Court of M.P.
+Office: Flat no. C-106, First floor, Chandan Block, Chinar Retreat, In front of
+Maida Mill, Arera Hills, Bhopal-462011(M.P.)
+Mob.: 9827223510, 7987467025,
+E-mail : rajendraprasadadvocate17@gmail.com
+____________________________________________
+Date 04.03.2024
+Title & Search Report
+To,
+Aditya Birla Housing Finance
+2025-12-21 19:24:42,314 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:24:44,478 -     [EXTRACTION] ✓ Extracted 3 fields using column: Legal Doc Description
+2025-12-21 19:24:44,478 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-21 19:24:44,479 - len(document_text): 122
+2025-12-21 19:24:44,479 - document_text[:500]: Pre & FINAL IMGC Sanction for P+C in case of Mrs. Sona Navani // Rs
+ 15 lacs // 10.50 % // 240 months // Agra// 3000023573
+2025-12-21 19:24:44,479 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:24:46,201 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-21 19:24:46,201 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-21 19:24:46,201 -     [EXTRACTION] Processing: CAM Soft.xlsx (using column: CAM Description)
+2025-12-21 19:24:49,570 - len(document_text): 799993
+2025-12-21 19:24:49,572 - document_text[:500]: ============================================================
+[SHEET: BasicInput]
+============================================================
+ | Segment (select from dropdown): | Prime |  | Customer Type (select from dropdown): |  |  | Self-employed Non-Professional (SENP) |  |  |  |  |  |  |  |  |  |  |  |  | 
+ | Deal Number | 3000023573 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+Parties to the Loan |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+S. No. | Name | Constitut
+2025-12-21 19:24:49,572 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:26:08,975 - 
+
+[STOPPED] Agent stopped by user
+2025-12-21 19:26:09,268 - [DISCONNECTED] Logged out from email server
+2025-12-21 19:31:21,292 - 
+============================================================
+2025-12-21 19:31:21,292 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-21 19:31:21,292 - ============================================================
+2025-12-21 19:31:21,292 - Email: yourmltales@gmail.com
+2025-12-21 19:31:21,293 - Server: imap.gmail.com:993
+2025-12-21 19:31:21,293 - Watching for subjects: 
+2025-12-21 19:31:21,293 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-21 19:31:21,293 - Root save location: email_attachments
+2025-12-21 19:31:21,293 - Check interval: 60s
+2025-12-21 19:31:21,293 - Only unseen emails: True
+2025-12-21 19:31:21,293 - Mark as read: False
+2025-12-21 19:31:21,293 - ============================================================
+
+2025-12-21 19:31:21,293 - Connecting to imap.gmail.com:993...
+2025-12-21 19:31:22,590 - [SUCCESS] Connected to imap.gmail.com
+2025-12-21 19:31:22,590 - [2025-12-21 19:31:22] Checking emails...
+2025-12-21 19:31:24,545 - 
+[NEW EMAIL] Subject: HL P+C case //3000019391// Rs 9.00 lacs // 11.75% // 240 Months
+2025-12-21 19:31:24,545 -   From: "prakhar.singh1 ." <prakhar.singh1@qualtechedge.com>
+2025-12-21 19:31:24,545 -   Date: Sun, 21 Dec 2025 12:14:44 +0000 (UTC)
+2025-12-21 19:31:24,548 -     [ATTACHMENT] App Form - Bhosale.pdf
+2025-12-21 19:31:24,557 -     [ATTACHMENT] Cam - Niranjan Bhosale.xlsx
+2025-12-21 19:31:24,558 -     [ATTACHMENT] PD FORMAT - SALARIED.docx
+2025-12-21 19:31:24,558 -   [SAVED] 3 attachment(s) to: email_attachments/3000019391_20251221_193124
+2025-12-21 19:31:24,558 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000019391_20251221_193124
+2025-12-21 19:31:24,558 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-21 19:31:26,414 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 19:31:26,414 -     [EXTRACTION] Processing: Cam - Niranjan Bhosale.xlsx (using column: CAM Description)
+2025-12-21 19:31:29,973 - len(document_text): 806305
+2025-12-21 19:31:29,977 - document_text[:500]: ============================================================
+[SHEET: Eligibility Sheet]
+============================================================
+Eligibility Sheet |  |  | Income Details |  |  |  |  | 
+Loan Amount Requested (In INR) | 900000 |  | Parameters  | % considered  | Previous Year | Current Year | Frequency | Amount Considered
+ROI | 0.1175 |  | Core Income  |  |  |  |  | 
+Tenure - Months | 240 |  | Applicant Net Salary to be considered |  |  | 20000 |  | 
+ |  |  | Coapplicant Net Sal
+2025-12-21 19:31:29,977 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:33:35,310 -     [EXTRACTION] Processing: PD FORMAT - SALARIED.docx (using column: PD (Word Doc) Description)
+2025-12-21 19:33:35,380 - len(document_text): 13749
+2025-12-21 19:33:35,380 - document_text[:500]: ============================================================
+[DOCUMENT CONTENT]
+============================================================
+Loan Proposal – HL – Resale Purchase loan proposal case of Mr. NIRANJAN SUBHASH BHOSALE for Rs. 9 lac under Affordable Cash Salaried income. ROI 12% ( 736 & 772 ) / 3000019391 - Kolhapur
+Purpose – Applicant is requested loan of Rs. 9 lacs for Purchase Resale Flat for self-use. Said property is situated at Pachgaon Grampachayat 3rd Floor having carpet area i
+2025-12-21 19:33:35,381 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:33:38,695 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-21 19:33:38,695 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-21 19:33:38,695 - len(document_text): 63
+2025-12-21 19:33:38,695 - document_text[:500]: HL P+C case //3000019391// Rs 9.00 lacs // 11.75% // 240 Months
+2025-12-21 19:33:38,695 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:33:40,925 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-21 19:33:40,925 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-21 19:33:40,926 -     [EXTRACTION] Processing: App Form - Bhosale.pdf (using column: Application Form Description)
+2025-12-21 19:33:41,835 - len(document_text): 20295
+2025-12-21 19:33:41,835 - document_text[:500]: 
+============================================================
+[PAGE 1]
+============================================================
+
+Application Form
+LOAN DETAILS
+Application Form No : 3000019391
+Loan Amount requested : 1000000
+Loan Tenure (Months) : 240
+Purpose of Loan : Home loan
+Product : HOME LOAN_AHF
+Scheme : HOME LOAN PURCHASE
+Sub Scheme : New
+PMAY : NO
+APPLICANT DETAILS
+PERSONAL DETAILS
+Existing Customer : NO
+NIRANJAN SUBHASH
+Name :
+BHOSALE
+Father Name : Subhash
+Spouse Name : NAMRATA
+Maid
+2025-12-21 19:33:41,835 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:33:45,993 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-21 19:33:46,215 -   [EXTRACTION] Results saved to email_attachments/3000019391_20251221_193124/extraction_results.xlsx
+2025-12-21 19:33:46,215 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000019391_20251221_193124/extraction_results.xlsx
+2025-12-21 19:33:46,247 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-21 19:33:54,344 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-21 19:33:54,344 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-21 19:34:54,345 - [2025-12-21 19:34:54] Checking emails...
+2025-12-21 19:34:54,939 -   No new attachments
+2025-12-21 19:35:54,940 - [2025-12-21 19:35:54] Checking emails...
+2025-12-21 19:35:55,512 -   No new attachments
+2025-12-21 19:36:55,513 - [2025-12-21 19:36:55] Checking emails...
+2025-12-21 19:36:56,073 -   No new attachments
+2025-12-21 19:37:56,075 - [2025-12-21 19:37:56] Checking emails...
+2025-12-21 19:37:56,639 -   No new attachments
+2025-12-21 19:38:29,408 - 
+
+[STOPPED] Agent stopped by user
+2025-12-21 19:38:29,681 - [DISCONNECTED] Logged out from email server
+2025-12-21 19:38:35,751 - 
+============================================================
+2025-12-21 19:38:35,751 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-21 19:38:35,751 - ============================================================
+2025-12-21 19:38:35,751 - Email: yourmltales@gmail.com
+2025-12-21 19:38:35,751 - Server: imap.gmail.com:993
+2025-12-21 19:38:35,751 - Watching for subjects: 
+2025-12-21 19:38:35,751 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-21 19:38:35,751 - Root save location: email_attachments
+2025-12-21 19:38:35,752 - Check interval: 60s
+2025-12-21 19:38:35,752 - Only unseen emails: True
+2025-12-21 19:38:35,752 - Mark as read: False
+2025-12-21 19:38:35,752 - ============================================================
+
+2025-12-21 19:38:35,752 - Connecting to imap.gmail.com:993...
+2025-12-21 19:38:36,788 - [SUCCESS] Connected to imap.gmail.com
+2025-12-21 19:38:36,788 - [2025-12-21 19:38:36] Checking emails...
+2025-12-21 19:38:37,373 -   No new attachments
+2025-12-21 19:39:37,373 - [2025-12-21 19:39:37] Checking emails...
+2025-12-21 19:39:37,938 -   No new attachments
+2025-12-21 19:40:37,938 - [2025-12-21 19:40:37] Checking emails...
+2025-12-21 19:40:40,264 - 
+[NEW EMAIL] Subject: Fw: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 19:40:40,264 -   From: "prakhar.singh1 ." <prakhar.singh1@qualtechedge.com>
+2025-12-21 19:40:40,264 -   Date: Sun, 21 Dec 2025 19:40:07 +0000 (UTC)
+2025-12-21 19:40:40,267 -     [ATTACHMENT] Application Form.pdf
+2025-12-21 19:40:40,273 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-21 19:40:40,273 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-21 19:40:40,273 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251221_194040
+2025-12-21 19:40:40,273 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251221_194040
+2025-12-21 19:40:40,274 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-21 19:40:42,208 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 19:40:42,208 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-21 19:40:45,254 - len(document_text): 802870
+2025-12-21 19:40:45,254 - document_text[:500]: ============================================================
+[SHEET: BasicInput]
+============================================================
+ | Segment (select from dropdown): | Affordable |  | Customer Type (select from dropdown): |  |  | Self-employed Non-Professional (SENP) |  |  |  |  |  |  |  |  |  |  |  |  | 
+Parties to the Loan |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+S. No. | Name | Constitution (select from dropdown) | Capacity (Applicant / Co-applicant / Guarantor) 
+2025-12-21 19:40:45,254 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:40:51,214 -     [EXTRACTION] ✓ Extracted 50 fields using column: CAM Description
+2025-12-21 19:40:51,214 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-21 19:40:51,214 - len(document_text): 139
+2025-12-21 19:40:51,214 - document_text[:500]: Fw: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 19:40:51,215 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:40:52,711 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-21 19:40:52,711 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-21 19:40:52,712 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-21 19:40:52,744 - len(document_text): 8225
+2025-12-21 19:40:52,744 - document_text[:500]: ============================================================
+[DOCUMENT CONTENT]
+============================================================
+Dear Sir,
+Recommending for financial sanction HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal.
+Collateral Details:
+Applicant is planning to purchase a plot in builder project at Kolar.
+Property is not identified yet.
+About Applicants:
+Applicant Mr. Kanhaiya Bharti is about 49 years of age & BA graduate
+2025-12-21 19:40:52,744 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:40:56,173 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-21 19:40:56,173 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-21 19:40:56,885 - len(document_text): 16980
+2025-12-21 19:40:56,885 - document_text[:500]: 
+============================================================
+[PAGE 1]
+============================================================
+
+Application Form
+LOAN DETAILS
+Application Form No : 3000023637
+Loan Amount requested : 3500000
+Loan Tenure (Months) : 240
+Plot purchase and
+Purpose of Loan :
+construction
+Product : HOME LOAN_AHF
+PLOT AND HOME
+Scheme :
+CONSTRUCTION LOAN
+Sub Scheme : New
+PMAY : NO
+APPLICANT DETAILS
+PERSONAL DETAILS
+Existing Customer : NO
+Name : KANHAIYA BHARTI
+Father Name : gokal bha
+2025-12-21 19:40:56,886 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:41:01,416 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-21 19:41:01,503 -   [EXTRACTION ERROR] 'Loan_Number'
+2025-12-21 19:41:01,504 - Traceback: Traceback (most recent call last):
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 940, in run_field_extraction
+    merge_results_to_excel(all_results, self.pas_fields, output_path, column_selections)
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 524, in merge_results_to_excel
+    row[doc_name] = extracted_data[field]
+                    ~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'Loan_Number'
+
+2025-12-21 19:41:01,505 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-21 19:42:01,505 - [2025-12-21 19:42:01] Checking emails...
+2025-12-21 19:42:02,139 -   No new attachments
+2025-12-21 19:43:02,140 - [2025-12-21 19:43:02] Checking emails...
+2025-12-21 19:43:02,751 -   No new attachments
+2025-12-21 19:43:23,647 - 
+
+[STOPPED] Agent stopped by user
+2025-12-21 19:43:23,933 - [DISCONNECTED] Logged out from email server
+2025-12-21 19:48:35,442 - 
+============================================================
+2025-12-21 19:48:35,443 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-21 19:48:35,443 - ============================================================
+2025-12-21 19:48:35,443 - Email: yourmltales@gmail.com
+2025-12-21 19:48:35,443 - Server: imap.gmail.com:993
+2025-12-21 19:48:35,443 - Watching for subjects: 
+2025-12-21 19:48:35,443 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-21 19:48:35,443 - Root save location: email_attachments
+2025-12-21 19:48:35,443 - Check interval: 60s
+2025-12-21 19:48:35,443 - Only unseen emails: True
+2025-12-21 19:48:35,443 - Mark as read: False
+2025-12-21 19:48:35,443 - ============================================================
+
+2025-12-21 19:48:35,443 - Connecting to imap.gmail.com:993...
+2025-12-21 19:48:36,669 - [SUCCESS] Connected to imap.gmail.com
+2025-12-21 19:48:36,669 - [2025-12-21 19:48:36] Checking emails...
+2025-12-21 19:48:37,237 -   No new attachments
+2025-12-21 19:49:37,238 - [2025-12-21 19:49:37] Checking emails...
+2025-12-21 19:49:39,100 - 
+[NEW EMAIL] Subject: Fwd: Fw: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 19:49:39,101 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-21 19:49:39,101 -   Date: Mon, 22 Dec 2025 01:19:00 +0530
+2025-12-21 19:49:39,106 -     [ATTACHMENT] Application Form.pdf
+2025-12-21 19:49:39,117 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-21 19:49:39,118 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-21 19:49:39,118 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251221_194939
+2025-12-21 19:49:39,118 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251221_194939
+2025-12-21 19:49:39,119 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-21 19:49:40,973 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 19:49:40,973 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-21 19:49:44,086 - len(document_text): 802870
+2025-12-21 19:49:44,086 - document_text[:500]: ============================================================
+[SHEET: BasicInput]
+============================================================
+ | Segment (select from dropdown): | Affordable |  | Customer Type (select from dropdown): |  |  | Self-employed Non-Professional (SENP) |  |  |  |  |  |  |  |  |  |  |  |  | 
+Parties to the Loan |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+S. No. | Name | Constitution (select from dropdown) | Capacity (Applicant / Co-applicant / Guarantor) 
+2025-12-21 19:49:44,086 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:51:49,411 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-21 19:51:49,411 - len(document_text): 144
+2025-12-21 19:51:49,411 - document_text[:500]: Fwd: Fw: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 19:51:49,412 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:51:51,055 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-21 19:51:51,055 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-21 19:51:51,056 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-21 19:51:51,091 - len(document_text): 8225
+2025-12-21 19:51:51,091 - document_text[:500]: ============================================================
+[DOCUMENT CONTENT]
+============================================================
+Dear Sir,
+Recommending for financial sanction HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal.
+Collateral Details:
+Applicant is planning to purchase a plot in builder project at Kolar.
+Property is not identified yet.
+About Applicants:
+Applicant Mr. Kanhaiya Bharti is about 49 years of age & BA graduate
+2025-12-21 19:51:51,091 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:51:55,449 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-21 19:51:55,449 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-21 19:51:56,355 - len(document_text): 16980
+2025-12-21 19:51:56,355 - document_text[:500]: 
+============================================================
+[PAGE 1]
+============================================================
+
+Application Form
+LOAN DETAILS
+Application Form No : 3000023637
+Loan Amount requested : 3500000
+Loan Tenure (Months) : 240
+Plot purchase and
+Purpose of Loan :
+construction
+Product : HOME LOAN_AHF
+PLOT AND HOME
+Scheme :
+CONSTRUCTION LOAN
+Sub Scheme : New
+PMAY : NO
+APPLICANT DETAILS
+PERSONAL DETAILS
+Existing Customer : NO
+Name : KANHAIYA BHARTI
+Father Name : gokal bha
+2025-12-21 19:51:56,355 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:52:00,512 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-21 19:52:00,759 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251221_194939/extraction_results.xlsx
+2025-12-21 19:52:00,759 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251221_194939/extraction_results.xlsx
+2025-12-21 19:52:00,794 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-21 19:52:09,844 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-21 19:52:09,845 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-21 19:52:27,072 - 
+
+[STOPPED] Agent stopped by user
+2025-12-21 19:52:27,349 - [DISCONNECTED] Logged out from email server
+2025-12-21 19:56:26,642 - 
+============================================================
+2025-12-21 19:56:26,642 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-21 19:56:26,642 - ============================================================
+2025-12-21 19:56:26,642 - Email: yourmltales@gmail.com
+2025-12-21 19:56:26,642 - Server: imap.gmail.com:993
+2025-12-21 19:56:26,642 - Watching for subjects: 
+2025-12-21 19:56:26,642 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-21 19:56:26,642 - Root save location: email_attachments
+2025-12-21 19:56:26,642 - Check interval: 60s
+2025-12-21 19:56:26,643 - Only unseen emails: True
+2025-12-21 19:56:26,643 - Mark as read: False
+2025-12-21 19:56:26,643 - ============================================================
+
+2025-12-21 19:56:26,643 - Connecting to imap.gmail.com:993...
+2025-12-21 19:56:27,661 - [SUCCESS] Connected to imap.gmail.com
+2025-12-21 19:56:27,661 - [2025-12-21 19:56:27] Checking emails...
+2025-12-21 19:56:29,712 - 
+[NEW EMAIL] Subject: Fwd: Fw: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 19:56:29,712 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-21 19:56:29,712 -   Date: Mon, 22 Dec 2025 01:26:23 +0530
+2025-12-21 19:56:29,715 -     [ATTACHMENT] Application Form.pdf
+2025-12-21 19:56:29,721 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-21 19:56:29,722 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-21 19:56:29,722 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251221_195629
+2025-12-21 19:56:29,722 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251221_195629
+2025-12-21 19:56:29,722 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-21 19:56:31,635 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-21 19:56:31,635 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-21 19:56:34,943 - len(document_text): 802870
+2025-12-21 19:56:34,943 - document_text[:500]: ============================================================
+[SHEET: BasicInput]
+============================================================
+ | Segment (select from dropdown): | Affordable |  | Customer Type (select from dropdown): |  |  | Self-employed Non-Professional (SENP) |  |  |  |  |  |  |  |  |  |  |  |  | 
+Parties to the Loan |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+S. No. | Name | Constitution (select from dropdown) | Capacity (Applicant / Co-applicant / Guarantor) 
+2025-12-21 19:56:34,943 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:58:40,294 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-21 19:58:40,295 - len(document_text): 144
+2025-12-21 19:58:40,295 - document_text[:500]: Fwd: Fw: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-21 19:58:40,295 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:58:41,897 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-21 19:58:41,897 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-21 19:58:41,897 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-21 19:58:41,935 - len(document_text): 8225
+2025-12-21 19:58:41,935 - document_text[:500]: ============================================================
+[DOCUMENT CONTENT]
+============================================================
+Dear Sir,
+Recommending for financial sanction HL P+C case of Mr. Kanhaiya Bharti // Rs 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal.
+Collateral Details:
+Applicant is planning to purchase a plot in builder project at Kolar.
+Property is not identified yet.
+About Applicants:
+Applicant Mr. Kanhaiya Bharti is about 49 years of age & BA graduate
+2025-12-21 19:58:41,935 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:58:49,671 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-21 19:58:49,671 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-21 19:58:50,390 - len(document_text): 16980
+2025-12-21 19:58:50,390 - document_text[:500]: 
+============================================================
+[PAGE 1]
+============================================================
+
+Application Form
+LOAN DETAILS
+Application Form No : 3000023637
+Loan Amount requested : 3500000
+Loan Tenure (Months) : 240
+Plot purchase and
+Purpose of Loan :
+construction
+Product : HOME LOAN_AHF
+PLOT AND HOME
+Scheme :
+CONSTRUCTION LOAN
+Sub Scheme : New
+PMAY : NO
+APPLICANT DETAILS
+PERSONAL DETAILS
+Existing Customer : NO
+Name : KANHAIYA BHARTI
+Father Name : gokal bha
+2025-12-21 19:58:50,390 - MAX_DOCUMENT_CHARS: 15000
+2025-12-21 19:58:55,079 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-21 19:58:55,282 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251221_195629/extraction_results.xlsx
+2025-12-21 19:58:55,282 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251221_195629/extraction_results.xlsx
+2025-12-21 19:58:55,328 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-21 19:59:02,582 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-21 19:59:02,582 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-21 20:00:02,583 - [2025-12-21 20:00:02] Checking emails...
+2025-12-21 20:00:03,191 -   No new attachments
+2025-12-21 20:01:03,191 - [2025-12-21 20:01:03] Checking emails...
+2025-12-21 20:01:03,770 -   No new attachments
+2025-12-21 20:02:03,770 - [2025-12-21 20:02:03] Checking emails...
+2025-12-21 20:02:04,376 -   No new attachments
+2025-12-21 20:03:04,377 - [2025-12-21 20:03:04] Checking emails...
+2025-12-21 20:03:04,922 -   No new attachments
+2025-12-21 20:04:04,922 - [2025-12-21 20:04:04] Checking emails...
+2025-12-21 20:04:05,489 -   No new attachments
+2025-12-21 20:05:05,489 - [2025-12-21 20:05:05] Checking emails...
+2025-12-21 20:05:06,090 -   No new attachments
+2025-12-21 20:06:06,090 - [2025-12-21 20:06:06] Checking emails...
+2025-12-21 20:06:06,674 -   No new attachments
+2025-12-21 20:07:06,674 - [2025-12-21 20:07:06] Checking emails...
+2025-12-21 20:07:07,271 -   No new attachments
+2025-12-21 20:08:07,272 - [2025-12-21 20:08:07] Checking emails...
+2025-12-21 20:08:07,849 -   No new attachments
+2025-12-21 20:09:07,850 - [2025-12-21 20:09:07] Checking emails...
+2025-12-21 20:09:08,434 -   No new attachments
+2025-12-21 20:10:08,434 - [2025-12-21 20:10:08] Checking emails...
+2025-12-21 20:10:09,003 -   No new attachments
+2025-12-21 20:11:09,003 - [2025-12-21 20:11:09] Checking emails...
+2025-12-21 20:11:09,568 -   No new attachments
+2025-12-21 20:12:09,569 - [2025-12-21 20:12:09] Checking emails...
+2025-12-21 20:12:10,158 -   No new attachments
+2025-12-21 20:13:10,158 - [2025-12-21 20:13:10] Checking emails...
+2025-12-21 20:13:10,730 -   No new attachments
+2025-12-21 20:14:10,730 - [2025-12-21 20:14:10] Checking emails...
+2025-12-21 20:14:11,337 -   No new attachments
+2025-12-21 20:15:11,338 - [2025-12-21 20:15:11] Checking emails...
+2025-12-21 20:15:11,929 -   No new attachments
+2025-12-21 20:16:11,929 - [2025-12-21 20:16:11] Checking emails...
+2025-12-21 20:16:12,483 -   No new attachments
+2025-12-21 20:17:12,483 - [2025-12-21 20:17:12] Checking emails...
+2025-12-21 20:17:13,036 -   No new attachments
+2025-12-21 20:18:13,036 - [2025-12-21 20:18:13] Checking emails...
+2025-12-21 20:18:13,576 -   No new attachments
+2025-12-21 20:19:13,576 - [2025-12-21 20:19:13] Checking emails...
+2025-12-21 20:19:14,139 -   No new attachments
+2025-12-21 20:20:14,140 - [2025-12-21 20:20:14] Checking emails...
+2025-12-21 20:20:14,682 -   No new attachments
+2025-12-21 20:21:14,683 - [2025-12-21 20:21:14] Checking emails...
+2025-12-21 20:21:15,246 -   No new attachments
+2025-12-21 20:22:15,246 - [2025-12-21 20:22:15] Checking emails...
+2025-12-21 20:22:15,849 -   No new attachments
+2025-12-21 20:23:15,850 - [2025-12-21 20:23:15] Checking emails...
+2025-12-21 20:23:16,416 -   No new attachments
+2025-12-21 20:24:16,417 - [2025-12-21 20:24:16] Checking emails...
+2025-12-21 20:24:16,985 -   No new attachments
+2025-12-21 20:25:16,985 - [2025-12-21 20:25:16] Checking emails...
+2025-12-21 20:25:17,548 -   No new attachments
+2025-12-21 20:26:17,549 - [2025-12-21 20:26:17] Checking emails...
+2025-12-21 20:26:18,125 -   No new attachments
+2025-12-21 20:27:18,126 - [2025-12-21 20:27:18] Checking emails...
+2025-12-21 20:27:18,710 -   No new attachments
+2025-12-21 20:28:18,711 - [2025-12-21 20:28:18] Checking emails...
+2025-12-21 20:28:19,303 -   No new attachments
+2025-12-21 20:29:19,303 - [2025-12-21 20:29:19] Checking emails...
+2025-12-21 20:29:19,878 -   No new attachments
+2025-12-21 20:30:19,878 - [2025-12-21 20:30:19] Checking emails...
+2025-12-21 20:30:20,439 -   No new attachments
+2025-12-21 20:31:20,440 - [2025-12-21 20:31:20] Checking emails...
+2025-12-21 20:31:21,023 -   No new attachments
+2025-12-21 20:32:21,024 - [2025-12-21 20:32:21] Checking emails...
+2025-12-21 20:32:21,600 -   No new attachments
+2025-12-21 20:33:21,601 - [2025-12-21 20:33:21] Checking emails...
+2025-12-21 20:33:22,190 -   No new attachments
+2025-12-21 20:34:22,190 - [2025-12-21 20:34:22] Checking emails...
+2025-12-21 20:34:22,758 -   No new attachments
+2025-12-21 20:35:22,758 - [2025-12-21 20:35:22] Checking emails...
+2025-12-21 20:35:23,325 -   No new attachments
+2025-12-21 20:36:23,326 - [2025-12-21 20:36:23] Checking emails...
+2025-12-21 20:36:23,913 -   No new attachments
+2025-12-21 20:37:23,913 - [2025-12-21 20:37:23] Checking emails...
+2025-12-21 20:37:24,479 -   No new attachments
+2025-12-21 20:38:24,480 - [2025-12-21 20:38:24] Checking emails...
+2025-12-21 20:38:25,121 -   No new attachments
+2025-12-21 20:39:25,122 - [2025-12-21 20:39:25] Checking emails...
+2025-12-21 20:39:25,704 -   No new attachments
+2025-12-21 20:40:25,704 - [2025-12-21 20:40:25] Checking emails...
+2025-12-21 20:40:26,289 -   No new attachments

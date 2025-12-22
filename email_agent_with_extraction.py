@@ -368,8 +368,9 @@ def extract_fields_with_intelligent_selection(
     api_key: str,
     model: str = "gpt-4o",
     document_name: str = None,  # Keep for backward compatibility
-    file_extension: str = None   # Keep for backward compatibility
-):
+    file_extension: str = None,   # Keep for backward compatibility
+    logger=None
+    ):
     """
     Extract fields from document using the matched description column
     
@@ -407,9 +408,14 @@ def extract_fields_with_intelligent_selection(
         print(f"  ⚠ No valid field descriptions found in column: {matched_column}")
         return {}, matched_column
     
+    print(f"  ➤ Extracting fields using column: {matched_column} ({len(fields_json)} fields)")
+    if logger:
+        logger.info(f"len(document_text): {len(document_text)}")
+        logger.info(f"document_text[:500]: {document_text[:500]}")
+        logger.info(f"MAX_DOCUMENT_CHARS: {MAX_DOCUMENT_CHARS}")
     # Truncate document if too long
-    if len(document_text) > MAX_DOCUMENT_CHARS:
-        document_text = document_text[:MAX_DOCUMENT_CHARS] + "\n...[Document truncated]"
+    # if len(document_text) > MAX_DOCUMENT_CHARS:
+    #     document_text = document_text[:MAX_DOCUMENT_CHARS] + "\n...[Document truncated]"
     
     prompt = f"""You are a data extraction assistant. Extract the following fields from the document.
 
@@ -420,12 +426,14 @@ Fields to extract:
 {json.dumps(fields_json, indent=2)}
 
 Instructions:
-- For each field, extract the value based on its description
-- If a field is not found or not applicable, use null
-- Return a JSON object with field names as keys and extracted values as values
-- Be precise and only extract what is explicitly mentioned
-
-Return ONLY valid JSON."""
+For CAM Some of content is from excel provided as plain text, where each sheet starts with a divider and its name, like:
+============================================================
+[SHEET: SheetName]
+============================================================
+For each field, extract the value based on its description, searching only within the relevant sheet and its data section.
+If a field is not found or not applicable in the specified sheet, use null as its value.
+Return a JSON object with field names as keys and extracted values as values.
+"""
 
     try:
         client = AzureOpenAI(
@@ -508,9 +516,9 @@ def merge_results_to_excel(all_results, pas_fields, output_path, column_selectio
                     description = desc_row.iloc[0][matched_column]
             # Custom logic
             if pd.isna(description) or str(description).strip() == "":
-                row[doc_name] = "Not Applicable"
+                row[doc_name] = ""
             elif field not in extracted_data or extracted_data[field] in [None, "", "null"]:
-                row[doc_name] = "Not Found"
+                row[doc_name] = ""
             else:
                 row[doc_name] = extracted_data[field]
         # Add additional columns from FieldConfiguration file at the end
@@ -670,16 +678,18 @@ class EmailAgentWithExtraction:
         self.description_columns = get_description_columns(self.config_df)
         
         # Setup logging
-        self.logger = logging.getLogger('EmailAgent')
-        self.logger.setLevel(logging.INFO)
+        logger = logging.getLogger('EmailAgent')
+        logger.setLevel(logging.INFO)
         handler = logging.FileHandler('email_agent.log', encoding='utf-8')
         handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
-        if not self.logger.hasHandlers():
-            self.logger.addHandler(handler)
+        if not logger.hasHandlers():
+            logger.addHandler(handler)
         console = logging.StreamHandler()
         console.setFormatter(logging.Formatter('%(message)s'))
-        if not any(isinstance(h, logging.StreamHandler) for h in self.logger.handlers):
-            self.logger.addHandler(console)
+        if not any(isinstance(h, logging.StreamHandler) for h in logger.handlers):
+            logger.addHandler(console)
+
+        self.logger = logger  # <-- Add this line
 
     #####
     def run_email_generation(self, folder_path, extraction_file):
@@ -913,7 +923,8 @@ class EmailAgentWithExtraction:
                     matched_column=matched_column,
                     pas_fields=self.pas_fields,
                     api_key=OPENAI_API_KEY,
-                    model=OPENAI_MODEL
+                    model=OPENAI_MODEL,
+                    logger=self.logger
                 )
                 
                 if extracted_data:

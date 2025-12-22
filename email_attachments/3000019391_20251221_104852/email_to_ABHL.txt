@@ -1,0 +1,6 @@
+Subject: ✅ Data Quality Check Passed
+================================================================================
+
+✅ Good news! No high criticality issues were found in the data extraction process.
+
+All high criticality fields have consistent values across documents.
