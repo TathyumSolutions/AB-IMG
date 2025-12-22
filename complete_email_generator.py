@@ -298,10 +298,10 @@ Return ONLY in this exact JSON format:
 """
             print(f"[LOG] Calling GPT API...")
             client = AzureOpenAI(
-            azure_endpoint="https://qc-tspl-dau-mr.openai.azure.com/",
-            api_key="DvskuzopcDYytzJygTQiCl1ikUiT8513H8vfpIwVPZPOnfeHCdZ1JQQJ99BEACHYHv6XJ3w3AAABACOGprIt",
-            api_version="2025-01-01-preview",
-        )
+                            azure_endpoint="https://qc-tspl-dau-mr.openai.azure.com/",
+                                        api_key="DvskuzopcDYytzJygTQiCl1ikUiT8513H8vfpIwVPZPOnfeHCdZ1JQQJ99BEACHYHv6XJ3w3AAABACOGprIt",
+                                                    api_version="2025-01-01-preview",
+            )
 
             completion = client.chat.completions.create(
                 model="gpt-4o-mini",
