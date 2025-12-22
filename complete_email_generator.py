@@ -14,6 +14,7 @@ import pandas as pd
 import os
 import json
 import smtplib
+import shutil
 from openai import OpenAI,AzureOpenAI
 from datetime import datetime
 from email.mime.text import MIMEText
@@ -22,6 +23,17 @@ from email.mime.base import MIMEBase
 from email import encoders
 # from email_agent_with_extraction import llm_logger
 import glob
+
+
+def _ensure_txt_copy_for_attachment(source_path: str) -> str:
+    base, _ = os.path.splitext(source_path)
+    txt_path = base + ".txt"
+    try:
+        if (not os.path.exists(txt_path)) or (os.path.getmtime(txt_path) < os.path.getmtime(source_path)):
+            shutil.copyfile(source_path, txt_path)
+    except Exception:
+        return source_path
+    return txt_path
 
 class CompleteEmailGenerator:
     """Complete email generator with all features and detailed logging"""
@@ -586,7 +598,10 @@ This is a system-generated email. Please do not reply to this message.
             latest_json = max(json_candidates, key=os.path.getmtime) if json_candidates else None
             attachments = [issues_attachment]
             if latest_json:
-                attachments.append(latest_json)
+                if os.path.basename(latest_json).lower().startswith('final_json_format_'):
+                    attachments.append(_ensure_txt_copy_for_attachment(latest_json))
+                else:
+                    attachments.append(latest_json)
             imgc_sent = self.send_email(
                 to_email=self.recipients['IMGC'],
                 subject=imgc_email['subject'],
