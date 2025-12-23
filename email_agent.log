@@ -472,3 +472,25 @@
 
 [STOPPED] Agent stopped by user
 2025-12-22 18:19:12,431 - [DISCONNECTED] Logged out from email server
+2025-12-22 18:37:43,971 - 
+============================================================
+2025-12-22 18:37:43,972 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 18:37:43,972 - ============================================================
+2025-12-22 18:37:43,972 - Email: youremailagent19@gmail.com
+2025-12-22 18:37:43,972 - Server: imap.gmail.com:993
+2025-12-22 18:37:43,972 - Watching for subjects: 
+2025-12-22 18:37:43,972 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 18:37:43,972 - Root save location: email_attachments
+2025-12-22 18:37:43,972 - Check interval: 60s
+2025-12-22 18:37:43,972 - Only unseen emails: True
+2025-12-22 18:37:43,973 - Mark as read: False
+2025-12-22 18:37:43,973 - ============================================================
+
+2025-12-22 18:37:43,973 - Connecting to imap.gmail.com:993...
+2025-12-22 18:37:44,937 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 18:37:44,937 - [2025-12-22 18:37:44] Checking emails...
+2025-12-22 18:37:45,446 -   No new attachments
+2025-12-22 18:37:58,944 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 18:37:59,198 - [DISCONNECTED] Logged out from email server

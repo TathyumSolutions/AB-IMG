@@ -1147,7 +1147,80 @@ class EmailAgentWithExtraction:
                 self.logger.info(f"    [ATTACHMENT] {filename}")
         
         return attachments
+    
+    ################################
+    def add_mismatch_column_with_llm(self,extraction_results_path, mapping_json_path):
+        """
+        Adds a 'MISMATCH' column to the extraction results Excel file.
+        For each row, if there is a discrepancy between not-null values in the mapped document columns,
+        a short description is generated using Azure OpenAI.
+        """
+        # Load extraction results
+        df = pd.read_excel(extraction_results_path)
+        # Load mapping JSON
+        with open(mapping_json_path, 'r', encoding='utf-8') as f:
+            mapping = json.load(f)
+        doc_columns = list(mapping.keys())
 
+        # Only keep columns that are in the mapping and not null in the DataFrame
+        relevant_cols = [col for col in doc_columns if col in df.columns]
+
+        # Prepare rows for LLM
+        mismatch_descriptions = []
+        client = AzureOpenAI(
+            azure_endpoint="https://qc-tspl-dau-mr.openai.azure.com/",
+            api_key=api_key or "DvskuzopcDYytzJygTQiCl1ikUiT8513H8vfpIwVPZPOnfeHCdZ1JQQJ99BEACHYHv6XJ3w3AAABACOGprIt",
+            api_version="2025-01-01-preview",
+        )
+
+        for idx, row in df.iterrows():
+            values = {col: str(row[col]) for col in relevant_cols if pd.notna(row[col]) and str(row[col]).strip()}
+            unique_values = set(values.values())
+            if len(unique_values) <= 1:
+                mismatch_descriptions.append("")
+                continue
+
+            # Prepare prompt for LLM
+            prompt = (
+                "You are a data quality assistant. Given the following extracted values for the same field from different documents, "
+                "identify if there is a mismatch. If so, write a short description of the discrepancy. "
+                "If not, return an empty string.\n\n"
+                f"Values:\n{json.dumps(values, indent=2)}"
+            )
+
+            try:
+                completion = client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": "You are a data quality assistant. Return only a short description of the mismatch, or an empty string if there is no issue."
+                        },
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ],
+                    max_tokens=128,
+                    temperature=0.0,
+                    response_format={"type": "text"}
+                )
+                result_text = completion.choices[0].message.content.strip()
+                mismatch_descriptions.append(result_text)
+            except Exception as e:
+                mismatch_descriptions.append(f"LLM error: {e}")
+
+        df['MISMATCH'] = mismatch_descriptions
+
+        # Save back to Excel (overwrite or new file as needed)
+        output_path = extraction_results_path.replace('.xlsx', '_with_mismatch.xlsx')
+        df.to_excel(output_path, index=False)
+        print(f"✓ MISMATCH column added and saved to: {output_path}")
+        return output_path
+
+    ################################
+    
+    
     def run_field_extraction(self, folder_path):
         """Run field extraction on all documents in the folder"""
         try:
@@ -1216,6 +1289,7 @@ class EmailAgentWithExtraction:
                 print(all_results)
                 output_path = os.path.join(folder_path, OUTPUT_FILENAME)
                 merge_results_to_excel(all_results, self.pas_fields, output_path, column_selections)
+                self.add_mismatch_column_with_llm(output_path, os.path.join(folder_path, 'document_column_mapping.json'))
                 self.logger.info(f"  [EXTRACTION] Results saved to {output_path}")
                 self.run_email_generation(folder_path, output_path)  ##Added by AP
             else:
@@ -1225,6 +1299,7 @@ class EmailAgentWithExtraction:
             self.logger.error(f"  [EXTRACTION ERROR] {e}")
             import traceback
             self.logger.error(f"Traceback: {traceback.format_exc()}")
+
 
     def check_emails(self):
         all_attachments = []
