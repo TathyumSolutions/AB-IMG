@@ -494,3 +494,1267 @@
 
 [STOPPED] Agent stopped by user
 2025-12-22 18:37:59,198 - [DISCONNECTED] Logged out from email server
+2025-12-22 18:38:49,110 - 
+============================================================
+2025-12-22 18:38:49,110 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 18:38:49,110 - ============================================================
+2025-12-22 18:38:49,110 - Email: yourmltales@gmail.com
+2025-12-22 18:38:49,110 - Server: imap.gmail.com:993
+2025-12-22 18:38:49,110 - Watching for subjects: 
+2025-12-22 18:38:49,111 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 18:38:49,111 - Root save location: email_attachments
+2025-12-22 18:38:49,111 - Check interval: 60s
+2025-12-22 18:38:49,111 - Only unseen emails: True
+2025-12-22 18:38:49,111 - Mark as read: False
+2025-12-22 18:38:49,111 - ============================================================
+
+2025-12-22 18:38:49,111 - Connecting to imap.gmail.com:993...
+2025-12-22 18:38:50,128 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 18:38:50,128 - [2025-12-22 18:38:50] Checking emails...
+2025-12-22 18:38:50,736 -   No new attachments
+2025-12-22 18:39:50,737 - [2025-12-22 18:39:50] Checking emails...
+2025-12-22 18:39:52,793 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 18:39:52,793 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 18:39:52,793 -   Date: Tue, 23 Dec 2025 00:09:50 +0530
+2025-12-22 18:39:52,796 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 18:39:52,802 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 18:39:52,803 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 18:39:52,803 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_183952
+2025-12-22 18:39:52,803 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_183952
+2025-12-22 18:39:52,803 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 18:39:54,824 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 18:39:54,824 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 18:42:03,006 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 18:42:04,618 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 18:42:04,618 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 18:42:04,618 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 18:42:08,842 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 18:42:08,842 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 18:42:14,507 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 18:42:14,737 -   [EXTRACTION ERROR] name 'api_key' is not defined
+2025-12-22 18:42:14,741 - Traceback: Traceback (most recent call last):
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 1292, in run_field_extraction
+    self.add_mismatch_column_with_llm(output_path, os.path.join(folder_path, 'document_column_mapping.json'))
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 1172, in add_mismatch_column_with_llm
+    api_key=api_key or "DvskuzopcDYytzJygTQiCl1ikUiT8513H8vfpIwVPZPOnfeHCdZ1JQQJ99BEACHYHv6XJ3w3AAABACOGprIt",
+            ^^^^^^^
+NameError: name 'api_key' is not defined
+
+2025-12-22 18:42:14,741 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 18:43:14,742 - [2025-12-22 18:43:14] Checking emails...
+2025-12-22 18:43:15,360 -   No new attachments
+2025-12-22 18:44:15,360 - [2025-12-22 18:44:15] Checking emails...
+2025-12-22 18:44:15,993 -   No new attachments
+2025-12-22 18:45:15,994 - [2025-12-22 18:45:15] Checking emails...
+2025-12-22 18:45:16,572 -   No new attachments
+2025-12-22 18:46:16,573 - [2025-12-22 18:46:16] Checking emails...
+2025-12-22 18:46:17,154 -   No new attachments
+2025-12-22 18:47:17,154 - [2025-12-22 18:47:17] Checking emails...
+2025-12-22 18:47:17,713 -   No new attachments
+2025-12-22 18:48:17,713 - [2025-12-22 18:48:17] Checking emails...
+2025-12-22 18:48:18,274 -   No new attachments
+2025-12-22 18:48:53,858 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 18:48:54,134 - [DISCONNECTED] Logged out from email server
+2025-12-22 18:48:59,385 - 
+============================================================
+2025-12-22 18:48:59,385 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 18:48:59,386 - ============================================================
+2025-12-22 18:48:59,386 - Email: yourmltales@gmail.com
+2025-12-22 18:48:59,386 - Server: imap.gmail.com:993
+2025-12-22 18:48:59,386 - Watching for subjects: 
+2025-12-22 18:48:59,386 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 18:48:59,386 - Root save location: email_attachments
+2025-12-22 18:48:59,386 - Check interval: 60s
+2025-12-22 18:48:59,386 - Only unseen emails: True
+2025-12-22 18:48:59,386 - Mark as read: False
+2025-12-22 18:48:59,386 - ============================================================
+
+2025-12-22 18:48:59,387 - Connecting to imap.gmail.com:993...
+2025-12-22 18:49:00,647 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 18:49:00,647 - [2025-12-22 18:49:00] Checking emails...
+2025-12-22 18:49:01,236 -   No new attachments
+2025-12-22 18:50:01,236 - [2025-12-22 18:50:01] Checking emails...
+2025-12-22 18:50:03,114 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 18:50:03,114 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 18:50:03,114 -   Date: Tue, 23 Dec 2025 00:19:59 +0530
+2025-12-22 18:50:03,117 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 18:50:03,123 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 18:50:03,123 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 18:50:03,123 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_185003
+2025-12-22 18:50:03,124 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_185003
+2025-12-22 18:50:03,124 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 18:50:05,209 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 18:50:05,210 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 18:52:13,381 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 18:52:15,333 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 18:52:15,333 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 18:52:15,333 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 18:52:19,443 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 18:52:19,443 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 18:52:25,247 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 18:52:25,513 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_185003/extraction_results.xlsx
+2025-12-22 18:52:25,514 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_185003/extraction_results.xlsx
+2025-12-22 18:52:25,537 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 18:52:33,208 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-22 18:52:33,208 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 18:53:33,209 - [2025-12-22 18:53:33] Checking emails...
+2025-12-22 18:53:33,820 -   No new attachments
+2025-12-22 18:54:33,820 - [2025-12-22 18:54:33] Checking emails...
+2025-12-22 18:54:34,396 -   No new attachments
+2025-12-22 18:55:34,397 - [2025-12-22 18:55:34] Checking emails...
+2025-12-22 18:55:34,978 -   No new attachments
+2025-12-22 18:55:39,178 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 18:55:39,462 - [DISCONNECTED] Logged out from email server
+2025-12-22 19:03:22,143 - 
+============================================================
+2025-12-22 19:03:22,143 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 19:03:22,143 - ============================================================
+2025-12-22 19:03:22,144 - Email: yourmltales@gmail.com
+2025-12-22 19:03:22,144 - Server: imap.gmail.com:993
+2025-12-22 19:03:22,144 - Watching for subjects: 
+2025-12-22 19:03:22,144 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 19:03:22,144 - Root save location: email_attachments
+2025-12-22 19:03:22,144 - Check interval: 60s
+2025-12-22 19:03:22,144 - Only unseen emails: True
+2025-12-22 19:03:22,144 - Mark as read: False
+2025-12-22 19:03:22,144 - ============================================================
+
+2025-12-22 19:03:22,144 - Connecting to imap.gmail.com:993...
+2025-12-22 19:03:23,094 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 19:03:23,094 - [2025-12-22 19:03:23] Checking emails...
+2025-12-22 19:03:23,657 -   No new attachments
+2025-12-22 19:04:23,658 - [2025-12-22 19:04:23] Checking emails...
+2025-12-22 19:04:25,540 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 19:04:25,540 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 19:04:25,540 -   Date: Tue, 23 Dec 2025 00:33:44 +0530
+2025-12-22 19:04:25,543 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 19:04:25,549 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 19:04:25,549 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 19:04:25,549 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_190425
+2025-12-22 19:04:25,549 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_190425
+2025-12-22 19:04:25,549 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 19:04:27,693 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 19:04:27,694 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 19:06:35,815 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 19:06:37,532 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 19:06:37,532 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 19:06:37,532 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 19:06:41,740 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 19:06:41,741 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 19:06:46,930 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 19:06:47,341 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_190425/extraction_results.xlsx
+2025-12-22 19:06:47,341 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_190425/extraction_results.xlsx
+2025-12-22 19:06:47,364 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 19:06:54,964 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-22 19:06:54,965 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 19:07:54,965 - [2025-12-22 19:07:54] Checking emails...
+2025-12-22 19:07:55,572 -   No new attachments
+2025-12-22 19:08:55,573 - [2025-12-22 19:08:55] Checking emails...
+2025-12-22 19:08:56,163 -   No new attachments
+2025-12-22 19:09:56,166 - [2025-12-22 19:09:56] Checking emails...
+2025-12-22 19:09:56,727 -   No new attachments
+2025-12-22 19:10:56,729 - [2025-12-22 19:10:56] Checking emails...
+2025-12-22 19:10:57,270 -   No new attachments
+2025-12-22 19:11:57,271 - [2025-12-22 19:11:57] Checking emails...
+2025-12-22 19:11:57,817 -   No new attachments
+2025-12-22 19:12:57,818 - [2025-12-22 19:12:57] Checking emails...
+2025-12-22 19:12:58,364 -   No new attachments
+2025-12-22 19:13:58,365 - [2025-12-22 19:13:58] Checking emails...
+2025-12-22 19:13:58,914 -   No new attachments
+2025-12-22 19:14:58,914 - [2025-12-22 19:14:58] Checking emails...
+2025-12-22 19:14:59,472 -   No new attachments
+2025-12-22 19:15:08,036 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 19:15:08,308 - [DISCONNECTED] Logged out from email server
+2025-12-22 19:20:06,135 - 
+============================================================
+2025-12-22 19:20:06,135 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 19:20:06,135 - ============================================================
+2025-12-22 19:20:06,135 - Email: yourmltales@gmail.com
+2025-12-22 19:20:06,135 - Server: imap.gmail.com:993
+2025-12-22 19:20:06,135 - Watching for subjects: 
+2025-12-22 19:20:06,135 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 19:20:06,135 - Root save location: email_attachments
+2025-12-22 19:20:06,135 - Check interval: 60s
+2025-12-22 19:20:06,135 - Only unseen emails: True
+2025-12-22 19:20:06,136 - Mark as read: False
+2025-12-22 19:20:06,136 - ============================================================
+
+2025-12-22 19:20:06,136 - Connecting to imap.gmail.com:993...
+2025-12-22 19:20:07,395 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 19:20:07,395 - [2025-12-22 19:20:07] Checking emails...
+2025-12-22 19:20:09,380 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 19:20:09,380 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 19:20:09,380 -   Date: Tue, 23 Dec 2025 00:49:09 +0530
+2025-12-22 19:20:09,383 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 19:20:09,389 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 19:20:09,389 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 19:20:09,389 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_192009
+2025-12-22 19:20:09,390 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_192009
+2025-12-22 19:20:09,390 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 19:20:11,451 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 19:20:11,451 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 19:22:19,682 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 19:22:21,362 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 19:22:21,362 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 19:22:21,363 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 19:22:25,534 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 19:22:25,534 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 19:22:30,984 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 19:22:31,195 - Loading extraction results from: email_attachments/3000023637_20251222_192009/extraction_results.xlsx
+2025-12-22 19:22:31,195 - Loading mapping from: email_attachments/3000023637_20251222_192009/document_column_mapping.json
+2025-12-22 19:22:31,241 - doc_columns: ['CAM Kanhiya Bhartiya.xlsx', 'mail_subject.txt', 'mail_body.txt', 'PD Note Kanhaiya.docx', 'Application Form.pdf']
+2025-12-22 19:22:31,289 - No mismatch found in row 0, skipping LLM call.
+2025-12-22 19:22:31,290 - No mismatch found in row 1, skipping LLM call.
+2025-12-22 19:22:31,290 - No mismatch found in row 2, skipping LLM call.
+2025-12-22 19:22:31,291 - No mismatch found in row 3, skipping LLM call.
+2025-12-22 19:22:31,292 - No mismatch found in row 4, skipping LLM call.
+2025-12-22 19:22:31,292 - No mismatch found in row 5, skipping LLM call.
+2025-12-22 19:22:31,293 - No mismatch found in row 6, skipping LLM call.
+2025-12-22 19:22:31,293 - No mismatch found in row 7, skipping LLM call.
+2025-12-22 19:22:31,294 - No mismatch found in row 8, skipping LLM call.
+2025-12-22 19:22:31,294 - No mismatch found in row 9, skipping LLM call.
+2025-12-22 19:22:31,298 - No mismatch found in row 10, skipping LLM call.
+2025-12-22 19:22:31,298 - No mismatch found in row 11, skipping LLM call.
+2025-12-22 19:22:31,298 - No mismatch found in row 12, skipping LLM call.
+2025-12-22 19:22:31,299 - No mismatch found in row 13, skipping LLM call.
+2025-12-22 19:22:31,299 - No mismatch found in row 14, skipping LLM call.
+2025-12-22 19:22:31,299 - No mismatch found in row 15, skipping LLM call.
+2025-12-22 19:22:31,299 - No mismatch found in row 16, skipping LLM call.
+2025-12-22 19:22:31,300 - No mismatch found in row 17, skipping LLM call.
+2025-12-22 19:22:31,301 - No mismatch found in row 18, skipping LLM call.
+2025-12-22 19:22:31,301 - No mismatch found in row 19, skipping LLM call.
+2025-12-22 19:22:31,304 - No mismatch found in row 20, skipping LLM call.
+2025-12-22 19:22:31,304 - No mismatch found in row 21, skipping LLM call.
+2025-12-22 19:22:31,304 - No mismatch found in row 22, skipping LLM call.
+2025-12-22 19:22:31,305 - No mismatch found in row 23, skipping LLM call.
+2025-12-22 19:22:31,305 - No mismatch found in row 24, skipping LLM call.
+2025-12-22 19:22:31,306 - No mismatch found in row 25, skipping LLM call.
+2025-12-22 19:22:31,306 - No mismatch found in row 26, skipping LLM call.
+2025-12-22 19:22:31,309 - No mismatch found in row 27, skipping LLM call.
+2025-12-22 19:22:31,309 - No mismatch found in row 28, skipping LLM call.
+2025-12-22 19:22:31,309 - No mismatch found in row 29, skipping LLM call.
+2025-12-22 19:22:31,310 - No mismatch found in row 30, skipping LLM call.
+2025-12-22 19:22:31,310 - No mismatch found in row 31, skipping LLM call.
+2025-12-22 19:22:31,310 - No mismatch found in row 32, skipping LLM call.
+2025-12-22 19:22:31,311 - No mismatch found in row 33, skipping LLM call.
+2025-12-22 19:22:31,313 - No mismatch found in row 34, skipping LLM call.
+2025-12-22 19:22:31,314 - No mismatch found in row 35, skipping LLM call.
+2025-12-22 19:22:31,314 - No mismatch found in row 36, skipping LLM call.
+2025-12-22 19:22:31,314 - No mismatch found in row 37, skipping LLM call.
+2025-12-22 19:22:31,315 - No mismatch found in row 38, skipping LLM call.
+2025-12-22 19:22:31,317 - No mismatch found in row 39, skipping LLM call.
+2025-12-22 19:22:31,317 - No mismatch found in row 40, skipping LLM call.
+2025-12-22 19:22:31,317 - No mismatch found in row 41, skipping LLM call.
+2025-12-22 19:22:31,318 - No mismatch found in row 42, skipping LLM call.
+2025-12-22 19:22:31,321 - No mismatch found in row 43, skipping LLM call.
+2025-12-22 19:22:31,321 - No mismatch found in row 44, skipping LLM call.
+2025-12-22 19:22:31,321 - No mismatch found in row 45, skipping LLM call.
+2025-12-22 19:22:31,321 - No mismatch found in row 46, skipping LLM call.
+2025-12-22 19:22:31,322 - No mismatch found in row 47, skipping LLM call.
+2025-12-22 19:22:31,322 - No mismatch found in row 48, skipping LLM call.
+2025-12-22 19:22:31,323 - No mismatch found in row 49, skipping LLM call.
+2025-12-22 19:22:31,323 - No mismatch found in row 50, skipping LLM call.
+2025-12-22 19:22:31,325 - No mismatch found in row 51, skipping LLM call.
+2025-12-22 19:22:31,326 - No mismatch found in row 52, skipping LLM call.
+2025-12-22 19:22:31,326 - No mismatch found in row 53, skipping LLM call.
+2025-12-22 19:22:31,327 - No mismatch found in row 54, skipping LLM call.
+2025-12-22 19:22:31,327 - No mismatch found in row 55, skipping LLM call.
+2025-12-22 19:22:31,328 - No mismatch found in row 56, skipping LLM call.
+2025-12-22 19:22:31,329 - No mismatch found in row 57, skipping LLM call.
+2025-12-22 19:22:31,329 - No mismatch found in row 58, skipping LLM call.
+2025-12-22 19:22:31,330 - No mismatch found in row 59, skipping LLM call.
+2025-12-22 19:22:31,330 - No mismatch found in row 60, skipping LLM call.
+2025-12-22 19:22:31,331 - No mismatch found in row 61, skipping LLM call.
+2025-12-22 19:22:31,331 - No mismatch found in row 62, skipping LLM call.
+2025-12-22 19:22:31,332 - No mismatch found in row 63, skipping LLM call.
+2025-12-22 19:22:31,333 - No mismatch found in row 64, skipping LLM call.
+2025-12-22 19:22:31,333 - No mismatch found in row 65, skipping LLM call.
+2025-12-22 19:22:31,334 - No mismatch found in row 66, skipping LLM call.
+2025-12-22 19:22:31,335 - No mismatch found in row 67, skipping LLM call.
+2025-12-22 19:22:31,335 - No mismatch found in row 68, skipping LLM call.
+2025-12-22 19:22:31,336 - No mismatch found in row 69, skipping LLM call.
+2025-12-22 19:22:31,336 - No mismatch found in row 70, skipping LLM call.
+2025-12-22 19:22:31,337 - No mismatch found in row 71, skipping LLM call.
+2025-12-22 19:22:31,337 - No mismatch found in row 72, skipping LLM call.
+2025-12-22 19:22:31,338 - No mismatch found in row 73, skipping LLM call.
+2025-12-22 19:22:31,338 - No mismatch found in row 74, skipping LLM call.
+2025-12-22 19:22:31,339 - No mismatch found in row 75, skipping LLM call.
+2025-12-22 19:22:31,340 - No mismatch found in row 76, skipping LLM call.
+2025-12-22 19:22:31,340 - No mismatch found in row 77, skipping LLM call.
+2025-12-22 19:22:31,341 - No mismatch found in row 78, skipping LLM call.
+2025-12-22 19:22:31,341 - No mismatch found in row 79, skipping LLM call.
+2025-12-22 19:22:31,342 - No mismatch found in row 80, skipping LLM call.
+2025-12-22 19:22:31,342 - No mismatch found in row 81, skipping LLM call.
+2025-12-22 19:22:31,343 - No mismatch found in row 82, skipping LLM call.
+2025-12-22 19:22:31,343 - No mismatch found in row 83, skipping LLM call.
+2025-12-22 19:22:31,381 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_192009/extraction_results.xlsx
+2025-12-22 19:22:31,382 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_192009/extraction_results.xlsx
+2025-12-22 19:22:31,430 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 19:22:39,031 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-22 19:22:39,032 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 19:22:43,766 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 19:22:44,038 - [DISCONNECTED] Logged out from email server
+2025-12-22 19:26:10,134 - 
+============================================================
+2025-12-22 19:26:10,134 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 19:26:10,134 - ============================================================
+2025-12-22 19:26:10,134 - Email: yourmltales@gmail.com
+2025-12-22 19:26:10,134 - Server: imap.gmail.com:993
+2025-12-22 19:26:10,135 - Watching for subjects: 
+2025-12-22 19:26:10,135 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 19:26:10,135 - Root save location: email_attachments
+2025-12-22 19:26:10,135 - Check interval: 60s
+2025-12-22 19:26:10,135 - Only unseen emails: True
+2025-12-22 19:26:10,135 - Mark as read: False
+2025-12-22 19:26:10,135 - ============================================================
+
+2025-12-22 19:26:10,135 - Connecting to imap.gmail.com:993...
+2025-12-22 19:26:11,205 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 19:26:11,206 - [2025-12-22 19:26:11] Checking emails...
+2025-12-22 19:26:11,812 -   No new attachments
+2025-12-22 19:27:11,812 - [2025-12-22 19:27:11] Checking emails...
+2025-12-22 19:27:13,701 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 19:27:13,701 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 19:27:13,701 -   Date: Tue, 23 Dec 2025 00:56:34 +0530
+2025-12-22 19:27:13,704 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 19:27:13,710 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 19:27:13,710 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 19:27:13,710 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_192713
+2025-12-22 19:27:13,710 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_192713
+2025-12-22 19:27:13,711 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 19:27:15,969 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 19:27:15,970 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 19:29:24,390 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 19:29:25,932 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 19:29:25,932 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 19:29:25,932 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 19:29:30,045 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 19:29:30,045 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 19:29:35,049 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 19:29:35,235 - Loading extraction results from: email_attachments/3000023637_20251222_192713/extraction_results.xlsx
+2025-12-22 19:29:35,235 - Loading mapping from: email_attachments/3000023637_20251222_192713/document_column_mapping.json
+2025-12-22 19:29:35,260 - doc_columns: ['CAM Kanhiya Bhartiya.xlsx', 'mail_subject.txt', 'mail_body.txt', 'PD Note Kanhaiya.docx', 'Application Form.pdf']
+2025-12-22 19:29:35,284 - No mismatch found in row 0, skipping LLM call.
+2025-12-22 19:29:35,284 - No mismatch found in row 1, skipping LLM call.
+2025-12-22 19:29:35,285 - No mismatch found in row 2, skipping LLM call.
+2025-12-22 19:29:35,285 - No mismatch found in row 3, skipping LLM call.
+2025-12-22 19:29:35,285 - No mismatch found in row 4, skipping LLM call.
+2025-12-22 19:29:37,274 - No mismatch found in row 7, skipping LLM call.
+2025-12-22 19:29:38,817 - No mismatch found in row 10, skipping LLM call.
+2025-12-22 19:29:38,817 - No mismatch found in row 11, skipping LLM call.
+2025-12-22 19:29:38,818 - No mismatch found in row 12, skipping LLM call.
+2025-12-22 19:29:38,818 - No mismatch found in row 13, skipping LLM call.
+2025-12-22 19:29:38,818 - No mismatch found in row 14, skipping LLM call.
+2025-12-22 19:29:38,819 - No mismatch found in row 15, skipping LLM call.
+2025-12-22 19:29:38,819 - No mismatch found in row 16, skipping LLM call.
+2025-12-22 19:29:38,819 - No mismatch found in row 17, skipping LLM call.
+2025-12-22 19:29:38,820 - No mismatch found in row 18, skipping LLM call.
+2025-12-22 19:29:38,820 - No mismatch found in row 19, skipping LLM call.
+2025-12-22 19:29:39,416 - No mismatch found in row 21, skipping LLM call.
+2025-12-22 19:29:39,416 - No mismatch found in row 22, skipping LLM call.
+2025-12-22 19:29:39,417 - No mismatch found in row 23, skipping LLM call.
+2025-12-22 19:29:39,417 - No mismatch found in row 24, skipping LLM call.
+2025-12-22 19:29:39,417 - No mismatch found in row 25, skipping LLM call.
+2025-12-22 19:29:41,265 - No mismatch found in row 28, skipping LLM call.
+2025-12-22 19:29:41,265 - No mismatch found in row 29, skipping LLM call.
+2025-12-22 19:29:41,265 - No mismatch found in row 30, skipping LLM call.
+2025-12-22 19:29:41,266 - No mismatch found in row 31, skipping LLM call.
+2025-12-22 19:29:41,266 - No mismatch found in row 32, skipping LLM call.
+2025-12-22 19:29:41,266 - No mismatch found in row 33, skipping LLM call.
+2025-12-22 19:29:41,266 - No mismatch found in row 34, skipping LLM call.
+2025-12-22 19:29:41,267 - No mismatch found in row 35, skipping LLM call.
+2025-12-22 19:29:41,267 - No mismatch found in row 36, skipping LLM call.
+2025-12-22 19:29:41,267 - No mismatch found in row 37, skipping LLM call.
+2025-12-22 19:29:41,267 - No mismatch found in row 38, skipping LLM call.
+2025-12-22 19:29:41,268 - No mismatch found in row 39, skipping LLM call.
+2025-12-22 19:29:41,268 - No mismatch found in row 40, skipping LLM call.
+2025-12-22 19:29:41,268 - No mismatch found in row 41, skipping LLM call.
+2025-12-22 19:29:41,268 - No mismatch found in row 42, skipping LLM call.
+2025-12-22 19:29:41,269 - No mismatch found in row 43, skipping LLM call.
+2025-12-22 19:29:41,269 - No mismatch found in row 44, skipping LLM call.
+2025-12-22 19:29:41,269 - No mismatch found in row 45, skipping LLM call.
+2025-12-22 19:29:41,269 - No mismatch found in row 46, skipping LLM call.
+2025-12-22 19:29:41,270 - No mismatch found in row 47, skipping LLM call.
+2025-12-22 19:29:41,270 - No mismatch found in row 48, skipping LLM call.
+2025-12-22 19:29:41,270 - No mismatch found in row 49, skipping LLM call.
+2025-12-22 19:29:41,270 - No mismatch found in row 50, skipping LLM call.
+2025-12-22 19:29:41,271 - No mismatch found in row 51, skipping LLM call.
+2025-12-22 19:29:41,271 - No mismatch found in row 52, skipping LLM call.
+2025-12-22 19:29:41,271 - No mismatch found in row 53, skipping LLM call.
+2025-12-22 19:29:41,271 - No mismatch found in row 54, skipping LLM call.
+2025-12-22 19:29:41,272 - No mismatch found in row 55, skipping LLM call.
+2025-12-22 19:29:41,272 - No mismatch found in row 56, skipping LLM call.
+2025-12-22 19:29:41,951 - No mismatch found in row 58, skipping LLM call.
+2025-12-22 19:29:41,952 - No mismatch found in row 59, skipping LLM call.
+2025-12-22 19:29:41,952 - No mismatch found in row 60, skipping LLM call.
+2025-12-22 19:29:41,952 - No mismatch found in row 61, skipping LLM call.
+2025-12-22 19:29:41,952 - No mismatch found in row 62, skipping LLM call.
+2025-12-22 19:29:41,953 - No mismatch found in row 63, skipping LLM call.
+2025-12-22 19:29:41,953 - No mismatch found in row 64, skipping LLM call.
+2025-12-22 19:29:41,953 - No mismatch found in row 65, skipping LLM call.
+2025-12-22 19:29:41,953 - No mismatch found in row 66, skipping LLM call.
+2025-12-22 19:29:41,954 - No mismatch found in row 67, skipping LLM call.
+2025-12-22 19:29:41,954 - No mismatch found in row 68, skipping LLM call.
+2025-12-22 19:29:41,954 - No mismatch found in row 69, skipping LLM call.
+2025-12-22 19:29:41,954 - No mismatch found in row 70, skipping LLM call.
+2025-12-22 19:29:41,955 - No mismatch found in row 71, skipping LLM call.
+2025-12-22 19:29:41,955 - No mismatch found in row 72, skipping LLM call.
+2025-12-22 19:29:41,955 - No mismatch found in row 73, skipping LLM call.
+2025-12-22 19:29:41,955 - No mismatch found in row 74, skipping LLM call.
+2025-12-22 19:29:41,956 - No mismatch found in row 75, skipping LLM call.
+2025-12-22 19:29:41,956 - No mismatch found in row 76, skipping LLM call.
+2025-12-22 19:29:41,956 - No mismatch found in row 77, skipping LLM call.
+2025-12-22 19:29:41,957 - No mismatch found in row 78, skipping LLM call.
+2025-12-22 19:29:41,957 - No mismatch found in row 79, skipping LLM call.
+2025-12-22 19:29:41,957 - No mismatch found in row 80, skipping LLM call.
+2025-12-22 19:29:41,958 - No mismatch found in row 81, skipping LLM call.
+2025-12-22 19:29:41,958 - No mismatch found in row 82, skipping LLM call.
+2025-12-22 19:29:41,958 - No mismatch found in row 83, skipping LLM call.
+2025-12-22 19:29:41,987 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_192713/extraction_results.xlsx
+2025-12-22 19:29:41,987 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_192713/extraction_results.xlsx
+2025-12-22 19:29:42,010 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 19:30:40,602 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-22 19:30:40,603 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 19:31:03,443 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 19:31:03,718 - [DISCONNECTED] Logged out from email server
+2025-12-22 19:42:43,203 - 
+============================================================
+2025-12-22 19:42:43,204 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 19:42:43,204 - ============================================================
+2025-12-22 19:42:43,204 - Email: yourmltales@gmail.com
+2025-12-22 19:42:43,204 - Server: imap.gmail.com:993
+2025-12-22 19:42:43,204 - Watching for subjects: 
+2025-12-22 19:42:43,204 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 19:42:43,204 - Root save location: email_attachments
+2025-12-22 19:42:43,204 - Check interval: 60s
+2025-12-22 19:42:43,204 - Only unseen emails: True
+2025-12-22 19:42:43,204 - Mark as read: False
+2025-12-22 19:42:43,205 - ============================================================
+
+2025-12-22 19:42:43,205 - Connecting to imap.gmail.com:993...
+2025-12-22 19:42:44,483 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 19:42:44,483 - [2025-12-22 19:42:44] Checking emails...
+2025-12-22 19:42:45,056 -   No new attachments
+2025-12-22 19:43:45,057 - [2025-12-22 19:43:45] Checking emails...
+2025-12-22 19:43:46,911 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 19:43:46,911 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 19:43:46,911 -   Date: Tue, 23 Dec 2025 01:13:04 +0530
+2025-12-22 19:43:46,914 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 19:43:46,920 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 19:43:46,921 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 19:43:46,921 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_194346
+2025-12-22 19:43:46,921 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_194346
+2025-12-22 19:43:46,921 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 19:43:49,104 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 19:43:49,104 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 19:45:57,257 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 19:45:58,724 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 19:45:58,724 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 19:45:58,724 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 19:46:02,505 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 19:46:02,505 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 19:46:07,830 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 19:46:08,056 - Loading extraction results from: email_attachments/3000023637_20251222_194346/extraction_results.xlsx
+2025-12-22 19:46:08,056 - Loading mapping from: email_attachments/3000023637_20251222_194346/document_column_mapping.json
+2025-12-22 19:46:08,080 - doc_columns: ['CAM Kanhiya Bhartiya.xlsx', 'mail_subject.txt', 'mail_body.txt', 'PD Note Kanhaiya.docx', 'Application Form.pdf']
+2025-12-22 19:46:08,106 - No mismatch found in row 0, skipping LLM call.
+2025-12-22 19:46:08,107 - No mismatch found in row 1, skipping LLM call.
+2025-12-22 19:46:08,107 - No mismatch found in row 2, skipping LLM call.
+2025-12-22 19:46:08,107 - No mismatch found in row 3, skipping LLM call.
+2025-12-22 19:46:08,108 - No mismatch found in row 4, skipping LLM call.
+2025-12-22 19:46:10,027 - No mismatch found in row 7, skipping LLM call.
+2025-12-22 19:46:11,408 - No mismatch found in row 10, skipping LLM call.
+2025-12-22 19:46:11,408 - No mismatch found in row 11, skipping LLM call.
+2025-12-22 19:46:11,409 - No mismatch found in row 12, skipping LLM call.
+2025-12-22 19:46:11,409 - No mismatch found in row 13, skipping LLM call.
+2025-12-22 19:46:11,409 - No mismatch found in row 14, skipping LLM call.
+2025-12-22 19:46:11,409 - No mismatch found in row 15, skipping LLM call.
+2025-12-22 19:46:11,410 - No mismatch found in row 16, skipping LLM call.
+2025-12-22 19:46:11,410 - No mismatch found in row 17, skipping LLM call.
+2025-12-22 19:46:11,410 - No mismatch found in row 18, skipping LLM call.
+2025-12-22 19:46:11,411 - No mismatch found in row 19, skipping LLM call.
+2025-12-22 19:46:11,945 - No mismatch found in row 21, skipping LLM call.
+2025-12-22 19:46:11,946 - No mismatch found in row 22, skipping LLM call.
+2025-12-22 19:46:11,946 - No mismatch found in row 23, skipping LLM call.
+2025-12-22 19:46:11,946 - No mismatch found in row 24, skipping LLM call.
+2025-12-22 19:46:11,947 - No mismatch found in row 25, skipping LLM call.
+2025-12-22 19:46:13,462 - No mismatch found in row 28, skipping LLM call.
+2025-12-22 19:46:13,462 - No mismatch found in row 29, skipping LLM call.
+2025-12-22 19:46:13,462 - No mismatch found in row 30, skipping LLM call.
+2025-12-22 19:46:13,462 - No mismatch found in row 31, skipping LLM call.
+2025-12-22 19:46:13,463 - No mismatch found in row 32, skipping LLM call.
+2025-12-22 19:46:13,463 - No mismatch found in row 33, skipping LLM call.
+2025-12-22 19:46:13,463 - No mismatch found in row 34, skipping LLM call.
+2025-12-22 19:46:13,463 - No mismatch found in row 35, skipping LLM call.
+2025-12-22 19:46:13,464 - No mismatch found in row 36, skipping LLM call.
+2025-12-22 19:46:13,464 - No mismatch found in row 37, skipping LLM call.
+2025-12-22 19:46:13,464 - No mismatch found in row 38, skipping LLM call.
+2025-12-22 19:46:13,464 - No mismatch found in row 39, skipping LLM call.
+2025-12-22 19:46:13,465 - No mismatch found in row 40, skipping LLM call.
+2025-12-22 19:46:13,465 - No mismatch found in row 41, skipping LLM call.
+2025-12-22 19:46:13,465 - No mismatch found in row 42, skipping LLM call.
+2025-12-22 19:46:13,465 - No mismatch found in row 43, skipping LLM call.
+2025-12-22 19:46:13,466 - No mismatch found in row 44, skipping LLM call.
+2025-12-22 19:46:13,466 - No mismatch found in row 45, skipping LLM call.
+2025-12-22 19:46:13,466 - No mismatch found in row 46, skipping LLM call.
+2025-12-22 19:46:13,466 - No mismatch found in row 47, skipping LLM call.
+2025-12-22 19:46:13,467 - No mismatch found in row 48, skipping LLM call.
+2025-12-22 19:46:13,467 - No mismatch found in row 49, skipping LLM call.
+2025-12-22 19:46:13,467 - No mismatch found in row 50, skipping LLM call.
+2025-12-22 19:46:13,468 - No mismatch found in row 51, skipping LLM call.
+2025-12-22 19:46:13,468 - No mismatch found in row 52, skipping LLM call.
+2025-12-22 19:46:13,468 - No mismatch found in row 53, skipping LLM call.
+2025-12-22 19:46:13,468 - No mismatch found in row 54, skipping LLM call.
+2025-12-22 19:46:13,469 - No mismatch found in row 55, skipping LLM call.
+2025-12-22 19:46:13,469 - No mismatch found in row 56, skipping LLM call.
+2025-12-22 19:46:14,272 - No mismatch found in row 58, skipping LLM call.
+2025-12-22 19:46:14,273 - No mismatch found in row 59, skipping LLM call.
+2025-12-22 19:46:14,273 - No mismatch found in row 60, skipping LLM call.
+2025-12-22 19:46:14,273 - No mismatch found in row 61, skipping LLM call.
+2025-12-22 19:46:14,274 - No mismatch found in row 62, skipping LLM call.
+2025-12-22 19:46:14,274 - No mismatch found in row 63, skipping LLM call.
+2025-12-22 19:46:14,274 - No mismatch found in row 64, skipping LLM call.
+2025-12-22 19:46:14,274 - No mismatch found in row 65, skipping LLM call.
+2025-12-22 19:46:14,275 - No mismatch found in row 66, skipping LLM call.
+2025-12-22 19:46:14,275 - No mismatch found in row 67, skipping LLM call.
+2025-12-22 19:46:14,275 - No mismatch found in row 68, skipping LLM call.
+2025-12-22 19:46:14,275 - No mismatch found in row 69, skipping LLM call.
+2025-12-22 19:46:14,276 - No mismatch found in row 70, skipping LLM call.
+2025-12-22 19:46:14,276 - No mismatch found in row 71, skipping LLM call.
+2025-12-22 19:46:14,277 - No mismatch found in row 72, skipping LLM call.
+2025-12-22 19:46:14,277 - No mismatch found in row 73, skipping LLM call.
+2025-12-22 19:46:14,278 - No mismatch found in row 74, skipping LLM call.
+2025-12-22 19:46:14,279 - No mismatch found in row 75, skipping LLM call.
+2025-12-22 19:46:14,280 - No mismatch found in row 76, skipping LLM call.
+2025-12-22 19:46:14,280 - No mismatch found in row 77, skipping LLM call.
+2025-12-22 19:46:14,281 - No mismatch found in row 78, skipping LLM call.
+2025-12-22 19:46:14,282 - No mismatch found in row 79, skipping LLM call.
+2025-12-22 19:46:14,282 - No mismatch found in row 80, skipping LLM call.
+2025-12-22 19:46:14,283 - No mismatch found in row 81, skipping LLM call.
+2025-12-22 19:46:14,283 - No mismatch found in row 82, skipping LLM call.
+2025-12-22 19:46:14,284 - No mismatch found in row 83, skipping LLM call.
+2025-12-22 19:46:14,315 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_194346/extraction_results.xlsx
+2025-12-22 19:46:14,315 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_194346/extraction_results.xlsx
+2025-12-22 19:46:14,340 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 19:46:22,757 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-22 19:46:22,758 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 19:47:22,758 - [2025-12-22 19:47:22] Checking emails...
+2025-12-22 19:47:23,368 -   No new attachments
+2025-12-22 19:47:56,531 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 19:47:56,806 - [DISCONNECTED] Logged out from email server
+2025-12-22 20:09:12,396 - 
+============================================================
+2025-12-22 20:09:12,396 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 20:09:12,396 - ============================================================
+2025-12-22 20:09:12,396 - Email: yourmltales@gmail.com
+2025-12-22 20:09:12,396 - Server: imap.gmail.com:993
+2025-12-22 20:09:12,396 - Watching for subjects: 
+2025-12-22 20:09:12,396 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 20:09:12,396 - Root save location: email_attachments
+2025-12-22 20:09:12,397 - Check interval: 60s
+2025-12-22 20:09:12,397 - Only unseen emails: True
+2025-12-22 20:09:12,397 - Mark as read: False
+2025-12-22 20:09:12,397 - ============================================================
+
+2025-12-22 20:09:12,397 - Connecting to imap.gmail.com:993...
+2025-12-22 20:09:13,463 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 20:09:13,463 - [2025-12-22 20:09:13] Checking emails...
+2025-12-22 20:09:14,054 -   No new attachments
+2025-12-22 20:10:14,054 - [2025-12-22 20:10:14] Checking emails...
+2025-12-22 20:10:16,149 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 20:10:16,149 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 20:10:16,149 -   Date: Tue, 23 Dec 2025 01:39:32 +0530
+2025-12-22 20:10:16,152 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 20:10:16,158 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 20:10:16,158 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 20:10:16,158 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_201016
+2025-12-22 20:10:16,159 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_201016
+2025-12-22 20:10:16,159 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 20:10:18,526 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 20:10:18,526 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 20:12:26,686 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 20:12:28,065 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 20:12:28,065 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 20:12:28,065 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 20:12:32,119 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 20:12:32,119 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 20:12:37,251 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 20:12:37,512 - Loading extraction results from: email_attachments/3000023637_20251222_201016/extraction_results.xlsx
+2025-12-22 20:12:37,513 - Loading mapping from: email_attachments/3000023637_20251222_201016/document_column_mapping.json
+2025-12-22 20:12:37,538 - doc_columns: ['CAM Kanhiya Bhartiya.xlsx', 'mail_subject.txt', 'mail_body.txt', 'PD Note Kanhaiya.docx', 'Application Form.pdf']
+2025-12-22 20:12:37,563 - No mismatch found in row 0, skipping LLM call.
+2025-12-22 20:12:37,563 - No mismatch found in row 1, skipping LLM call.
+2025-12-22 20:12:37,563 - No mismatch found in row 2, skipping LLM call.
+2025-12-22 20:12:37,564 - No mismatch found in row 3, skipping LLM call.
+2025-12-22 20:12:37,564 - No mismatch found in row 4, skipping LLM call.
+2025-12-22 20:12:39,723 - No mismatch found in row 7, skipping LLM call.
+2025-12-22 20:12:41,497 - No mismatch found in row 10, skipping LLM call.
+2025-12-22 20:12:41,498 - No mismatch found in row 11, skipping LLM call.
+2025-12-22 20:12:41,498 - No mismatch found in row 12, skipping LLM call.
+2025-12-22 20:12:41,498 - No mismatch found in row 13, skipping LLM call.
+2025-12-22 20:12:41,498 - No mismatch found in row 14, skipping LLM call.
+2025-12-22 20:12:41,499 - No mismatch found in row 15, skipping LLM call.
+2025-12-22 20:12:41,499 - No mismatch found in row 16, skipping LLM call.
+2025-12-22 20:12:41,499 - No mismatch found in row 17, skipping LLM call.
+2025-12-22 20:12:41,500 - No mismatch found in row 18, skipping LLM call.
+2025-12-22 20:12:41,500 - No mismatch found in row 19, skipping LLM call.
+2025-12-22 20:12:42,329 - No mismatch found in row 21, skipping LLM call.
+2025-12-22 20:12:42,329 - No mismatch found in row 22, skipping LLM call.
+2025-12-22 20:12:42,329 - No mismatch found in row 23, skipping LLM call.
+2025-12-22 20:12:42,329 - No mismatch found in row 24, skipping LLM call.
+2025-12-22 20:12:42,330 - No mismatch found in row 25, skipping LLM call.
+2025-12-22 20:12:44,144 - No mismatch found in row 28, skipping LLM call.
+2025-12-22 20:12:44,144 - No mismatch found in row 29, skipping LLM call.
+2025-12-22 20:12:44,145 - No mismatch found in row 30, skipping LLM call.
+2025-12-22 20:12:44,146 - No mismatch found in row 31, skipping LLM call.
+2025-12-22 20:12:44,146 - No mismatch found in row 32, skipping LLM call.
+2025-12-22 20:12:44,147 - No mismatch found in row 33, skipping LLM call.
+2025-12-22 20:12:44,147 - No mismatch found in row 34, skipping LLM call.
+2025-12-22 20:12:44,148 - No mismatch found in row 35, skipping LLM call.
+2025-12-22 20:12:44,148 - No mismatch found in row 36, skipping LLM call.
+2025-12-22 20:12:44,149 - No mismatch found in row 37, skipping LLM call.
+2025-12-22 20:12:44,149 - No mismatch found in row 38, skipping LLM call.
+2025-12-22 20:12:44,150 - No mismatch found in row 39, skipping LLM call.
+2025-12-22 20:12:44,150 - No mismatch found in row 40, skipping LLM call.
+2025-12-22 20:12:44,151 - No mismatch found in row 41, skipping LLM call.
+2025-12-22 20:12:44,153 - No mismatch found in row 42, skipping LLM call.
+2025-12-22 20:12:44,153 - No mismatch found in row 43, skipping LLM call.
+2025-12-22 20:12:44,154 - No mismatch found in row 44, skipping LLM call.
+2025-12-22 20:12:44,156 - No mismatch found in row 45, skipping LLM call.
+2025-12-22 20:12:44,157 - No mismatch found in row 46, skipping LLM call.
+2025-12-22 20:12:44,158 - No mismatch found in row 47, skipping LLM call.
+2025-12-22 20:12:44,159 - No mismatch found in row 48, skipping LLM call.
+2025-12-22 20:12:44,160 - No mismatch found in row 49, skipping LLM call.
+2025-12-22 20:12:44,161 - No mismatch found in row 50, skipping LLM call.
+2025-12-22 20:12:44,163 - No mismatch found in row 51, skipping LLM call.
+2025-12-22 20:12:44,164 - No mismatch found in row 52, skipping LLM call.
+2025-12-22 20:12:44,164 - No mismatch found in row 53, skipping LLM call.
+2025-12-22 20:12:44,165 - No mismatch found in row 54, skipping LLM call.
+2025-12-22 20:12:44,166 - No mismatch found in row 55, skipping LLM call.
+2025-12-22 20:12:44,167 - No mismatch found in row 56, skipping LLM call.
+2025-12-22 20:12:44,977 - No mismatch found in row 58, skipping LLM call.
+2025-12-22 20:12:44,977 - No mismatch found in row 59, skipping LLM call.
+2025-12-22 20:12:44,977 - No mismatch found in row 60, skipping LLM call.
+2025-12-22 20:12:44,978 - No mismatch found in row 61, skipping LLM call.
+2025-12-22 20:12:44,978 - No mismatch found in row 62, skipping LLM call.
+2025-12-22 20:12:44,978 - No mismatch found in row 63, skipping LLM call.
+2025-12-22 20:12:44,978 - No mismatch found in row 64, skipping LLM call.
+2025-12-22 20:12:44,979 - No mismatch found in row 65, skipping LLM call.
+2025-12-22 20:12:44,979 - No mismatch found in row 66, skipping LLM call.
+2025-12-22 20:12:44,979 - No mismatch found in row 67, skipping LLM call.
+2025-12-22 20:12:44,979 - No mismatch found in row 68, skipping LLM call.
+2025-12-22 20:12:44,980 - No mismatch found in row 69, skipping LLM call.
+2025-12-22 20:12:44,980 - No mismatch found in row 70, skipping LLM call.
+2025-12-22 20:12:44,980 - No mismatch found in row 71, skipping LLM call.
+2025-12-22 20:12:44,980 - No mismatch found in row 72, skipping LLM call.
+2025-12-22 20:12:44,981 - No mismatch found in row 73, skipping LLM call.
+2025-12-22 20:12:44,981 - No mismatch found in row 74, skipping LLM call.
+2025-12-22 20:12:44,981 - No mismatch found in row 75, skipping LLM call.
+2025-12-22 20:12:44,981 - No mismatch found in row 76, skipping LLM call.
+2025-12-22 20:12:44,982 - No mismatch found in row 77, skipping LLM call.
+2025-12-22 20:12:44,982 - No mismatch found in row 78, skipping LLM call.
+2025-12-22 20:12:44,982 - No mismatch found in row 79, skipping LLM call.
+2025-12-22 20:12:44,982 - No mismatch found in row 80, skipping LLM call.
+2025-12-22 20:12:44,983 - No mismatch found in row 81, skipping LLM call.
+2025-12-22 20:12:44,983 - No mismatch found in row 82, skipping LLM call.
+2025-12-22 20:12:44,983 - No mismatch found in row 83, skipping LLM call.
+2025-12-22 20:12:45,013 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_201016/extraction_results.xlsx
+2025-12-22 20:12:45,013 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_201016/extraction_results.xlsx
+2025-12-22 20:12:45,037 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 20:12:45,162 -   [EMAIL GENERATION ERROR] 'CompleteEmailGenerator' object has no attribute 'logger'
+2025-12-22 20:12:45,163 - Traceback: Traceback (most recent call last):
+  File "/workspaces/AB-IMG/email_agent_with_extraction.py", line 994, in run_email_generation
+    result = generator.generate_and_send_all_emails(folder_path, send_emails=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/complete_email_generator.py", line 556, in generate_and_send_all_emails
+    issues_attachment = self.create_issues_excel(output_dir)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/AB-IMG/complete_email_generator.py", line 390, in create_issues_excel
+    self.logger.info(f"[LOG] Columns to exclude: {exclude_columns}")
+    ^^^^^^^^^^^
+AttributeError: 'CompleteEmailGenerator' object has no attribute 'logger'
+
+2025-12-22 20:12:45,164 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 20:13:45,164 - [2025-12-22 20:13:45] Checking emails...
+2025-12-22 20:13:45,813 -   No new attachments
+2025-12-22 20:13:55,928 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 20:13:56,214 - [DISCONNECTED] Logged out from email server
+2025-12-22 20:14:00,930 - 
+============================================================
+2025-12-22 20:14:00,930 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-22 20:14:00,930 - ============================================================
+2025-12-22 20:14:00,930 - Email: yourmltales@gmail.com
+2025-12-22 20:14:00,930 - Server: imap.gmail.com:993
+2025-12-22 20:14:00,930 - Watching for subjects: 
+2025-12-22 20:14:00,930 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-22 20:14:00,930 - Root save location: email_attachments
+2025-12-22 20:14:00,931 - Check interval: 60s
+2025-12-22 20:14:00,931 - Only unseen emails: True
+2025-12-22 20:14:00,931 - Mark as read: False
+2025-12-22 20:14:00,931 - ============================================================
+
+2025-12-22 20:14:00,931 - Connecting to imap.gmail.com:993...
+2025-12-22 20:14:01,975 - [SUCCESS] Connected to imap.gmail.com
+2025-12-22 20:14:01,975 - [2025-12-22 20:14:01] Checking emails...
+2025-12-22 20:14:02,543 -   No new attachments
+2025-12-22 20:15:02,543 - [2025-12-22 20:15:02] Checking emails...
+2025-12-22 20:15:04,453 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-22 20:15:04,453 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-22 20:15:04,454 -   Date: Tue, 23 Dec 2025 01:44:18 +0530
+2025-12-22 20:15:04,456 -     [ATTACHMENT] Application Form.pdf
+2025-12-22 20:15:04,463 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-22 20:15:04,463 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-22 20:15:04,463 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251222_201504
+2025-12-22 20:15:04,463 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251222_201504
+2025-12-22 20:15:04,463 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-22 20:15:06,313 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-22 20:15:06,313 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-22 20:17:14,676 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-22 20:17:16,338 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-22 20:17:16,338 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-22 20:17:16,339 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-22 20:17:20,487 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-22 20:17:20,487 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-22 20:17:25,350 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-22 20:17:25,594 - Loading extraction results from: email_attachments/3000023637_20251222_201504/extraction_results.xlsx
+2025-12-22 20:17:25,594 - Loading mapping from: email_attachments/3000023637_20251222_201504/document_column_mapping.json
+2025-12-22 20:17:25,619 - doc_columns: ['CAM Kanhiya Bhartiya.xlsx', 'mail_subject.txt', 'mail_body.txt', 'PD Note Kanhaiya.docx', 'Application Form.pdf']
+2025-12-22 20:17:25,646 - No mismatch found in row 0, skipping LLM call.
+2025-12-22 20:17:25,646 - No mismatch found in row 1, skipping LLM call.
+2025-12-22 20:17:25,646 - No mismatch found in row 2, skipping LLM call.
+2025-12-22 20:17:25,646 - No mismatch found in row 3, skipping LLM call.
+2025-12-22 20:17:25,647 - No mismatch found in row 4, skipping LLM call.
+2025-12-22 20:17:27,794 - No mismatch found in row 7, skipping LLM call.
+2025-12-22 20:17:29,486 - No mismatch found in row 10, skipping LLM call.
+2025-12-22 20:17:29,487 - No mismatch found in row 11, skipping LLM call.
+2025-12-22 20:17:29,487 - No mismatch found in row 12, skipping LLM call.
+2025-12-22 20:17:29,487 - No mismatch found in row 13, skipping LLM call.
+2025-12-22 20:17:29,488 - No mismatch found in row 14, skipping LLM call.
+2025-12-22 20:17:29,488 - No mismatch found in row 15, skipping LLM call.
+2025-12-22 20:17:29,488 - No mismatch found in row 16, skipping LLM call.
+2025-12-22 20:17:29,488 - No mismatch found in row 17, skipping LLM call.
+2025-12-22 20:17:29,489 - No mismatch found in row 18, skipping LLM call.
+2025-12-22 20:17:29,489 - No mismatch found in row 19, skipping LLM call.
+2025-12-22 20:17:30,307 - No mismatch found in row 21, skipping LLM call.
+2025-12-22 20:17:30,307 - No mismatch found in row 22, skipping LLM call.
+2025-12-22 20:17:30,308 - No mismatch found in row 23, skipping LLM call.
+2025-12-22 20:17:30,308 - No mismatch found in row 24, skipping LLM call.
+2025-12-22 20:17:30,308 - No mismatch found in row 25, skipping LLM call.
+2025-12-22 20:17:32,045 - No mismatch found in row 28, skipping LLM call.
+2025-12-22 20:17:32,046 - No mismatch found in row 29, skipping LLM call.
+2025-12-22 20:17:32,046 - No mismatch found in row 30, skipping LLM call.
+2025-12-22 20:17:32,046 - No mismatch found in row 31, skipping LLM call.
+2025-12-22 20:17:32,046 - No mismatch found in row 32, skipping LLM call.
+2025-12-22 20:17:32,047 - No mismatch found in row 33, skipping LLM call.
+2025-12-22 20:17:32,047 - No mismatch found in row 34, skipping LLM call.
+2025-12-22 20:17:32,047 - No mismatch found in row 35, skipping LLM call.
+2025-12-22 20:17:32,048 - No mismatch found in row 36, skipping LLM call.
+2025-12-22 20:17:32,048 - No mismatch found in row 37, skipping LLM call.
+2025-12-22 20:17:32,048 - No mismatch found in row 38, skipping LLM call.
+2025-12-22 20:17:32,048 - No mismatch found in row 39, skipping LLM call.
+2025-12-22 20:17:32,049 - No mismatch found in row 40, skipping LLM call.
+2025-12-22 20:17:32,049 - No mismatch found in row 41, skipping LLM call.
+2025-12-22 20:17:32,049 - No mismatch found in row 42, skipping LLM call.
+2025-12-22 20:17:32,049 - No mismatch found in row 43, skipping LLM call.
+2025-12-22 20:17:32,050 - No mismatch found in row 44, skipping LLM call.
+2025-12-22 20:17:32,050 - No mismatch found in row 45, skipping LLM call.
+2025-12-22 20:17:32,050 - No mismatch found in row 46, skipping LLM call.
+2025-12-22 20:17:32,051 - No mismatch found in row 47, skipping LLM call.
+2025-12-22 20:17:32,051 - No mismatch found in row 48, skipping LLM call.
+2025-12-22 20:17:32,051 - No mismatch found in row 49, skipping LLM call.
+2025-12-22 20:17:32,051 - No mismatch found in row 50, skipping LLM call.
+2025-12-22 20:17:32,052 - No mismatch found in row 51, skipping LLM call.
+2025-12-22 20:17:32,052 - No mismatch found in row 52, skipping LLM call.
+2025-12-22 20:17:32,052 - No mismatch found in row 53, skipping LLM call.
+2025-12-22 20:17:32,053 - No mismatch found in row 54, skipping LLM call.
+2025-12-22 20:17:32,053 - No mismatch found in row 55, skipping LLM call.
+2025-12-22 20:17:32,053 - No mismatch found in row 56, skipping LLM call.
+2025-12-22 20:17:32,834 - No mismatch found in row 58, skipping LLM call.
+2025-12-22 20:17:32,834 - No mismatch found in row 59, skipping LLM call.
+2025-12-22 20:17:32,834 - No mismatch found in row 60, skipping LLM call.
+2025-12-22 20:17:32,835 - No mismatch found in row 61, skipping LLM call.
+2025-12-22 20:17:32,835 - No mismatch found in row 62, skipping LLM call.
+2025-12-22 20:17:32,835 - No mismatch found in row 63, skipping LLM call.
+2025-12-22 20:17:32,836 - No mismatch found in row 64, skipping LLM call.
+2025-12-22 20:17:32,836 - No mismatch found in row 65, skipping LLM call.
+2025-12-22 20:17:32,836 - No mismatch found in row 66, skipping LLM call.
+2025-12-22 20:17:32,836 - No mismatch found in row 67, skipping LLM call.
+2025-12-22 20:17:32,837 - No mismatch found in row 68, skipping LLM call.
+2025-12-22 20:17:32,837 - No mismatch found in row 69, skipping LLM call.
+2025-12-22 20:17:32,837 - No mismatch found in row 70, skipping LLM call.
+2025-12-22 20:17:32,837 - No mismatch found in row 71, skipping LLM call.
+2025-12-22 20:17:32,838 - No mismatch found in row 72, skipping LLM call.
+2025-12-22 20:17:32,838 - No mismatch found in row 73, skipping LLM call.
+2025-12-22 20:17:32,838 - No mismatch found in row 74, skipping LLM call.
+2025-12-22 20:17:32,838 - No mismatch found in row 75, skipping LLM call.
+2025-12-22 20:17:32,839 - No mismatch found in row 76, skipping LLM call.
+2025-12-22 20:17:32,839 - No mismatch found in row 77, skipping LLM call.
+2025-12-22 20:17:32,839 - No mismatch found in row 78, skipping LLM call.
+2025-12-22 20:17:32,839 - No mismatch found in row 79, skipping LLM call.
+2025-12-22 20:17:32,840 - No mismatch found in row 80, skipping LLM call.
+2025-12-22 20:17:32,840 - No mismatch found in row 81, skipping LLM call.
+2025-12-22 20:17:32,840 - No mismatch found in row 82, skipping LLM call.
+2025-12-22 20:17:32,841 - No mismatch found in row 83, skipping LLM call.
+2025-12-22 20:17:32,870 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251222_201504/extraction_results.xlsx
+2025-12-22 20:17:32,870 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251222_201504/extraction_results.xlsx
+2025-12-22 20:17:32,896 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-22 20:17:40,507 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-22 20:17:40,508 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-22 20:18:40,508 - [2025-12-22 20:18:40] Checking emails...
+2025-12-22 20:18:41,121 -   No new attachments
+2025-12-22 20:19:27,594 - 
+
+[STOPPED] Agent stopped by user
+2025-12-22 20:19:27,868 - [DISCONNECTED] Logged out from email server
+2025-12-23 03:32:48,487 - 
+============================================================
+2025-12-23 03:32:48,489 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-23 03:32:48,489 - ============================================================
+2025-12-23 03:32:48,489 - Email: yourmltales@gmail.com
+2025-12-23 03:32:48,489 - Server: imap.gmail.com:993
+2025-12-23 03:32:48,489 - Watching for subjects: 
+2025-12-23 03:32:48,489 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-23 03:32:48,490 - Root save location: email_attachments
+2025-12-23 03:32:48,490 - Check interval: 60s
+2025-12-23 03:32:48,490 - Only unseen emails: True
+2025-12-23 03:32:48,490 - Mark as read: False
+2025-12-23 03:32:48,490 - ============================================================
+
+2025-12-23 03:32:48,490 - Connecting to imap.gmail.com:993...
+2025-12-23 03:32:49,493 - [SUCCESS] Connected to imap.gmail.com
+2025-12-23 03:32:49,494 - [2025-12-23 03:32:49] Checking emails...
+2025-12-23 03:32:51,548 - 
+[NEW EMAIL] Subject: Fw: Pre IMGC letter. HL P+C case of Mr. NIRANJAN SUBHASH BHOSALE //
+ Rs 9.00 lacs // 11.75% // 240 Months // CM assessment // Kolhapur //
+ 3000019391
+2025-12-23 03:32:51,548 -   From: "prakhar.singh1 ." <prakhar.singh1@qualtechedge.com>
+2025-12-23 03:32:51,549 -   Date: Mon, 22 Dec 2025 20:44:27 +0000 (UTC)
+2025-12-23 03:32:51,641 -     [ATTACHMENT] App Form - Bhosale.pdf
+2025-12-23 03:32:51,648 -     [ATTACHMENT] Cam - Niranjan Bhosale.xlsx
+2025-12-23 03:32:51,649 -     [ATTACHMENT] PD FORMAT - SALARIED.docx
+2025-12-23 03:32:51,649 -   [SAVED] 3 attachment(s) to: email_attachments/3000019391_20251223_033251
+2025-12-23 03:32:51,649 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000019391_20251223_033251
+2025-12-23 03:32:51,649 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-23 03:32:55,070 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-23 03:32:55,070 -     [EXTRACTION] Processing: Cam - Niranjan Bhosale.xlsx (using column: CAM Description)
+2025-12-23 03:35:03,474 -     [EXTRACTION] Processing: PD FORMAT - SALARIED.docx (using column: PD (Word Doc) Description)
+2025-12-23 03:35:06,551 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-23 03:35:06,551 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-23 03:35:08,022 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-23 03:35:08,022 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-23 03:35:08,023 -     [EXTRACTION] Processing: App Form - Bhosale.pdf (using column: Application Form Description)
+2025-12-23 03:35:13,793 -     [EXTRACTION] ✓ Extracted 30 fields using column: Application Form Description
+2025-12-23 03:35:14,018 - Loading extraction results from: email_attachments/3000019391_20251223_033251/extraction_results.xlsx
+2025-12-23 03:35:14,018 - Loading mapping from: email_attachments/3000019391_20251223_033251/document_column_mapping.json
+2025-12-23 03:35:14,051 - doc_columns: ['Cam - Niranjan Bhosale.xlsx', 'PD FORMAT - SALARIED.docx', 'mail_subject.txt', 'mail_body.txt', 'App Form - Bhosale.pdf']
+2025-12-23 03:35:14,076 - No mismatch found in row 0, skipping LLM call.
+2025-12-23 03:35:14,076 - No mismatch found in row 1, skipping LLM call.
+2025-12-23 03:35:14,077 - No mismatch found in row 2, skipping LLM call.
+2025-12-23 03:35:14,077 - No mismatch found in row 3, skipping LLM call.
+2025-12-23 03:35:14,077 - No mismatch found in row 4, skipping LLM call.
+2025-12-23 03:35:15,992 - No mismatch found in row 7, skipping LLM call.
+2025-12-23 03:35:17,111 - No mismatch found in row 10, skipping LLM call.
+2025-12-23 03:35:17,111 - No mismatch found in row 11, skipping LLM call.
+2025-12-23 03:35:17,111 - No mismatch found in row 12, skipping LLM call.
+2025-12-23 03:35:17,112 - No mismatch found in row 13, skipping LLM call.
+2025-12-23 03:35:17,112 - No mismatch found in row 14, skipping LLM call.
+2025-12-23 03:35:17,112 - No mismatch found in row 15, skipping LLM call.
+2025-12-23 03:35:17,112 - No mismatch found in row 16, skipping LLM call.
+2025-12-23 03:35:17,113 - No mismatch found in row 17, skipping LLM call.
+2025-12-23 03:35:17,113 - No mismatch found in row 18, skipping LLM call.
+2025-12-23 03:35:17,113 - No mismatch found in row 19, skipping LLM call.
+2025-12-23 03:35:17,114 - No mismatch found in row 20, skipping LLM call.
+2025-12-23 03:35:17,114 - No mismatch found in row 21, skipping LLM call.
+2025-12-23 03:35:17,114 - No mismatch found in row 22, skipping LLM call.
+2025-12-23 03:35:17,696 - No mismatch found in row 24, skipping LLM call.
+2025-12-23 03:35:17,697 - No mismatch found in row 25, skipping LLM call.
+2025-12-23 03:35:17,697 - No mismatch found in row 26, skipping LLM call.
+2025-12-23 03:35:17,697 - No mismatch found in row 27, skipping LLM call.
+2025-12-23 03:35:17,698 - No mismatch found in row 28, skipping LLM call.
+2025-12-23 03:35:17,698 - No mismatch found in row 29, skipping LLM call.
+2025-12-23 03:35:17,698 - No mismatch found in row 30, skipping LLM call.
+2025-12-23 03:35:17,698 - No mismatch found in row 31, skipping LLM call.
+2025-12-23 03:35:17,699 - No mismatch found in row 32, skipping LLM call.
+2025-12-23 03:35:17,699 - No mismatch found in row 33, skipping LLM call.
+2025-12-23 03:35:17,699 - No mismatch found in row 34, skipping LLM call.
+2025-12-23 03:35:17,699 - No mismatch found in row 35, skipping LLM call.
+2025-12-23 03:35:17,700 - No mismatch found in row 36, skipping LLM call.
+2025-12-23 03:35:17,700 - No mismatch found in row 37, skipping LLM call.
+2025-12-23 03:35:17,700 - No mismatch found in row 38, skipping LLM call.
+2025-12-23 03:35:17,701 - No mismatch found in row 39, skipping LLM call.
+2025-12-23 03:35:17,701 - No mismatch found in row 40, skipping LLM call.
+2025-12-23 03:35:17,701 - No mismatch found in row 41, skipping LLM call.
+2025-12-23 03:35:17,701 - No mismatch found in row 42, skipping LLM call.
+2025-12-23 03:35:17,702 - No mismatch found in row 43, skipping LLM call.
+2025-12-23 03:35:17,702 - No mismatch found in row 44, skipping LLM call.
+2025-12-23 03:35:17,702 - No mismatch found in row 45, skipping LLM call.
+2025-12-23 03:35:17,702 - No mismatch found in row 46, skipping LLM call.
+2025-12-23 03:35:17,703 - No mismatch found in row 47, skipping LLM call.
+2025-12-23 03:35:17,703 - No mismatch found in row 48, skipping LLM call.
+2025-12-23 03:35:17,703 - No mismatch found in row 49, skipping LLM call.
+2025-12-23 03:35:17,704 - No mismatch found in row 50, skipping LLM call.
+2025-12-23 03:35:17,704 - No mismatch found in row 51, skipping LLM call.
+2025-12-23 03:35:17,704 - No mismatch found in row 52, skipping LLM call.
+2025-12-23 03:35:18,288 - No mismatch found in row 54, skipping LLM call.
+2025-12-23 03:35:18,289 - No mismatch found in row 55, skipping LLM call.
+2025-12-23 03:35:18,289 - No mismatch found in row 56, skipping LLM call.
+2025-12-23 03:35:18,992 - No mismatch found in row 58, skipping LLM call.
+2025-12-23 03:35:18,993 - No mismatch found in row 59, skipping LLM call.
+2025-12-23 03:35:18,993 - No mismatch found in row 60, skipping LLM call.
+2025-12-23 03:35:18,993 - No mismatch found in row 61, skipping LLM call.
+2025-12-23 03:35:18,993 - No mismatch found in row 62, skipping LLM call.
+2025-12-23 03:35:18,994 - No mismatch found in row 63, skipping LLM call.
+2025-12-23 03:35:18,994 - No mismatch found in row 64, skipping LLM call.
+2025-12-23 03:35:18,994 - No mismatch found in row 65, skipping LLM call.
+2025-12-23 03:35:18,994 - No mismatch found in row 66, skipping LLM call.
+2025-12-23 03:35:18,995 - No mismatch found in row 67, skipping LLM call.
+2025-12-23 03:35:18,995 - No mismatch found in row 68, skipping LLM call.
+2025-12-23 03:35:18,995 - No mismatch found in row 69, skipping LLM call.
+2025-12-23 03:35:18,995 - No mismatch found in row 70, skipping LLM call.
+2025-12-23 03:35:18,996 - No mismatch found in row 71, skipping LLM call.
+2025-12-23 03:35:18,996 - No mismatch found in row 72, skipping LLM call.
+2025-12-23 03:35:18,996 - No mismatch found in row 73, skipping LLM call.
+2025-12-23 03:35:18,997 - No mismatch found in row 74, skipping LLM call.
+2025-12-23 03:35:18,997 - No mismatch found in row 75, skipping LLM call.
+2025-12-23 03:35:18,997 - No mismatch found in row 76, skipping LLM call.
+2025-12-23 03:35:18,998 - No mismatch found in row 77, skipping LLM call.
+2025-12-23 03:35:18,998 - No mismatch found in row 78, skipping LLM call.
+2025-12-23 03:35:18,999 - No mismatch found in row 79, skipping LLM call.
+2025-12-23 03:35:18,999 - No mismatch found in row 80, skipping LLM call.
+2025-12-23 03:35:18,999 - No mismatch found in row 81, skipping LLM call.
+2025-12-23 03:35:19,000 - No mismatch found in row 82, skipping LLM call.
+2025-12-23 03:35:19,000 - No mismatch found in row 83, skipping LLM call.
+2025-12-23 03:35:19,031 -   [EXTRACTION] Results saved to email_attachments/3000019391_20251223_033251/extraction_results.xlsx
+2025-12-23 03:35:19,031 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000019391_20251223_033251/extraction_results.xlsx
+2025-12-23 03:35:19,054 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-23 03:35:26,073 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-23 03:35:26,074 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-23 03:36:26,074 - [2025-12-23 03:36:26] Checking emails...
+2025-12-23 03:36:26,722 -   No new attachments
+2025-12-23 03:37:26,723 - [2025-12-23 03:37:26] Checking emails...
+2025-12-23 03:37:27,289 -   No new attachments
+2025-12-23 03:38:27,289 - [2025-12-23 03:38:27] Checking emails...
+2025-12-23 03:38:27,847 -   No new attachments
+2025-12-23 03:39:27,847 - [2025-12-23 03:39:27] Checking emails...
+2025-12-23 03:39:29,457 - 
+[NEW EMAIL] Subject: Fw: Pre IMGC letter. HL P+C case of Mr. NIRANJAN SUBHASH BHOSALE //
+ Rs 9.00 lacs // 11.75% // 240 Months // CM assessment // Kolhapur //
+ 3000019391
+2025-12-23 03:39:29,457 -   From: "prakhar.singh1 ." <prakhar.singh1@qualtechedge.com>
+2025-12-23 03:39:29,457 -   Date: Tue, 23 Dec 2025 03:39:03 +0000 (UTC)
+2025-12-23 03:39:29,460 -     [ATTACHMENT] App Form - Bhosale.pdf
+2025-12-23 03:39:29,466 -     [ATTACHMENT] Cam - Niranjan Bhosale.xlsx
+2025-12-23 03:39:29,466 -     [ATTACHMENT] PD FORMAT - SALARIED.docx
+2025-12-23 03:39:29,467 -   [SAVED] 3 attachment(s) to: email_attachments/3000019391_20251223_033929
+2025-12-23 03:39:29,467 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000019391_20251223_033929
+2025-12-23 03:39:29,467 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-23 03:39:31,416 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-23 03:39:31,416 -     [EXTRACTION] Processing: Cam - Niranjan Bhosale.xlsx (using column: CAM Description)
+2025-12-23 03:41:39,692 -     [EXTRACTION] Processing: PD FORMAT - SALARIED.docx (using column: PD (Word Doc) Description)
+2025-12-23 03:41:42,862 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-23 03:41:42,862 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-23 03:41:44,401 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-23 03:41:44,402 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-23 03:41:44,402 -     [EXTRACTION] Processing: App Form - Bhosale.pdf (using column: Application Form Description)
+2025-12-23 03:41:51,306 -     [EXTRACTION] ✓ Extracted 31 fields using column: Application Form Description
+2025-12-23 03:41:51,524 - Loading extraction results from: email_attachments/3000019391_20251223_033929/extraction_results.xlsx
+2025-12-23 03:41:51,524 - Loading mapping from: email_attachments/3000019391_20251223_033929/document_column_mapping.json
+2025-12-23 03:41:51,570 - doc_columns: ['Cam - Niranjan Bhosale.xlsx', 'PD FORMAT - SALARIED.docx', 'mail_subject.txt', 'mail_body.txt', 'App Form - Bhosale.pdf']
+2025-12-23 03:41:51,613 - No mismatch found in row 0, skipping LLM call.
+2025-12-23 03:41:51,614 - No mismatch found in row 1, skipping LLM call.
+2025-12-23 03:41:51,614 - No mismatch found in row 2, skipping LLM call.
+2025-12-23 03:41:51,615 - No mismatch found in row 3, skipping LLM call.
+2025-12-23 03:41:51,615 - No mismatch found in row 4, skipping LLM call.
+2025-12-23 03:41:53,666 - No mismatch found in row 7, skipping LLM call.
+2025-12-23 03:41:54,683 - No mismatch found in row 10, skipping LLM call.
+2025-12-23 03:41:54,684 - No mismatch found in row 11, skipping LLM call.
+2025-12-23 03:41:54,684 - No mismatch found in row 12, skipping LLM call.
+2025-12-23 03:41:54,684 - No mismatch found in row 13, skipping LLM call.
+2025-12-23 03:41:54,685 - No mismatch found in row 14, skipping LLM call.
+2025-12-23 03:41:54,685 - No mismatch found in row 15, skipping LLM call.
+2025-12-23 03:41:54,685 - No mismatch found in row 16, skipping LLM call.
+2025-12-23 03:41:54,685 - No mismatch found in row 17, skipping LLM call.
+2025-12-23 03:41:54,686 - No mismatch found in row 18, skipping LLM call.
+2025-12-23 03:41:54,686 - No mismatch found in row 19, skipping LLM call.
+2025-12-23 03:41:54,686 - No mismatch found in row 20, skipping LLM call.
+2025-12-23 03:41:54,687 - No mismatch found in row 21, skipping LLM call.
+2025-12-23 03:41:54,687 - No mismatch found in row 22, skipping LLM call.
+2025-12-23 03:41:55,328 - No mismatch found in row 24, skipping LLM call.
+2025-12-23 03:41:55,328 - No mismatch found in row 25, skipping LLM call.
+2025-12-23 03:41:55,329 - No mismatch found in row 26, skipping LLM call.
+2025-12-23 03:41:55,329 - No mismatch found in row 27, skipping LLM call.
+2025-12-23 03:41:55,329 - No mismatch found in row 28, skipping LLM call.
+2025-12-23 03:41:55,330 - No mismatch found in row 29, skipping LLM call.
+2025-12-23 03:41:55,330 - No mismatch found in row 30, skipping LLM call.
+2025-12-23 03:41:55,330 - No mismatch found in row 31, skipping LLM call.
+2025-12-23 03:41:55,330 - No mismatch found in row 32, skipping LLM call.
+2025-12-23 03:41:55,332 - No mismatch found in row 33, skipping LLM call.
+2025-12-23 03:41:55,333 - No mismatch found in row 34, skipping LLM call.
+2025-12-23 03:41:55,334 - No mismatch found in row 35, skipping LLM call.
+2025-12-23 03:41:55,334 - No mismatch found in row 36, skipping LLM call.
+2025-12-23 03:41:55,335 - No mismatch found in row 37, skipping LLM call.
+2025-12-23 03:41:55,336 - No mismatch found in row 38, skipping LLM call.
+2025-12-23 03:41:55,336 - No mismatch found in row 39, skipping LLM call.
+2025-12-23 03:41:55,337 - No mismatch found in row 40, skipping LLM call.
+2025-12-23 03:41:55,338 - No mismatch found in row 41, skipping LLM call.
+2025-12-23 03:41:55,338 - No mismatch found in row 42, skipping LLM call.
+2025-12-23 03:41:55,338 - No mismatch found in row 43, skipping LLM call.
+2025-12-23 03:41:55,339 - No mismatch found in row 44, skipping LLM call.
+2025-12-23 03:41:55,339 - No mismatch found in row 45, skipping LLM call.
+2025-12-23 03:41:55,340 - No mismatch found in row 46, skipping LLM call.
+2025-12-23 03:41:55,341 - No mismatch found in row 47, skipping LLM call.
+2025-12-23 03:41:55,341 - No mismatch found in row 48, skipping LLM call.
+2025-12-23 03:41:55,342 - No mismatch found in row 49, skipping LLM call.
+2025-12-23 03:41:55,342 - No mismatch found in row 50, skipping LLM call.
+2025-12-23 03:41:55,342 - No mismatch found in row 51, skipping LLM call.
+2025-12-23 03:41:55,343 - No mismatch found in row 52, skipping LLM call.
+2025-12-23 03:41:55,924 - No mismatch found in row 54, skipping LLM call.
+2025-12-23 03:41:55,924 - No mismatch found in row 55, skipping LLM call.
+2025-12-23 03:41:55,924 - No mismatch found in row 56, skipping LLM call.
+2025-12-23 03:41:56,701 - No mismatch found in row 58, skipping LLM call.
+2025-12-23 03:41:56,702 - No mismatch found in row 59, skipping LLM call.
+2025-12-23 03:41:56,702 - No mismatch found in row 60, skipping LLM call.
+2025-12-23 03:41:56,702 - No mismatch found in row 61, skipping LLM call.
+2025-12-23 03:41:56,703 - No mismatch found in row 62, skipping LLM call.
+2025-12-23 03:41:56,703 - No mismatch found in row 63, skipping LLM call.
+2025-12-23 03:41:56,703 - No mismatch found in row 64, skipping LLM call.
+2025-12-23 03:41:56,704 - No mismatch found in row 65, skipping LLM call.
+2025-12-23 03:41:56,704 - No mismatch found in row 66, skipping LLM call.
+2025-12-23 03:41:56,704 - No mismatch found in row 67, skipping LLM call.
+2025-12-23 03:41:56,704 - No mismatch found in row 68, skipping LLM call.
+2025-12-23 03:41:56,705 - No mismatch found in row 69, skipping LLM call.
+2025-12-23 03:41:56,705 - No mismatch found in row 70, skipping LLM call.
+2025-12-23 03:41:56,705 - No mismatch found in row 71, skipping LLM call.
+2025-12-23 03:41:56,706 - No mismatch found in row 72, skipping LLM call.
+2025-12-23 03:41:56,706 - No mismatch found in row 73, skipping LLM call.
+2025-12-23 03:41:56,706 - No mismatch found in row 74, skipping LLM call.
+2025-12-23 03:41:56,706 - No mismatch found in row 75, skipping LLM call.
+2025-12-23 03:41:56,707 - No mismatch found in row 76, skipping LLM call.
+2025-12-23 03:41:56,707 - No mismatch found in row 77, skipping LLM call.
+2025-12-23 03:41:56,707 - No mismatch found in row 78, skipping LLM call.
+2025-12-23 03:41:56,707 - No mismatch found in row 79, skipping LLM call.
+2025-12-23 03:41:56,708 - No mismatch found in row 80, skipping LLM call.
+2025-12-23 03:41:56,708 - No mismatch found in row 81, skipping LLM call.
+2025-12-23 03:41:56,709 - No mismatch found in row 82, skipping LLM call.
+2025-12-23 03:41:56,709 - No mismatch found in row 83, skipping LLM call.
+2025-12-23 03:41:56,746 -   [EXTRACTION] Results saved to email_attachments/3000019391_20251223_033929/extraction_results.xlsx
+2025-12-23 03:41:56,746 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000019391_20251223_033929/extraction_results.xlsx
+2025-12-23 03:41:56,776 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-23 03:42:03,679 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-23 03:42:03,679 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-23 03:43:03,680 - [2025-12-23 03:43:03] Checking emails...
+2025-12-23 03:43:04,257 -   No new attachments
+2025-12-23 03:44:04,257 - [2025-12-23 03:44:04] Checking emails...
+2025-12-23 03:44:04,798 -   No new attachments
+2025-12-23 03:45:04,798 - [2025-12-23 03:45:04] Checking emails...
+2025-12-23 03:45:05,335 -   No new attachments
+2025-12-23 03:46:05,335 - [2025-12-23 03:46:05] Checking emails...
+2025-12-23 03:46:05,895 -   No new attachments
+2025-12-23 03:47:05,895 - [2025-12-23 03:47:05] Checking emails...
+2025-12-23 03:47:06,458 -   No new attachments
+2025-12-23 03:48:06,459 - [2025-12-23 03:48:06] Checking emails...
+2025-12-23 03:48:07,008 -   No new attachments
+2025-12-23 03:49:07,009 - [2025-12-23 03:49:07] Checking emails...
+2025-12-23 03:49:07,569 -   No new attachments
+2025-12-23 03:50:07,569 - [2025-12-23 03:50:07] Checking emails...
+2025-12-23 03:50:08,114 -   No new attachments
+2025-12-23 03:51:08,115 - [2025-12-23 03:51:08] Checking emails...
+2025-12-23 03:51:08,659 -   No new attachments
+2025-12-23 03:51:55,725 - 
+
+[STOPPED] Agent stopped by user
+2025-12-23 03:51:55,989 - [DISCONNECTED] Logged out from email server
+2025-12-23 03:55:58,895 - 
+============================================================
+2025-12-23 03:55:58,895 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2025-12-23 03:55:58,895 - ============================================================
+2025-12-23 03:55:58,896 - Email: yourmltales@gmail.com
+2025-12-23 03:55:58,896 - Server: imap.gmail.com:993
+2025-12-23 03:55:58,896 - Watching for subjects: 
+2025-12-23 03:55:58,896 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2025-12-23 03:55:58,896 - Root save location: email_attachments
+2025-12-23 03:55:58,896 - Check interval: 60s
+2025-12-23 03:55:58,896 - Only unseen emails: True
+2025-12-23 03:55:58,896 - Mark as read: False
+2025-12-23 03:55:58,896 - ============================================================
+
+2025-12-23 03:55:58,896 - Connecting to imap.gmail.com:993...
+2025-12-23 03:55:59,965 - [SUCCESS] Connected to imap.gmail.com
+2025-12-23 03:55:59,965 - [2025-12-23 03:55:59] Checking emails...
+2025-12-23 03:56:00,524 -   No new attachments
+2025-12-23 03:57:00,524 - [2025-12-23 03:57:00] Checking emails...
+2025-12-23 03:57:02,534 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. Test HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2025-12-23 03:57:02,534 -   From: ML TALES <yourmltales@gmail.com>
+2025-12-23 03:57:02,534 -   Date: Tue, 23 Dec 2025 09:26:51 +0530
+2025-12-23 03:57:02,537 -     [ATTACHMENT] Application Form.pdf
+2025-12-23 03:57:02,543 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2025-12-23 03:57:02,544 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2025-12-23 03:57:02,545 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20251223_035702
+2025-12-23 03:57:02,545 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20251223_035702
+2025-12-23 03:57:02,545 -   [EXTRACTION] Found 5 document(s) to process
+2025-12-23 03:57:04,454 -   [EXTRACTION] Document-to-column mapping completed
+2025-12-23 03:57:04,454 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2025-12-23 03:57:07,647 - Processing document with matched column: CAM Description
+2025-12-23 03:57:07,647 - len(document_text): 738667
+2025-12-23 03:57:07,647 - MAX_DOCUMENT_CHARS: 15000
+2025-12-23 03:57:14,095 -     [EXTRACTION] ✓ Extracted 50 fields using column: CAM Description
+2025-12-23 03:57:14,095 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2025-12-23 03:57:14,096 - Processing document with matched column: Email Subject Description
+2025-12-23 03:57:14,096 - len(document_text): 144
+2025-12-23 03:57:14,096 - MAX_DOCUMENT_CHARS: 15000
+2025-12-23 03:57:15,785 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2025-12-23 03:57:15,785 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2025-12-23 03:57:15,786 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2025-12-23 03:57:15,821 - Processing document with matched column: PD (Word Doc) Description
+2025-12-23 03:57:15,821 - len(document_text): 8114
+2025-12-23 03:57:15,821 - MAX_DOCUMENT_CHARS: 15000
+2025-12-23 03:57:19,601 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2025-12-23 03:57:19,602 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2025-12-23 03:57:20,415 - Processing document with matched column: Application Form Description
+2025-12-23 03:57:20,415 - len(document_text): 16923
+2025-12-23 03:57:20,416 - MAX_DOCUMENT_CHARS: 15000
+2025-12-23 03:57:24,616 -     [EXTRACTION] ✓ Extracted 30 fields using column: Application Form Description
+2025-12-23 03:57:24,874 - Loading extraction results from: email_attachments/3000023637_20251223_035702/extraction_results.xlsx
+2025-12-23 03:57:24,874 - Loading mapping from: email_attachments/3000023637_20251223_035702/document_column_mapping.json
+2025-12-23 03:57:24,922 - doc_columns: ['CAM Kanhiya Bhartiya.xlsx', 'mail_subject.txt', 'mail_body.txt', 'PD Note Kanhaiya.docx', 'Application Form.pdf']
+2025-12-23 03:57:24,971 - No mismatch found in row 0, skipping LLM call.
+2025-12-23 03:57:24,972 - No mismatch found in row 1, skipping LLM call.
+2025-12-23 03:57:24,972 - No mismatch found in row 2, skipping LLM call.
+2025-12-23 03:57:24,972 - No mismatch found in row 3, skipping LLM call.
+2025-12-23 03:57:24,973 - No mismatch found in row 4, skipping LLM call.
+2025-12-23 03:57:29,335 - No mismatch found in row 10, skipping LLM call.
+2025-12-23 03:57:29,336 - No mismatch found in row 11, skipping LLM call.
+2025-12-23 03:57:29,336 - No mismatch found in row 12, skipping LLM call.
+2025-12-23 03:57:29,336 - No mismatch found in row 13, skipping LLM call.
+2025-12-23 03:57:29,337 - No mismatch found in row 14, skipping LLM call.
+2025-12-23 03:57:29,337 - No mismatch found in row 15, skipping LLM call.
+2025-12-23 03:57:29,337 - No mismatch found in row 16, skipping LLM call.
+2025-12-23 03:57:29,337 - No mismatch found in row 17, skipping LLM call.
+2025-12-23 03:57:29,338 - No mismatch found in row 18, skipping LLM call.
+2025-12-23 03:57:29,338 - No mismatch found in row 19, skipping LLM call.
+2025-12-23 03:57:29,947 - No mismatch found in row 21, skipping LLM call.
+2025-12-23 03:57:29,948 - No mismatch found in row 22, skipping LLM call.
+2025-12-23 03:57:29,948 - No mismatch found in row 23, skipping LLM call.
+2025-12-23 03:57:29,948 - No mismatch found in row 24, skipping LLM call.
+2025-12-23 03:57:29,948 - No mismatch found in row 25, skipping LLM call.
+2025-12-23 03:57:31,595 - No mismatch found in row 28, skipping LLM call.
+2025-12-23 03:57:31,596 - No mismatch found in row 29, skipping LLM call.
+2025-12-23 03:57:32,300 - No mismatch found in row 31, skipping LLM call.
+2025-12-23 03:57:32,300 - No mismatch found in row 32, skipping LLM call.
+2025-12-23 03:57:32,301 - No mismatch found in row 33, skipping LLM call.
+2025-12-23 03:57:32,301 - No mismatch found in row 34, skipping LLM call.
+2025-12-23 03:57:32,301 - No mismatch found in row 35, skipping LLM call.
+2025-12-23 03:57:32,301 - No mismatch found in row 36, skipping LLM call.
+2025-12-23 03:57:32,302 - No mismatch found in row 37, skipping LLM call.
+2025-12-23 03:57:32,935 - No mismatch found in row 39, skipping LLM call.
+2025-12-23 03:57:32,935 - No mismatch found in row 40, skipping LLM call.
+2025-12-23 03:57:32,936 - No mismatch found in row 41, skipping LLM call.
+2025-12-23 03:57:32,937 - No mismatch found in row 42, skipping LLM call.
+2025-12-23 03:57:32,937 - No mismatch found in row 43, skipping LLM call.
+2025-12-23 03:57:32,938 - No mismatch found in row 44, skipping LLM call.
+2025-12-23 03:57:32,938 - No mismatch found in row 45, skipping LLM call.
+2025-12-23 03:57:32,939 - No mismatch found in row 46, skipping LLM call.
+2025-12-23 03:57:32,939 - No mismatch found in row 47, skipping LLM call.
+2025-12-23 03:57:32,939 - No mismatch found in row 48, skipping LLM call.
+2025-12-23 03:57:32,940 - No mismatch found in row 49, skipping LLM call.
+2025-12-23 03:57:32,940 - No mismatch found in row 50, skipping LLM call.
+2025-12-23 03:57:32,940 - No mismatch found in row 51, skipping LLM call.
+2025-12-23 03:57:32,941 - No mismatch found in row 52, skipping LLM call.
+2025-12-23 03:57:32,941 - No mismatch found in row 53, skipping LLM call.
+2025-12-23 03:57:32,942 - No mismatch found in row 54, skipping LLM call.
+2025-12-23 03:57:32,942 - No mismatch found in row 55, skipping LLM call.
+2025-12-23 03:57:32,943 - No mismatch found in row 56, skipping LLM call.
+2025-12-23 03:57:33,615 - No mismatch found in row 58, skipping LLM call.
+2025-12-23 03:57:33,615 - No mismatch found in row 59, skipping LLM call.
+2025-12-23 03:57:33,616 - No mismatch found in row 60, skipping LLM call.
+2025-12-23 03:57:33,616 - No mismatch found in row 61, skipping LLM call.
+2025-12-23 03:57:33,616 - No mismatch found in row 62, skipping LLM call.
+2025-12-23 03:57:33,616 - No mismatch found in row 63, skipping LLM call.
+2025-12-23 03:57:33,617 - No mismatch found in row 64, skipping LLM call.
+2025-12-23 03:57:33,617 - No mismatch found in row 65, skipping LLM call.
+2025-12-23 03:57:33,617 - No mismatch found in row 66, skipping LLM call.
+2025-12-23 03:57:33,618 - No mismatch found in row 67, skipping LLM call.
+2025-12-23 03:57:33,618 - No mismatch found in row 68, skipping LLM call.
+2025-12-23 03:57:33,618 - No mismatch found in row 69, skipping LLM call.
+2025-12-23 03:57:33,618 - No mismatch found in row 70, skipping LLM call.
+2025-12-23 03:57:33,619 - No mismatch found in row 71, skipping LLM call.
+2025-12-23 03:57:33,619 - No mismatch found in row 72, skipping LLM call.
+2025-12-23 03:57:33,619 - No mismatch found in row 73, skipping LLM call.
+2025-12-23 03:57:33,619 - No mismatch found in row 74, skipping LLM call.
+2025-12-23 03:57:33,620 - No mismatch found in row 75, skipping LLM call.
+2025-12-23 03:57:33,620 - No mismatch found in row 76, skipping LLM call.
+2025-12-23 03:57:33,620 - No mismatch found in row 77, skipping LLM call.
+2025-12-23 03:57:33,620 - No mismatch found in row 78, skipping LLM call.
+2025-12-23 03:57:33,621 - No mismatch found in row 79, skipping LLM call.
+2025-12-23 03:57:33,621 - No mismatch found in row 80, skipping LLM call.
+2025-12-23 03:57:33,621 - No mismatch found in row 81, skipping LLM call.
+2025-12-23 03:57:33,621 - No mismatch found in row 82, skipping LLM call.
+2025-12-23 03:57:33,621 - No mismatch found in row 83, skipping LLM call.
+2025-12-23 03:57:33,652 -   [EXTRACTION] Results saved to email_attachments/3000023637_20251223_035702/extraction_results.xlsx
+2025-12-23 03:57:33,652 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20251223_035702/extraction_results.xlsx
+2025-12-23 03:57:33,679 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2025-12-23 03:57:40,774 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2025-12-23 03:57:40,774 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2025-12-23 03:58:40,775 - [2025-12-23 03:58:40] Checking emails...
+2025-12-23 03:58:41,368 -   No new attachments
+2025-12-23 03:59:41,369 - [2025-12-23 03:59:41] Checking emails...
+2025-12-23 03:59:41,991 -   No new attachments
+2025-12-23 04:00:41,991 - [2025-12-23 04:00:41] Checking emails...
+2025-12-23 04:00:42,534 -   No new attachments
+2025-12-23 04:00:45,196 - 
+
+[STOPPED] Agent stopped by user
+2025-12-23 04:00:45,456 - [DISCONNECTED] Logged out from email server

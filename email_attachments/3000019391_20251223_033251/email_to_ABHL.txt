@@ -1,0 +1,27 @@
+Subject: Loan ID: 3000019391 Loan Application Document Processing Update - Major Discrepancies Found
+================================================================================
+
+Dear ABHFL Team,
+I hope this email finds you well.
+We have processed your documents, but major discrepancies were identified during our quality check.
+
+Quality Check Summary:
+• 49 major mismatches detected
+• Revised documents or additional information may be required.
+
+Documents Processed
+A total of 5 documents were received and processed, including:
+• Cam - Niranjan Bhosale.xlsx
+• PD FORMAT - SALARIED.docx
+• mail_subject.txt
+• mail_body.txt
+• App Form - Bhosale.pdf
+
+Please review the attached summarization report for details on the discrepancies.
+If you require any additional information or clarification, please feel free to reach out to us.
+Warm regards,
+IMGC Team
+________________________________________
+This is a system-generated email. Please do not reply to this message.
+________________________________________
+For Implementation Use Only

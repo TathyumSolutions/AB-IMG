@@ -387,12 +387,16 @@ Return ONLY in this exact JSON format:
         # Columns to exclude
         exclude_keywords = ['Data Type', 'Field length', 'Primary Source Document', 'Secondary Source Document']
         exclude_columns = [col for col in all_columns if any(key in col for key in exclude_keywords) or 'Description' in col]
-
+        print(f"[LOG] Columns to exclude: {exclude_columns}")
+        mismatch_extraction_file=os.path.join(output_folder, "extraction_results_with_mismatch.xlsx")
+        merged_df_1=pd.read_excel(mismatch_extraction_file)
+        print(f"[LOG] Merged DataFrame shape before filtering: {merged_df_1.shape}")
+        print(f"[LOG] First row of merged columns: {merged_df_1.head(1)}" )
         # Columns to keep
-        keep_columns = [col for col in self.merged_df.columns if col not in exclude_columns]
-
+        keep_columns = [col for col in merged_df_1.columns if col not in exclude_columns]
+        print(f"[LOG] Columns to keep: {keep_columns}")
         # Filter DataFrame
-        filtered_df = self.merged_df[keep_columns]
+        filtered_df = merged_df_1[keep_columns]
 
         # Create filename
         filename = os.path.join(output_folder, "issues.xlsx")
