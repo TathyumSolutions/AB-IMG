@@ -987,8 +987,9 @@ class EmailAgentWithExtraction:
                 extraction_file=extraction_file,
                 config_file=config_file,
                 api_key=api_key,
-                smtp_config=smtp_config
-            )
+                smtp_config=smtp_config,
+                folder_path=folder_path            
+                )
 
             self.logger.info(f"  [EMAIL GENERATION] Recipients loaded: {len(generator.recipients)} recipient(s)")
 

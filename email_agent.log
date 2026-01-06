@@ -1758,3 +1758,564 @@ AttributeError: 'CompleteEmailGenerator' object has no attribute 'logger'
 
 [STOPPED] Agent stopped by user
 2025-12-23 04:00:45,456 - [DISCONNECTED] Logged out from email server
+2026-01-05 12:35:24,241 - 
+============================================================
+2026-01-05 12:35:24,242 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2026-01-05 12:35:24,242 - ============================================================
+2026-01-05 12:35:24,242 - Email: yourmltales@gmail.com
+2026-01-05 12:35:24,242 - Server: imap.gmail.com:993
+2026-01-05 12:35:24,243 - Watching for subjects: 
+2026-01-05 12:35:24,243 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2026-01-05 12:35:24,243 - Root save location: email_attachments
+2026-01-05 12:35:24,243 - Check interval: 60s
+2026-01-05 12:35:24,243 - Only unseen emails: True
+2026-01-05 12:35:24,243 - Mark as read: False
+2026-01-05 12:35:24,243 - ============================================================
+
+2026-01-05 12:35:24,244 - Connecting to imap.gmail.com:993...
+2026-01-05 12:35:25,500 - [SUCCESS] Connected to imap.gmail.com
+2026-01-05 12:35:25,500 - [2026-01-05 12:35:25] Checking emails...
+2026-01-05 12:35:26,060 -   No new attachments
+2026-01-05 12:36:26,061 - [2026-01-05 12:36:26] Checking emails...
+2026-01-05 12:36:26,626 -   No new attachments
+2026-01-05 12:36:31,287 - 
+
+[STOPPED] Agent stopped by user
+2026-01-05 12:36:31,560 - [DISCONNECTED] Logged out from email server
+2026-01-05 12:36:57,200 - 
+============================================================
+2026-01-05 12:36:57,200 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2026-01-05 12:36:57,200 - ============================================================
+2026-01-05 12:36:57,200 - Email: yourmltales@gmail.com
+2026-01-05 12:36:57,200 - Server: imap.gmail.com:993
+2026-01-05 12:36:57,201 - Watching for subjects: 
+2026-01-05 12:36:57,201 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2026-01-05 12:36:57,201 - Root save location: email_attachments
+2026-01-05 12:36:57,201 - Check interval: 2s
+2026-01-05 12:36:57,201 - Only unseen emails: True
+2026-01-05 12:36:57,201 - Mark as read: False
+2026-01-05 12:36:57,201 - ============================================================
+
+2026-01-05 12:36:57,201 - Connecting to imap.gmail.com:993...
+2026-01-05 12:36:58,415 - [SUCCESS] Connected to imap.gmail.com
+2026-01-05 12:36:58,415 - [2026-01-05 12:36:58] Checking emails...
+2026-01-05 12:36:58,975 -   No new attachments
+2026-01-05 12:37:00,976 - [2026-01-05 12:37:00] Checking emails...
+2026-01-05 12:37:01,549 -   No new attachments
+2026-01-05 12:37:03,549 - [2026-01-05 12:37:03] Checking emails...
+2026-01-05 12:37:04,099 -   No new attachments
+2026-01-05 12:37:06,099 - [2026-01-05 12:37:06] Checking emails...
+2026-01-05 12:37:06,664 -   No new attachments
+2026-01-05 12:37:08,665 - [2026-01-05 12:37:08] Checking emails...
+2026-01-05 12:37:09,255 -   No new attachments
+2026-01-05 12:37:11,255 - [2026-01-05 12:37:11] Checking emails...
+2026-01-05 12:37:11,805 -   No new attachments
+2026-01-05 12:37:13,806 - [2026-01-05 12:37:13] Checking emails...
+2026-01-05 12:37:14,381 -   No new attachments
+2026-01-05 12:37:16,381 - [2026-01-05 12:37:16] Checking emails...
+2026-01-05 12:37:16,951 -   No new attachments
+2026-01-05 12:37:18,952 - [2026-01-05 12:37:18] Checking emails...
+2026-01-05 12:37:19,523 -   No new attachments
+2026-01-05 12:37:21,524 - [2026-01-05 12:37:21] Checking emails...
+2026-01-05 12:37:22,093 -   No new attachments
+2026-01-05 12:37:24,093 - [2026-01-05 12:37:24] Checking emails...
+2026-01-05 12:37:24,665 -   No new attachments
+2026-01-05 12:37:26,666 - [2026-01-05 12:37:26] Checking emails...
+2026-01-05 12:37:27,238 -   No new attachments
+2026-01-05 12:37:29,238 - [2026-01-05 12:37:29] Checking emails...
+2026-01-05 12:37:29,822 -   No new attachments
+2026-01-05 12:37:31,822 - [2026-01-05 12:37:31] Checking emails...
+2026-01-05 12:37:32,458 -   No new attachments
+2026-01-05 12:37:34,459 - [2026-01-05 12:37:34] Checking emails...
+2026-01-05 12:37:35,031 -   No new attachments
+2026-01-05 12:37:37,032 - [2026-01-05 12:37:37] Checking emails...
+2026-01-05 12:37:37,584 -   No new attachments
+2026-01-05 12:37:39,584 - [2026-01-05 12:37:39] Checking emails...
+2026-01-05 12:37:40,158 -   No new attachments
+2026-01-05 12:37:42,158 - [2026-01-05 12:37:42] Checking emails...
+2026-01-05 12:37:42,709 -   No new attachments
+2026-01-05 12:37:44,709 - [2026-01-05 12:37:44] Checking emails...
+2026-01-05 12:37:45,262 -   No new attachments
+2026-01-05 12:37:47,263 - [2026-01-05 12:37:47] Checking emails...
+2026-01-05 12:37:47,835 -   No new attachments
+2026-01-05 12:37:49,836 - [2026-01-05 12:37:49] Checking emails...
+2026-01-05 12:37:50,388 -   No new attachments
+2026-01-05 12:37:52,389 - [2026-01-05 12:37:52] Checking emails...
+2026-01-05 12:37:52,962 -   No new attachments
+2026-01-05 12:37:54,962 - [2026-01-05 12:37:54] Checking emails...
+2026-01-05 12:37:55,531 -   No new attachments
+2026-01-05 12:37:57,532 - [2026-01-05 12:37:57] Checking emails...
+2026-01-05 12:37:58,085 -   No new attachments
+2026-01-05 12:38:00,086 - [2026-01-05 12:38:00] Checking emails...
+2026-01-05 12:38:00,640 -   No new attachments
+2026-01-05 12:38:02,641 - [2026-01-05 12:38:02] Checking emails...
+2026-01-05 12:38:03,221 -   No new attachments
+2026-01-05 12:38:05,222 - [2026-01-05 12:38:05] Checking emails...
+2026-01-05 12:38:05,804 -   No new attachments
+2026-01-05 12:38:07,805 - [2026-01-05 12:38:07] Checking emails...
+2026-01-05 12:38:08,357 -   No new attachments
+2026-01-05 12:38:10,358 - [2026-01-05 12:38:10] Checking emails...
+2026-01-05 12:38:10,914 -   No new attachments
+2026-01-05 12:38:12,914 - [2026-01-05 12:38:12] Checking emails...
+2026-01-05 12:38:13,473 -   No new attachments
+2026-01-05 12:38:15,474 - [2026-01-05 12:38:15] Checking emails...
+2026-01-05 12:38:16,073 -   No new attachments
+2026-01-05 12:38:18,073 - [2026-01-05 12:38:18] Checking emails...
+2026-01-05 12:38:18,632 -   No new attachments
+2026-01-05 12:38:20,632 - [2026-01-05 12:38:20] Checking emails...
+2026-01-05 12:38:21,196 -   No new attachments
+2026-01-05 12:38:23,197 - [2026-01-05 12:38:23] Checking emails...
+2026-01-05 12:38:23,747 -   No new attachments
+2026-01-05 12:38:25,747 - [2026-01-05 12:38:25] Checking emails...
+2026-01-05 12:38:26,298 -   No new attachments
+2026-01-05 12:38:28,299 - [2026-01-05 12:38:28] Checking emails...
+2026-01-05 12:38:29,533 - 
+[NEW EMAIL] Subject: Fwd: Fw: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2026-01-05 12:38:29,533 -   From: pooja singh <pujunchiya@gmail.com>
+2026-01-05 12:38:29,533 -   Date: Mon, 5 Jan 2026 18:08:15 +0530
+2026-01-05 12:38:29,535 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2026-01-05 12:38:29,535 -   [SAVED] 1 attachment(s) to: email_attachments/3000023637_20260105_123829
+2026-01-05 12:38:29,535 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20260105_123829
+2026-01-05 12:38:29,535 -   [EXTRACTION] Found 3 document(s) to process
+2026-01-05 12:38:31,495 -   [EXTRACTION] Document-to-column mapping completed
+2026-01-05 12:38:31,496 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2026-01-05 12:38:31,497 - Processing document with matched column: Email Subject Description
+2026-01-05 12:38:31,497 - len(document_text): 143
+2026-01-05 12:38:31,497 - MAX_DOCUMENT_CHARS: 15000
+2026-01-05 12:38:33,197 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2026-01-05 12:38:33,197 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2026-01-05 12:38:33,197 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2026-01-05 12:38:33,233 - Processing document with matched column: PD (Word Doc) Description
+2026-01-05 12:38:33,233 - len(document_text): 8114
+2026-01-05 12:38:33,233 - MAX_DOCUMENT_CHARS: 15000
+2026-01-05 12:38:36,450 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2026-01-05 12:38:36,736 - Loading extraction results from: email_attachments/3000023637_20260105_123829/extraction_results.xlsx
+2026-01-05 12:38:36,736 - Loading mapping from: email_attachments/3000023637_20260105_123829/document_column_mapping.json
+2026-01-05 12:38:36,820 - doc_columns: ['mail_subject.txt', 'mail_body.txt', 'PD Note Kanhaiya.docx']
+2026-01-05 12:38:36,918 - No mismatch found in row 0, skipping LLM call.
+2026-01-05 12:38:36,919 - No mismatch found in row 1, skipping LLM call.
+2026-01-05 12:38:36,920 - No mismatch found in row 2, skipping LLM call.
+2026-01-05 12:38:36,920 - No mismatch found in row 3, skipping LLM call.
+2026-01-05 12:38:36,920 - No mismatch found in row 4, skipping LLM call.
+2026-01-05 12:38:36,921 - No mismatch found in row 5, skipping LLM call.
+2026-01-05 12:38:36,921 - No mismatch found in row 6, skipping LLM call.
+2026-01-05 12:38:36,922 - No mismatch found in row 7, skipping LLM call.
+2026-01-05 12:38:36,922 - No mismatch found in row 8, skipping LLM call.
+2026-01-05 12:38:36,922 - No mismatch found in row 9, skipping LLM call.
+2026-01-05 12:38:36,923 - No mismatch found in row 10, skipping LLM call.
+2026-01-05 12:38:36,923 - No mismatch found in row 11, skipping LLM call.
+2026-01-05 12:38:36,923 - No mismatch found in row 12, skipping LLM call.
+2026-01-05 12:38:36,924 - No mismatch found in row 13, skipping LLM call.
+2026-01-05 12:38:36,924 - No mismatch found in row 14, skipping LLM call.
+2026-01-05 12:38:36,924 - No mismatch found in row 15, skipping LLM call.
+2026-01-05 12:38:36,925 - No mismatch found in row 16, skipping LLM call.
+2026-01-05 12:38:36,925 - No mismatch found in row 17, skipping LLM call.
+2026-01-05 12:38:36,925 - No mismatch found in row 18, skipping LLM call.
+2026-01-05 12:38:36,925 - No mismatch found in row 19, skipping LLM call.
+2026-01-05 12:38:36,926 - No mismatch found in row 20, skipping LLM call.
+2026-01-05 12:38:36,926 - No mismatch found in row 21, skipping LLM call.
+2026-01-05 12:38:36,926 - No mismatch found in row 22, skipping LLM call.
+2026-01-05 12:38:36,926 - No mismatch found in row 23, skipping LLM call.
+2026-01-05 12:38:36,927 - No mismatch found in row 24, skipping LLM call.
+2026-01-05 12:38:36,927 - No mismatch found in row 25, skipping LLM call.
+2026-01-05 12:38:36,927 - No mismatch found in row 26, skipping LLM call.
+2026-01-05 12:38:36,927 - No mismatch found in row 27, skipping LLM call.
+2026-01-05 12:38:36,928 - No mismatch found in row 28, skipping LLM call.
+2026-01-05 12:38:36,928 - No mismatch found in row 29, skipping LLM call.
+2026-01-05 12:38:36,928 - No mismatch found in row 30, skipping LLM call.
+2026-01-05 12:38:36,928 - No mismatch found in row 31, skipping LLM call.
+2026-01-05 12:38:36,929 - No mismatch found in row 32, skipping LLM call.
+2026-01-05 12:38:36,929 - No mismatch found in row 33, skipping LLM call.
+2026-01-05 12:38:36,929 - No mismatch found in row 34, skipping LLM call.
+2026-01-05 12:38:36,929 - No mismatch found in row 35, skipping LLM call.
+2026-01-05 12:38:36,930 - No mismatch found in row 36, skipping LLM call.
+2026-01-05 12:38:36,930 - No mismatch found in row 37, skipping LLM call.
+2026-01-05 12:38:36,930 - No mismatch found in row 38, skipping LLM call.
+2026-01-05 12:38:36,931 - No mismatch found in row 39, skipping LLM call.
+2026-01-05 12:38:36,931 - No mismatch found in row 40, skipping LLM call.
+2026-01-05 12:38:36,931 - No mismatch found in row 41, skipping LLM call.
+2026-01-05 12:38:36,931 - No mismatch found in row 42, skipping LLM call.
+2026-01-05 12:38:36,932 - No mismatch found in row 43, skipping LLM call.
+2026-01-05 12:38:36,932 - No mismatch found in row 44, skipping LLM call.
+2026-01-05 12:38:36,932 - No mismatch found in row 45, skipping LLM call.
+2026-01-05 12:38:36,933 - No mismatch found in row 46, skipping LLM call.
+2026-01-05 12:38:36,933 - No mismatch found in row 47, skipping LLM call.
+2026-01-05 12:38:36,933 - No mismatch found in row 48, skipping LLM call.
+2026-01-05 12:38:36,934 - No mismatch found in row 49, skipping LLM call.
+2026-01-05 12:38:36,934 - No mismatch found in row 50, skipping LLM call.
+2026-01-05 12:38:36,934 - No mismatch found in row 51, skipping LLM call.
+2026-01-05 12:38:36,934 - No mismatch found in row 52, skipping LLM call.
+2026-01-05 12:38:36,937 - No mismatch found in row 53, skipping LLM call.
+2026-01-05 12:38:36,938 - No mismatch found in row 54, skipping LLM call.
+2026-01-05 12:38:36,938 - No mismatch found in row 55, skipping LLM call.
+2026-01-05 12:38:36,938 - No mismatch found in row 56, skipping LLM call.
+2026-01-05 12:38:36,938 - No mismatch found in row 57, skipping LLM call.
+2026-01-05 12:38:36,939 - No mismatch found in row 58, skipping LLM call.
+2026-01-05 12:38:36,939 - No mismatch found in row 59, skipping LLM call.
+2026-01-05 12:38:36,942 - No mismatch found in row 60, skipping LLM call.
+2026-01-05 12:38:36,942 - No mismatch found in row 61, skipping LLM call.
+2026-01-05 12:38:36,942 - No mismatch found in row 62, skipping LLM call.
+2026-01-05 12:38:36,943 - No mismatch found in row 63, skipping LLM call.
+2026-01-05 12:38:36,943 - No mismatch found in row 64, skipping LLM call.
+2026-01-05 12:38:36,943 - No mismatch found in row 65, skipping LLM call.
+2026-01-05 12:38:36,945 - No mismatch found in row 66, skipping LLM call.
+2026-01-05 12:38:36,945 - No mismatch found in row 67, skipping LLM call.
+2026-01-05 12:38:36,946 - No mismatch found in row 68, skipping LLM call.
+2026-01-05 12:38:36,946 - No mismatch found in row 69, skipping LLM call.
+2026-01-05 12:38:36,946 - No mismatch found in row 70, skipping LLM call.
+2026-01-05 12:38:36,947 - No mismatch found in row 71, skipping LLM call.
+2026-01-05 12:38:36,947 - No mismatch found in row 72, skipping LLM call.
+2026-01-05 12:38:36,953 - No mismatch found in row 73, skipping LLM call.
+2026-01-05 12:38:36,953 - No mismatch found in row 74, skipping LLM call.
+2026-01-05 12:38:36,954 - No mismatch found in row 75, skipping LLM call.
+2026-01-05 12:38:36,954 - No mismatch found in row 76, skipping LLM call.
+2026-01-05 12:38:36,954 - No mismatch found in row 77, skipping LLM call.
+2026-01-05 12:38:36,954 - No mismatch found in row 78, skipping LLM call.
+2026-01-05 12:38:36,955 - No mismatch found in row 79, skipping LLM call.
+2026-01-05 12:38:36,955 - No mismatch found in row 80, skipping LLM call.
+2026-01-05 12:38:36,958 - No mismatch found in row 81, skipping LLM call.
+2026-01-05 12:38:36,958 - No mismatch found in row 82, skipping LLM call.
+2026-01-05 12:38:36,958 - No mismatch found in row 83, skipping LLM call.
+2026-01-05 12:38:37,028 -   [EXTRACTION] Results saved to email_attachments/3000023637_20260105_123829/extraction_results.xlsx
+2026-01-05 12:38:37,029 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20260105_123829/extraction_results.xlsx
+2026-01-05 12:38:37,053 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2026-01-05 12:38:45,331 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2026-01-05 12:38:45,332 - [SUCCESS] Downloaded 1 attachment(s) into 1 folder(s)
+2026-01-05 12:38:47,332 - [2026-01-05 12:38:47] Checking emails...
+2026-01-05 12:38:47,904 -   No new attachments
+2026-01-05 12:38:49,905 - [2026-01-05 12:38:49] Checking emails...
+2026-01-05 12:38:50,454 -   No new attachments
+2026-01-05 12:38:50,995 - 
+
+[STOPPED] Agent stopped by user
+2026-01-05 12:38:51,275 - [DISCONNECTED] Logged out from email server
+2026-01-05 15:34:35,089 - 
+============================================================
+2026-01-05 15:34:35,091 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2026-01-05 15:34:35,091 - ============================================================
+2026-01-05 15:34:35,091 - Email: yourmltales@gmail.com
+2026-01-05 15:34:35,091 - Server: imap.gmail.com:993
+2026-01-05 15:34:35,091 - Watching for subjects: 
+2026-01-05 15:34:35,091 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2026-01-05 15:34:35,091 - Root save location: email_attachments
+2026-01-05 15:34:35,091 - Check interval: 2s
+2026-01-05 15:34:35,091 - Only unseen emails: True
+2026-01-05 15:34:35,091 - Mark as read: False
+2026-01-05 15:34:35,091 - ============================================================
+
+2026-01-05 15:34:35,092 - Connecting to imap.gmail.com:993...
+2026-01-05 15:34:36,093 - [SUCCESS] Connected to imap.gmail.com
+2026-01-05 15:34:36,093 - [2026-01-05 15:34:36] Checking emails...
+2026-01-05 15:34:36,699 -   No new attachments
+2026-01-05 15:34:38,700 - [2026-01-05 15:34:38] Checking emails...
+2026-01-05 15:34:39,257 -   No new attachments
+2026-01-05 15:34:41,257 - [2026-01-05 15:34:41] Checking emails...
+2026-01-05 15:34:41,811 -   No new attachments
+2026-01-05 15:34:43,811 - [2026-01-05 15:34:43] Checking emails...
+2026-01-05 15:34:44,378 -   No new attachments
+2026-01-05 15:34:46,378 - [2026-01-05 15:34:46] Checking emails...
+2026-01-05 15:34:46,949 -   No new attachments
+2026-01-05 15:34:48,949 - [2026-01-05 15:34:48] Checking emails...
+2026-01-05 15:34:49,505 -   No new attachments
+2026-01-05 15:34:51,505 - [2026-01-05 15:34:51] Checking emails...
+2026-01-05 15:34:52,062 -   No new attachments
+2026-01-05 15:34:54,062 - [2026-01-05 15:34:54] Checking emails...
+2026-01-05 15:34:54,619 -   No new attachments
+2026-01-05 15:34:56,621 - [2026-01-05 15:34:56] Checking emails...
+2026-01-05 15:34:57,180 -   No new attachments
+2026-01-05 15:34:59,180 - [2026-01-05 15:34:59] Checking emails...
+2026-01-05 15:34:59,736 -   No new attachments
+2026-01-05 15:35:01,737 - [2026-01-05 15:35:01] Checking emails...
+2026-01-05 15:35:02,282 -   No new attachments
+2026-01-05 15:35:04,283 - [2026-01-05 15:35:04] Checking emails...
+2026-01-05 15:35:04,840 -   No new attachments
+2026-01-05 15:35:06,840 - [2026-01-05 15:35:06] Checking emails...
+2026-01-05 15:35:07,381 -   No new attachments
+2026-01-05 15:35:09,381 - [2026-01-05 15:35:09] Checking emails...
+2026-01-05 15:35:09,923 -   No new attachments
+2026-01-05 15:35:11,923 - [2026-01-05 15:35:11] Checking emails...
+2026-01-05 15:35:12,246 - 
+
+[STOPPED] Agent stopped by user
+2026-01-05 15:35:12,509 - [DISCONNECTED] Logged out from email server
+2026-01-05 16:50:33,428 - 
+============================================================
+2026-01-05 16:50:33,429 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2026-01-05 16:50:33,429 - ============================================================
+2026-01-05 16:50:33,429 - Email: yourmltales@gmail.com
+2026-01-05 16:50:33,429 - Server: imap.gmail.com:993
+2026-01-05 16:50:33,429 - Watching for subjects: 
+2026-01-05 16:50:33,429 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2026-01-05 16:50:33,429 - Root save location: email_attachments
+2026-01-05 16:50:33,429 - Check interval: 2s
+2026-01-05 16:50:33,429 - Only unseen emails: True
+2026-01-05 16:50:33,429 - Mark as read: False
+2026-01-05 16:50:33,429 - ============================================================
+
+2026-01-05 16:50:33,429 - Connecting to imap.gmail.com:993...
+2026-01-05 16:50:34,743 - [SUCCESS] Connected to imap.gmail.com
+2026-01-05 16:50:34,743 - [2026-01-05 16:50:34] Checking emails...
+2026-01-05 16:50:35,333 -   No new attachments
+2026-01-05 16:50:37,334 - [2026-01-05 16:50:37] Checking emails...
+2026-01-05 16:50:37,892 -   No new attachments
+2026-01-05 16:50:39,892 - [2026-01-05 16:50:39] Checking emails...
+2026-01-05 16:50:40,450 -   No new attachments
+2026-01-05 16:50:42,450 - [2026-01-05 16:50:42] Checking emails...
+2026-01-05 16:50:43,031 -   No new attachments
+2026-01-05 16:50:45,032 - [2026-01-05 16:50:45] Checking emails...
+2026-01-05 16:50:45,569 -   No new attachments
+2026-01-05 16:50:47,570 - [2026-01-05 16:50:47] Checking emails...
+2026-01-05 16:50:48,111 -   No new attachments
+2026-01-05 16:50:50,113 - [2026-01-05 16:50:50] Checking emails...
+2026-01-05 16:50:50,684 -   No new attachments
+2026-01-05 16:50:52,685 - [2026-01-05 16:50:52] Checking emails...
+2026-01-05 16:50:53,248 -   No new attachments
+2026-01-05 16:50:55,248 - [2026-01-05 16:50:55] Checking emails...
+2026-01-05 16:50:55,807 -   No new attachments
+2026-01-05 16:50:57,807 - [2026-01-05 16:50:57] Checking emails...
+2026-01-05 16:50:58,369 -   No new attachments
+2026-01-05 16:51:00,369 - [2026-01-05 16:51:00] Checking emails...
+2026-01-05 16:51:00,927 -   No new attachments
+2026-01-05 16:51:02,927 - [2026-01-05 16:51:02] Checking emails...
+2026-01-05 16:51:03,484 -   No new attachments
+2026-01-05 16:51:05,485 - [2026-01-05 16:51:05] Checking emails...
+2026-01-05 16:51:06,031 -   No new attachments
+2026-01-05 16:51:08,031 - [2026-01-05 16:51:08] Checking emails...
+2026-01-05 16:51:08,563 -   No new attachments
+2026-01-05 16:51:10,563 - [2026-01-05 16:51:10] Checking emails...
+2026-01-05 16:51:11,155 -   No new attachments
+2026-01-05 16:51:13,155 - [2026-01-05 16:51:13] Checking emails...
+2026-01-05 16:51:13,730 -   No new attachments
+2026-01-05 16:51:15,730 - [2026-01-05 16:51:15] Checking emails...
+2026-01-05 16:51:16,292 -   No new attachments
+2026-01-05 16:51:18,292 - [2026-01-05 16:51:18] Checking emails...
+2026-01-05 16:51:19,757 - 
+[NEW EMAIL] Subject: Fwd: Fw: Pre IMGC letter. HL P+C case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2026-01-05 16:51:19,757 -   From: pooja singh <pujunchiya@gmail.com>
+2026-01-05 16:51:19,757 -   Date: Mon, 5 Jan 2026 22:21:06 +0530
+2026-01-05 16:51:19,759 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2026-01-05 16:51:19,759 -   [SAVED] 1 attachment(s) to: email_attachments/3000023637_20260105_165119
+2026-01-05 16:51:19,759 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20260105_165119
+2026-01-05 16:51:19,759 -   [EXTRACTION] Found 3 document(s) to process
+2026-01-05 16:51:21,749 -   [EXTRACTION] Document-to-column mapping completed
+2026-01-05 16:51:21,749 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2026-01-05 16:51:21,750 - Processing document with matched column: Email Subject Description
+2026-01-05 16:51:21,750 - len(document_text): 143
+2026-01-05 16:51:21,750 - MAX_DOCUMENT_CHARS: 15000
+2026-01-05 16:51:23,453 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2026-01-05 16:51:23,453 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2026-01-05 16:51:23,454 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2026-01-05 16:51:23,488 - Processing document with matched column: PD (Word Doc) Description
+2026-01-05 16:51:23,488 - len(document_text): 8114
+2026-01-05 16:51:23,488 - MAX_DOCUMENT_CHARS: 15000
+2026-01-05 16:51:27,381 -     [EXTRACTION] ✓ Extracted 22 fields using column: PD (Word Doc) Description
+2026-01-05 16:51:27,603 - Loading extraction results from: email_attachments/3000023637_20260105_165119/extraction_results.xlsx
+2026-01-05 16:51:27,603 - Loading mapping from: email_attachments/3000023637_20260105_165119/document_column_mapping.json
+2026-01-05 16:51:27,637 - doc_columns: ['mail_subject.txt', 'mail_body.txt', 'PD Note Kanhaiya.docx']
+2026-01-05 16:51:27,668 - No mismatch found in row 0, skipping LLM call.
+2026-01-05 16:51:27,668 - No mismatch found in row 1, skipping LLM call.
+2026-01-05 16:51:27,669 - No mismatch found in row 2, skipping LLM call.
+2026-01-05 16:51:27,669 - No mismatch found in row 3, skipping LLM call.
+2026-01-05 16:51:27,669 - No mismatch found in row 4, skipping LLM call.
+2026-01-05 16:51:27,669 - No mismatch found in row 5, skipping LLM call.
+2026-01-05 16:51:27,670 - No mismatch found in row 6, skipping LLM call.
+2026-01-05 16:51:27,670 - No mismatch found in row 7, skipping LLM call.
+2026-01-05 16:51:27,670 - No mismatch found in row 8, skipping LLM call.
+2026-01-05 16:51:27,671 - No mismatch found in row 9, skipping LLM call.
+2026-01-05 16:51:27,671 - No mismatch found in row 10, skipping LLM call.
+2026-01-05 16:51:27,671 - No mismatch found in row 11, skipping LLM call.
+2026-01-05 16:51:27,671 - No mismatch found in row 12, skipping LLM call.
+2026-01-05 16:51:27,672 - No mismatch found in row 13, skipping LLM call.
+2026-01-05 16:51:27,672 - No mismatch found in row 14, skipping LLM call.
+2026-01-05 16:51:27,672 - No mismatch found in row 15, skipping LLM call.
+2026-01-05 16:51:27,672 - No mismatch found in row 16, skipping LLM call.
+2026-01-05 16:51:27,672 - No mismatch found in row 17, skipping LLM call.
+2026-01-05 16:51:27,673 - No mismatch found in row 18, skipping LLM call.
+2026-01-05 16:51:27,673 - No mismatch found in row 19, skipping LLM call.
+2026-01-05 16:51:27,673 - No mismatch found in row 20, skipping LLM call.
+2026-01-05 16:51:27,673 - No mismatch found in row 21, skipping LLM call.
+2026-01-05 16:51:27,674 - No mismatch found in row 22, skipping LLM call.
+2026-01-05 16:51:27,674 - No mismatch found in row 23, skipping LLM call.
+2026-01-05 16:51:27,674 - No mismatch found in row 24, skipping LLM call.
+2026-01-05 16:51:27,674 - No mismatch found in row 25, skipping LLM call.
+2026-01-05 16:51:27,675 - No mismatch found in row 26, skipping LLM call.
+2026-01-05 16:51:27,675 - No mismatch found in row 27, skipping LLM call.
+2026-01-05 16:51:27,675 - No mismatch found in row 28, skipping LLM call.
+2026-01-05 16:51:27,675 - No mismatch found in row 29, skipping LLM call.
+2026-01-05 16:51:27,676 - No mismatch found in row 30, skipping LLM call.
+2026-01-05 16:51:27,676 - No mismatch found in row 31, skipping LLM call.
+2026-01-05 16:51:27,676 - No mismatch found in row 32, skipping LLM call.
+2026-01-05 16:51:27,676 - No mismatch found in row 33, skipping LLM call.
+2026-01-05 16:51:27,677 - No mismatch found in row 34, skipping LLM call.
+2026-01-05 16:51:27,677 - No mismatch found in row 35, skipping LLM call.
+2026-01-05 16:51:27,677 - No mismatch found in row 36, skipping LLM call.
+2026-01-05 16:51:27,677 - No mismatch found in row 37, skipping LLM call.
+2026-01-05 16:51:27,677 - No mismatch found in row 38, skipping LLM call.
+2026-01-05 16:51:27,678 - No mismatch found in row 39, skipping LLM call.
+2026-01-05 16:51:27,678 - No mismatch found in row 40, skipping LLM call.
+2026-01-05 16:51:27,678 - No mismatch found in row 41, skipping LLM call.
+2026-01-05 16:51:27,678 - No mismatch found in row 42, skipping LLM call.
+2026-01-05 16:51:27,679 - No mismatch found in row 43, skipping LLM call.
+2026-01-05 16:51:27,679 - No mismatch found in row 44, skipping LLM call.
+2026-01-05 16:51:27,679 - No mismatch found in row 45, skipping LLM call.
+2026-01-05 16:51:27,679 - No mismatch found in row 46, skipping LLM call.
+2026-01-05 16:51:27,680 - No mismatch found in row 47, skipping LLM call.
+2026-01-05 16:51:27,680 - No mismatch found in row 48, skipping LLM call.
+2026-01-05 16:51:27,680 - No mismatch found in row 49, skipping LLM call.
+2026-01-05 16:51:27,680 - No mismatch found in row 50, skipping LLM call.
+2026-01-05 16:51:27,680 - No mismatch found in row 51, skipping LLM call.
+2026-01-05 16:51:27,681 - No mismatch found in row 52, skipping LLM call.
+2026-01-05 16:51:27,681 - No mismatch found in row 53, skipping LLM call.
+2026-01-05 16:51:27,681 - No mismatch found in row 54, skipping LLM call.
+2026-01-05 16:51:27,681 - No mismatch found in row 55, skipping LLM call.
+2026-01-05 16:51:27,682 - No mismatch found in row 56, skipping LLM call.
+2026-01-05 16:51:27,682 - No mismatch found in row 57, skipping LLM call.
+2026-01-05 16:51:27,682 - No mismatch found in row 58, skipping LLM call.
+2026-01-05 16:51:27,682 - No mismatch found in row 59, skipping LLM call.
+2026-01-05 16:51:27,683 - No mismatch found in row 60, skipping LLM call.
+2026-01-05 16:51:27,683 - No mismatch found in row 61, skipping LLM call.
+2026-01-05 16:51:27,683 - No mismatch found in row 62, skipping LLM call.
+2026-01-05 16:51:27,683 - No mismatch found in row 63, skipping LLM call.
+2026-01-05 16:51:27,683 - No mismatch found in row 64, skipping LLM call.
+2026-01-05 16:51:27,684 - No mismatch found in row 65, skipping LLM call.
+2026-01-05 16:51:27,684 - No mismatch found in row 66, skipping LLM call.
+2026-01-05 16:51:27,684 - No mismatch found in row 67, skipping LLM call.
+2026-01-05 16:51:27,684 - No mismatch found in row 68, skipping LLM call.
+2026-01-05 16:51:27,685 - No mismatch found in row 69, skipping LLM call.
+2026-01-05 16:51:27,685 - No mismatch found in row 70, skipping LLM call.
+2026-01-05 16:51:27,685 - No mismatch found in row 71, skipping LLM call.
+2026-01-05 16:51:27,685 - No mismatch found in row 72, skipping LLM call.
+2026-01-05 16:51:27,686 - No mismatch found in row 73, skipping LLM call.
+2026-01-05 16:51:27,686 - No mismatch found in row 74, skipping LLM call.
+2026-01-05 16:51:27,686 - No mismatch found in row 75, skipping LLM call.
+2026-01-05 16:51:27,686 - No mismatch found in row 76, skipping LLM call.
+2026-01-05 16:51:27,686 - No mismatch found in row 77, skipping LLM call.
+2026-01-05 16:51:27,687 - No mismatch found in row 78, skipping LLM call.
+2026-01-05 16:51:27,687 - No mismatch found in row 79, skipping LLM call.
+2026-01-05 16:51:27,687 - No mismatch found in row 80, skipping LLM call.
+2026-01-05 16:51:27,687 - No mismatch found in row 81, skipping LLM call.
+2026-01-05 16:51:27,688 - No mismatch found in row 82, skipping LLM call.
+2026-01-05 16:51:27,688 - No mismatch found in row 83, skipping LLM call.
+2026-01-05 16:51:27,728 -   [EXTRACTION] Results saved to email_attachments/3000023637_20260105_165119/extraction_results.xlsx
+2026-01-05 16:51:27,728 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20260105_165119/extraction_results.xlsx
+2026-01-05 16:51:27,761 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2026-01-05 16:51:35,165 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2026-01-05 16:51:35,165 - [SUCCESS] Downloaded 1 attachment(s) into 1 folder(s)
+2026-01-05 16:51:37,166 - [2026-01-05 16:51:37] Checking emails...
+2026-01-05 16:51:37,720 -   No new attachments
+2026-01-05 16:51:39,720 - [2026-01-05 16:51:39] Checking emails...
+2026-01-05 16:51:40,269 -   No new attachments
+2026-01-05 16:51:42,269 - [2026-01-05 16:51:42] Checking emails...
+2026-01-05 16:51:42,803 -   No new attachments
+2026-01-05 16:51:44,803 - [2026-01-05 16:51:44] Checking emails...
+2026-01-05 16:51:45,334 -   No new attachments
+2026-01-05 16:51:47,335 - [2026-01-05 16:51:47] Checking emails...
+2026-01-05 16:51:47,871 -   No new attachments
+2026-01-05 16:51:49,871 - [2026-01-05 16:51:49] Checking emails...
+2026-01-05 16:51:50,410 -   No new attachments
+2026-01-05 16:51:52,410 - [2026-01-05 16:51:52] Checking emails...
+2026-01-05 16:51:52,961 -   No new attachments
+2026-01-05 16:51:54,962 - [2026-01-05 16:51:54] Checking emails...
+2026-01-05 16:51:55,493 -   No new attachments
+2026-01-05 16:51:57,493 - [2026-01-05 16:51:57] Checking emails...
+2026-01-05 16:51:58,034 -   No new attachments
+2026-01-05 16:52:00,034 - [2026-01-05 16:52:00] Checking emails...
+2026-01-05 16:52:00,570 -   No new attachments
+2026-01-05 16:52:02,570 - [2026-01-05 16:52:02] Checking emails...
+2026-01-05 16:52:03,103 -   No new attachments
+2026-01-05 16:52:05,103 - [2026-01-05 16:52:05] Checking emails...
+2026-01-05 16:52:05,637 -   No new attachments
+2026-01-05 16:52:07,637 - [2026-01-05 16:52:07] Checking emails...
+2026-01-05 16:52:08,210 -   No new attachments
+2026-01-05 16:52:10,211 - [2026-01-05 16:52:10] Checking emails...
+2026-01-05 16:52:10,767 -   No new attachments
+2026-01-05 16:52:12,767 - [2026-01-05 16:52:12] Checking emails...
+2026-01-05 16:52:13,348 -   No new attachments
+2026-01-05 16:52:15,348 - [2026-01-05 16:52:15] Checking emails...
+2026-01-05 16:52:15,879 -   No new attachments
+2026-01-05 16:52:17,880 - [2026-01-05 16:52:17] Checking emails...
+2026-01-05 16:52:18,437 -   No new attachments
+2026-01-05 16:52:20,437 - [2026-01-05 16:52:20] Checking emails...
+2026-01-05 16:52:21,008 -   No new attachments
+2026-01-05 16:52:23,008 - [2026-01-05 16:52:23] Checking emails...
+2026-01-05 16:52:23,569 -   No new attachments
+2026-01-05 16:52:25,569 - [2026-01-05 16:52:25] Checking emails...
+2026-01-05 16:52:26,153 -   No new attachments
+2026-01-05 16:52:28,154 - [2026-01-05 16:52:28] Checking emails...
+2026-01-05 16:52:28,732 -   No new attachments
+2026-01-05 16:52:30,733 - [2026-01-05 16:52:30] Checking emails...
+2026-01-05 16:52:31,290 -   No new attachments
+2026-01-05 16:52:33,290 - [2026-01-05 16:52:33] Checking emails...
+2026-01-05 16:52:33,849 -   No new attachments
+2026-01-05 16:52:35,850 - [2026-01-05 16:52:35] Checking emails...
+2026-01-05 16:52:36,383 -   No new attachments
+2026-01-05 16:52:38,384 - [2026-01-05 16:52:38] Checking emails...
+2026-01-05 16:52:38,920 -   No new attachments
+2026-01-05 16:52:40,920 - [2026-01-05 16:52:40] Checking emails...
+2026-01-05 16:52:41,450 -   No new attachments
+2026-01-05 16:52:43,451 - [2026-01-05 16:52:43] Checking emails...
+2026-01-05 16:52:43,981 -   No new attachments
+2026-01-05 16:52:45,981 - [2026-01-05 16:52:45] Checking emails...
+2026-01-05 16:52:46,515 -   No new attachments
+2026-01-05 16:52:48,516 - [2026-01-05 16:52:48] Checking emails...
+2026-01-05 16:52:49,054 -   No new attachments
+2026-01-05 16:52:51,054 - [2026-01-05 16:52:51] Checking emails...
+2026-01-05 16:52:51,586 -   No new attachments
+2026-01-05 16:52:53,586 - [2026-01-05 16:52:53] Checking emails...
+2026-01-05 16:52:54,126 -   No new attachments
+2026-01-05 16:52:56,126 - [2026-01-05 16:52:56] Checking emails...
+2026-01-05 16:52:56,656 -   No new attachments
+2026-01-05 16:52:58,657 - [2026-01-05 16:52:58] Checking emails...
+2026-01-05 16:52:59,193 -   No new attachments
+2026-01-05 16:53:01,194 - [2026-01-05 16:53:01] Checking emails...
+2026-01-05 16:53:01,727 -   No new attachments
+2026-01-05 16:53:03,727 - [2026-01-05 16:53:03] Checking emails...
+2026-01-05 16:53:04,264 -   No new attachments
+2026-01-05 16:53:06,264 - [2026-01-05 16:53:06] Checking emails...
+2026-01-05 16:53:06,798 -   No new attachments
+2026-01-05 16:53:08,798 - [2026-01-05 16:53:08] Checking emails...
+2026-01-05 16:53:09,336 -   No new attachments
+2026-01-05 16:53:11,337 - [2026-01-05 16:53:11] Checking emails...
+2026-01-05 16:53:11,903 -   No new attachments
+2026-01-05 16:53:13,904 - [2026-01-05 16:53:13] Checking emails...
+2026-01-05 16:53:14,443 -   No new attachments
+2026-01-05 16:53:16,443 - [2026-01-05 16:53:16] Checking emails...
+2026-01-05 16:53:16,974 -   No new attachments
+2026-01-05 16:53:18,975 - [2026-01-05 16:53:18] Checking emails...
+2026-01-05 16:53:19,512 -   No new attachments
+2026-01-05 16:53:21,513 - [2026-01-05 16:53:21] Checking emails...
+2026-01-05 16:53:22,050 -   No new attachments
+2026-01-05 16:53:24,050 - [2026-01-05 16:53:24] Checking emails...
+2026-01-05 16:53:24,587 -   No new attachments
+2026-01-05 16:53:26,587 - [2026-01-05 16:53:26] Checking emails...
+2026-01-05 16:53:27,120 -   No new attachments
+2026-01-05 16:53:29,120 - [2026-01-05 16:53:29] Checking emails...
+2026-01-05 16:53:29,675 -   No new attachments
+2026-01-05 16:53:31,676 - [2026-01-05 16:53:31] Checking emails...
+2026-01-05 16:53:32,209 -   No new attachments
+2026-01-05 16:53:34,210 - [2026-01-05 16:53:34] Checking emails...
+2026-01-05 16:53:34,742 -   No new attachments
+2026-01-05 16:53:36,743 - [2026-01-05 16:53:36] Checking emails...
+2026-01-05 16:53:37,279 -   No new attachments
+2026-01-05 16:53:39,279 - [2026-01-05 16:53:39] Checking emails...
+2026-01-05 16:53:39,845 -   No new attachments
+2026-01-05 16:53:41,846 - [2026-01-05 16:53:41] Checking emails...
+2026-01-05 16:53:42,378 -   No new attachments
+2026-01-05 16:53:44,378 - [2026-01-05 16:53:44] Checking emails...
+2026-01-05 16:53:44,911 -   No new attachments
+2026-01-05 16:53:46,911 - [2026-01-05 16:53:46] Checking emails...
+2026-01-05 16:53:47,443 -   No new attachments
+2026-01-05 16:53:49,443 - [2026-01-05 16:53:49] Checking emails...
+2026-01-05 16:53:49,976 -   No new attachments
+2026-01-05 16:53:51,976 - [2026-01-05 16:53:51] Checking emails...
+2026-01-05 16:53:52,508 -   No new attachments
+2026-01-05 16:53:53,096 - 
+
+[STOPPED] Agent stopped by user
+2026-01-05 16:53:53,357 - [DISCONNECTED] Logged out from email server

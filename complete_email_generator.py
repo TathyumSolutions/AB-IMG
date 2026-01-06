@@ -37,14 +37,14 @@ def _ensure_txt_copy_for_attachment(source_path: str) -> str:
 
 class CompleteEmailGenerator:
     """Complete email generator with all features and detailed logging"""
-    def __init__(self, extraction_file, config_file, api_key, smtp_config):
+    def __init__(self, extraction_file, config_file, api_key, smtp_config,folder_path):
         print(f"[LOG] Initializing CompleteEmailGenerator")
         self.extraction_file = extraction_file
         self.config_file = config_file
         self.api_key = api_key
         self.smtp_config = self.load_smtp_config(smtp_config)
         print(f"[LOG] Loading recipients from {smtp_config}")
-        self.recipients = self.load_recipients_from_config(smtp_config)
+        self.recipients = self.load_recipients_from_config(smtp_config,folder_path)
         print(f"[LOG] Recipients loaded: {self.recipients}")
         print(f"[LOG] Loading extraction results from {self.extraction_file}")
         self.merged_df = self.load_extraction_results()
@@ -69,16 +69,34 @@ class CompleteEmailGenerator:
             print(f"[ERROR] Could not load SMTP config: {e}")
             return {}
 
-    def load_recipients_from_config(self, config_path):
+    def load_recipients_from_config(self, config_path, folder_path):
+        import os
+        import json
         try:
+            # Load config for IMGC email
             with open(config_path, "r") as f:
                 config = json.load(f)
-                abhl = config.get("abhl_imgc", {}).get("abhl_email_id", "")
                 imgc = config.get("abhl_imgc", {}).get("imgc_email_id", "")
-                return {"ABHL": abhl, "IMGC": imgc}
+
+            # Find email_metadata.json in the folder_path
+            metadata_path = os.path.join(folder_path, "email_metadata.json")
+            abhl_list = []
+            if os.path.exists(metadata_path):
+                with open(metadata_path, "r") as meta_f:
+                    metadata = json.load(meta_f)
+                    from_field = metadata.get("from", "")
+                    # Extract email from "from" field (format: "Name <email>")
+                    import re
+                    match = re.search(r'<([^>]+)>', from_field)
+                    if match:
+                        abhl_list.append(match.group(1))
+                    else:
+                        abhl_list.append(from_field)  # fallback: use as is
+
+            return {"ABHL": abhl_list, "IMGC": imgc}
         except Exception as e:
             print(f"[ERROR] Could not load recipients from config: {e}")
-            return {"ABHL": "", "IMGC": ""}
+            return {"ABHL": [], "IMGC": ""}
 
     def load_extraction_results(self):
         try:
@@ -399,7 +417,7 @@ Return ONLY in this exact JSON format:
         filtered_df = merged_df_1[keep_columns]
 
         # Create filename
-        filename = os.path.join(output_folder, "issues.xlsx")
+        filename = os.path.join(output_folder, "final_extracted_output.xlsx")
         filtered_df.to_excel(filename, index=False)
         print(f"[LOG] Issues Excel file created: {filename}")
         return filename
