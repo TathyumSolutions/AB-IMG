@@ -1,13 +1,14 @@
 """
-Complete Email Generator - All Features in One File
+Complete Email Generator - All Features in One File (WITH HTML CLEANING)
 ====================================================
 Features:
 - Data cleaning (whitespace, special chars, case-insensitive)
 - First/Second preference support
 - Major field error messages
-- Email sending via SMTP
+- Email sending via SMTP with HTML support
 - GPT integration (optional)
 - ABHL email now includes Excel attachment with high criticality issues
+- **NEW: HTML cleaning for readable email formatting**
 """
 
 import pandas as pd
@@ -15,13 +16,14 @@ import os
 import json
 import smtplib
 import shutil
-from openai import OpenAI,AzureOpenAI
+from openai import OpenAI, AzureOpenAI
 from datetime import datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
-# from email_agent_with_extraction import llm_logger
+from bs4 import BeautifulSoup
+import re
 import glob
 
 
@@ -35,16 +37,101 @@ def _ensure_txt_copy_for_attachment(source_path: str) -> str:
         return source_path
     return txt_path
 
+
+def clean_html_email(html_content):
+    """
+    Clean messy HTML while preserving tables and important formatting
+    Makes email human-readable by removing excessive inline styles and nested divs
+    """
+    if not html_content:
+        return ""
+    
+    print("[LOG] Cleaning HTML content for readability...")
+    
+    # Parse with BeautifulSoup
+    soup = BeautifulSoup(html_content, 'html.parser')
+    
+    # Remove script and style tags completely
+    for tag in soup(['script', 'style', 'meta', 'link']):
+        tag.decompose()
+    
+    # Clean up inline styles - keep only essential ones
+    for tag in soup.find_all(True):
+        if tag.has_attr('style'):
+            style = tag['style']
+            # Keep only essential styles for tables
+            if tag.name in ['table', 'td', 'th', 'tr']:
+                # Keep border, padding, background for tables
+                essential_styles = []
+                for prop in ['border', 'padding', 'background-color', 'color', 'text-align', 'width']:
+                    if prop in style.lower():
+                        # Extract this property
+                        match = re.search(rf'{prop}\s*:\s*[^;]+', style, re.IGNORECASE)
+                        if match:
+                            essential_styles.append(match.group(0))
+                
+                if essential_styles:
+                    tag['style'] = '; '.join(essential_styles)
+                else:
+                    del tag['style']
+            else:
+                # For non-table elements, remove most inline styles
+                del tag['style']
+        
+        # Remove unnecessary attributes
+        attrs_to_remove = ['class', 'id', 'dir']
+        for attr in list(tag.attrs.keys()):
+            if attr in attrs_to_remove or attr.startswith('data-'):
+                del tag.attrs[attr]
+    
+    # Remove empty tags (but keep br, hr, img)
+    for tag in soup.find_all():
+        if len(tag.get_text(strip=True)) == 0 and tag.name not in ['br', 'hr', 'img']:
+            tag.decompose()
+    
+    # Get clean HTML
+    clean_html = str(soup)
+    
+    # Remove excessive whitespace
+    clean_html = re.sub(r'\n\s*\n', '\n', clean_html)
+    
+    print("[LOG] HTML cleaned successfully")
+    return clean_html
+
+
+def extract_readable_text(html_content):
+    """
+    Extract plain text in readable format from HTML
+    """
+    if not html_content:
+        return ""
+    
+    soup = BeautifulSoup(html_content, 'html.parser')
+    
+    # Remove script and style tags
+    for tag in soup(['script', 'style']):
+        tag.decompose()
+    
+    # Get text with proper spacing
+    text = soup.get_text(separator='\n', strip=True)
+    
+    # Clean up excessive newlines
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    
+    return text
+
+
 class CompleteEmailGenerator:
-    """Complete email generator with all features and detailed logging"""
-    def __init__(self, extraction_file, config_file, api_key, smtp_config,folder_path):
+    """Complete email generator with all features including HTML cleaning"""
+    
+    def __init__(self, extraction_file, config_file, api_key, smtp_config, folder_path):
         print(f"[LOG] Initializing CompleteEmailGenerator")
         self.extraction_file = extraction_file
         self.config_file = config_file
         self.api_key = api_key
         self.smtp_config = self.load_smtp_config(smtp_config)
         print(f"[LOG] Loading recipients from {smtp_config}")
-        self.recipients = self.load_recipients_from_config(smtp_config,folder_path)
+        self.recipients = self.load_recipients_from_config(smtp_config, folder_path)
         print(f"[LOG] Recipients loaded: {self.recipients}")
         print(f"[LOG] Loading extraction results from {self.extraction_file}")
         self.merged_df = self.load_extraction_results()
@@ -57,7 +144,6 @@ class CompleteEmailGenerator:
                 print(f"[LOG] OpenAI client initialized")
             except Exception as e:
                 print(f"[ERROR] Failed to initialize OpenAI client: {e}")
-
 
     def load_smtp_config(self, smtp_config_path):
         try:
@@ -109,13 +195,10 @@ class CompleteEmailGenerator:
 
     def _clean_value(self, val):
         if val is None:
-            #print(f"[LOG] Cleaning value: None -> ''")
             return ""
         if isinstance(val, float) and pd.isna(val):
-            #print(f"[LOG] Cleaning value: NaN -> ''")
             return ""
         cleaned = str(val).strip().lower()
-        #print(f"[LOG] Cleaning value: {val} -> {cleaned}")
         return cleaned
 
     def _get_preferred_value(self, row, doc_columns):
@@ -230,13 +313,24 @@ class CompleteEmailGenerator:
             formatted_text += f"{'='*70}\n"
         return formatted_text
 
-    def send_email(self, to_email, subject, body, attachment_path=None, attachment_paths=None):
+    def send_email(self, to_email, subject, body, attachment_path=None, attachment_paths=None, is_html=False):
+        """
+        Send email with support for both plain text and HTML
+        
+        Args:
+            to_email: Recipient email(s)
+            subject: Email subject
+            body: Email body (plain text or HTML)
+            attachment_path: Single attachment path (deprecated, use attachment_paths)
+            attachment_paths: List of attachment paths
+            is_html: If True, send body as HTML, else as plain text
+        """
         print(f"[LOG] Attempting to send email to: {to_email}")
         if not self.smtp_config:
             print("[ERROR] SMTP config not loaded. Cannot send email.")
             return False
         try:
-            msg = MIMEMultipart()
+            msg = MIMEMultipart('alternative')  # Changed to 'alternative' to support both text and HTML
             msg['From'] = self.smtp_config['address']
             if isinstance(to_email, (list, tuple)):
                 msg['To'] = ', '.join(to_email)
@@ -245,7 +339,19 @@ class CompleteEmailGenerator:
                 msg['To'] = to_email
                 recipients = [to_email]
             msg['Subject'] = subject
-            msg.attach(MIMEText(body, 'plain'))
+            
+            # Attach body as HTML or plain text
+            if is_html:
+                # Create plain text version for email clients that don't support HTML
+                plain_text = extract_readable_text(body)
+                msg.attach(MIMEText(plain_text, 'plain', 'utf-8'))
+                msg.attach(MIMEText(body, 'html', 'utf-8'))
+                print("[LOG] Email body attached as HTML with plain text fallback")
+            else:
+                msg.attach(MIMEText(body, 'plain'))
+                print("[LOG] Email body attached as plain text")
+            
+            # Handle attachments
             files_to_attach = []
             if attachment_paths is not None:
                 if isinstance(attachment_paths, (list, tuple)):
@@ -269,9 +375,7 @@ class CompleteEmailGenerator:
                 filename = os.path.basename(path)
                 part.add_header('Content-Disposition', f'attachment; filename= {filename}')
                 msg.attach(part)
-            else:
-                if attachment_path:
-                    print(f"[WARNING] Attachment path provided but file does not exist: {attachment_path}")
+            
             print(f"[LOG] Connecting to SMTP server: {self.smtp_config['smtp_server']}:{self.smtp_config['smtp_port']}")
             server = smtplib.SMTP(self.smtp_config['smtp_server'], self.smtp_config['smtp_port'])
             server.starttls()
@@ -316,17 +420,17 @@ Return ONLY in this exact JSON format:
 """
             print(f"[LOG] Calling GPT API...")
             client = AzureOpenAI(
-            azure_endpoint="https://qc-tspl-dau-mr.openai.azure.com/",
-            api_key="DvskuzopcDYytzJygTQiCl1ikUiT8513H8vfpIwVPZPOnfeHCdZ1JQQJ99BEACHYHv6XJ3w3AAABACOGprIt",
-            api_version="2025-01-01-preview",
-        )
+                azure_endpoint="https://qc-tspl-dau-mr.openai.azure.com/",
+                api_key="DvskuzopcDYytzJygTQiCl1ikUiT8513H8vfpIwVPZPOnfeHCdZ1JQQJ99BEACHYHv6XJ3w3AAABACOGprIt",
+                api_version="2025-01-01-preview",
+            )
 
             completion = client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[
                     {
-                    "role": "system", 
-                    "content": "You are a professional business email writer. Always return valid JSON"
+                        "role": "system",
+                        "content": "You are a professional business email writer. Always return valid JSON"
                     },
                     {
                         "role": "user",
@@ -338,13 +442,13 @@ Return ONLY in this exact JSON format:
                 response_format={"type": "json_object"}
             )
             result = completion.choices[0].message.content.strip()
-            llm_logger.info(json.dumps({
-                "model": "gpt-4o-mini",
-                "input_tokens": completion.usage.prompt_tokens,
-                "output_tokens": completion.usage.completion_tokens,
-                "prompt": prompt,
-                "response": result
-            }))
+            # llm_logger.info(json.dumps({
+            #     "model": "gpt-4o-mini",
+            #     "input_tokens": completion.usage.prompt_tokens,
+            #     "output_tokens": completion.usage.completion_tokens,
+            #     "prompt": prompt,
+            #     "response": result
+            # }))
             if result.startswith("```json"):
                 result = result[7:]
             if result.endswith("```"):
@@ -360,41 +464,6 @@ Return ONLY in this exact JSON format:
                 'body': body_content
             }
 
-    # def create_high_criticality_excel(self, output_folder):
-    #     """Create an Excel file containing only high criticality rows, with filtered columns."""
-    #     print(f"[LOG] Creating Excel file with high criticality rows")
-    #     crit_col = 'Mismatch Criticality' if 'Mismatch Criticality' in self.merged_df.columns else 'Criticality'
-    #     high_crit_df = self.merged_df[self.merged_df[crit_col].astype(str).str.upper() == 'HIGH'].copy()
-
-    #     if high_crit_df.empty:
-    #         print("[LOG] No high criticality rows found.")
-    #         return None
-
-    #     # Load config to get all columns
-    #     config_df = pd.read_excel(self.config_file)
-    #     all_columns = config_df.columns.tolist()
-
-    #     # Columns to exclude
-    #     exclude_keywords = ['Data Type', 'Field length', 'Primary Source Document', 'Secondary Source Document']
-    #     exclude_columns = [col for col in all_columns if any(key in col for key in exclude_keywords) or 'Description' in col]
-
-    #     # Columns to keep
-    #     keep_columns = [col for col in all_columns if col not in exclude_columns]
-
-    #     # Reorder and filter columns
-    #     filtered_df = high_crit_df.reindex(columns=keep_columns)
-
-    #     # Create filename with timestamp
-    #     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    #     filename = os.path.join(output_folder, f"High_Criticality_Issues_{timestamp}.xlsx")
-
-    #     # Save to Excel
-    #     filtered_df.to_excel(filename, index=False)
-    #     print(f"[LOG] High criticality Excel file created: {filename}")
-    #     print(f"[LOG] Rows in high criticality file: {len(filtered_df)}")
-
-    #     return filename
-
     def create_issues_excel(self, output_folder):
         """Create an Excel file with all rows, filtered columns (for both ABHL and IMGC)."""
         print(f"[LOG] Creating issues Excel file for both ABHL and IMGC")
@@ -406,10 +475,10 @@ Return ONLY in this exact JSON format:
         exclude_keywords = ['Data Type', 'Field length', 'Primary Source Document', 'Secondary Source Document']
         exclude_columns = [col for col in all_columns if any(key in col for key in exclude_keywords) or 'Description' in col]
         print(f"[LOG] Columns to exclude: {exclude_columns}")
-        mismatch_extraction_file=os.path.join(output_folder, "extraction_results_with_mismatch.xlsx")
-        merged_df_1=pd.read_excel(mismatch_extraction_file)
+        mismatch_extraction_file = os.path.join(output_folder, "extraction_results_with_mismatch.xlsx")
+        merged_df_1 = pd.read_excel(mismatch_extraction_file)
         print(f"[LOG] Merged DataFrame shape before filtering: {merged_df_1.shape}")
-        print(f"[LOG] First row of merged columns: {merged_df_1.head(1)}" )
+        print(f"[LOG] First row of merged columns: {merged_df_1.head(1)}")
         # Columns to keep
         keep_columns = [col for col in merged_df_1.columns if col not in exclude_columns]
         print(f"[LOG] Columns to keep: {keep_columns}")
@@ -427,9 +496,14 @@ Return ONLY in this exact JSON format:
             mapping = json.load(f)
         return list(mapping.keys())
 
-    def generate_abhl_email(self, mapping_json_path):
+    def generate_abhl_email(self, mapping_json_path, original_subject=None, original_body=None, original_sender=None, original_date=None):
+        """
+        Generate ABHL email with cleaned HTML from original message
+        
+        KEY CHANGE: Clean the original_body HTML to make it human-readable
+        """
         print(f"[LOG] Generating ABHL email (high criticality issues)")
-        print("[LOG] Loading major issues for ABHL email mapping JSON ", mapping_json_path  )
+        print("[LOG] Loading major issues for ABHL email mapping JSON ", mapping_json_path)
         major_issues = self.get_major_issues()
         loan_id = self._extract_loan_id()
 
@@ -447,41 +521,43 @@ Return ONLY in this exact JSON format:
             valid_mask = final_data_col.notna() & final_data_col.astype(str).str.strip().ne('')
             total_captured_fields = int(valid_mask.sum())
 
+        # Compose the new content
         if major_issues.empty:
-            body_content = f"""Dear ABHFL Team,
-I hope this email finds you well.
-We are pleased to inform you that the documents shared to initiate the loan application have been successfully processed through our data extraction and quality check workflow.
-
-Quality Check Summary:
-• No discrepancies were identified
-• Data values are consistent across the submitted documents
-
-At this stage, no additional information or revised documents are required. However, we will keep you informed for any further inputs be needed during subsequent processing.
-
-Documents Processed
-A total of {num_docs} documents were received and processed, including:
-{doc_list}
-
-If you require any additional information or clarification, please feel free to reach out to us.
-Warm regards,
-IMGC Team
-________________________________________
-This is a system-generated email. Please do not reply to this message.
-________________________________________
-For Implementation Use Only
-"""
-            subject_hint = f"Loan ID: {loan_id} Loan Application Document Processing Update"
+            new_content_lines = [
+                "Dear ABHFL Team,",
+                "I hope this email finds you well.",
+                "",
+                "We are pleased to inform you that the documents shared to initiate the loan application have been successfully processed through our data extraction and quality check workflow.",
+                "",
+                "<strong>Quality Check Summary:</strong>",
+                "• No discrepancies were identified",
+                "• Data values are consistent across the submitted documents",
+                "",
+                "At this stage, no additional information or revised documents are required. However, we will keep you informed for any further inputs be needed during subsequent processing.",
+                "",
+                "<strong>Documents Processed</strong>",
+                f"A total of {num_docs} documents were received and processed, including:",
+                f"{doc_list}",
+                "",
+                "If you require any additional information or clarification, please feel free to reach out to us.",
+                "Warm regards,",
+                "IMGC Team",
+                "________________________________________",
+                "This is a system-generated email. Please do not reply to this message.",
+                "________________________________________",
+                "For Implementation Use Only"
+            ]
+            new_content_html = '<br>'.join(new_content_lines)
         else:
-            # Summarization report for major mismatches
             summary_lines = [
-                f"Dear ABHFL Team,",
+                "Dear ABHFL Team,",
                 "I hope this email finds you well.",
                 "",
                 "We have processed your documents and below is the document captured summary",
                 "",
-                f"Total Fields Captured : {total_captured_fields}", 
+                f"<strong>Total Fields Captured:</strong> {total_captured_fields}",
                 "",
-                "Documents Processed",
+                "<strong>Documents Processed</strong>",
                 f"A total of {num_docs} documents were received and processed, including:",
                 f"{doc_list}",
                 "",
@@ -494,14 +570,114 @@ For Implementation Use Only
                 "________________________________________",
                 "For Implementation Use Only"
             ]
-            body_content = '\n'.join(summary_lines)
+            new_content_html = '<br>'.join(summary_lines)
+
+        # **KEY CHANGE**: Clean the original HTML body for readability
+        cleaned_original_body = ""
+        if original_body:
+            print("[LOG] Cleaning original email HTML for better readability...")
+            cleaned_original_body = clean_html_email(original_body)
+
+        # Compose the complete HTML email with cleaned original message
+        complete_html = f"""
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }}
+        
+        table {{
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }}
+        
+        th, td {{
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }}
+        
+        th {{
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }}
+        
+        tr:nth-child(even) {{
+            background-color: #f9f9f9;
+        }}
+        
+        blockquote {{
+            margin: 10px 0;
+            padding-left: 15px;
+            border-left: 3px solid #ccc;
+            color: #666;
+        }}
+        
+        .gmail_quote {{
+            margin: 10px 0;
+            padding-left: 15px;
+            border-left: 3px solid #ccc;
+            color: #666;
+        }}
+        
+        hr {{
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }}
+        
+        p {{
+            margin: 10px 0;
+        }}
+        
+        strong, b {{
+            font-weight: bold;
+        }}
+    </style>
+</head>
+<body>
+    <!-- New reply content -->
+    <div class="reply-content">
+        {new_content_html}
+    </div>
+    
+    <!-- Divider -->
+    <hr>
+    
+    <!-- Original message header -->
+    {f'<div style="color: #666; margin: 15px 0;"><strong>On {original_date or "[date]"}, {original_sender or "[sender]"} wrote:</strong></div>' if (original_date or original_sender) else ''}
+    
+    <!-- Quoted original message (CLEANED) -->
+    <blockquote class="gmail_quote">
+        {cleaned_original_body}
+    </blockquote>
+</body>
+</html>
+"""
+
+        # Set subject as a reply
+        if original_subject:
+            subject_hint = f"Re: {original_subject}"
+        else:
             subject_hint = f"Loan ID: {loan_id} Loan Application Document Processing Update"
 
         email = {
             'subject': subject_hint,
-            'body': body_content
+            'body': complete_html,
+            'is_html': True  # Flag to indicate this is HTML content
         }
-        print(f"[LOG] ABHL email generated")
+        print(f"[LOG] ABHL reply email generated with cleaned HTML")
         return email
 
     def generate_imgc_email(self, mapping_json_path):
@@ -514,8 +690,8 @@ For Implementation Use Only
             if "mail_subject.txt" not in doc and "mail_body.txt" not in doc
         ]
         num_docs = len(filtered_docs)
-        print("IMGC JSON path:",mapping_json_path)
-        print("IMGC doc_names:",doc_names)
+        print("IMGC JSON path:", mapping_json_path)
+        print("IMGC doc_names:", doc_names)
         doc_list = '\n'.join([f"• {doc}" for doc in filtered_docs])
 
         # Extraction statistics
@@ -553,7 +729,8 @@ This is a system-generated email. Please do not reply to this message.
 
         email = {
             'subject': subject,
-            'body': body
+            'body': body,
+            'is_html': False  # IMGC email is plain text
         }
         print(f"[LOG] IMGC email generated")
         return email
@@ -566,60 +743,73 @@ This is a system-generated email. Please do not reply to this message.
             f.write("="*80 + "\n\n")
             f.write(email_dict['body'])
         print(f"[LOG] Email saved to: {filename}")
-    
+
     def generate_and_send_all_emails(self, output_dir, send_emails=True):
         print("\n" + "="*80)
         print("EMAIL GENERATION WITH DATA CLEANING & PREFERENCES")
         print("="*80 + "\n")
         os.makedirs(output_dir, exist_ok=True)
         print(f"[LOG] Output directory ensured: {output_dir}")
-        
-        # Generate ABHL email
+
+        # --- Extract original mail fields from files in output_dir ---
+        subject_path = os.path.join(output_dir, "mail_subject.txt")
+        body_html_path = os.path.join(output_dir, "mail_body.html")
+        metadata_path = os.path.join(output_dir, "email_metadata.json")
+        original_subject = None
+        original_body = None
+        original_sender = None
+        original_date = None
+
+        if os.path.exists(subject_path):
+            with open(subject_path, "r", encoding="utf-8") as f:
+                original_subject = f.read().strip()
+        if os.path.exists(body_html_path):
+            with open(body_html_path, "r", encoding="utf-8") as f:
+                original_body = f.read()
+        if os.path.exists(metadata_path):
+            with open(metadata_path, "r", encoding="utf-8") as f:
+                meta = json.load(f)
+                original_sender = meta.get("from")
+                original_date = meta.get("date")
+
+        # Generate ABHL email as a reply (with cleaned HTML)
         print("📧 Generating ABHL email (High Criticality Issues)...")
-        mapping_json=os.path.join(output_dir, f"document_column_mapping.json")
-        abhl_email = self.generate_abhl_email(mapping_json)
-        abhl_file = f"{output_dir}/email_to_ABHL.txt"
+        mapping_json = os.path.join(output_dir, f"document_column_mapping.json")
+        abhl_email = self.generate_abhl_email(
+            mapping_json,
+            original_subject=original_subject,
+            original_body=original_body,
+            original_sender=original_sender,
+            original_date=original_date
+        )
+        abhl_file = f"{output_dir}/email_to_ABHL.html"  # Changed extension to .html
         self.save_email_to_file(abhl_email, abhl_file)
-        
-        # # Create high criticality Excel attachment for ABHL
-        # print("📊 Creating high criticality Excel file for ABHL...")
-        # abhl_attachment = self.create_high_criticality_excel(output_dir)
-        
+
         # Create issues Excel attachment for both ABHL and IMGC
         print("📊 Creating issues Excel file for both ABHL and IMGC...")
         issues_attachment = self.create_issues_excel(output_dir)
 
-        # Send ABHL email with attachment
+        # Send ABHL email with attachment (AS HTML)
         abhl_sent = False
         if send_emails and self.recipients.get('ABHL'):
-            print(f"📤 Sending email to ABHL ({self.recipients['ABHL']})...")
+            print(f"📤 Sending HTML email to ABHL ({self.recipients['ABHL']})...")
             abhl_sent = self.send_email(
                 to_email=self.recipients['ABHL'],
                 subject=abhl_email['subject'],
                 body=abhl_email['body'],
-                attachment_path=issues_attachment
+                attachment_path=issues_attachment,
+                is_html=abhl_email.get('is_html', False)  # Use HTML flag
             )
 
-        # # Send IMGC email with the same attachment
-        # imgc_sent = False
-        # if send_emails and self.recipients.get('IMGC'):
-        #     print(f"\n📤 Sending email to IMGC ({self.recipients['IMGC']})...")
-        #     imgc_sent = self.send_email(
-        #         to_email=self.recipients['IMGC'],
-        #         subject=imgc_email['subject'],
-        #         body=imgc_email['body'],
-        #         attachment_path=issues_attachment
-        #     )
-        
-        # Generate IMGC email
+        # Generate IMGC email (plain text)
         print("\n📧 Generating IMGC email (Low Criticality Issues)...")
-        mapping_json=os.path.join(output_dir, f"document_column_mapping.json")
+        mapping_json = os.path.join(output_dir, f"document_column_mapping.json")
         imgc_email = self.generate_imgc_email(mapping_json)
         imgc_file = f"{output_dir}/email_to_IMGC.txt"
         self.save_email_to_file(imgc_email, imgc_file)
-        
+
         print("[DEBUG] IMGC email body to be sent:\n", imgc_email['body'])
-        
+
         # IMGC gets issues.xlsx and latest JSON
         imgc_sent = False
         if send_emails and self.recipients.get('IMGC'):
@@ -644,14 +834,15 @@ This is a system-generated email. Please do not reply to this message.
                 to_email=self.recipients['IMGC'],
                 subject=imgc_email['subject'],
                 body=imgc_email['body'],
-                attachment_paths=attachments
+                attachment_paths=attachments,
+                is_html=imgc_email.get('is_html', False)  # Use HTML flag (False for IMGC)
             )
-        
+
         # Summary
         print("\n" + "="*80)
         print("SUMMARY")
         print("="*80)
-        print(f"✅ ABHL Email: {abhl_file}")
+        print(f"✅ ABHL Email: {abhl_file} (HTML format with cleaned original message)")
         if issues_attachment:
             print(f"   📎 Attachment: {issues_attachment}")
         if send_emails:
@@ -661,13 +852,13 @@ This is a system-generated email. Please do not reply to this message.
             print(f"   {'✅ Sent' if imgc_sent else '❌ Not sent'} to {self.recipients.get('IMGC', 'N/A')}")
         print(f"   📎 Attachment: {issues_attachment}")
         print("="*80 + "\n")
-        
+
         return {
             'abhl_email': abhl_email,
             'imgc_email': imgc_email,
             'abhl_file': abhl_file,
             'imgc_file': imgc_file,
-            'abhl_attachment': issues_attachment,            
+            'abhl_attachment': issues_attachment,
             'abhl_sent': abhl_sent,
             'imgc_sent': imgc_sent
         }
@@ -688,6 +879,7 @@ This is a system-generated email. Please do not reply to this message.
             return str(self.merged_df['Loan ID'].iloc[0])
         return "Unknown"
 
+
 def main():
     import sys
     from pathlib import Path
@@ -701,6 +893,7 @@ def main():
         process_extraction_results(extraction_file, output_folder)
     else:
         print(f"[ERROR] extraction_results.xlsx not found in {output_folder}")
+
 
 def process_extraction_results(extraction_file, output_folder):
     import pandas as pd
@@ -716,11 +909,13 @@ def process_extraction_results(extraction_file, output_folder):
         extraction_file=extraction_file,
         config_file=config_file,
         api_key=api_key,
-        smtp_config=smtp_config
+        smtp_config=smtp_config,
+        folder_path=output_folder
     )
     print(f"[LOG] Recipients loaded: {generator.recipients}")
     generator.generate_and_send_all_emails(output_folder, send_emails=True)
     print(f"[LOG] Email generation and sending complete for: {extraction_file}")
+
 
 if __name__ == "__main__":
     main()

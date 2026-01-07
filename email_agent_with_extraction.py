@@ -35,6 +35,7 @@ from docx import Document
 from pypdf import PdfReader
 import pdfplumber
 from openai import OpenAI
+import html2text
 
 load_dotenv()
 
@@ -1088,10 +1089,11 @@ class EmailAgentWithExtraction:
             json.dump(metadata, f, indent=2)
         print("Saved email metadata.")
         # Save email body
-        body_content = self.extract_email_body(msg)
-        
+        plain_body, html_body = self.extract_email_body(msg)
         with open(os.path.join(save_path, 'mail_body.txt'), 'w', encoding='utf-8') as f:
-            f.write(body_content)
+            f.write(plain_body or "")
+        with open(os.path.join(save_path, 'mail_body.html'), 'w', encoding='utf-8') as f:
+            f.write(html_body or "")
         
         # Save email subject
         with open(os.path.join(save_path, 'mail_subject.txt'), 'w', encoding='utf-8') as f:
@@ -1111,20 +1113,73 @@ class EmailAgentWithExtraction:
         
         return attachments
 
-    def extract_email_body(self, msg):
-        body = ""
-        if msg.is_multipart():
-            for part in msg.walk():
-                content_type = part.get_content_type()
-                if content_type == "text/plain":
-                    payload = part.get_payload(decode=True)
-                    if payload:
-                        body += payload.decode('utf-8', errors='ignore')
-        else:
-            payload = msg.get_payload(decode=True)
-            if payload:
-                body = payload.decode('utf-8', errors='ignore')
-        return body
+    def extract_email_body(self, msg, save_path=None):
+        """
+        Extracts the email body in both HTML and plain text formats.
+        Stores mail_body.txt (plain text) and mail_body.html (HTML) in save_path if provided.
+        Returns (plain_text, html_text)
+        """
+        html_body = None
+        plain_body = None
+
+        # Extract body parts with exception handling
+        try:
+            if msg.is_multipart():
+                for part in msg.walk():
+                    try:
+                        content_type = part.get_content_type()
+                        payload = part.get_payload(decode=True)
+                        if content_type == "text/html" and payload:
+                            html_body = payload.decode('utf-8', errors='ignore')
+                        elif content_type == "text/plain" and payload and not plain_body:
+                            plain_body = payload.decode('utf-8', errors='ignore')
+                    except Exception as e:
+                        print(f"[ERROR] Failed to decode part: {e}")
+            else:
+                try:
+                    payload = msg.get_payload(decode=True)
+                    content_type = msg.get_content_type()
+                    if content_type == "text/html" and payload:
+                        html_body = payload.decode('utf-8', errors='ignore')
+                    elif content_type == "text/plain" and payload:
+                        plain_body = payload.decode('utf-8', errors='ignore')
+                except Exception as e:
+                    print(f"[ERROR] Failed to decode payload: {e}")
+        except Exception as e:
+            print(f"[ERROR] Failed to extract email body: {e}")
+
+        # Convert HTML to plain text if needed
+        try:
+            if html_body and not plain_body:
+                plain_body = html2text.html2text(html_body)
+        except Exception as e:
+            print(f"[ERROR] html2text conversion failed: {e}")
+            if not plain_body:
+                plain_body = html_body or ""
+        try:
+            if plain_body and not html_body:
+                html_body = plain_body
+        except Exception as e:
+            print(f"[ERROR] Fallback to plain_body for html_body failed: {e}")
+            if not html_body:
+                html_body = ""
+
+        # Save to files if save_path is provided
+        if save_path:
+            try:
+                txt_path = os.path.join(save_path, 'mail_body.txt')
+                with open(txt_path, 'w', encoding='utf-8') as f:
+                    f.write(plain_body or "")
+            except Exception as e:
+                print(f"[ERROR] Failed to write mail_body.txt: {e}")
+            try:
+                html_path = os.path.join(save_path, 'mail_body.html')
+                with open(html_path, 'w', encoding='utf-8') as f:
+                    f.write(html_body or "")
+            except Exception as e:
+                print(f"[ERROR] Failed to write mail_body.html: {e}")
+
+        return plain_body or "", html_body or ""
 
     def download_attachments(self, msg, save_path):
         print("Downloading attachments...")
