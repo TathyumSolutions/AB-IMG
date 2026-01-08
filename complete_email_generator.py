@@ -130,6 +130,7 @@ class CompleteEmailGenerator:
         self.config_file = config_file
         self.api_key = api_key
         self.smtp_config = self.load_smtp_config(smtp_config)
+        self.folder_path = folder_path  # <-- Store the folder path for later use
         print(f"[LOG] Loading recipients from {smtp_config}")
         self.recipients = self.load_recipients_from_config(smtp_config, folder_path)
         print(f"[LOG] Recipients loaded: {self.recipients}")
@@ -265,15 +266,42 @@ class CompleteEmailGenerator:
         print(f"[LOG] Total issues identified: {len(issues)}")
         return pd.DataFrame(issues)
 
-    def get_major_issues(self):
-        print(f"[LOG] Getting major (high criticality) issues")
-        all_issues = self.identify_issues()
-        if all_issues.empty:
-            print(f"[LOG] No issues found")
-            return all_issues
-        major_issues = all_issues[all_issues['Criticality'].astype(str).str.upper() == 'HIGH']
-        print(f"[LOG] Major issues found: {len(major_issues)}")
-        return major_issues
+    def get_major_issues(self, output_folder=None):
+        """
+        Checks the 'MISMATCH' column in extraction_results_with_mismatch.xlsx.
+        Returns 0 if all values are null/empty/zero, else returns 2.
+        Uses self.folder_path if output_folder is not provided.
+        """
+        import pandas as pd
+        import os
+
+        folder = output_folder if output_folder is not None else self.folder_path
+        mismatch_extraction_file = os.path.join(folder, "extraction_results_with_mismatch.xlsx")
+
+        print(f"[LOG] Checking major issues in {mismatch_extraction_file}")
+        if not os.path.exists(mismatch_extraction_file):
+            print(f"[ERROR] File not found: {mismatch_extraction_file}")
+            return 0
+
+        df = pd.read_excel(mismatch_extraction_file)
+        print(f"[LOG] Columns in the file: {df.columns.tolist()}")
+        if 'MISMATCH' not in df.columns:
+            print(f"[ERROR] 'MISMATCH' column not found in {mismatch_extraction_file}")
+            return 0
+
+        # Consider a row as mismatch if the value is not null/empty/zero (do not cast to int)
+        def is_mismatch(val):
+            if pd.isnull(val):
+                return False
+            sval = str(val).strip()
+            if sval in ("", "0", "None", "nan", "NaN"):
+                return False
+            return True
+
+        if not df['MISMATCH'].apply(is_mismatch).any():
+            return 0
+        else:
+            return 2
 
     def get_low_issues(self):
         print(f"[LOG] Getting low criticality issues")
@@ -442,13 +470,6 @@ Return ONLY in this exact JSON format:
                 response_format={"type": "json_object"}
             )
             result = completion.choices[0].message.content.strip()
-            # llm_logger.info(json.dumps({
-            #     "model": "gpt-4o-mini",
-            #     "input_tokens": completion.usage.prompt_tokens,
-            #     "output_tokens": completion.usage.completion_tokens,
-            #     "prompt": prompt,
-            #     "response": result
-            # }))
             if result.startswith("```json"):
                 result = result[7:]
             if result.endswith("```"):
@@ -479,8 +500,8 @@ Return ONLY in this exact JSON format:
         merged_df_1 = pd.read_excel(mismatch_extraction_file)
         print(f"[LOG] Merged DataFrame shape before filtering: {merged_df_1.shape}")
         print(f"[LOG] First row of merged columns: {merged_df_1.head(1)}")
-        # Columns to keep
-        keep_columns = [col for col in merged_df_1.columns if col not in exclude_columns]
+        # Columns to keep (remove 'Mismatch Criticality' explicitly)
+        keep_columns = [col for col in merged_df_1.columns if col not in exclude_columns and col != 'Mismatch Criticality']
         print(f"[LOG] Columns to keep: {keep_columns}")
         # Filter DataFrame
         filtered_df = merged_df_1[keep_columns]
@@ -505,6 +526,7 @@ Return ONLY in this exact JSON format:
         print(f"[LOG] Generating ABHL email (high criticality issues)")
         print("[LOG] Loading major issues for ABHL email mapping JSON ", mapping_json_path)
         major_issues = self.get_major_issues()
+        print(f"[LOG] Count of major issues: {major_issues}")
         loan_id = self._extract_loan_id()
 
         doc_names = self._get_document_names_from_mapping(mapping_json_path)
@@ -522,55 +544,172 @@ Return ONLY in this exact JSON format:
             total_captured_fields = int(valid_mask.sum())
 
         # Compose the new content
-        if major_issues.empty:
+        if major_issues == 0:
+            # happy flow (new format for both ABHL and IMGC)
+            loan_number = loan_id if loan_id else "[Loan Number]"
+            applicant_name = "[Applicant Name]"
+            found_applicant = False
+            print("[LOG] Trying to extract applicant name for happy flow...")   
+            # Try to extract applicant name from final_extracted_output.xlsx using PAS Field Name values
+            final_output_file = os.path.join(self.folder_path, "final_extracted_output.xlsx")
+            if os.path.exists(final_output_file):
+                df_final = pd.read_excel(final_output_file)
+                first_name_val = ""
+                surname_val = ""
+                # Use PAS Field Name values, not column names
+                if 'PAS Field Name' in df_final.columns:
+                    # Set index to PAS Field Name for easy lookup
+                    df_final_indexed = df_final.set_index('PAS Field Name')
+                    if 'Borrower_First_Name' in df_final_indexed.index:
+                        first_name_val = str(df_final_indexed.loc['Borrower_First_Name'].dropna().values[0]).strip()
+                    if 'Borrower_Surname' in df_final_indexed.index:
+                        surname_val = str(df_final_indexed.loc['Borrower_Surname'].dropna().values[0]).strip()
+                if first_name_val or surname_val:
+                    applicant_name = f"{first_name_val} {surname_val}".strip()
+                    found_applicant = True
+            # Fallback to merged_df if not found in final_extracted_output.xlsx
+            if not found_applicant:
+                first_name_val = ""
+                surname_val = ""
+                if 'PAS Field Name' in self.merged_df.columns:
+                    merged_df_indexed = self.merged_df.set_index('PAS Field Name')
+                    if 'Borrower_First_Name' in merged_df_indexed.index:
+                        first_name_val = str(merged_df_indexed.loc['Borrower_First_Name'].dropna().values[0]).strip()
+                    if 'Borrower_Surname' in merged_df_indexed.index:
+                        surname_val = str(merged_df_indexed.loc['Borrower_Surname'].dropna().values[0]).strip()
+                if first_name_val or surname_val:
+                    applicant_name = f"{first_name_val} {surname_val}".strip()
+                    found_applicant = True
+                # If still not found, fallback to Applicant Name column
+                if not found_applicant and 'Applicant Name' in self.merged_df.columns:
+                    first_valid = self.merged_df['Applicant Name'].dropna().astype(str).str.strip()
+                    if not first_valid.empty and first_valid.iloc[0]:
+                        applicant_name = first_valid.iloc[0]
+                        found_applicant = True
             new_content_lines = [
                 "Dear ABHFL Team,",
-                "I hope this email finds you well.",
+                "Greetings!",
                 "",
-                "We are pleased to inform you that the documents shared to initiate the loan application have been successfully processed through our data extraction and quality check workflow.",
+                f"We wish to inform you that your loan application <strong>{loan_number}</strong> for applicant <strong>{applicant_name}</strong> is currently under process. The submitted documents have been successfully reviewed and verified.",
                 "",
-                "<strong>Quality Check Summary:</strong>",
-                "• No discrepancies were identified",
-                "• Data values are consistent across the submitted documents",
+                "Our team will now proceed with the next steps as per the standard processing workflow. In case any further information or clarification is required, we will communicate with you promptly.",
                 "",
-                "At this stage, no additional information or revised documents are required. However, we will keep you informed for any further inputs be needed during subsequent processing.",
-                "",
-                "<strong>Documents Processed</strong>",
-                f"A total of {num_docs} documents were received and processed, including:",
-                f"{doc_list}",
-                "",
-                "If you require any additional information or clarification, please feel free to reach out to us.",
+                "Thank you for your continued cooperation.",
                 "Warm regards,",
-                "IMGC Team",
-                "________________________________________",
-                "This is a system-generated email. Please do not reply to this message.",
-                "________________________________________",
-                "For Implementation Use Only"
+                "IMGC Team"
             ]
             new_content_html = '<br>'.join(new_content_lines)
         else:
+            # unhappy flow (mismatch) for both ABHL and IMGC
+            loan_number = loan_id if loan_id else "[Loan Number]"
+            applicant_name = "[Applicant Name]"
+            found_applicant = False
+            # Try to extract applicant name from final_extracted_output.xlsx using PAS Field Name values
+            final_output_file = os.path.join(self.folder_path, "final_extracted_output.xlsx")
+            if os.path.exists(final_output_file):
+                df_final = pd.read_excel(final_output_file)
+                first_name_val = ""
+                surname_val = ""
+                # Use PAS Field Name values, not column names
+                if 'PAS Field Name' in df_final.columns:
+                    df_final_indexed = df_final.set_index('PAS Field Name')
+                    if 'Borrower_First_Name' in df_final_indexed.index:
+                        first_name_val = str(df_final_indexed.loc['Borrower_First_Name'].dropna().values[0]).strip()
+                    if 'Borrower_Surname' in df_final_indexed.index:
+                        surname_val = str(df_final_indexed.loc['Borrower_Surname'].dropna().values[0]).strip()
+                if first_name_val or surname_val:
+                    applicant_name = f"{first_name_val} {surname_val}".strip()
+                    found_applicant = True
+            # Fallback to merged_df if not found in final_extracted_output.xlsx
+            if not found_applicant:
+                first_name_val = ""
+                surname_val = ""
+                if 'PAS Field Name' in self.merged_df.columns:
+                    merged_df_indexed = self.merged_df.set_index('PAS Field Name')
+                    if 'Borrower_First_Name' in merged_df_indexed.index:
+                        first_name_val = str(merged_df_indexed.loc['Borrower_First_Name'].dropna().values[0]).strip()
+                    if 'Borrower_Surname' in merged_df_indexed.index:
+                        surname_val = str(merged_df_indexed.loc['Borrower_Surname'].dropna().values[0]).strip()
+                if first_name_val or surname_val:
+                    applicant_name = f"{first_name_val} {surname_val}".strip()
+                    found_applicant = True
+                # If still not found, fallback to Applicant Name column
+                if not found_applicant and 'Applicant Name' in self.merged_df.columns:
+                    first_valid = self.merged_df['Applicant Name'].dropna().astype(str).str.strip()
+                    if not first_valid.empty and first_valid.iloc[0]:
+                        applicant_name = first_valid.iloc[0]
+                        found_applicant = True
+
+            # Compose document list
+            doc_list_html = ''
+            if num_docs > 0:
+                doc_list_html = '<br>'.join([f"• {doc}" for doc in filtered_docs])
+
+            # Read mismatch rows from the final_extracted_output.xlsx file and use its columns
+            final_output_file = os.path.join(self.folder_path, "final_extracted_output.xlsx")
+            mismatch_rows = pd.DataFrame()
+            if os.path.exists(final_output_file):
+                df_final = pd.read_excel(final_output_file)
+                # Try to get MISMATCH column from extraction_results_with_mismatch.xlsx for filtering
+                mismatch_extraction_file = os.path.join(self.folder_path, "extraction_results_with_mismatch.xlsx")
+                if os.path.exists(mismatch_extraction_file):
+                    df_mismatch = pd.read_excel(mismatch_extraction_file)
+                    if 'MISMATCH' in df_mismatch.columns:
+                        mismatch_mask = df_mismatch['MISMATCH'].notnull() & (df_mismatch['MISMATCH'].astype(str).str.strip() != '')
+                        # Align index if needed
+                        if len(df_final) == len(df_mismatch):
+                            mismatch_rows = df_final[mismatch_mask]
+                        else:
+                            # fallback: try to merge on a key if available, else skip
+                            mismatch_rows = df_final.copy()
+                    else:
+                        mismatch_rows = pd.DataFrame()
+                else:
+                    mismatch_rows = pd.DataFrame()
+            # Build HTML table for mismatches using columns from final_extracted_output.xlsx
+            print(f"[LOG] Sending files with these columns: {mismatch_rows.columns.tolist()}")
+            if not mismatch_rows.empty:
+                table_headers = list(mismatch_rows.columns)
+                # Replace 'PAS Field Name' with 'Information Label' in the header row
+                display_headers = ["Information Label" if h == "PAS Field Name" else h for h in table_headers]
+                table_html = '<table><tr>' + ''.join([f'<th>{col}</th>' for col in display_headers]) + '</tr>'
+                for _, row in mismatch_rows.iterrows():
+                    row_html = ''
+                    for col in table_headers:
+                        val = row[col]
+                        # Show blank for NaN/None, else string value
+                        if pd.isna(val):
+                            cell = ''
+                        else:
+                            cell = str(val)
+                        row_html += f'<td>{cell}</td>'
+                    table_html += f'<tr>{row_html}</tr>'
+                table_html += '</table>'
+            else:
+                table_html = '<p>No discrepancies found.</p>'
+
             summary_lines = [
                 "Dear ABHFL Team,",
-                "I hope this email finds you well.",
+                "Greetings!",
                 "",
-                "We have processed your documents and below is the document captured summary",
+                f"We have reviewed the documents received for the loan application <strong>{loan_number}</strong> for applicant <strong>{applicant_name}</strong> and noted the following observations during verification.",
+                "<br><strong>Documents Processed</strong>",
+                f"A total of {num_docs} document{'s' if num_docs == 1 else 's'} were received and processed:",
+                f"{doc_list_html}",
                 "",
-                f"<strong>Total Fields Captured:</strong> {total_captured_fields}",
+                "During verification, certain data inconsistencies were observed across the submitted documents, which require further clarification. To help us proceed further, we request that you complete the following actions:",
+                "• Verify the highlighted discrepancies",
+                "• Submit updated/corrected documents with consistent applicant details",
                 "",
-                "<strong>Documents Processed</strong>",
-                f"A total of {num_docs} documents were received and processed, including:",
-                f"{doc_list}",
+                "<strong>Discrepancy Summary</strong>",
+                str(table_html),
                 "",
-                "Please review the attached summarization report for details on the discrepancies.",
-                "If you require any additional information or clarification, please feel free to reach out to us.",
+                "Please reply to this email with the revised documents. Once received, our team will promptly review them and re-initiate the process as per the standard workflow.",
+                "Thank you for your cooperation.",
                 "Warm regards,",
-                "IMGC Team",
-                "________________________________________",
-                "This is a system-generated email. Please do not reply to this message.",
-                "________________________________________",
-                "For Implementation Use Only"
+                "IMGC Team"
             ]
-            new_content_html = '<br>'.join(summary_lines)
+            new_content_html = '<br>'.join([str(line) for line in summary_lines])
 
         # **KEY CHANGE**: Clean the original HTML body for readability
         cleaned_original_body = ""
@@ -640,10 +779,6 @@ Return ONLY in this exact JSON format:
         p {{
             margin: 10px 0;
         }}
-        
-        strong, b {{
-            font-weight: bold;
-        }}
     </style>
 </head>
 <body>
@@ -670,7 +805,7 @@ Return ONLY in this exact JSON format:
         if original_subject:
             subject_hint = f"Re: {original_subject}"
         else:
-            subject_hint = f"Loan ID: {loan_id} Loan Application Document Processing Update"
+            subject_hint = f"Loan ID: {loan_id} - Loan Application Document Processing Update"
 
         email = {
             'subject': subject_hint,
@@ -680,59 +815,25 @@ Return ONLY in this exact JSON format:
         print(f"[LOG] ABHL reply email generated with cleaned HTML")
         return email
 
-    def generate_imgc_email(self, mapping_json_path):
-        print(f"[LOG] Generating IMGC email (criticality analysis)")
-        loan_id = self._extract_loan_id()
-        print("IMGC Loan Id:", loan_id)
-        doc_names = self._get_document_names_from_mapping(mapping_json_path)
-        filtered_docs = [
-            doc for doc in doc_names
-            if "mail_subject.txt" not in doc and "mail_body.txt" not in doc
-        ]
-        num_docs = len(filtered_docs)
-        print("IMGC JSON path:", mapping_json_path)
-        print("IMGC doc_names:", doc_names)
-        doc_list = '\n'.join([f"• {doc}" for doc in filtered_docs])
-
-        # Extraction statistics
-        total_fields = len(self.merged_df)
-        all_issues = self.identify_issues()
-        total_issues = len(all_issues)
-        high_issues = all_issues[all_issues['Criticality'].astype(str).str.upper() == 'HIGH']
-        low_issues = all_issues[all_issues['Criticality'].astype(str).str.upper() != 'HIGH']
-        high_count = len(high_issues)
-        low_count = len(low_issues)
-
-        total_captured_fields = 0
-        if 'Final Data for PAS System' in self.merged_df.columns:
-            final_data_col = self.merged_df['Final Data for PAS System']
-            valid_mask = final_data_col.notna() & final_data_col.astype(str).str.strip().ne('')
-            total_captured_fields = int(valid_mask.sum())
-
-        subject = f"ABHFL – Loan ID: {loan_id} – Document Data Extraction Report"
-        body = f"""Dear IMGC Team,
-
-I hope you are doing well.
-A total of {num_docs} loan-related documents were received and successfully processed as part of this request. The documents include:
-{doc_list}
-Please find below a summary of the data extraction performed on the received documents, including overall extraction statistics:
-
-📊 Data Extraction Summary
-• Total Fields Processed: {total_fields}
-• Total Fields Captured : {total_captured_fields}
-
-The complete extracted Excel file has been attached for review and audit purposes.
-If any clarification, correction, or follow-up action is required, please coordinate internally as per the defined workflow.
-________________________________________
-This is a system-generated email. Please do not reply to this message.
-"""
-
-        email = {
-            'subject': subject,
-            'body': body,
-            'is_html': False  # IMGC email is plain text
-        }
-        print(f"[LOG] IMGC email generated")
+    def generate_imgc_email(self, mapping_json_path, original_subject=None, original_body=None, original_sender=None, original_date=None):
+        """
+        Generate IMGC email with mail trail (original subject, body, sender, date) just like ABHL.
+        """
+        print(f"[LOG] Generating IMGC email (with mail trail)")
+        abhl_email = self.generate_abhl_email(
+            mapping_json_path,
+            original_subject=original_subject,
+            original_body=original_body,
+            original_sender=original_sender,
+            original_date=original_date
+        )
+        # Replace "ABHFL Team" with "IMGC Team" in subject and body, but keep mail trail
+        email = abhl_email.copy()
+        email['subject'] = abhl_email['subject'].replace("ABHFL", "IMGC")
+        if abhl_email.get('body'):
+            # Replace only the greeting, not the mail trail
+            email['body'] = abhl_email['body'].replace("Dear ABHFL Team,", "Dear IMGC Team,", 1)
+        print(f"[LOG] IMGC email generated (with mail trail)")
         return email
 
     def save_email_to_file(self, email_dict, filename):
@@ -772,6 +873,10 @@ This is a system-generated email. Please do not reply to this message.
                 original_sender = meta.get("from")
                 original_date = meta.get("date")
 
+        # Create issues Excel attachment for both ABHL and IMGC (do this BEFORE generating ABHL email)
+        print("📊 Creating issues Excel file for both ABHL and IMGC...")
+        issues_attachment = self.create_issues_excel(output_dir)
+
         # Generate ABHL email as a reply (with cleaned HTML)
         print("📧 Generating ABHL email (High Criticality Issues)...")
         mapping_json = os.path.join(output_dir, f"document_column_mapping.json")
@@ -785,10 +890,6 @@ This is a system-generated email. Please do not reply to this message.
         abhl_file = f"{output_dir}/email_to_ABHL.html"  # Changed extension to .html
         self.save_email_to_file(abhl_email, abhl_file)
 
-        # Create issues Excel attachment for both ABHL and IMGC
-        print("📊 Creating issues Excel file for both ABHL and IMGC...")
-        issues_attachment = self.create_issues_excel(output_dir)
-
         # Send ABHL email with attachment (AS HTML)
         abhl_sent = False
         if send_emails and self.recipients.get('ABHL'):
@@ -801,11 +902,17 @@ This is a system-generated email. Please do not reply to this message.
                 is_html=abhl_email.get('is_html', False)  # Use HTML flag
             )
 
-        # Generate IMGC email (plain text)
-        print("\n📧 Generating IMGC email (Low Criticality Issues)...")
+        # Generate IMGC email (HTML with mail trail)
+        print("\n📧 Generating IMGC email (with mail trail)...")
         mapping_json = os.path.join(output_dir, f"document_column_mapping.json")
-        imgc_email = self.generate_imgc_email(mapping_json)
-        imgc_file = f"{output_dir}/email_to_IMGC.txt"
+        imgc_email = self.generate_imgc_email(
+            mapping_json,
+            original_subject=original_subject,
+            original_body=original_body,
+            original_sender=original_sender,
+            original_date=original_date
+        )
+        imgc_file = f"{output_dir}/email_to_IMGC.html"  # Changed to .html
         self.save_email_to_file(imgc_email, imgc_file)
 
         print("[DEBUG] IMGC email body to be sent:\n", imgc_email['body'])
@@ -814,28 +921,30 @@ This is a system-generated email. Please do not reply to this message.
         imgc_sent = False
         if send_emails and self.recipients.get('IMGC'):
             print(f"\n📤 Sending email to IMGC ({self.recipients['IMGC']})...")
-            json_candidates = []
-            try:
-                extraction_dir = os.path.dirname(str(self.extraction_file))
-                json_candidates = glob.glob(os.path.join(extraction_dir, 'final_json_format_*.json'))
-                if not json_candidates:
-                    json_candidates = glob.glob(os.path.join(extraction_dir, 'pas_field_map_*.json'))
-            except Exception:
-                json_candidates = []
-
-            latest_json = max(json_candidates, key=os.path.getmtime) if json_candidates else None
             attachments = [issues_attachment]
-            if latest_json:
-                if os.path.basename(latest_json).lower().startswith('final_json_format_'):
-                    attachments.append(_ensure_txt_copy_for_attachment(latest_json))
-                else:
-                    attachments.append(latest_json)
+            # Only attach latest JSON if happy flow (get_major_issues == 0)
+            if self.get_major_issues(output_dir) == 0:
+                json_candidates = []
+                try:
+                    extraction_dir = os.path.dirname(str(self.extraction_file))
+                    json_candidates = glob.glob(os.path.join(extraction_dir, 'final_json_format_*.json'))
+                    if not json_candidates:
+                        json_candidates = glob.glob(os.path.join(extraction_dir, 'pas_field_map_*.json'))
+                except Exception:
+                    json_candidates = []
+
+                latest_json = max(json_candidates, key=os.path.getmtime) if json_candidates else None
+                if latest_json:
+                    if os.path.basename(latest_json).lower().startswith('final_json_format_'):
+                        attachments.append(_ensure_txt_copy_for_attachment(latest_json))
+                    else:
+                        attachments.append(latest_json)
             imgc_sent = self.send_email(
                 to_email=self.recipients['IMGC'],
                 subject=imgc_email['subject'],
                 body=imgc_email['body'],
                 attachment_paths=attachments,
-                is_html=imgc_email.get('is_html', False)  # Use HTML flag (False for IMGC)
+                is_html=imgc_email.get('is_html', False)  # Use HTML flag
             )
 
         # Summary
@@ -847,7 +956,7 @@ This is a system-generated email. Please do not reply to this message.
             print(f"   📎 Attachment: {issues_attachment}")
         if send_emails:
             print(f"   {'✅ Sent' if abhl_sent else '❌ Not sent'} to {self.recipients.get('ABHL', 'N/A')}")
-        print(f"✅ IMGC Email: {imgc_file}")
+        print(f"✅ IMGC Email: {imgc_file} (HTML format with cleaned original message)")
         if send_emails:
             print(f"   {'✅ Sent' if imgc_sent else '❌ Not sent'} to {self.recipients.get('IMGC', 'N/A')}")
         print(f"   📎 Attachment: {issues_attachment}")
@@ -878,6 +987,156 @@ This is a system-generated email. Please do not reply to this message.
         if hasattr(self, 'merged_df') and 'Loan ID' in self.merged_df.columns:
             return str(self.merged_df['Loan ID'].iloc[0])
         return "Unknown"
+
+    def _extract_loan_and_applicant(self):
+        """
+        Extracts Loan Number and Applicant Name from the merged DataFrame.
+        Returns (loan_number, applicant_name) or ('Unknown', 'Unknown') if not found.
+        """
+        loan_number = "Unknown"
+        applicant_name = "Unknown"
+        if hasattr(self, 'merged_df'):
+            for col in self.merged_df.columns:
+                if "loan" in col.lower() and "number" in col.lower():
+                    loan_number = str(self.merged_df[col].iloc[0])
+                if "applicant" in col.lower() and "name" in col.lower():
+                    applicant_name = str(self.merged_df[col].iloc[0])
+        return loan_number, applicant_name
+
+    def generate_abhl_email_v2(self):
+        """
+        Generate ABHL email with new format for both happy flow and mismatch.
+        """
+        print(f"[LOG] Generating ABHL email (v2 format)")
+        major_issues = self.get_major_issues()
+        loan_number, applicant_name = self._extract_loan_and_applicant()
+
+        if major_issues == 0:
+            # Happy flow
+            body = f"""Dear ABHFL Team,
+Greetings!
+We wish to inform you that your loan application {loan_number} for applicant {applicant_name} is currently under process. The submitted documents have been successfully reviewed and verified.
+Our team will now proceed with the next steps as per the standard processing workflow. In case any further information or clarification is required, we will communicate with you promptly.
+Thank you for your continued cooperation.
+Warm regards,
+IMGC Team
+________________________________________
+This is a system-generated email. Please do not reply to this message.
+"""
+        else:
+            # Mismatch flow
+            # Compose document list
+            doc_names = []
+            if hasattr(self, 'merged_df'):
+                for col in self.merged_df.columns:
+                    if col not in ['PAS Field Name', 'Mismatch Criticality', 'Criticality', 'First Preference', 'Second Preference', 'Final Data for PAS System']:
+                        doc_names.append(col)
+            doc_list = '\n'.join([f"• {doc}" for doc in doc_names if doc])
+
+            # Compose discrepancy summary (tabular)
+            summary = ""
+            for idx, row in major_issues.iterrows():
+                field = row.get('Field Name', '')
+                values = row.get('Values Found', '')
+                error_type = row.get('Error Type', '')
+                summary += f"{field}\n\t{values}\n\t{error_type}\n\n"
+
+            body = f"""Dear ABHFL Team,
+Greetings!
+We have reviewed the documents received for the loan application {loan_number} for applicant {applicant_name} and noted the following observations during verification.
+
+Documents Processed
+A total of {len(doc_names)} documents were received and processed:
+{doc_list}
+
+During the review, we identified mismatches in some key data points across these documents. To proceed further with processing, we request you to kindly provide the updated documents with consistent applicant/application details.
+
+Discrepancy Summary
+{summary}
+Please share the corrected documents at the earliest to avoid any delays in processing.
+Thank you for your cooperation.
+Warm regards,
+IMGC Team
+________________________________________
+This is a system-generated email. Please do not reply to this message.
+"""
+        email = {
+            'subject': f"Loan Application {loan_number} - {('Discrepancy Observed' if not major_issues.empty else 'Successfully Verified')}",
+            'body': body,
+            'is_html': False
+        }
+        return email
+
+    def generate_custom_email(self, recipient_type="ABHL", attach_json_path=None):
+        """
+        Generate email for ABHL or IMGC with new format for both happy flow and mismatch.
+        If attach_json_path is provided, it will be included in the returned dict for attachment.
+        """
+        print(f"[LOG] Generating {recipient_type} email (custom format)")
+        major_issues = self.get_major_issues()
+        loan_number, applicant_name = self._extract_loan_and_applicant()
+        recipient_name = "ABHFL Team" if recipient_type == "ABHL" else "IMGC Team"
+        sender_name = "IMGC Team"
+
+        if major_issues == 0:
+            # Happy flow
+            body = f"""Dear {recipient_name},
+Greetings!
+We wish to inform you that your loan application {loan_number} for applicant {applicant_name} is currently under process. The submitted documents have been successfully reviewed and verified.
+Our team will now proceed with the next steps as per the standard processing workflow. In case any further information or clarification is required, we will communicate with you promptly.
+Thank you for your continued cooperation.
+Warm regards,
+{sender_name}
+________________________________________
+This is a system-generated email. Please do not reply to this message.
+"""
+            subject = f"Loan Application {loan_number} - Successfully Verified"
+        else:
+            # Mismatch flow
+            doc_names = []
+            if hasattr(self, 'merged_df'):
+                for col in self.merged_df.columns:
+                    if col not in ['PAS Field Name', 'Mismatch Criticality', 'Criticality', 'First Preference', 'Second Preference', 'Final Data for PAS System']:
+                        doc_names.append(col)
+            doc_list = '\n'.join([f"• {doc}" for doc in doc_names if doc])
+
+            # Compose discrepancy summary (tabular)
+            summary = ""
+            for idx, row in major_issues.iterrows():
+                field = row.get('Field Name', '')
+                values = row.get('Values Found', '')
+                error_type = row.get('Error Type', '')
+                summary += f"{field}\n\t{values}\n\t{error_type}\n\n"
+
+            body = f"""Dear {recipient_name},
+Greetings!
+We have reviewed the documents received for the loan application {loan_number} for applicant {applicant_name} and noted the following observations during verification.
+
+Documents Processed
+A total of {len(doc_names)} documents were received and processed:
+{doc_list}
+
+During the review, we identified mismatches in some key data points across these documents. To proceed further with processing, we request you to kindly provide the updated documents with consistent applicant/application details.
+
+Discrepancy Summary
+{summary}
+Please share the corrected documents at the earliest to avoid any delays in processing.
+Thank you for your cooperation.
+Warm regards,
+{sender_name}
+________________________________________
+This is a system-generated email. Please do not reply to this message.
+"""
+            subject = f"Loan Application {loan_number} - Discrepancy Observed"
+
+        email = {
+            'subject': subject,
+            'body': body,
+            'is_html': False
+        }
+        if attach_json_path:
+            email['json_attachment'] = attach_json_path
+        return email
 
 
 def main():

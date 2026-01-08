@@ -1,0 +1,20 @@
+Subject: ABHFL – Loan ID: 3000019391 – Document Data Extraction Report
+================================================================================
+
+Dear IMGC Team,
+
+I hope you are doing well.
+A total of 3 loan-related documents were received and successfully processed as part of this request. The documents include:
+• Cam - Niranjan Bhosale.xlsx
+• PD FORMAT - SALARIED.docx
+• App Form - Bhosale.pdf
+Please find below a summary of the data extraction performed on the received documents, including overall extraction statistics:
+
+📊 Data Extraction Summary
+• Total Fields Processed: 32
+• Total Fields Captured : 32
+
+The complete extracted Excel file has been attached for review and audit purposes.
+If any clarification, correction, or follow-up action is required, please coordinate internally as per the defined workflow.
+________________________________________
+This is a system-generated email. Please do not reply to this message.
