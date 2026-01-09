@@ -318,9 +318,13 @@ class CompleteEmailGenerator:
         if issues_df.empty:
             return "✅ No issues found. All data is consistent."
         formatted_text = ""
+        print(f"[LOG] Formatting {len(issues_df)} issues")
+        print (f"[LOG] Issues DataFrame columns: {issues_df.columns.tolist()}")
+        print(f"[LOG] Issues DataFrame head:\n{issues_df.head()}")
         for idx, row in issues_df.iterrows():
             field = row['Field Name']
             # Exclude 'Final Data for PAS System' from the discrepancy table
+            print( "current field is :", field)
             if field.strip().lower() == 'final data for pas system':
                 continue
             criticality = row['Criticality']
@@ -673,6 +677,7 @@ Return ONLY in this exact JSON format:
             print(f"[LOG] Sending files with these columns: {mismatch_rows.columns.tolist()}")
             if not mismatch_rows.empty:
                 table_headers = list(mismatch_rows.columns)
+                
                 # Replace 'PAS Field Name' with 'Information Label' in the header row
                 display_headers = ["Information Label" if h == "PAS Field Name" else h for h in table_headers]
                 table_html = '<table><tr>' + ''.join([f'<th>{col}</th>' for col in display_headers]) + '</tr>'
