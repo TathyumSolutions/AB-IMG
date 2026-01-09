@@ -320,6 +320,9 @@ class CompleteEmailGenerator:
         formatted_text = ""
         for idx, row in issues_df.iterrows():
             field = row['Field Name']
+            # Exclude 'Final Data for PAS System' from the discrepancy table
+            if field.strip().lower() == 'final data for pas system':
+                continue
             criticality = row['Criticality']
             error_type = row['Error Type']
             values = row['Values Found']
