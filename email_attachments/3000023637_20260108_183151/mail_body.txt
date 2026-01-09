@@ -1,0 +1,670 @@
+ Team,
+
+Please find attached the remaining corrected data
+    On Thursday, January 8, 2026 at 11:55:12 PM GMT+5:30, <yourmltales@gmail.com> wrote:  
+ 
+ #yiv6060802022 body {font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:1.6;color:#333;max-width:800px;margin:0 auto;padding:20px;}#yiv6060802022 table {border-collapse:collapse;width:100%;margin:15px 0;border:1px solid #ddd;}#yiv6060802022 th, #yiv6060802022 td {border:1px solid #ddd;padding:10px;text-align:left;}#yiv6060802022 th {background-color:#f2f2f2;font-weight:bold;}#yiv6060802022 tr:nth-child {background-color:#f9f9f9;}#yiv6060802022 blockquote {margin:10px 0;padding-left:15px;border-left:3px solid #ccc;color:#666;}#yiv6060802022 .yiv6060802022gmail_quote {margin:10px 0;padding-left:15px;border-left:3px solid #ccc;color:#666;}#yiv6060802022 hr {border:none;border-top:1px solid #ccc;margin:20px 0;}#yiv6060802022 p {margin:10px 0;}  Dear ABHFL Team,
+Greetings!
+
+We have reviewed the documents received for the loan application 3000023637 for applicant KANHAIYA BHARTI and noted the following observations during verification.
+
+Documents Processed
+A total of 3 documents were received and processed:
+• Application Form (02) (1) (2).pdf
+• PD Note Kanhaiya 01.docx
+• CAM Kanhiya Bhartiya 01.xlsx
+
+During verification, certain data inconsistencies were observed across the submitted documents, which require further clarification. To help us proceed further, we request that you complete the following actions:
+• Verify the highlighted discrepancies
+• Submit updated/corrected documents with consistent applicant details
+
+Discrepancy Summary
+
+| Information Label | Application Form (02) (1) (2) | PD Note Kanhaiya 01 | mail_subject | CAM Kanhiya Bhartiya 01 | Final Data for PAS System | MISMATCH |
+| Type_Of_Employment_Borrower | Self-employed |  |  | Self-employed Non-Professional (SENP) | Self-employed | The values describe different employment statuses: one is "Self-employed" while the other specifies "Self-employed Non-Professional (SENP)", indicating a mismatch in the level of detail. |
+
+
+
+Please reply to this email with the revised documents. Once received, our team will promptly review them and re-initiate the process as per the standard workflow.
+Thank you for your cooperation.
+Warm regards,
+IMGC Team   On Thu, 8 Jan 2026 18:24:29 +0000 (UTC), "prakhar.singh1 ." wrote: 
+ 
+Hi
+
+Attaching revised docs for the requested inconsistencies On Thursday, January 8, 2026 at 11:43:28 PM GMT+5:30, <yourmltales@gmail.com> wrote:  Dear ABHFL Team,
+Greetings!
+
+We have reviewed the documents received for the loan application 3000023637 for applicant KANHAIYA BHARTI and noted the following observations during verification.
+
+Documents Processed
+A total of 3 documents were received and processed:
+• Application Form (02) (1).pdf
+• PD Note Kanhaiya 01.docx
+• CAM Kanhiya Bhartiya 01.xlsx
+
+During verification, certain data inconsistencies were observed across the submitted documents, which require further clarification. To help us proceed further, we request that you complete the following actions:
+• Verify the highlighted discrepancies
+• Submit updated/corrected documents with consistent applicant details
+
+Discrepancy Summary
+
+| Information Label | Application Form (02) (1) | PD Note Kanhaiya 01 | mail_subject | CAM Kanhiya Bhartiya 01 | Final Data for PAS System | MISMATCH |
+| Sanction_Interest_Rate | 12.00 | 12 | 12.00 | The values "12.00" and "12" represent the same numerical value but are formatted differently; one includes decimal places while the other does not. |
+| Type_Of_Employment_Borrower | Self-employed | Self-employed Non-Professional (SENP) | Self-employed | The values describe different employment statuses: one is "Self-employed" while the other specifies "Self-employed Non-Professional (SENP)", indicating a mismatch in the level of detail. |
+
+
+
+Please reply to this email with the revised documents. Once received, our team will promptly review them and re-initiate the process as per the standard workflow.
+Thank you for your cooperation.
+Warm regards,
+IMGC Team On Thu, 8 Jan 2026 18:12:19 +0000 (UTC), "prakhar.singh1 ." wrote:Hi Team,
+
+Please find below the revised documents
+
+
+Thanks On Thursday, January 8, 2026 at 11:36:15 PM GMT+5:30, yourmltales@gmail.com <yourmltales@gmail.com> wrote:  Dear ABHFL Team,
+Greetings!
+
+We have reviewed the documents received for the loan application 3000023637 for applicant KANHAIYA BHARTI and noted the following observations during verification.
+
+Documents Processed
+A total of 3 documents were received and processed:
+• CAM Kanhiya Bhartiya.xlsx
+• PD Note Kanhaiya.docx
+• Application Form.pdf
+
+During verification, certain data inconsistencies were observed across the submitted documents, which require further clarification. To help us proceed further, we request that you complete the following actions:
+• Verify the highlighted discrepancies
+• Submit updated/corrected documents with consistent applicant details
+
+Discrepancy Summary
+
+| Information Label | CAM Kanhiya Bhartiya | mail_subject | PD Note Kanhaiya | Application Form | Final Data for PAS System | MISMATCH |
+| Final_Sanctioned_Amount | 3000000 | 3000000 | 3000000 | 3500000 | 3000000 | The values for "CAM Kanhiya Bhartiya", "mail_subject", and "PD Note Kanhaiya" are all "3000000", while the "Application Form" value is "3500000", indicating a mismatch. |
+| Sanction_Interest_Rate | 0.12 | 12 | 0.12 | Mismatch in values for the same field: "CAM Kanhiya Bhartiya" is 0.12 while "PD Note Kanhaiya" is 12. |
+| Loan_Type | Composite Loan (Plot Purchase plus Home Construction) | Composite Loan (Plot Purchase plus Home Construction) | CONSTRUCTION LOAN | Composite Loan (Plot Purchase plus Home Construction) | Mismatch in loan type descriptions: "Composite Loan (Plot Purchase plus Home Construction)" vs "CONSTRUCTION LOAN". |
+| Employer_Type | Proprietor | Proprietorship | Proprietor | The values indicate different business structures: "Proprietor" suggests an individual ownership, while "Proprietorship" refers to the business type. |
+| Months_In_Total_Employment | 36 | 60 | 36 | Mismatch in values: "PD Note Kanhaiya" shows 36 while "Application Form" shows 60. |
+| Years_In_Total_Employment | 3 | 5 | 3 | Mismatch: Different values for the same field; "PD Note Kanhaiya" has a value of "3" while "Application Form" has a value of "5". |
+| Type_Of_Employment_Borrower | Self-employed Non-Professional (SENP) | SENP | Self-employed Non-Professional (SENP) | The values describe the same category but use different terminologies: "Self-employed Non-Professional (SENP)" vs. "SENP". |
+| Employer_Name | M/S Om construction | OM CONSTRUCTIONS | M/S Om construction | The names "M/S Om construction" and "OM CONSTRUCTIONS" are not identical due to differences in casing and the presence of "M/S". |
+
+
+
+Please reply to this email with the revised documents. Once received, our team will promptly review them and re-initiate the process as per the standard workflow.
+Thank you for your cooperation.
+Warm regards,
+IMGC Team On Thu, 8 Jan 2026 18:05:23 +0000 (UTC), "prakhar.singh1 ." wrote:
+
+Dear Sir,
+
+Recommending for financial sanction HL caseof Mr. Kanhaiya Bharti // Rs 30.00 lacs // 12.00 % // 240 Months // CMassessment // Bhopal.
+
+| 
+Parties to the Loan
+ |
+| 
+S. No.
+ | 
+Name
+ | 
+Constitution (select from dropdown)
+ | 
+Capacity (Applicant / Co-applicant / Guarantor)
+ | 
+Age at the time of
+ | 
+Relationship with Applicant
+ | 
+CIBIL Score
+ | 
+Income Considered (Y / N)
+ | 
+Property Ownership (Y / N)
+ |
+| 
+Application
+ | 
+Maturity
+ |
+| 
+1
+ | 
+KANHAIYA BHARTI
+ | 
+Individual
+ | 
+APPLICANT
+ | 
+49
+ | 
+69
+ | 
+SELF
+ | 
+781
+ | 
+Y
+ | 
+Y
+ |
+| 
+2
+ | 
+SANDHYA BHARTI
+ | 
+Individual
+ | 
+CO-APPLICANT
+ | 
+42
+ | 
+62
+ | 
+SPOUSE
+ | 
+-1
+ | 
+N
+ | 
+N
+ |
+
+
+| 
+Proposed Loan Break-up
+ |
+| 
+S. No.
+ | 
+Type of Loan
+ | 
+Nature of Transaction
+ | 
+Loan Amount (Rs.)
+ | 
+Tenure (Months)
+ | 
+Proposed ROI
+ | 
+EMI (Rs.)
+ |
+| 
+1
+ | 
+Home Loan
+ | 
+Purchase from Builder
+ | 
+                           3,000,000 
+ | 
+240
+ | 
+12.00%
+ | 
+                33,033 
+ |
+
+
+Collateral Details:
+
+·Applicant is planning topurchase a plot in builder project at Kolar.
+
+·Property is not identified yet.
+
+About Applicants:
+
+·Applicant Mr. Kanhaiya Bhartiis about 49 years of age & BA graduate by his qualification.
+
+·Applicant is married &residing in rented house at H No E7/112 Arera Colony Bhopal.
+
+·Having Spouse & 2 kids infamily.
+
+·Daughter is in fashion field& son is doing preparation for IIT.
+
+·Spouse of applicant Mrs.Sahdhya Bharti is co-applicant in loan. She is earning member having a ladiesParlour.
+
+·Her Income is not consideredfor eligibility purpose.
+
+·Applicant is Proprietor of FirmM / S Om Construction.
+
+·Firm was started in years 2018from Hoshangabad. In Years 2020 applicant is shifted to Bhopal for education ofchildren
+
+·He started his work at Bhopalon years 2021.
+
+·He is basically engaged inCivil construction working taking contract for construction of Home &commercial unit.
+
+·In last 2-3 years he hasdelivered 20+ units.
+
+·He is taking work on labourcost & also with material.
+
+·His charges for with materialconstruction is Rs 1400 per sqft & On labour cost Rs 350 per sqft.
+
+·Currently 3 site is running atBhopal Neelabad area for 3 residential units on labour cost.
+
+·Total construction area is approx.4500 sqft area which cost comes to 15 lacs approx.
+
+·All Labour is hired on dailywages basis.
+
+·As declare by applicant hismonthly income is approx. 80K.
+
+·Applicant SALARY REFLECTED INBANK.
+
+Apart from this business applicant ishaving agri Income of Rs 4 lacs PA from His agri land of 8.25 acre located atHoshangabad Dist.
+
+Cibil Details:
+
+·Cibil Score of applicant is781, with null remarks.
+
+·Cibil score of co-applicant is-1.
+
+Income Details;
+
+| 
+Name of Customer / Assessee:
+ | 
+Kanhaiya Bhartiya
+ |
+| 
+Date of Birth / Incorporation (mm/dd/yyyy):
+ | 
+2/Jan/18
+ |
+| 
+Type of Assessee (select from dropdown):
+ | 
+Individual
+ |
+| 
+Qualification (for Individuals only):
+ | 
+Graduate
+ |
+| 
+Industry Category (select from dropdown):
+ | 
+Services
+ |
+| 
+Industry Sub-classification (select from dropdown):
+ |
+| 
+Latest Audited / Reported Financials available for Financial Year ended on 31st March of (Year):
+ |
+| 
+Business Setup Details
+ | 
+Resi-cum-Office Setup  
+ |
+| 
+Business Premises Ownership
+ | 
+Self-Owned
+ |
+| 
+Business Activity observed
+ | 
+Intensive
+ |
+| 
+Business Type
+ | 
+Non - Seasonal
+ |
+
+
+| 
+Assessed Sale / Operational income
+ | 
+Peak Business hours
+ | 
+Normal Hours
+ | 
+Daily
+ | 
+Monthly
+ |
+| 
+Books (With Receipts) / Non Books (Without Receipts)
+ | 
+100,000
+ |
+| 
+A. Total Assessed Income
+ | 
+100,000
+ |
+| 
+Less- Business Expenses
+ |
+| 
+Cost of Goods               [Books (With Receipts) / Non Books (Without Receipts)]
+ | 
+20,000
+ |
+| 
+Rent of Business premises if applicable
+ |
+| 
+Business Promotion Expenses
+ |
+| 
+Others (Specify)
+ | 
+20,000
+ |
+| 
+B. Total Business Expenses
+ | 
+40,000
+ |
+| 
+C. Net Income from Business (A-B)
+ | 
+60,000
+ |
+| 
+Other Income (Monthly)
+ |
+| 
+Nature of Income
+ | 
+Verification Tool (Specify)
+ | 
+Amount
+ |
+| 
+Rental
+ |
+| 
+Others
+ |
+| 
+Monthly Income of Applicant’s Family (Mention Relation with Applicant)
+ |
+| 
+Income Source (Salary/Business/others)
+ | 
+Verification Tool (Specify)
+ | 
+Amount
+ |
+| 
+D. Total Other Income (Monthly)
+ | 
+0
+ |
+| 
+E. Total Family Income (C+D) p.m.
+ | 
+60,000
+ |
+| 
+Household Expenses
+ | 
+Monthly
+ |
+| 
+Food, Clothing and other Household Expenses
+ |
+| 
+Loan EMI
+ |
+| 
+Other (Specify)
+ |
+| 
+F. Total Household Expenses
+ | 
+0
+ |
+| 
+Net Disposable Income(E-F) 
+ | 
+60,000
+ |
+| 
+Eligible Loan Amount as per CM Assessed Income FOIR norms
+ | 
+3,269,499
+ |
+| 
+Applied Loan Amount
+ | 
+3,000,000
+ |
+| 
+EMI for applied Loan Amount
+ | 
+33,033
+ |
+| 
+FOIR for Applied Loan Amount
+ | 
+55.06%
+ |
+
+
+Banking Details:
+
+·Applicant is having saving a/cBanking with SBI, Average banking is 150820/- with credit submission of Rs16.77 lacs. (For 6 months)
+
+| 
+Name of Bank
+ | 
+STATE BANK OF INDIA 
+ | 
+Branch Name
+ |
+| 
+A/c Type (Select from Dropdown)
+ | 
+Savings
+ | 
+A/c Number
+ | 
+00000031272798836
+ |
+| 
+Month
+ | 
+Balance / Utilization on date (Rs.)
+ | 
+Min Balance of the month (Rs.)
+ | 
+Max Balance of the month (Rs.)
+ | 
+Average (Rs.)
+ | 
+Total Inflows (Rs.)
+ | 
+Total Outflows (Rs.)
+ |
+| 
+10
+ | 
+20
+ | 
+30
+ |
+| 
+Sep-23
+ | 
+          30,118 
+ | 
+          12,604 
+ | 
+          10,440 
+ | 
+          10,439 
+ | 
+          39,768 
+ | 
+          17,721 
+ | 
+             656 
+ | 
+        25,945 
+ |
+| 
+Oct-23
+ | 
+          12,128 
+ | 
+            1,682 
+ | 
+                158 
+ | 
+                  85 
+ | 
+          12,532 
+ | 
+            4,656 
+ | 
+        12,500 
+ | 
+        39,638 
+ |
+| 
+Nov-23
+ | 
+            1,658 
+ | 
+        118,671 
+ | 
+          68,286 
+ | 
+            1,002 
+ | 
+        118,870 
+ | 
+          62,872 
+ | 
+     129,518 
+ | 
+        61,370 
+ |
+| 
+Dec-23
+ | 
+          28,662 
+ | 
+          11,742 
+ | 
+        103,395 
+ | 
+            9,223 
+ | 
+        103,913 
+ | 
+          47,933 
+ | 
+        51,236 
+ | 
+        66,342 
+ |
+| 
+Jan-24
+ | 
+          97,388 
+ | 
+    1,110,255 
+ | 
+        998,729 
+ | 
+                825 
+ | 
+        152,006 
+ | 
+        735,457 
+ | 
+  1,373,901 
+ | 
+     272,157 
+ |
+| 
+Feb-24
+ | 
+        969,705 
+ | 
+        960,340 
+ | 
+        893,547 
+ | 
+        871,525 
+ | 
+    1,002,355 
+ | 
+        941,197 
+ | 
+     109,551 
+ | 
+     222,854 
+ |
+| 
+Total 
+ | 
+    1,139,659 
+ | 
+    2,215,294 
+ | 
+    2,074,555 
+ | 
+        893,099 
+ | 
+    1,429,444 
+ | 
+    1,809,836 
+ | 
+  1,677,362 
+ | 
+     688,306 
+ |
+| 
+Average
+ | 
+          94,972 
+ | 
+        184,608 
+ | 
+        172,880 
+ | 
+          74,425 
+ | 
+        119,120 
+ | 
+        150,820 
+ | 
+     139,780 
+ | 
+        57,359 
+ |
+
+
+Deviations:
+
+| 
+Deviations
+ | 
+Mitigates
+ |
+| 
+Resi Cum Business Setup
+ | 
+Applicant is contractor, not having separate business setup. Not required as per nature of business.
+ |
+
+
+Sanction Conditions:
+
+NACH & SPDC is to be taken from SB a/cof applicant.
+
+Property is to be registered in name ofapplicant / Co-applicant or in Joint Name.
+
+All Property related documents is to beobtain as per Norms.
+
+MG from IMGC is to be obtain.
+
+
+  
