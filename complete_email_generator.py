@@ -659,13 +659,17 @@ Return ONLY in this exact JSON format:
                 df_final = pd.read_excel(final_output_file)
                 # Try to get MISMATCH column from extraction_results_with_mismatch.xlsx for filtering
                 mismatch_extraction_file = os.path.join(self.folder_path, "extraction_results_with_mismatch.xlsx")
+                
                 if os.path.exists(mismatch_extraction_file):
                     df_mismatch = pd.read_excel(mismatch_extraction_file)
+                    df_mismatch = df_mismatch.drop(columns=['Final Data for PAS System'])
                     if 'MISMATCH' in df_mismatch.columns:
                         mismatch_mask = df_mismatch['MISMATCH'].notnull() & (df_mismatch['MISMATCH'].astype(str).str.strip() != '')
                         # Align index if needed
                         if len(df_final) == len(df_mismatch):
                             mismatch_rows = df_final[mismatch_mask]
+                            if 'Final Data for PAS System' in mismatch_rows.columns:
+                                mismatch_rows = mismatch_rows.drop(columns=['Final Data for PAS System'])
                         else:
                             # fallback: try to merge on a key if available, else skip
                             mismatch_rows = df_final.copy()
@@ -677,7 +681,7 @@ Return ONLY in this exact JSON format:
             print(f"[LOG] Sending files with these columns: {mismatch_rows.columns.tolist()}")
             if not mismatch_rows.empty:
                 table_headers = list(mismatch_rows.columns)
-                
+                print(f"[LOG] Mismatch table headers: {table_headers}")
                 # Replace 'PAS Field Name' with 'Information Label' in the header row
                 display_headers = ["Information Label" if h == "PAS Field Name" else h for h in table_headers]
                 table_html = '<table><tr>' + ''.join([f'<th>{col}</th>' for col in display_headers]) + '</tr>'

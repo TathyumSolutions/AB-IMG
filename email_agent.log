@@ -62377,3 +62377,337 @@ IndexError: index 0 is out of bounds for axis 0 with size 0
 
 [STOPPED] Agent stopped by user
 2026-01-09 13:07:01,140 - [DISCONNECTED] Logged out from email server
+2026-01-11 08:43:34,530 - 
+============================================================
+2026-01-11 08:43:34,573 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2026-01-11 08:43:34,573 - ============================================================
+2026-01-11 08:43:34,573 - Email: yourmltales@gmail.com
+2026-01-11 08:43:34,574 - Server: imap.gmail.com:993
+2026-01-11 08:43:34,574 - Watching for subjects: 
+2026-01-11 08:43:34,574 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2026-01-11 08:43:34,574 - Root save location: email_attachments
+2026-01-11 08:43:34,574 - Check interval: 2s
+2026-01-11 08:43:34,574 - Only unseen emails: True
+2026-01-11 08:43:34,575 - Mark as read: False
+2026-01-11 08:43:34,575 - ============================================================
+
+2026-01-11 08:43:34,575 - Connecting to imap.gmail.com:993...
+2026-01-11 08:43:35,708 - [SUCCESS] Connected to imap.gmail.com
+2026-01-11 08:43:35,709 - [2026-01-11 08:43:35] Checking emails...
+2026-01-11 08:43:38,079 - 
+[NEW EMAIL] Subject: Q Pre IMGC letter. HL case of Mr. Kanhaiya Bharti // Rs 30.00 lacs
+ // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2026-01-11 08:43:38,079 -   From: "prakhar.singh1 ." <prakhar.singh1@qualtechedge.com>
+2026-01-11 08:43:38,080 -   Date: Fri, 9 Jan 2026 13:15:46 +0000 (UTC)
+2026-01-11 08:43:38,095 -     [ATTACHMENT] Application Form (1) (2).pdf
+2026-01-11 08:43:38,100 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2026-01-11 08:43:38,102 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2026-01-11 08:43:38,102 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20260111_084338
+2026-01-11 08:43:38,102 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20260111_084338
+2026-01-11 08:43:38,103 -   [EXTRACTION] Found 5 document(s) to process
+2026-01-11 08:43:40,341 -   [EXTRACTION] Document-to-column mapping completed
+2026-01-11 08:43:40,341 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2026-01-11 08:43:43,414 - Processing document with matched column: CAM Description
+2026-01-11 08:43:43,415 - len(document_text): 738641
+2026-01-11 08:43:43,415 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 08:43:45,991 -     [EXTRACTION] ✓ Extracted 12 fields using column: CAM Description
+2026-01-11 08:43:45,992 -     [EXTRACTION] Processing: Application Form (1) (2).pdf (using column: Application Form Description)
+2026-01-11 08:43:47,121 - Processing document with matched column: Application Form Description
+2026-01-11 08:43:47,121 - len(document_text): 16114
+2026-01-11 08:43:47,122 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 08:43:50,475 -     [EXTRACTION] ✓ Extracted 25 fields using column: Application Form Description
+2026-01-11 08:43:50,476 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2026-01-11 08:43:50,476 - Processing document with matched column: Email Subject Description
+2026-01-11 08:43:50,477 - len(document_text): 132
+2026-01-11 08:43:50,477 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 08:43:51,906 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2026-01-11 08:43:51,906 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2026-01-11 08:43:51,907 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2026-01-11 08:43:51,945 - Processing document with matched column: PD (Word Doc) Description
+2026-01-11 08:43:51,945 - len(document_text): 8069
+2026-01-11 08:43:51,946 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 08:43:55,124 -     [EXTRACTION] ✓ Extracted 18 fields using column: PD (Word Doc) Description
+2026-01-11 08:43:55,241 - Loading extraction results from: email_attachments/3000023637_20260111_084338/extraction_results.xlsx
+2026-01-11 08:43:55,241 - Loading mapping from: email_attachments/3000023637_20260111_084338/document_column_mapping.json
+2026-01-11 08:43:55,259 - doc_columns: ['CAM Kanhiya Bhartiya.xlsx', 'Application Form (1) (2).pdf', 'mail_subject.txt', 'mail_body.txt', 'PD Note Kanhaiya.docx']
+2026-01-11 08:43:55,285 - No mismatch found in row 0, skipping LLM call.
+2026-01-11 08:43:55,285 - No mismatch found in row 1, skipping LLM call.
+2026-01-11 08:43:55,285 - No mismatch found in row 2, skipping LLM call.
+2026-01-11 08:43:55,286 - No mismatch found in row 3, skipping LLM call.
+2026-01-11 08:43:55,286 - No mismatch found in row 4, skipping LLM call.
+2026-01-11 08:43:56,420 - No mismatch found in row 6, skipping LLM call.
+2026-01-11 08:43:56,420 - No mismatch found in row 7, skipping LLM call.
+2026-01-11 08:43:56,420 - No mismatch found in row 8, skipping LLM call.
+2026-01-11 08:43:56,421 - No mismatch found in row 9, skipping LLM call.
+2026-01-11 08:43:57,086 - No mismatch found in row 11, skipping LLM call.
+2026-01-11 08:43:57,086 - No mismatch found in row 12, skipping LLM call.
+2026-01-11 08:43:57,086 - No mismatch found in row 13, skipping LLM call.
+2026-01-11 08:43:57,087 - No mismatch found in row 14, skipping LLM call.
+2026-01-11 08:43:57,087 - No mismatch found in row 15, skipping LLM call.
+2026-01-11 08:43:57,087 - No mismatch found in row 16, skipping LLM call.
+2026-01-11 08:43:57,087 - No mismatch found in row 17, skipping LLM call.
+2026-01-11 08:43:57,088 - No mismatch found in row 18, skipping LLM call.
+2026-01-11 08:43:58,884 - No mismatch found in row 22, skipping LLM call.
+2026-01-11 08:43:58,884 - No mismatch found in row 23, skipping LLM call.
+2026-01-11 08:43:59,379 - No mismatch found in row 25, skipping LLM call.
+2026-01-11 08:43:59,379 - No mismatch found in row 26, skipping LLM call.
+2026-01-11 08:43:59,814 - No mismatch found in row 28, skipping LLM call.
+2026-01-11 08:43:59,814 - No mismatch found in row 29, skipping LLM call.
+2026-01-11 08:44:00,406 - No mismatch found in row 31, skipping LLM call.
+2026-01-11 08:44:00,426 -   [EXTRACTION] Results saved to email_attachments/3000023637_20260111_084338/extraction_results.xlsx
+2026-01-11 08:44:00,426 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20260111_084338/extraction_results.xlsx
+2026-01-11 08:44:00,441 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2026-01-11 08:44:08,948 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2026-01-11 08:44:10,427 - 
+[NEW EMAIL] Subject: Fwd: Pre IMGC letter. HL case of Mr. Kanhaiya Bharti // Rs 30.00 lacs
+ // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637 // UNHAPPY FLOW
+2026-01-11 08:44:10,428 -   From: pooja singh <pujunchiya@gmail.com>
+2026-01-11 08:44:10,428 -   Date: Fri, 9 Jan 2026 22:26:34 +0530
+2026-01-11 08:44:10,439 -     [ATTACHMENT] Application Form.pdf
+2026-01-11 08:44:10,443 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2026-01-11 08:44:10,444 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2026-01-11 08:44:10,444 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20260111_084410
+2026-01-11 08:44:10,444 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20260111_084410
+2026-01-11 08:44:10,444 -   [EXTRACTION] Found 5 document(s) to process
+2026-01-11 08:44:11,843 - 
+
+[STOPPED] Agent stopped by user
+2026-01-11 08:44:12,132 - [DISCONNECTED] Logged out from email server
+2026-01-11 09:13:51,364 - 
+============================================================
+2026-01-11 09:13:51,364 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2026-01-11 09:13:51,364 - ============================================================
+2026-01-11 09:13:51,364 - Email: yourmltales@gmail.com
+2026-01-11 09:13:51,364 - Server: imap.gmail.com:993
+2026-01-11 09:13:51,364 - Watching for subjects: 
+2026-01-11 09:13:51,364 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2026-01-11 09:13:51,365 - Root save location: email_attachments
+2026-01-11 09:13:51,365 - Check interval: 2s
+2026-01-11 09:13:51,365 - Only unseen emails: True
+2026-01-11 09:13:51,365 - Mark as read: False
+2026-01-11 09:13:51,365 - ============================================================
+
+2026-01-11 09:13:51,365 - Connecting to imap.gmail.com:993...
+2026-01-11 09:13:52,657 - [SUCCESS] Connected to imap.gmail.com
+2026-01-11 09:13:52,657 - [2026-01-11 09:13:52] Checking emails...
+2026-01-11 09:13:54,639 - 
+[NEW EMAIL] Subject: Fw: Provide IMGC letter. HL case of Mr. Kanhaiya Bharti // Rs 30.00
+ lacs // 12.00 % // 240 Months // CM assessment // Bhopal // 3000023637
+2026-01-11 09:13:54,639 -   From: "prakhar.singh1 ." <prakhar.singh1@qualtechedge.com>
+2026-01-11 09:13:54,640 -   Date: Sun, 11 Jan 2026 08:02:53 +0000 (UTC)
+2026-01-11 09:13:54,651 -     [ATTACHMENT] Application Form.pdf
+2026-01-11 09:13:54,656 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2026-01-11 09:13:54,657 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2026-01-11 09:13:54,657 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20260111_091354
+2026-01-11 09:13:54,657 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20260111_091354
+2026-01-11 09:13:54,657 -   [EXTRACTION] Found 5 document(s) to process
+2026-01-11 09:13:56,438 -   [EXTRACTION] Document-to-column mapping completed
+2026-01-11 09:13:56,438 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2026-01-11 09:13:59,245 - Processing document with matched column: CAM Description
+2026-01-11 09:13:59,246 - len(document_text): 738667
+2026-01-11 09:13:59,246 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 09:14:02,210 -     [EXTRACTION] ✓ Extracted 12 fields using column: CAM Description
+2026-01-11 09:14:02,210 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2026-01-11 09:14:02,211 - Processing document with matched column: Email Subject Description
+2026-01-11 09:14:02,211 - len(document_text): 138
+2026-01-11 09:14:02,211 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 09:14:03,657 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2026-01-11 09:14:03,657 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2026-01-11 09:14:03,658 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2026-01-11 09:14:03,692 - Processing document with matched column: PD (Word Doc) Description
+2026-01-11 09:14:03,692 - len(document_text): 8114
+2026-01-11 09:14:03,692 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 09:14:07,430 -     [EXTRACTION] ✓ Extracted 18 fields using column: PD (Word Doc) Description
+2026-01-11 09:14:07,431 -     [EXTRACTION] Processing: Application Form.pdf (using column: Application Form Description)
+2026-01-11 09:14:08,018 - Processing document with matched column: Application Form Description
+2026-01-11 09:14:08,018 - len(document_text): 16923
+2026-01-11 09:14:08,018 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 09:14:11,783 -     [EXTRACTION] ✓ Extracted 25 fields using column: Application Form Description
+2026-01-11 09:14:11,888 - Loading extraction results from: email_attachments/3000023637_20260111_091354/extraction_results.xlsx
+2026-01-11 09:14:11,888 - Loading mapping from: email_attachments/3000023637_20260111_091354/document_column_mapping.json
+2026-01-11 09:14:11,905 - doc_columns: ['CAM Kanhiya Bhartiya.xlsx', 'mail_subject.txt', 'mail_body.txt', 'PD Note Kanhaiya.docx', 'Application Form.pdf']
+2026-01-11 09:14:11,930 - No mismatch found in row 0, skipping LLM call.
+2026-01-11 09:14:11,931 - No mismatch found in row 1, skipping LLM call.
+2026-01-11 09:14:11,931 - No mismatch found in row 2, skipping LLM call.
+2026-01-11 09:14:11,931 - No mismatch found in row 3, skipping LLM call.
+2026-01-11 09:14:11,932 - No mismatch found in row 4, skipping LLM call.
+2026-01-11 09:14:13,175 - No mismatch found in row 6, skipping LLM call.
+2026-01-11 09:14:14,404 - No mismatch found in row 9, skipping LLM call.
+2026-01-11 09:14:14,404 - No mismatch found in row 10, skipping LLM call.
+2026-01-11 09:14:14,405 - No mismatch found in row 11, skipping LLM call.
+2026-01-11 09:14:14,405 - No mismatch found in row 12, skipping LLM call.
+2026-01-11 09:14:14,405 - No mismatch found in row 13, skipping LLM call.
+2026-01-11 09:14:14,406 - No mismatch found in row 14, skipping LLM call.
+2026-01-11 09:14:14,406 - No mismatch found in row 15, skipping LLM call.
+2026-01-11 09:14:14,406 - No mismatch found in row 16, skipping LLM call.
+2026-01-11 09:14:14,406 - No mismatch found in row 17, skipping LLM call.
+2026-01-11 09:14:14,407 - No mismatch found in row 18, skipping LLM call.
+2026-01-11 09:14:16,133 - No mismatch found in row 22, skipping LLM call.
+2026-01-11 09:14:16,134 - No mismatch found in row 23, skipping LLM call.
+2026-01-11 09:14:16,788 - No mismatch found in row 25, skipping LLM call.
+2026-01-11 09:14:16,788 - No mismatch found in row 26, skipping LLM call.
+2026-01-11 09:14:16,789 - No mismatch found in row 27, skipping LLM call.
+2026-01-11 09:14:16,789 - No mismatch found in row 28, skipping LLM call.
+2026-01-11 09:14:16,789 - No mismatch found in row 29, skipping LLM call.
+2026-01-11 09:14:17,447 - No mismatch found in row 31, skipping LLM call.
+2026-01-11 09:14:17,467 -   [EXTRACTION] Results saved to email_attachments/3000023637_20260111_091354/extraction_results.xlsx
+2026-01-11 09:14:17,468 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20260111_091354/extraction_results.xlsx
+2026-01-11 09:14:17,484 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2026-01-11 09:14:26,195 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2026-01-11 09:14:26,196 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2026-01-11 09:14:28,197 - [2026-01-11 09:14:28] Checking emails...
+2026-01-11 13:44:28,013 - 
+============================================================
+2026-01-11 13:44:28,016 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2026-01-11 13:44:28,016 - ============================================================
+2026-01-11 13:44:28,016 - Email: yourmltales@gmail.com
+2026-01-11 13:44:28,016 - Server: imap.gmail.com:993
+2026-01-11 13:44:28,016 - Watching for subjects: 
+2026-01-11 13:44:28,016 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2026-01-11 13:44:28,016 - Root save location: email_attachments
+2026-01-11 13:44:28,017 - Check interval: 2s
+2026-01-11 13:44:28,017 - Only unseen emails: True
+2026-01-11 13:44:28,017 - Mark as read: False
+2026-01-11 13:44:28,017 - ============================================================
+
+2026-01-11 13:44:28,017 - Connecting to imap.gmail.com:993...
+2026-01-11 13:44:29,359 - [SUCCESS] Connected to imap.gmail.com
+2026-01-11 13:44:29,359 - [2026-01-11 13:44:29] Checking emails...
+2026-01-11 13:44:31,613 - 
+[NEW EMAIL] Subject: unhappy flow IMGC letter. HL case of Mr. Kanhaiya Bharti // Rs
+ 30.00 lacs // 12.00 % // 240 Months // CM assessment // Bhopal //
+ 3000023637  UNHAPPY FLOW
+2026-01-11 13:44:31,614 -   From: "prakhar.singh1 ." <prakhar.singh1@qualtechedge.com>
+2026-01-11 13:44:31,614 -   Date: Sun, 11 Jan 2026 10:20:25 +0000 (UTC)
+2026-01-11 13:44:31,629 -     [ATTACHMENT] Application Form (1) (2).pdf
+2026-01-11 13:44:31,635 -     [ATTACHMENT] CAM Kanhiya Bhartiya.xlsx
+2026-01-11 13:44:31,636 -     [ATTACHMENT] PD Note Kanhaiya.docx
+2026-01-11 13:44:31,636 -   [SAVED] 3 attachment(s) to: email_attachments/3000023637_20260111_134431
+2026-01-11 13:44:31,636 - 
+  [EXTRACTION] Starting field extraction for email_attachments/3000023637_20260111_134431
+2026-01-11 13:44:31,636 -   [EXTRACTION] Found 5 document(s) to process
+2026-01-11 13:44:34,000 -   [EXTRACTION] Document-to-column mapping completed
+2026-01-11 13:44:34,000 -     [EXTRACTION] Processing: CAM Kanhiya Bhartiya.xlsx (using column: CAM Description)
+2026-01-11 13:44:36,850 - Processing document with matched column: CAM Description
+2026-01-11 13:44:36,850 - len(document_text): 738641
+2026-01-11 13:44:36,850 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 13:44:39,937 -     [EXTRACTION] ✓ Extracted 12 fields using column: CAM Description
+2026-01-11 13:44:39,937 -     [EXTRACTION] Processing: Application Form (1) (2).pdf (using column: Application Form Description)
+2026-01-11 13:44:41,049 - Processing document with matched column: Application Form Description
+2026-01-11 13:44:41,049 - len(document_text): 16114
+2026-01-11 13:44:41,049 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 13:44:44,674 -     [EXTRACTION] ✓ Extracted 25 fields using column: Application Form Description
+2026-01-11 13:44:44,674 -     [EXTRACTION] Processing: mail_subject.txt (using column: Email Subject Description)
+2026-01-11 13:44:44,675 - Processing document with matched column: Email Subject Description
+2026-01-11 13:44:44,675 - len(document_text): 152
+2026-01-11 13:44:44,675 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 13:44:46,633 -     [EXTRACTION] ✓ Extracted 5 fields using column: Email Subject Description
+2026-01-11 13:44:46,633 -     [EXTRACTION] Processing: mail_body.txt (using column: Email Body Description)
+2026-01-11 13:44:46,633 -     [EXTRACTION] Processing: PD Note Kanhaiya.docx (using column: PD (Word Doc) Description)
+2026-01-11 13:44:46,670 - Processing document with matched column: PD (Word Doc) Description
+2026-01-11 13:44:46,670 - len(document_text): 8069
+2026-01-11 13:44:46,670 - MAX_DOCUMENT_CHARS: 15000
+2026-01-11 13:44:49,384 -     [EXTRACTION] ✓ Extracted 18 fields using column: PD (Word Doc) Description
+2026-01-11 13:44:49,548 - Loading extraction results from: email_attachments/3000023637_20260111_134431/extraction_results.xlsx
+2026-01-11 13:44:49,548 - Loading mapping from: email_attachments/3000023637_20260111_134431/document_column_mapping.json
+2026-01-11 13:44:49,568 - doc_columns: ['CAM Kanhiya Bhartiya.xlsx', 'Application Form (1) (2).pdf', 'mail_subject.txt', 'mail_body.txt', 'PD Note Kanhaiya.docx']
+2026-01-11 13:44:49,611 - No mismatch found in row 0, skipping LLM call.
+2026-01-11 13:44:49,611 - No mismatch found in row 1, skipping LLM call.
+2026-01-11 13:44:49,612 - No mismatch found in row 2, skipping LLM call.
+2026-01-11 13:44:49,612 - No mismatch found in row 3, skipping LLM call.
+2026-01-11 13:44:49,612 - No mismatch found in row 4, skipping LLM call.
+2026-01-11 13:44:50,928 - No mismatch found in row 6, skipping LLM call.
+2026-01-11 13:44:50,929 - No mismatch found in row 7, skipping LLM call.
+2026-01-11 13:44:50,929 - No mismatch found in row 8, skipping LLM call.
+2026-01-11 13:44:50,929 - No mismatch found in row 9, skipping LLM call.
+2026-01-11 13:44:51,583 - No mismatch found in row 11, skipping LLM call.
+2026-01-11 13:44:51,583 - No mismatch found in row 12, skipping LLM call.
+2026-01-11 13:44:51,584 - No mismatch found in row 13, skipping LLM call.
+2026-01-11 13:44:51,584 - No mismatch found in row 14, skipping LLM call.
+2026-01-11 13:44:51,584 - No mismatch found in row 15, skipping LLM call.
+2026-01-11 13:44:51,584 - No mismatch found in row 16, skipping LLM call.
+2026-01-11 13:44:51,585 - No mismatch found in row 17, skipping LLM call.
+2026-01-11 13:44:51,585 - No mismatch found in row 18, skipping LLM call.
+2026-01-11 13:44:53,681 - No mismatch found in row 22, skipping LLM call.
+2026-01-11 13:44:53,681 - No mismatch found in row 23, skipping LLM call.
+2026-01-11 13:44:54,240 - No mismatch found in row 25, skipping LLM call.
+2026-01-11 13:44:54,241 - No mismatch found in row 26, skipping LLM call.
+2026-01-11 13:44:54,705 - No mismatch found in row 28, skipping LLM call.
+2026-01-11 13:44:54,706 - No mismatch found in row 29, skipping LLM call.
+2026-01-11 13:44:55,256 - No mismatch found in row 31, skipping LLM call.
+2026-01-11 13:44:55,278 -   [EXTRACTION] Results saved to email_attachments/3000023637_20260111_134431/extraction_results.xlsx
+2026-01-11 13:44:55,279 - 
+  [EMAIL GENERATION] Starting email generation for email_attachments/3000023637_20260111_134431/extraction_results.xlsx
+2026-01-11 13:44:55,294 -   [EMAIL GENERATION] Recipients loaded: 2 recipient(s)
+2026-01-11 13:45:03,345 -   [EMAIL GENERATION] ✓ Email generation and sending complete
+2026-01-11 13:45:03,346 - [SUCCESS] Downloaded 3 attachment(s) into 1 folder(s)
+2026-01-11 13:45:05,346 - [2026-01-11 13:45:05] Checking emails...
+2026-01-11 13:45:05,927 -   No new attachments
+2026-01-11 13:45:07,927 - [2026-01-11 13:45:07] Checking emails...
+2026-01-11 13:45:08,484 -   No new attachments
+2026-01-11 13:45:10,484 - [2026-01-11 13:45:10] Checking emails...
+2026-01-11 13:45:11,089 -   No new attachments
+2026-01-11 13:45:13,090 - [2026-01-11 13:45:13] Checking emails...
+2026-01-11 13:45:13,643 -   No new attachments
+2026-01-11 13:45:15,643 - [2026-01-11 13:45:15] Checking emails...
+2026-01-11 13:45:16,177 -   No new attachments
+2026-01-11 13:45:18,177 - [2026-01-11 13:45:18] Checking emails...
+2026-01-11 13:45:18,710 -   No new attachments
+2026-01-11 13:45:20,710 - [2026-01-11 13:45:20] Checking emails...
+2026-01-11 13:45:21,259 -   No new attachments
+2026-01-11 13:45:23,260 - [2026-01-11 13:45:23] Checking emails...
+2026-01-11 13:45:23,880 -   No new attachments
+2026-01-11 13:45:25,881 - [2026-01-11 13:45:25] Checking emails...
+2026-01-11 13:45:26,465 -   No new attachments
+2026-01-11 13:45:26,608 - 
+
+[STOPPED] Agent stopped by user
+2026-01-11 13:45:26,875 - [DISCONNECTED] Logged out from email server
+2026-01-11 13:46:10,664 - 
+============================================================
+2026-01-11 13:46:10,664 - EMAIL AGENT WITH FIELD EXTRACTION STARTED
+2026-01-11 13:46:10,664 - ============================================================
+2026-01-11 13:46:10,664 - Email: yourmltales@gmail.com
+2026-01-11 13:46:10,664 - Server: imap.gmail.com:993
+2026-01-11 13:46:10,664 - Watching for subjects: 
+2026-01-11 13:46:10,664 - Loan ID Pattern: ([A-Za-z0-9]{9,}\d)
+2026-01-11 13:46:10,664 - Root save location: email_attachments
+2026-01-11 13:46:10,664 - Check interval: 2s
+2026-01-11 13:46:10,664 - Only unseen emails: True
+2026-01-11 13:46:10,664 - Mark as read: False
+2026-01-11 13:46:10,664 - ============================================================
+
+2026-01-11 13:46:10,665 - Connecting to imap.gmail.com:993...
+2026-01-11 13:46:11,608 - [SUCCESS] Connected to imap.gmail.com
+2026-01-11 13:46:11,608 - [2026-01-11 13:46:11] Checking emails...
+2026-01-11 13:46:12,167 -   No new attachments
+2026-01-11 13:46:14,168 - [2026-01-11 13:46:14] Checking emails...
+2026-01-11 13:46:14,729 -   No new attachments
+2026-01-11 13:46:16,729 - [2026-01-11 13:46:16] Checking emails...
+2026-01-11 13:46:17,319 -   No new attachments
+2026-01-11 13:46:19,319 - [2026-01-11 13:46:19] Checking emails...
+2026-01-11 13:46:19,878 -   No new attachments
+2026-01-11 13:46:21,878 - [2026-01-11 13:46:21] Checking emails...
+2026-01-11 13:46:22,439 -   No new attachments
+2026-01-11 13:46:24,441 - [2026-01-11 13:46:24] Checking emails...
+2026-01-11 13:46:25,055 -   No new attachments
+2026-01-11 13:46:27,055 - [2026-01-11 13:46:27] Checking emails...
+2026-01-11 13:46:27,667 -   No new attachments
+2026-01-11 13:46:29,667 - [2026-01-11 13:46:29] Checking emails...
+2026-01-11 13:46:30,228 -   No new attachments
+2026-01-11 13:46:32,228 - [2026-01-11 13:46:32] Checking emails...
+2026-01-11 13:46:32,819 -   No new attachments
+2026-01-11 13:46:34,820 - [2026-01-11 13:46:34] Checking emails...
+2026-01-11 13:46:35,381 -   No new attachments
+2026-01-11 13:46:37,381 - [2026-01-11 13:46:37] Checking emails...
+2026-01-11 13:46:37,986 -   No new attachments
+2026-01-11 13:46:39,987 - [2026-01-11 13:46:39] Checking emails...
+2026-01-11 13:46:40,609 -   No new attachments
+2026-01-11 13:46:42,610 - [2026-01-11 13:46:42] Checking emails...
+2026-01-11 13:46:43,215 -   No new attachments
+2026-01-11 13:46:45,215 - [2026-01-11 13:46:45] Checking emails...
